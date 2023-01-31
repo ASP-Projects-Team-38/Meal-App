@@ -1,0 +1,60 @@
+// Pinned section
+section.pinned {
+    margin-top: $section-margin-top;
+
+    .page-heading {
+        @include flex(row, flex-start, center, 8px);
+
+        .view-change {
+            @include flex(row, flex-start, center, 8px);
+
+            a {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .btn-container button{
+        @include button($secondary-bg-colour, $secondary-bg-colour-dark);
+
+        margin-top: 20px;
+    }
+
+    .calendar-cards {
+        .card {
+            background-color: #fff;
+            box-shadow: 0px 0px 10px 4px #0000001c;
+            margin: 24px auto;
+
+            box-sizing: border-box;
+            border-bottom: 50px solid #444;
+
+            .info {
+                margin-top: 47%;
+                margin-right: 24px;
+                color: #fff;
+
+                font-weight: 700;
+                font-size: 1.2rem;
+                text-align: right;
+            }
+        }
+    }
+}
+
+// Main section
+main {
+    margin-top: $section-margin-top;
+
+    .btn-container {
+        @include flex(row, center, center);
+    }
+
+    .btn-container.grocery {
+        @include flex(row, flex-start, center, 24px);
+    }
+
+    button {
+        @include button($primary-btn-colour, $hover-btn-colour, calc($section-margin-top * 2));
+    }
+}

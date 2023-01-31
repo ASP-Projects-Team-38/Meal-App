@@ -1,0 +1,48 @@
+@mixin container ($mx, $my) {
+    margin: $my $mx;
+}
+
+@mixin flex($direction, $justify-content, $align-items, $gap: unset) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify-content;
+    align-items: $align-items;
+
+    @if $gap != unset {
+        gap: $gap;
+    }
+}
+
+@mixin grid($min, $max, $gap: unset) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax($min, $max));
+
+    @if $gap != unset {
+        gap: $gap;
+        row-gap: 20px !important;
+    }
+}
+
+@mixin button($bg, $hover-bg, $mt: unset) {
+    @if $mt != unset {
+        margin-top: $mt;
+    }
+
+    background-color: $bg;
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.2rem;
+
+    padding: 16px 32px;
+    border-radius: 8px;
+    border: none;
+
+    margin-bottom: 20px;
+
+    transition: hover 1s;
+
+    &:hover {
+        cursor: pointer;
+        background-color: $hover-bg;
+    }
+}

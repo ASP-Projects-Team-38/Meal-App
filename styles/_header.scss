@@ -1,0 +1,55 @@
+header {
+    @include flex(row, space-between, center);
+
+    margin-top: 20px;
+
+    .branding {
+        @include flex(row, center, center, 16px);
+
+        color: $primary-bg-colour;
+        font-weight: bold;
+        font-size: 1.5rem;
+    }
+
+    nav {
+        @include flex(row, center, center, 48px);
+
+        font-size: 1.2rem;
+        font-weight: 500;
+
+        a {
+            border-bottom: 4px solid #fff;
+            transition: border-bottom 1s;
+
+            &::after {
+                content: '.';
+            }
+
+            &:hover {
+                border-bottom: 4px solid $hover-colour;
+            }
+        }
+
+        a.theme {
+            margin-left: 40px;
+            border-bottom: none;
+            font-size: 1.8rem;
+            color: #333;
+
+            transition: transform 1s;
+
+            &::after {
+                content: '';
+            }
+
+            &:hover {
+                transform: scale(1.3);
+                border-bottom: none;
+            }
+        }
+
+        a.current {
+            border-bottom: 4px solid $accent-colour;
+        }
+    }
+}
