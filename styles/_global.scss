@@ -1,0 +1,35 @@
+// Elements
+html {
+    scroll-behavior: smooth;
+    font-size: 14px; // setting the root font sizing for rem use.
+}
+
+* {
+    font-family: $font-main;
+}
+
+body {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+// Classes
+.container {
+    @include container( $container-margin, 0);
+}
+
+.cards {
+    @include grid(350px, 1fr, 48px);
+
+    .card {
+        width: 350px;
+        height: 200px;
+        background-color: $placeholder-bg-colour;
+
+        border-radius: 24px;
+    }
+}
