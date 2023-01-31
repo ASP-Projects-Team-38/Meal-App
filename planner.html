@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meal App | Planner</title>
+    <link rel="stylesheet" href="./styles/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header Section -->
+      <header>
+        <div class="branding">
+          <img src="./assets/logo.svg" alt="Site logo" class="logo" />
+          <p>Site Name</p>
+        </div>
+        <nav class="nav-links">
+          <a href="./recipes.html">Recipes</a>
+          <a class="current" href="./planner.html">Planner</a>
+          <a href="./groceries.html">Groceries</a>
+          <a class="theme" href="#">&#9775;</a>
+        </nav>
+      </header>
+
+      <!-- Hero Section -->
+      <section class="hero">
+        <h1>Planner</h1>
+        <input type="date" class="calendar" />
+      </section>
+
+      <!-- Overview Section -->
+      <section class="pinned">
+        <div class="page-heading">
+          <img src="./assets/icon-calendar.svg" alt="Calendar icon" />
+          <h2>Daily Overview</h2>
+          <div class="view-change">
+            <img src="./assets/icon-switch.svg" alt="Switch icon" />
+            <a href="">Change view</a>
+          </div>
+        </div>
+
+        <div class="calendar-cards cards">
+          <div class="card">
+            <div class="info">
+              <p>Breakfast</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="info">
+              <p>Lunch</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="info">
+              <p>Dinner</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="btn-container">
+          <button>Add Meal</button>
+        </div>
+      </section>
+
+      <!-- Main Section -->
+      <main>
+        <h2>Add to Planner</h2>
+        <div class="cards">
+          <div class="card"></div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
