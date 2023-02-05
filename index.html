@@ -60,6 +60,7 @@
       <!-- Add Recipe Pop up -->
       <section class="pop-up-container">
         <div class="pop-up">
+          <span class="close-btn">&times;</span>
           <p>Add Recipe</p>
           <form action="#">
             <div class="recipe-name-group">
@@ -68,19 +69,21 @@
             </div>
             <div class="recipe-ingredients-group">
               <label for="recipe-ingredients">Ingredients:</label>
-              <input
+              <textarea
                 id="recipe-ingredients"
-                type="text"
                 name="recipe-ingredients"
-              />
+                cols="30"
+                rows="3"
+              ></textarea>
             </div>
             <div class="recipe-instructions-group">
               <label for="recipe-instructions">Instructions:</label>
-              <input
+              <textarea
                 id="recipe-instructions"
-                type="text"
                 name="recipe-instructions"
-              />
+                cols="30"
+                rows="10"
+              ></textarea>
             </div>
             <div class="warning">
               <p>

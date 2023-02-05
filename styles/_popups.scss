@@ -1,0 +1,75 @@
+section.pop-up-container {
+    div.pop-up {
+        @include flex(column, center, center, 4px);
+
+
+        background-color: $pop-up-bg-dark;
+        color: $pop-up-on-bg-dark;
+
+        padding: 48px 96px;
+        border-radius: 32px;
+        margin-bottom: 100px; //remove
+
+        p {
+            font-weight: 700;
+            font-size: 2rem;
+            padding-top: 40px;
+        }
+
+        span.close-btn {
+            margin-left: -1070px;
+            font-weight: 700;
+            font-size: 3.5rem;
+            margin-bottom: -80px;
+            margin-top: -30px;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+
+        form {
+            @include flex(column, center, center, 20px);
+
+            div {
+                @include flex(row, space-between, flex-start, 48px);
+            }
+
+            div.recipe-name-group {
+                input {
+                    margin-left: -20px;
+                }
+            }
+
+            input, textarea {
+                width: 500px;
+                padding: 12px 16px;
+                border-radius: 8px;
+                border: none;
+            }
+            
+            label {
+                font-weight: 500;
+                font-size: 1.3rem;
+            }
+
+            div.warning p {
+                font-weight: 400;
+                font-size: 1rem;
+                margin-left: 80px;
+                margin-top: -24px;
+
+                span {
+                    margin-right: 8px;
+                }
+            }
+
+            input[type='submit'] {
+                @include button($primary-btn-colour, $hover-btn-colour);
+                width: 540px;
+                margin-left: 160px;
+            }
+        }
+    }
+}

@@ -46,3 +46,7 @@
         background-color: $hover-bg;
     }
 }
+
+@mixin popup($bg) {
+    background-color: $bg;
+}
