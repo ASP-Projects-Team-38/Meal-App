@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Meal App | Recipes</title>
     <link rel="stylesheet" href="./styles/style.css" />
+    <script src="./scripts/recipes.js" defer></script>
   </head>
   <body>
     <div class="container">
@@ -54,9 +55,51 @@
           <div class="card"></div>
         </div>
         <div class="btn-container">
-          <button>Add Recipe</button>
+          <button id="add-recipe-btn">Add Recipe</button>
         </div>
       </main>
+      <!-- Add Recipe Pop up -->
+      <div class="toggle-popup-display">
+        <section class="pop-up-container" id="add-recipe-popup">
+          <div id="add-recipe" class="pop-up">
+            <span class="close-btn" id="close-recipe-popup-btn">&times;</span>
+            <p>Add Recipe</p>
+            <form action="#">
+              <div class="recipe-name-group">
+                <label for="recipe-name">Recipe Name:</label>
+                <input id="recipe-name" type="text" name="recipe-name" />
+              </div>
+              <div class="recipe-ingredients-group">
+                <label for="recipe-ingredients">Ingredients:</label>
+                <textarea
+                  id="recipe-ingredients"
+                  name="recipe-ingredients"
+                  cols="30"
+                  rows="3"
+                ></textarea>
+              </div>
+              <div class="recipe-instructions-group">
+                <label for="recipe-instructions">Instructions:</label>
+                <textarea
+                  id="recipe-instructions"
+                  name="recipe-instructions"
+                  cols="30"
+                  rows="10"
+                ></textarea>
+              </div>
+              <div class="warning">
+                <p>
+                  <span>&#9432;</span>Please enter ingredients and directions as
+                  a comma separated list.
+                </p>
+              </div>
+              <div class="submit-btn">
+                <input type="submit" value="Add" />
+              </div>
+            </form>
+          </div>
+        </section>
+      </div>
     </div>
   </body>
 </html>
