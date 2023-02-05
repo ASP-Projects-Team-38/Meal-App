@@ -1,0 +1,54 @@
+# mac setup (you may also need to install docker/mysql client/jq)
+brew install node
+node -v
+>> v19.6.0
+npm -v
+>> 9.4.0
+
+# npm install
+npm install express --save
+npm install body-parser --save
+npm install mysql2 --save
+npm install --save-dev nodemon
+
+# mysql setup
+docker run -d -p 3306:3306 \
+  --name mysql-container -e MYSQL_ROOT_PASSWORD=root \
+  -e MYSQL_DATABASE=meal_app -e MYSQL_USER=meal_app_user \
+  -e MYSQL_PASSWORD=meal_app_user mysql/mysql-server:latest
+
+# login as root
+docker exec -it mysql-container bash
+mysql -u root -p
+
+# login as app user
+mysql -h 127.0.0.1 -u meal_app_user -p
+
+# setup db objects
+USE meal_app;
+CREATE TABLE IF NOT EXISTS recipes (
+  id BIGINT UNSIGNED AUTO_INCREMENT,
+  name VARCHAR(255) NOT NULL,
+  content VARCHAR(255) NOT NULL,
+  PRIMARY KEY (id));
+
+# run the app locally (with mysql container running and setup)
+git clone https://github.com/ASP-Projects-Team-38/Meal-App.git
+cd Meal-App
+git switch recipe-api
+npm install
+npm start
+
+# test the api
+curl -s -X POST -d '{"name":"recipe01", "content":"step 1; step 2; step 3;"}' -H 'Content-Type: application/json' http://localhost:5000/api/recipes | jq .
+curl -s -X POST -d '{"name":"recipe02", "content":"step 1; step 2; step 3;"}' -H 'Content-Type: application/json' http://localhost:5000/api/recipes | jq .
+curl -s -X POST -d '{"name":"recipe03", "content":"step 1; step 2; step 3;"}' -H 'Content-Type: application/json' http://localhost:5000/api/recipes | jq .
+curl -s -X POST -d '{"name":"recipe04", "content":"step 1; step 2; step 3;"}' -H 'Content-Type: application/json' http://localhost:5000/api/recipes | jq .
+
+curl -s -X GET http://localhost:5000/api/recipes | jq .
+
+curl -s -X GET http://localhost:5000/api/recipes/1 | jq .
+
+curl -s -X PUT -d '{"name":"recipe01", "content":"step 11; step 22; step 33;"}' -H 'Content-Type: application/json' http://localhost:5000/api/recipes/1 | jq .
+
+curl -s -X DELETE http://localhost:5000/api/recipes/2 | jq .
