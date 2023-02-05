@@ -211,17 +211,26 @@ main button:hover {
   background-color: #2ba469;
 }
 
+section.pop-up-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
 section.pop-up-container div.pop-up {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 4px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   background-color: #467397;
   color: #fff;
   padding: 48px 96px;
   border-radius: 32px;
-  margin-bottom: 100px;
+  margin-bottom: 20px;
 }
 section.pop-up-container div.pop-up p {
   font-weight: 700;
@@ -229,11 +238,11 @@ section.pop-up-container div.pop-up p {
   padding-top: 40px;
 }
 section.pop-up-container div.pop-up span.close-btn {
-  margin-left: -1070px;
+  margin-left: -770px;
   font-weight: 700;
   font-size: 3.5rem;
   margin-bottom: -80px;
-  margin-top: -30px;
+  margin-top: -10px;
 }
 section.pop-up-container div.pop-up span.close-btn:hover {
   cursor: pointer;
@@ -255,11 +264,12 @@ section.pop-up-container div.pop-up form div {
 section.pop-up-container div.pop-up form div.recipe-name-group input {
   margin-left: -20px;
 }
-section.pop-up-container div.pop-up form input, section.pop-up-container div.pop-up form textarea {
+section.pop-up-container div.pop-up form input, section.pop-up-container div.pop-up form textarea, section.pop-up-container div.pop-up form select {
   width: 500px;
   padding: 12px 16px;
   border-radius: 8px;
   border: none;
+  margin-top: -10px;
 }
 section.pop-up-container div.pop-up form label {
   font-weight: 500;
@@ -290,4 +300,26 @@ section.pop-up-container div.pop-up form input[type=submit] {
 section.pop-up-container div.pop-up form input[type=submit]:hover {
   cursor: pointer;
   background-color: #2ba469;
+}
+section.pop-up-container div#add-list form div.warning p {
+  margin-left: -20px;
+}
+section.pop-up-container div#add-list form div.list-ingredients-group input {
+  margin-left: -8px;
+}
+section.pop-up-container div#add-list form input, section.pop-up-container div#add-list form textarea, section.pop-up-container div#add-list form select {
+  margin-top: -8px;
+}
+section.pop-up-container div#add-list form input[type=submit] {
+  width: 530px;
+  margin-left: 140px;
+}
+section.pop-up-container div#generate-list form select {
+  margin-top: -10px;
+  margin-bottom: 40px;
+  font-size: 1.2rem;
+}
+section.pop-up-container div#generate-list form input[type=submit] {
+  width: 500px;
+  margin-left: 190px;
 }/*# sourceMappingURL=style.css.map */
