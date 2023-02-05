@@ -57,6 +57,43 @@
           <button>Add Recipe</button>
         </div>
       </main>
+      <!-- Add Recipe Pop up -->
+      <section class="pop-up-container">
+        <div class="pop-up">
+          <p>Add Recipe</p>
+          <form action="#">
+            <div class="recipe-name-group">
+              <label for="recipe-name">Recipe Name:</label>
+              <input id="recipe-name" type="text" name="recipe-name" />
+            </div>
+            <div class="recipe-ingredients-group">
+              <label for="recipe-ingredients">Ingredients:</label>
+              <input
+                id="recipe-ingredients"
+                type="text"
+                name="recipe-ingredients"
+              />
+            </div>
+            <div class="recipe-instructions-group">
+              <label for="recipe-instructions">Instructions:</label>
+              <input
+                id="recipe-instructions"
+                type="text"
+                name="recipe-instructions"
+              />
+            </div>
+            <div class="warning">
+              <p>
+                <span>&#9432;</span>Please enter ingredients and directions as a
+                comma separated list.
+              </p>
+            </div>
+            <div class="submit-btn">
+              <input type="submit" value="Add" />
+            </div>
+          </form>
+        </div>
+      </section>
     </div>
   </body>
 </html>

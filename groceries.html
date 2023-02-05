@@ -58,6 +58,64 @@
           <button>Generate List</button>
         </div>
       </main>
+
+      <!-- Add List Pop up -->
+      <section class="pop-up-container">
+        <div class="pop-up">
+          <p>Add List</p>
+          <form action="#">
+            <div class="list-name-group">
+              <label for="list-name">List Name:</label>
+              <input id="list-name" type="text" name="list-name" />
+            </div>
+            <div class="list-ingredients-group">
+              <label for="list-ingredients">Ingredients:</label>
+              <input
+                id="list-ingredients"
+                type="text"
+                name="list-ingredients"
+              />
+            </div>
+            <div class="warning">
+              <p>
+                <span>&#9432;</span>Please enter ingredients as a comma
+                separated list.
+              </p>
+            </div>
+            <div class="submit-btn">
+              <input type="submit" value="Add" />
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <!-- Generate List Pop up -->
+      <section class="pop-up-container">
+        <div class="pop-up">
+          <p>Generate List</p>
+          <form action="#">
+            <div class="generate-list-name-group">
+              <label for="generate-list-name">Select a Recipe:</label>
+              <select name="generate-list-name" id="generate-list-name">
+                <option value="" selected disabled>-Select a recipe-</option>
+                <option value="Wild mushroom mac 'n' cheese">
+                  Wild mushroom mac 'n' cheese
+                </option>
+                <option value="Ndolé">Ndolé</option>
+                <option value="Chorizo & mozzarella gnocchi bake">
+                  Chorizo & mozzarella gnocchi bake
+                </option>
+                <option value="Swedish meatball burgers">
+                  Swedish meatball burgers
+                </option>
+              </select>
+            </div>
+            <div class="submit-btn">
+              <input type="submit" value="Generate" />
+            </div>
+          </form>
+        </div>
+      </section>
     </div>
   </body>
 </html>
