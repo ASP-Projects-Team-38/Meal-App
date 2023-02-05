@@ -216,6 +216,8 @@ section.pop-up-container {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  margin-top: -800px;
+  z-index: 1;
 }
 section.pop-up-container div.pop-up {
   display: flex;
@@ -231,7 +233,6 @@ section.pop-up-container div.pop-up {
   padding: 48px 96px;
   border-radius: 32px;
   margin-bottom: 20px;
-  display: none;
 }
 section.pop-up-container div.pop-up p {
   font-weight: 700;
@@ -315,12 +316,16 @@ section.pop-up-container div#add-list form input[type=submit] {
   width: 530px;
   margin-left: 140px;
 }
-section.pop-up-container div#generate-list form select {
+section.pop-up-container section#generate-list-popup div#generate-list form select {
   margin-top: -10px;
   margin-bottom: 40px;
   font-size: 1.2rem;
 }
-section.pop-up-container div#generate-list form input[type=submit] {
+section.pop-up-container section#generate-list-popup div#generate-list form input[type=submit] {
   width: 500px;
   margin-left: 190px;
+}
+
+.toggle-popup-display {
+  display: none;
 }/*# sourceMappingURL=style.css.map */

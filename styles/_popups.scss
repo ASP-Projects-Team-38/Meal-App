@@ -1,5 +1,8 @@
 section.pop-up-container {
     @include flex(row, center, center);
+    margin-top: -800px;
+    z-index: 1;
+
     div.pop-up {
         @include flex(column, center, center, 4px);
 
@@ -74,9 +77,11 @@ section.pop-up-container {
                 margin-left: 160px;
             }
         }
-
-        display: none;
     }
+
+    // .toggle-popup-display {
+    //     display: none;
+    // }
 
     // Add List Pop Up 
     // Minor adjustments
@@ -103,18 +108,26 @@ section.pop-up-container {
 
     // Generate List Pop Up 
     // Minor adjustments
-    div#generate-list {
-        form {
-            select {
-                margin-top: -10px;
-                margin-bottom: 40px;
-                font-size: 1.2rem;
-            }
+    section#generate-list-popup {
 
-            input[type='submit'] {
-                width: 500px;
-                margin-left: 190px;
+        div#generate-list {
+            form {
+                select {
+                    margin-top: -10px;
+                    margin-bottom: 40px;
+                    font-size: 1.2rem;
+                }
+
+                input[type='submit'] {
+                    width: 500px;
+                    margin-left: 190px;
+                }
             }
-        }
+        }  
     }
+    
+}
+
+.toggle-popup-display {
+    display: none;
 }
