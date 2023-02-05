@@ -231,6 +231,7 @@ section.pop-up-container div.pop-up {
   padding: 48px 96px;
   border-radius: 32px;
   margin-bottom: 20px;
+  display: none;
 }
 section.pop-up-container div.pop-up p {
   font-weight: 700;
