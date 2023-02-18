@@ -33,26 +33,42 @@
       <!-- Main Section -->
       <main id="sign-up-form">
         <form action="#">
-          <div class="username-group">
+          <div class="fname-group log-group">
+            <label for="fname">First name</label>
+            <input id="fname" type="text" name="fname" />
+          </div>
+          <div class="lname-group log-group">
+            <label for="lname">Last name</label>
+            <input id="lname" type="text" name="lname" />
+          </div>
+          <div class="dob-group log-group">
+            <label for="dob">DOB</label>
+            <input id="dob" type="date" name="dob" />
+          </div>
+          <div class="email-group log-group">
+            <label for="email">Email</label>
+            <input id="email" type="email" name="email" />
+          </div>
+          <div class="phone-number-group log-group">
+            <label for="phone-number">Phone Number</label>
+            <input id="phone-number" type="tel" name="phone-number" />
+          </div>
+          <div class="username-group log-group">
             <label for="username">Username</label>
             <input id="username" type="text" name="username" />
           </div>
-          <div class="password-group">
+          <div class="password-group log-group">
             <label for="password">Password</label>
             <input id="password" type="password" name="password" />
           </div>
+          <div class="re-password-group log-group">
+            <label for="re-password">Re-type Password</label>
+            <input id="re-password" type="password" name="re-password" />
+          </div>
           <div class="btn-container">
-            <button id="login-btn">Sign In</button>
+            <button id="login-btn">Sign Up</button>
           </div>
         </form>
-        <div class="sign-up-link">
-          <p>
-            Don&#39;t have an account?
-            <a id="test" href="./signup.html" class="sign-up-link"
-              >Click here to make one.</a
-            >
-          </p>
-        </div>
       </main>
     </div>
   </body>
