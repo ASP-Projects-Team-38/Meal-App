@@ -330,4 +330,16 @@ section.pop-up-container section#generate-list-popup div#generate-list form inpu
 
 .toggle-popup-display {
   display: none;
+}
+
+main#sign-in-form {
+  background-color: rgb(155, 148, 222);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+main#sign-in-form div.sign-up-link a.sign-up-link {
+  font-weight: 700;
+  text-decoration: underline;
 }/*# sourceMappingURL=style.css.map */

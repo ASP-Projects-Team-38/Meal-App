@@ -1,0 +1,12 @@
+main#sign-in-form {
+    background-color: rgb(155, 148, 222);
+
+    @include flex(column, space-between, center);
+
+    div.sign-up-link {
+        a.sign-up-link  {
+            font-weight: 700;
+            text-decoration: underline;
+        }
+    }
+}
