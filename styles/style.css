@@ -110,10 +110,6 @@ section.hero input::-moz-placeholder {
   color: #333;
   font-size: 1.1rem;
 }
-section.hero input:-ms-input-placeholder {
-  color: #333;
-  font-size: 1.1rem;
-}
 section.hero input::placeholder {
   color: #333;
   font-size: 1.1rem;
@@ -124,6 +120,13 @@ section.hero input:active {
 section.hero .calendar {
   background-color: #D3DCFD;
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1294117647);
+}
+
+section.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 section.pinned {
@@ -225,7 +228,6 @@ section.pop-up-container div.pop-up {
   justify-content: center;
   align-items: center;
   gap: 4px;
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   background-color: #467397;
