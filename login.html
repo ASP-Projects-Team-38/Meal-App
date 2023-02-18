@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meal App | Log In</title>
+    <link rel="stylesheet" href="./styles/style.css" />
+    <script src="./scripts/recipes.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header Section -->
+      <header>
+        <div class="branding">
+          <img src="./assets/logo.svg" alt="Site logo" class="logo" />
+          <p>Site Name</p>
+        </div>
+        <!-- Nav not needed for login page -->
+        <nav class="nav-links">
+          <!-- <a class="current" href="./index.html">Recipes</a> -->
+          <!-- <a href="./planner.html">Planner</a> -->
+          <!-- <a href="./groceries.html">Groceries</a> -->
+          <a class="theme" href="#">&#9775;</a>
+        </nav>
+      </header>
+
+      <!-- Hero Section -->
+      <section class="hero center">
+        <h1>User Login</h1>
+      </section>
+
+      <!-- Main Section -->
+      <main id="sign-in-form">
+        <form action="#">
+          <div class="username-group log-group">
+            <label for="username">Username</label>
+            <input id="username" type="text" name="username" />
+          </div>
+          <div class="password-group log-group">
+            <label for="password">Password</label>
+            <input id="password" type="password" name="password" />
+          </div>
+          <div class="btn-container">
+            <button id="login-btn">Sign In</button>
+          </div>
+        </form>
+        <div class="sign-up-link">
+          <p>
+            Don&#39;t have an account?
+            <a id="test" href="./signup.html" class="sign-up-link"
+              >Click here to make one.</a
+            >
+          </p>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

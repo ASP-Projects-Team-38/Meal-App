@@ -1,0 +1,62 @@
+main#sign-in-form,
+main#sign-up-form {
+    @include flex(column, space-between, center, 16px);
+
+    form {
+        @include flex(column, space-between, center, 40px);
+
+        div.log-group {
+            font-size: 1.4rem;
+
+            label {
+                font-weight: 500;
+                margin-right: 40px;
+            }
+    
+            input {
+                margin-top: 16px;
+                min-width: 400px;
+                width: 35vw;
+                padding: 12px 16px;
+
+                background-color: $hover-colour-light;
+
+                border-radius: 8px;
+                outline: none;
+                border: none;
+            }
+        }
+    
+        button#login-btn {
+            @include button($primary-btn-colour, $hover-btn-colour, 80px);
+        }
+    }
+
+    div.sign-up-link {
+        a.sign-up-link  {
+            font-weight: 700;
+            text-decoration: underline;
+        }
+    }
+}
+
+main#sign-up-form {
+    form {
+        @include flex(column, space-between, center, 32px);
+
+        div.log-group {
+            font-size: 1.2rem;
+
+            @include flex(column, space-between, flex-start, 4px);
+
+            input {
+                min-width: 500px;
+                width: 50vw;
+            }
+        }
+    
+        button#login-btn {
+            @include button($primary-btn-colour, $hover-btn-colour, 24px);
+        }
+    }
+}

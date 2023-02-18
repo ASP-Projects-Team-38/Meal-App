@@ -30,3 +30,7 @@ section.hero {
         box-shadow: 4px 4px 4px #00000021;
     }
 }
+
+section.center {
+    @include flex(column, center, center);
+}

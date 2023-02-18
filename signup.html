@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meal App | Sign Up</title>
+    <link rel="stylesheet" href="./styles/style.css" />
+    <script src="./scripts/recipes.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header Section -->
+      <header>
+        <div class="branding">
+          <img src="./assets/logo.svg" alt="Site logo" class="logo" />
+          <p>Site Name</p>
+        </div>
+        <!-- Nav not needed for login page -->
+        <nav class="nav-links">
+          <!-- <a class="current" href="./index.html">Recipes</a> -->
+          <!-- <a href="./planner.html">Planner</a> -->
+          <!-- <a href="./groceries.html">Groceries</a> -->
+          <a class="theme" href="#">&#9775;</a>
+        </nav>
+      </header>
+
+      <!-- Hero Section -->
+      <section class="hero center">
+        <h1>User Registration</h1>
+      </section>
+
+      <!-- Main Section -->
+      <main id="sign-up-form">
+        <form action="#">
+          <div class="fname-group log-group">
+            <label for="fname">First name</label>
+            <input id="fname" type="text" name="fname" />
+          </div>
+          <div class="lname-group log-group">
+            <label for="lname">Last name</label>
+            <input id="lname" type="text" name="lname" />
+          </div>
+          <div class="dob-group log-group">
+            <label for="dob">DOB</label>
+            <input id="dob" type="date" name="dob" />
+          </div>
+          <div class="email-group log-group">
+            <label for="email">Email</label>
+            <input id="email" type="email" name="email" />
+          </div>
+          <div class="phone-number-group log-group">
+            <label for="phone-number">Phone Number</label>
+            <input id="phone-number" type="tel" name="phone-number" />
+          </div>
+          <div class="username-group log-group">
+            <label for="username">Username</label>
+            <input id="username" type="text" name="username" />
+          </div>
+          <div class="password-group log-group">
+            <label for="password">Password</label>
+            <input id="password" type="password" name="password" />
+          </div>
+          <div class="re-password-group log-group">
+            <label for="re-password">Re-type Password</label>
+            <input id="re-password" type="password" name="re-password" />
+          </div>
+          <div class="btn-container">
+            <button id="login-btn">Sign Up</button>
+          </div>
+        </form>
+      </main>
+    </div>
+  </body>
+</html>
