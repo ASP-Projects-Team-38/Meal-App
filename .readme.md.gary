@@ -54,3 +54,20 @@ curl -s -X PUT -d '{"name":"recipe01", "content":"step 11; step 22; step 33;"}' 
 
 curl -s -X DELETE http://localhost:5000/api/recipes/2 | jq .
 ```
+
+```
+npm install ejs --save
+npm install express-session --save
+npm install cookie-parser --save
+
+CREATE TABLE IF NOT EXISTS users (
+  id BIGINT UNSIGNED AUTO_INCREMENT,
+  fname VARCHAR(30) NOT NULL,
+  lname VARCHAR(30) NOT NULL,
+  email VARCHAR(30) NOT NULL,
+  dob VARCHAR(20) NOT NULL,
+  phoneNumber VARCHAR(30) NOT NULL,
+  username VARCHAR(30) NOT NULL,
+  password VARCHAR(100) NOT NULL,
+  PRIMARY KEY (id));
+```
