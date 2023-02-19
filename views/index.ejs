@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meal App | Recipes</title>
+    <link rel="stylesheet" href="../styles/style.css" />
+    <script src="/scripts/recipes.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header Section -->
+      <header>
+        <div class="branding">
+          <img src="/assets/logo.svg" alt="Site logo" class="logo" />
+          <p>Site Name</p>
+        </div>
+        <nav class="nav-links">
+          <a class="current" href="index.html">Recipes</a>
+          <a href="planner.html">Planner</a>
+          <a href="groceries.html">Groceries</a>
+          <a class="theme" href="#">&#9775;</a>
+          <a href="#"><%= username %></a>
+          <a href="/logout">Logout</a>
+        </nav>
+
+      </header>
+      <!-- Hero Section -->
+      <section class="hero">
+        <h1>Recipes</h1>
+        <input type="text" placeholder="&#128269; Search recipes..." />
+      </section>
+
+      <!-- Pinned Section -->
+      <section class="pinned">
+        <div class="page-heading">
+          <img src="/assets/icon-pin.svg" alt="Pin icon" />
+          <h2>Pinned</h2>
+        </div>
+        <div class="cards">
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+        </div>
+      </section>
+
+      <!-- Main Section -->
+      <main>
+        <h2>Recipes</h2>
+        <div class="cards">
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+        </div>
+        <div class="btn-container">
+          <button id="add-recipe-btn">Add Recipe</button>
+        </div>
+      </main>
+      <!-- Add Recipe Pop up -->
+      <div class="toggle-popup-display">
+        <section class="pop-up-container" id="add-recipe-popup">
+          <div id="add-recipe" class="pop-up">
+            <span class="close-btn" id="close-recipe-popup-btn">&times;</span>
+            <p>Add Recipe</p>
+            <form action="#">
+              <div class="recipe-name-group">
+                <label for="recipe-name">Recipe Name:</label>
+                <input id="recipe-name" type="text" name="recipe-name" />
+              </div>
+              <div class="recipe-ingredients-group">
+                <label for="recipe-ingredients">Ingredients:</label>
+                <textarea
+                  id="recipe-ingredients"
+                  name="recipe-ingredients"
+                  cols="30"
+                  rows="3"
+                ></textarea>
+              </div>
+              <div class="recipe-instructions-group">
+                <label for="recipe-instructions">Instructions:</label>
+                <textarea
+                  id="recipe-instructions"
+                  name="recipe-instructions"
+                  cols="30"
+                  rows="10"
+                ></textarea>
+              </div>
+              <div class="warning">
+                <p>
+                  <span>&#9432;</span>Please enter ingredients and directions as
+                  a comma separated list.
+                </p>
+              </div>
+              <div class="submit-btn">
+                <input type="submit" value="Add" />
+              </div>
+            </form>
+          </div>
+        </section>
+      </div>
+    </div>
+  </body>
+</html>
