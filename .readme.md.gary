@@ -71,3 +71,35 @@ CREATE TABLE IF NOT EXISTS users (
   password VARCHAR(100) NOT NULL,
   PRIMARY KEY (id));
 ```
+
+To test it:
+```
+docker run -d -p 3306:3306 \
+  --name mysql-container -e MYSQL_ROOT_PASSWORD=root \
+  -e MYSQL_DATABASE=meal_app -e MYSQL_USER=meal_app_user \
+  -e MYSQL_PASSWORD=meal_app_user mysql/mysql-server:latest
+
+mysql -h 127.0.0.1 -u meal_app_user -p
+USE meal_app;
+CREATE TABLE IF NOT EXISTS users (
+  id BIGINT UNSIGNED AUTO_INCREMENT,
+  fname VARCHAR(30) NOT NULL,
+  lname VARCHAR(30) NOT NULL,
+  email VARCHAR(30) NOT NULL,
+  dob VARCHAR(20) NOT NULL,
+  phoneNumber VARCHAR(30) NOT NULL,
+  username VARCHAR(30) NOT NULL,
+  password VARCHAR(100) NOT NULL,
+  PRIMARY KEY (id));
+exit;
+
+git clone https://github.com/ASP-Projects-Team-38/Meal-App.git
+cd Meal-App
+
+npm install
+npm start
+
+open by broswer:
+http://127.0.0.1:5000
+
+```
