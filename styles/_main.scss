@@ -47,12 +47,12 @@ main {
     margin-top: $section-margin-top;
 
     .btn-container {
-        @include flex(row, center, center);
+        @include flex(row, center, center, 32px);
     }
 
-    .btn-container.grocery {
-        @include flex(row, flex-start, center, 24px);
-    }
+    // .btn-container.grocery {
+    //     @include flex(row, flex-start, center, 24px);
+    // }
 
     button {
         @include button($primary-btn-colour, $hover-btn-colour, calc($section-margin-top * 2));

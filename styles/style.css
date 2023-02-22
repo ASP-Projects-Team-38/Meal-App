@@ -189,13 +189,7 @@ main .btn-container {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-}
-main .btn-container.grocery {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 24px;
+  gap: 32px;
 }
 main button {
   margin-top: 100px;
