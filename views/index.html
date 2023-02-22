@@ -71,13 +71,33 @@
                 <input id="recipe-name" type="text" name="recipe-name" />
               </div>
               <div class="recipe-ingredients-group">
-                <label for="recipe-ingredients">Ingredients:</label>
-                <textarea
+                <!-- <label for="recipe-ingredients">Ingredients:</label> -->
+                <label>Ingredients:</label>
+                <div class="recipe-ingredients">
+                  <div class="recipe-ingredient-subgroup">
+                    <input
+                      type="text"
+                      name="recipe-ingredient-1"
+                      id="recipe-ingredient-1"
+                      placeholder="ingredient (e.g. flour)"
+                    />
+                    <input
+                      type="text"
+                      name="recipe-quantity-1"
+                      id="recipe-quantity-1"
+                      placeholder="amount (e.g. 250g)"
+                    />
+                  </div>
+                </div>
+                <button id="add-recipe-ingredient-input-btn" type="button">
+                  Add ingredient
+                </button>
+                <!-- <textarea
                   id="recipe-ingredients"
                   name="recipe-ingredients"
                   cols="30"
                   rows="3"
-                ></textarea>
+                ></textarea> -->
               </div>
               <div class="recipe-instructions-group">
                 <label for="recipe-instructions">Instructions:</label>

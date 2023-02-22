@@ -10,3 +10,10 @@ addRecipeBtn.addEventListener("click", () => {
 closeRecipePopUpBtn.addEventListener("click", () => {
     addRecipePopUp.parentElement.classList.add("toggle-popup-display");
 });
+
+
+const ingredientsInputSection = document.querySelector(".recipe-ingredients");
+const addIngredientBtn = document.querySelector("#add-recipe-ingredient-input-btn");
+let numberOfIngredients = 1;
+
+addIngredientBtn.addEventListener();

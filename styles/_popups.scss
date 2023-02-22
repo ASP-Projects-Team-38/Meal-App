@@ -54,6 +54,33 @@ section.pop-up-container {
 
                 margin-top: -10px;
             }
+
+            div.recipe-ingredients-group {
+                @include flex(column, center, flex-start);
+
+                div.recipe-ingredient-subgroup {
+                    @include flex(row, flex-start, center, 12px);
+                    margin-top: -24px;
+                    margin-left: 150px;
+
+                    input {
+                        width: 150px;
+                    }
+
+                    input:first-of-type {
+                        width: 300px;
+                    }
+
+                    
+                }
+
+                button {
+                    @include button($primary-btn-colour, $hover-btn-colour, -32px);
+                    font-size: 1rem;
+                    padding: 8px 16px;
+                    margin-left: 150px;
+                }
+            }
             
             label {
                 font-weight: 500;
