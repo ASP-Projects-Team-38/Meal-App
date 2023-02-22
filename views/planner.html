@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Meal App | Planner</title>
     <link rel="stylesheet" href="../styles/style.css" />
+    <script src="/scripts/planner.js" defer></script>
   </head>
   <body>
     <div class="container">
@@ -74,6 +75,47 @@
           <button id="set-remainder-btn">Set Remainders</button>
         </div>
       </main>
+
+      <!-- Set Remainders Pop up -->
+      <div class="toggle-popup-display">
+        <section class="pop-up-container" id="set-remainders-popup">
+          <div id="set-remainders" class="pop-up">
+            <span class="close-btn" id="close-set-remainders-popup-btn"
+              >&times;</span
+            >
+            <p>Set Remainders</p>
+            <form action="#">
+              <div class="set-remainders-freq-group">
+                <label for="set-remainders-freq">Remainder Frequency:</label>
+                <select name="set-remainders-freq" id="set-remainders-freq">
+                  <option value="" selected disabled>
+                    -Select a frequency-
+                  </option>
+                  <option value="hourly">Hourly</option>
+                  <option value="daily">Daily</option>
+                  <option value="weekly">Weekly</option>
+                  <option value="bi-monthly">Bi-Monthly</option>
+                  <option value="monthly">Monthly</option>
+                </select>
+              </div>
+              <div class="set-remainders-send-group">
+                <label for="set-remainders-send">Send Reminder to:</label>
+                <select name="set-remainders-send" id="set-remainders-send">
+                  <option value="" selected disabled>
+                    -Select a communication-
+                  </option>
+                  <option value="text">Text</option>
+                  <option value="email">Email</option>
+                  <option value="site">Site</option>
+                </select>
+              </div>
+              <div class="submit-btn">
+                <input type="submit" value="Remind Me" />
+              </div>
+            </form>
+          </div>
+        </section>
+      </div>
     </div>
   </body>
 </html>
