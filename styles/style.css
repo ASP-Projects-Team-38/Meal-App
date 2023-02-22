@@ -275,7 +275,13 @@ section.pop-up-container div.pop-up form div.recipe-ingredients-group {
   justify-content: center;
   align-items: flex-start;
 }
-section.pop-up-container div.pop-up form div.recipe-ingredients-group div.recipe-ingredient-subgroup {
+section.pop-up-container div.pop-up form div.recipe-ingredients-group div.recipe-ingredients {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+section.pop-up-container div.pop-up form div.recipe-ingredients-group div.recipe-ingredients div.recipe-ingredient-subgroup {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -284,10 +290,10 @@ section.pop-up-container div.pop-up form div.recipe-ingredients-group div.recipe
   margin-top: -24px;
   margin-left: 150px;
 }
-section.pop-up-container div.pop-up form div.recipe-ingredients-group div.recipe-ingredient-subgroup input {
+section.pop-up-container div.pop-up form div.recipe-ingredients-group div.recipe-ingredients div.recipe-ingredient-subgroup input {
   width: 150px;
 }
-section.pop-up-container div.pop-up form div.recipe-ingredients-group div.recipe-ingredient-subgroup input:first-of-type {
+section.pop-up-container div.pop-up form div.recipe-ingredients-group div.recipe-ingredients div.recipe-ingredient-subgroup input:first-of-type {
   width: 300px;
 }
 section.pop-up-container div.pop-up form div.recipe-ingredients-group button {

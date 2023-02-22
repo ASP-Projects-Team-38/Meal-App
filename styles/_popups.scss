@@ -58,20 +58,22 @@ section.pop-up-container {
             div.recipe-ingredients-group {
                 @include flex(column, center, flex-start);
 
-                div.recipe-ingredient-subgroup {
-                    @include flex(row, flex-start, center, 12px);
-                    margin-top: -24px;
-                    margin-left: 150px;
+                div.recipe-ingredients {
+                    @include flex(column, center, flex-start);
 
-                    input {
-                        width: 150px;
+                    div.recipe-ingredient-subgroup {
+                        @include flex(row, flex-start, center, 12px);
+                        margin-top: -24px;
+                        margin-left: 150px;
+    
+                        input {
+                            width: 150px;
+                        }
+    
+                        input:first-of-type {
+                            width: 300px;
+                        }
                     }
-
-                    input:first-of-type {
-                        width: 300px;
-                    }
-
-                    
                 }
 
                 button {
