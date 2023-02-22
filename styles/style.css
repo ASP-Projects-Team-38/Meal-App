@@ -323,10 +323,16 @@ section.pop-up-container div.pop-up form div.warning p {
   font-weight: 400;
   font-size: 1rem;
   margin-left: 80px;
-  margin-top: -24px;
+  margin-top: -36px;
 }
 section.pop-up-container div.pop-up form div.warning p span {
   margin-right: 8px;
+}
+section.pop-up-container div.pop-up form div.recipe-tags-group {
+  margin-left: 65px;
+}
+section.pop-up-container div.pop-up form div.recipe-time-estimation-group {
+  margin-left: -30px;
 }
 section.pop-up-container div.pop-up form input[type=submit] {
   background-color: #33BD7B;

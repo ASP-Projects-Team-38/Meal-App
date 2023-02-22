@@ -72,13 +72,26 @@
                 <input id="recipe-name" type="text" name="recipe-name" />
               </div>
               <div class="recipe-ingredients-group">
-                <label for="recipe-ingredients">Ingredients:</label>
-                <textarea
-                  id="recipe-ingredients"
-                  name="recipe-ingredients"
-                  cols="30"
-                  rows="3"
-                ></textarea>
+                <label>Ingredients:</label>
+                <div class="recipe-ingredients">
+                  <div class="recipe-ingredient-subgroup">
+                    <input
+                      type="text"
+                      name="recipe-ingredient-1"
+                      id="recipe-ingredient-1"
+                      placeholder="ingredient (e.g. flour)"
+                    />
+                    <input
+                      type="text"
+                      name="recipe-quantity-1"
+                      id="recipe-quantity-1"
+                      placeholder="amount (e.g. 250g)"
+                    />
+                  </div>
+                </div>
+                <button id="add-recipe-ingredient-input-btn" type="button">
+                  Add ingredient
+                </button>
               </div>
               <div class="recipe-instructions-group">
                 <label for="recipe-instructions">Instructions:</label>
@@ -89,11 +102,23 @@
                   rows="10"
                 ></textarea>
               </div>
+              <div class="recipe-tags-group">
+                <label for="recipe-tags">Tags:</label>
+                <input id="recipe-tags" type="text" name="recipe-tags" />
+              </div>
               <div class="warning">
                 <p>
-                  <span>&#9432;</span>Please enter ingredients and directions as
-                  a comma separated list.
+                  <span>&#9432;</span>Please enter instructions and tags as a
+                  comma separated list.
                 </p>
+              </div>
+              <div class="recipe-time-estimation-group">
+                <label for="recipe-time-estimation">Time Estimation:</label>
+                <input
+                  id="recipe-time-estimation"
+                  type="text"
+                  name="recipe-time-estimation"
+                />
               </div>
               <div class="submit-btn">
                 <input type="submit" value="Add" />

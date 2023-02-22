@@ -26,12 +26,12 @@ function addIngredientInputField() {
     ingredientGroup.classList.add("recipe-ingredient-subgroup");
 
     let ingredientInput = document.createElement("input");
-    ingredientInput.setAttribute("placeholder", "ingredient (e.g. flour)");
+    ingredientInput.setAttribute("placeholder", "Ingredient (e.g. flour)");
     ingredientInput.setAttribute("name", `recipe-ingredient-${numberOfIngredients}`);
     ingredientInput.setAttribute("id", `recipe-ingredient-${numberOfIngredients}`);
 
     let amountInput = document.createElement("input");
-    amountInput.setAttribute("placeholder", "amount (e.g. 250g)");
+    amountInput.setAttribute("placeholder", "Amount (e.g. 250g)");
     amountInput.setAttribute("name", `recipe-amount-${numberOfIngredients}`);
     amountInput.setAttribute("id", `recipe-amount-${numberOfIngredients}`);
 
