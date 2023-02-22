@@ -59,6 +59,7 @@
           <button id="estimate-cost-btn">Estimate Cost</button>
         </div>
       </main>
+
       <!-- Add Recipe Pop up -->
       <div class="toggle-popup-display">
         <section class="pop-up-container" id="add-recipe-popup">
@@ -71,13 +72,26 @@
                 <input id="recipe-name" type="text" name="recipe-name" />
               </div>
               <div class="recipe-ingredients-group">
-                <label for="recipe-ingredients">Ingredients:</label>
-                <textarea
-                  id="recipe-ingredients"
-                  name="recipe-ingredients"
-                  cols="30"
-                  rows="3"
-                ></textarea>
+                <label>Ingredients:</label>
+                <div class="recipe-ingredients">
+                  <div class="recipe-ingredient-subgroup">
+                    <input
+                      type="text"
+                      name="recipe-ingredient-1"
+                      id="recipe-ingredient-1"
+                      placeholder="Ingredient (e.g. flour)"
+                    />
+                    <input
+                      type="text"
+                      name="recipe-quantity-1"
+                      id="recipe-quantity-1"
+                      placeholder="Amount (e.g. 250g)"
+                    />
+                  </div>
+                </div>
+                <button id="add-recipe-ingredient-input-btn" type="button">
+                  Add ingredient
+                </button>
               </div>
               <div class="recipe-instructions-group">
                 <label for="recipe-instructions">Instructions:</label>
@@ -88,14 +102,73 @@
                   rows="10"
                 ></textarea>
               </div>
+              <div class="recipe-tags-group">
+                <label for="recipe-tags">Tags:</label>
+                <input id="recipe-tags" type="text" name="recipe-tags" />
+              </div>
               <div class="warning">
                 <p>
-                  <span>&#9432;</span>Please enter ingredients and directions as
-                  a comma separated list.
+                  <span>&#9432;</span>Please enter instructions and tags as a
+                  comma separated list.
                 </p>
+              </div>
+              <div class="recipe-time-estimation-group">
+                <label for="recipe-time-estimation">Time Estimation:</label>
+                <input
+                  id="recipe-time-estimation"
+                  type="text"
+                  name="recipe-time-estimation"
+                />
               </div>
               <div class="submit-btn">
                 <input type="submit" value="Add" />
+              </div>
+            </form>
+          </div>
+        </section>
+      </div>
+
+      <!-- Estimate Cost Pop up -->
+      <div class="toggle-popup-display">
+        <section class="pop-up-container" id="estimate-cost-popup">
+          <div id="estimate-cost" class="pop-up">
+            <span class="close-btn" id="close-estimate-cost-popup-btn"
+              >&times;</span
+            >
+            <p>Estimate Cost</p>
+            <form action="#">
+              <div class="estimate-cost-recipe-group">
+                <label for="estimate-cost-recipe">Select a Recipe:</label>
+                <select name="estimate-cost-recipe" id="estimate-cost-recipe">
+                  <option value="" selected disabled>-Select a recipe-</option>
+                  <option value="Wild mushroom mac 'n' cheese">
+                    Wild mushroom mac 'n' cheese
+                  </option>
+                  <option value="Ndolé">Ndolé</option>
+                  <option value="Chorizo & mozzarella gnocchi bake">
+                    Chorizo & mozzarella gnocchi bake
+                  </option>
+                  <option value="Swedish meatball burgers">
+                    Swedish meatball burgers
+                  </option>
+                </select>
+              </div>
+              <div class="estimate-cost-store-group">
+                <label for="estimate-cost-store">Select a Store:</label>
+                <select name="estimate-cost-store" id="estimate-cost-store">
+                  <option value="" selected disabled>-Select a store-</option>
+                  <option value="Sainsbury's">Sainsbury's</option>
+                  <option value="Tesco">Tesco</option>
+                  <option value="Lidl">Lidl</option>
+                  <option value="Morrisons">Morrsions</option>
+                  <option value="M&S">M&S</option>
+                  <option value="Aldi">Aldi</option>
+                  <option value="Asda">Asda</option>
+                  <option value="Iceland">Iceland</option>
+                </select>
+              </div>
+              <div class="submit-btn">
+                <input type="submit" value="Estimate" />
               </div>
             </form>
           </div>

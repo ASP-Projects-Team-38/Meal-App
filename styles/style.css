@@ -269,6 +269,52 @@ section.pop-up-container div.pop-up form input, section.pop-up-container div.pop
   border: none;
   margin-top: -10px;
 }
+section.pop-up-container div.pop-up form div.recipe-ingredients-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+section.pop-up-container div.pop-up form div.recipe-ingredients-group div.recipe-ingredients {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+section.pop-up-container div.pop-up form div.recipe-ingredients-group div.recipe-ingredients div.recipe-ingredient-subgroup {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 12px;
+  margin-top: -24px;
+  margin-left: 150px;
+}
+section.pop-up-container div.pop-up form div.recipe-ingredients-group div.recipe-ingredients div.recipe-ingredient-subgroup input {
+  width: 150px;
+}
+section.pop-up-container div.pop-up form div.recipe-ingredients-group div.recipe-ingredients div.recipe-ingredient-subgroup input:first-of-type {
+  width: 300px;
+}
+section.pop-up-container div.pop-up form div.recipe-ingredients-group button {
+  margin-top: -32px;
+  background-color: #33BD7B;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.2rem;
+  padding: 16px 32px;
+  border-radius: 8px;
+  border: none;
+  margin-bottom: 20px;
+  transition: hover 1s;
+  font-size: 1rem;
+  padding: 8px 16px;
+  margin-left: 150px;
+}
+section.pop-up-container div.pop-up form div.recipe-ingredients-group button:hover {
+  cursor: pointer;
+  background-color: #2ba469;
+}
 section.pop-up-container div.pop-up form label {
   font-weight: 500;
   font-size: 1.3rem;
@@ -277,10 +323,16 @@ section.pop-up-container div.pop-up form div.warning p {
   font-weight: 400;
   font-size: 1rem;
   margin-left: 80px;
-  margin-top: -24px;
+  margin-top: -36px;
 }
 section.pop-up-container div.pop-up form div.warning p span {
   margin-right: 8px;
+}
+section.pop-up-container div.pop-up form div.recipe-tags-group {
+  margin-left: 65px;
+}
+section.pop-up-container div.pop-up form div.recipe-time-estimation-group {
+  margin-left: -30px;
 }
 section.pop-up-container div.pop-up form input[type=submit] {
   background-color: #33BD7B;

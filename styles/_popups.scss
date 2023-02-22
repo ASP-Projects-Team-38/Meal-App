@@ -54,6 +54,35 @@ section.pop-up-container {
 
                 margin-top: -10px;
             }
+
+            div.recipe-ingredients-group {
+                @include flex(column, center, flex-start);
+
+                div.recipe-ingredients {
+                    @include flex(column, center, flex-start);
+
+                    div.recipe-ingredient-subgroup {
+                        @include flex(row, flex-start, center, 12px);
+                        margin-top: -24px;
+                        margin-left: 150px;
+    
+                        input {
+                            width: 150px;
+                        }
+    
+                        input:first-of-type {
+                            width: 300px;
+                        }
+                    }
+                }
+
+                button {
+                    @include button($primary-btn-colour, $hover-btn-colour, -32px);
+                    font-size: 1rem;
+                    padding: 8px 16px;
+                    margin-left: 150px;
+                }
+            }
             
             label {
                 font-weight: 500;
@@ -64,11 +93,19 @@ section.pop-up-container {
                 font-weight: 400;
                 font-size: 1rem;
                 margin-left: 80px;
-                margin-top: -24px;
+                margin-top: -36px;
 
                 span {
                     margin-right: 8px;
                 }
+            }
+
+            div.recipe-tags-group {
+                margin-left: 65px;
+            }
+
+            div.recipe-time-estimation-group {
+                margin-left: -30px;
             }
 
             input[type='submit'] {
