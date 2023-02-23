@@ -7,8 +7,8 @@ section.pop-up-container {
         @include flex(column, center, center, 4px);
 
         width: fit-content;
-        background-color: $pop-up-bg-dark;
-        color: $pop-up-on-bg-dark;
+        background-color: $pop-up-bg-light;
+        color: $pop-up-on-bg-light;
 
         padding: 48px 96px;
         border-radius: 32px;
