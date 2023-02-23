@@ -9,53 +9,44 @@ html {
 }
 
 body.theme--light {
-    margin: 0;
     background-color: $page-bg-light;
     color: $page-on-bg-light;
 }
 
 body.theme--dark {
-    margin: 0;
     background-color: $page-bg-dark;
     color: $page-on-bg-dark;
 }
 
-.theme--light a {
-    text-decoration: none;
-    color: $page-on-bg-light;
+
+body {
+    margin: 0;
 }
 
-.theme--dark a {
+a {
     text-decoration: none;
-    color: $page-on-bg-dark;
+    @include themed() {
+        color: toggleTheme("page-on-bg");
+    }
 }
+
 
 // Classes
 .container {
     @include container( $container-margin, 0);
 }
 
-.theme--light .cards {
+.cards {
     @include grid(350px, 1fr, 48px);
 
     .card {
         width: 350px;
         height: 200px;
-        background-color: $placeholder-bg-light;
-        color: $placeholder-on-bg-light;
 
-        border-radius: 24px;
-    }
-}
-
-.theme--dark .cards {
-    @include grid(350px, 1fr, 48px);
-
-    .card {
-        width: 350px;
-        height: 200px;
-        background-color: $placeholder-bg-dark;
-        color: $placeholder-on-bg-dark;
+        @include themed() {
+            background-color: toggleTheme("placeholder-bg");
+            color: toggleTheme("placeholder-on-bg");
+        }
 
         border-radius: 24px;
     }

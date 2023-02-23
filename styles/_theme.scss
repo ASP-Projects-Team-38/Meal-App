@@ -26,6 +26,8 @@ $themes: (
         input-bg: $input-bg-light,
         input-on-bg: $input-on-bg-light,
 
+        colour-scheme: light,
+
         cal-card-bg: $cal-card-bg-light,
         cal-card-label-bg: $cal-card-label-bg-light,
 
@@ -59,6 +61,8 @@ $themes: (
         input-bg: $input-bg-dark,
         input-on-bg: $input-on-bg-dark,
 
+        colour-scheme: dark,
+
         cal-card-bg: $cal-card-bg-dark,
         cal-card-label-bg: $cal-card-label-bg-dark,
 
@@ -84,6 +88,6 @@ $themes: (
     }
 }
 
-@function toggle($key) {
+@function toggleTheme($key) {
     @return map-get($theme-map, $key);
 }

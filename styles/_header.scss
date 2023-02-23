@@ -7,8 +7,7 @@ header {
         @include flex(row, center, center, 16px);
 
         @include themed() {
-            color: toggle("brand-colour");
-            // color: $brand-colour-light;
+            color: toggleTheme("brand-colour");
         }
         font-weight: bold;
         font-size: 1.5rem;
@@ -21,7 +20,9 @@ header {
         font-weight: 500;
 
         a {
-            border-bottom: 4px solid $page-bg-light;
+            @include themed() {
+                border-bottom: 4px solid toggleTheme("page-bg");
+            }
             transition: border-bottom 1s;
 
             &::after {
@@ -29,7 +30,9 @@ header {
             }
 
             &:hover {
-                border-bottom: 4px solid $hovered-page-light;
+                @include themed() {
+                    border-bottom: 4px solid toggleTheme("hovered-page");
+                }
             }
         }
 
@@ -37,7 +40,9 @@ header {
             margin-left: 40px;
             border-bottom: none;
             font-size: 1.8rem;
-            color: $page-on-bg-light;
+            @include themed() {
+                color: toggleTheme("page-on-bg");
+            }
 
             transition: transform 1s;
 
@@ -52,7 +57,9 @@ header {
         }
 
         a.current {
-            border-bottom: 4px solid $current-page-light;
+            @include themed() {
+                border-bottom: 4px solid toggleTheme("current-page");
+            }
         }
     }
 }

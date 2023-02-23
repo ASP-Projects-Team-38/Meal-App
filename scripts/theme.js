@@ -1,6 +1,8 @@
 const themeBtn = document.querySelector("#theme-btn");
 const body = document.querySelector("body");
 
+body.classList.add("theme--light");
+
 themeBtn.addEventListener("click", toggleTheme);
 
 function toggleTheme() {
