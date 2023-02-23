@@ -6,7 +6,10 @@ header {
     .branding {
         @include flex(row, center, center, 16px);
 
-        color: $brand-colour-light;
+        @include themed() {
+            color: toggle("brand-colour");
+            // color: $brand-colour-light;
+        }
         font-weight: bold;
         font-size: 1.5rem;
     }
