@@ -28,7 +28,7 @@ main#sign-up-form {
         }
     
         button#login-btn {
-            @include button($primary-btn-colour, $hover-btn-colour, 80px);
+            @include button($primary-btn-light, $hover-btn-light, $primary-on-btn-light, 80px);
         }
     }
 
@@ -56,7 +56,7 @@ main#sign-up-form {
         }
     
         button#login-btn {
-            @include button($primary-btn-colour, $hover-btn-colour, 24px);
+            @include button($primary-btn-light, $hover-btn-light, $primary-on-btn-light, 24px);
         }
     }
 }

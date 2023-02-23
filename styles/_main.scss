@@ -15,7 +15,7 @@ section.pinned {
     }
 
     .btn-container button{
-        @include button($secondary-bg-colour, $secondary-bg-colour-dark);
+        @include button($secondary-btn-light, $secondary-hover-btn-light, $secondary-on-btn-light);
 
         margin-top: 20px;
     }
@@ -55,6 +55,6 @@ main {
     // }
 
     button {
-        @include button($primary-btn-colour, $hover-btn-colour, calc($section-margin-top * 2));
+        @include button($primary-btn-light, $hover-btn-light, $primary-on-btn-light, calc($section-margin-top * 2));
     }
 }

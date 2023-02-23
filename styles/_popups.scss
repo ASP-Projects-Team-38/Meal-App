@@ -77,7 +77,7 @@ section.pop-up-container {
                 }
 
                 button {
-                    @include button($primary-btn-colour, $hover-btn-colour, -32px);
+                    @include button($primary-btn-light, $hover-btn-light, $primary-on-btn-light, -32px);
                     font-size: 1rem;
                     padding: 8px 16px;
                     margin-left: 150px;
@@ -109,7 +109,7 @@ section.pop-up-container {
             }
 
             input[type='submit'] {
-                @include button($primary-btn-colour, $hover-btn-colour);
+                @include button($primary-btn-light, $hover-btn-light, $primary-on-btn-light);
                 width: 540px;
                 margin-left: 160px;
             }
