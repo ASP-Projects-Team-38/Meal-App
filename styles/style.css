@@ -32,7 +32,8 @@ a {
 .cards .card {
   width: 350px;
   height: 200px;
-  background-color: #D9D9D9;
+  background-color: #555;
+  color: #fff;
   border-radius: 24px;
 }
 
@@ -104,16 +105,17 @@ section.hero input {
   width: 250px;
   margin-right: 24px;
   padding: 12px 16px;
-  background-color: #D9D9D9;
+  background-color: #555;
+  color: #fff;
   border: none;
   border-radius: 8px;
 }
 section.hero input::-moz-placeholder {
-  color: #333;
+  color: #fff;
   font-size: 1.1rem;
 }
 section.hero input::placeholder {
-  color: #333;
+  color: #fff;
   font-size: 1.1rem;
 }
 section.hero input:active {
@@ -401,6 +403,7 @@ main#sign-up-form form {
 main#sign-in-form form div.log-group,
 main#sign-up-form form div.log-group {
   font-size: 1.4rem;
+  color-scheme: light;
 }
 main#sign-in-form form div.log-group label,
 main#sign-up-form form div.log-group label {

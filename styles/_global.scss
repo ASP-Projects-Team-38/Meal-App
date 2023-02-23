@@ -30,7 +30,8 @@ a {
     .card {
         width: 350px;
         height: 200px;
-        background-color: $placeholder-bg-colour;
+        background-color: $placeholder-bg-light;
+        color: $placeholder-on-bg-light;
 
         border-radius: 24px;
     }

@@ -31,6 +31,10 @@ $secondary-hover-btn-light: #5f76c6;
 $input-bg-light: #D3DCFD;
 $input-on-bg-light: #000;
 
+// Placeholder Colours
+$placeholder-bg-light: #D9D9D9;
+$placeholder-on-bg-light: #000;
+
 
 /// ----- Dark Theme ----- \\\
 // Page Colours
@@ -59,13 +63,16 @@ $secondary-hover-btn-dark: #2f55dd;
 $input-bg-dark: #6184FE;
 $input-on-bg-dark: #fff;
 
+// Placeholder Colours
+$placeholder-bg-light: #555;
+$placeholder-on-bg-light: #fff;
+
 
 $primary-bg-colour: #467397; // remove
 $secondary-bg-colour: #728CEA; // remove
 $secondary-bg-colour-dark: #5b70bd; // remove
 
 
-$placeholder-bg-colour:#D9D9D9;
 $accent-colour: #27B6B6; // remove
 $hover-colour: #9DACE0; // remove
 $hover-colour-light: #D3DCFD;
