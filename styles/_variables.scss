@@ -1,4 +1,4 @@
-// Fonts
+////////////////////////// Fonts \\\\\\\\\\\\\\\\\\\\\\\\\\
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 $font-main: 'Inter', sans-serif;
 $font-secondary: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -31,6 +31,10 @@ $secondary-hover-btn-light: #5f76c6;
 $input-bg-light: #D3DCFD;
 $input-on-bg-light: #000;
 
+// Calendar Overview Placeholder Colours
+$cal-card-bg-light: #fff;
+$cal-card-label-bg-light: #444;
+
 // Placeholder Colours
 $placeholder-bg-light: #D9D9D9;
 $placeholder-on-bg-light: #000;
@@ -38,9 +42,9 @@ $placeholder-on-bg-light: #000;
 
 /// ----- Dark Theme ----- \\\
 // Page Colours
-$page-bg-light: #333;
-$page-on-bg-light: #fff;
-$brand-colour-light: #fff;
+$page-bg-dark: #333;
+$page-on-bg-dark: #fff;
+$brand-colour-dark: #fff;
 
 // Nav Link Colours
 $current-page-light: #33E4E4;
@@ -63,21 +67,16 @@ $secondary-hover-btn-dark: #2f55dd;
 $input-bg-dark: #6184FE;
 $input-on-bg-dark: #fff;
 
+// Calendar Overview Placeholder Colours
+$cal-card-bg-dark: #222;
+$cal-card-label-bg-dark: #fff;
+
 // Placeholder Colours
-$placeholder-bg-light: #555;
-$placeholder-on-bg-light: #fff;
+$placeholder-bg-dark: #555;
+$placeholder-on-bg-dark: #fff;
 
 
-$primary-bg-colour: #467397; // remove
-$secondary-bg-colour: #728CEA; // remove
-$secondary-bg-colour-dark: #5b70bd; // remove
-
-
-$accent-colour: #27B6B6; // remove
-$hover-colour: #9DACE0; // remove
-$hover-colour-light: #D3DCFD;
-
-
+////////////////////////// White Space \\\\\\\\\\\\\\\\\\\\\\\\\\
 // Margin / Padding
 $container-margin: 120px;
 $section-margin-top: 50px;
