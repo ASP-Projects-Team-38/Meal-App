@@ -1,0 +1,93 @@
+$themes: (
+    light: (
+        logo: url("../assets/logo-light.svg"),
+        pinned-icon: url("../assets/icon-pin-light.svg"),
+        calendar-icon: url("../assets/icon-calendar-light.svg"),
+        switch-icon: url("../assets/icon-switch-light.svg"),
+
+        page-bg: $page-bg-light,
+        page-on-bg: $page-on-bg-light,
+        brand-colour: $brand-colour-light,
+
+        current-page: $current-page-light,
+        hovered-page: $hovered-page-light,
+
+        pop-up-bg: $pop-up-bg-light,
+        pop-up-on-bg: $pop-up-on-bg-light,
+
+        primary-btn: $primary-btn-light,
+        primary-on-btn: $primary-on-btn-light,
+        hover-btn: $hover-btn-light,
+
+        secondary-btn: $secondary-btn-light,
+        secondary-on-btn: $secondary-on-btn-light,
+        secondary-hover-btn: $secondary-hover-btn-light,
+
+        input-bg: $input-bg-light,
+        input-on-bg: $input-on-bg-light,
+
+        colour-scheme: light,
+
+        cal-card-bg: $cal-card-bg-light,
+        cal-card-label-bg: $cal-card-label-bg-light,
+
+        placeholder-bg: $placeholder-bg-light,
+        placeholder-on-bg: $placeholder-on-bg-light
+    ),
+    dark: (
+        logo: url("../assets/logo-dark.svg"),
+        pinned-icon: url("../assets/icon-pin-dark.svg"),
+        calendar-icon: url("../assets/icon-calendar-dark.svg"),
+        switch-icon: url("../assets/icon-switch-dark.svg"),
+
+        page-bg: $page-bg-dark,
+        page-on-bg: $page-on-bg-dark,
+        brand-colour: $brand-colour-dark,
+
+        current-page: $current-page-dark,
+        hovered-page: $hovered-page-dark,
+
+        pop-up-bg: $pop-up-bg-dark,
+        pop-up-on-bg: $pop-up-on-bg-dark,
+
+        primary-btn: $primary-btn-dark,
+        primary-on-btn: $primary-on-btn-dark,
+        hover-btn: $hover-btn-dark,
+
+        secondary-btn: $secondary-btn-dark,
+        secondary-on-btn: $secondary-on-btn-dark,
+        secondary-hover-btn: $secondary-hover-btn-dark,
+
+        input-bg: $input-bg-dark,
+        input-on-bg: $input-on-bg-dark,
+
+        colour-scheme: dark,
+
+        cal-card-bg: $cal-card-bg-dark,
+        cal-card-label-bg: $cal-card-label-bg-dark,
+
+        placeholder-bg: $placeholder-bg-dark,
+        placeholder-on-bg: $placeholder-on-bg-dark
+    ),
+);
+
+
+@mixin themed() {
+    @each $theme, $map in $themes {
+        .theme--#{$theme} & {
+            $theme-map: () !global;
+
+            @each $key, $submap in $map {
+                $value: map-get(map-get($themes, $theme), '#{$key}');
+                $theme-map: map-merge($theme-map, ($key: $value)) !global;
+            }
+
+            @content;
+            $theme-map: null !global;
+        }
+    }
+}
+
+@function toggleTheme($key) {
+    @return map-get($theme-map, $key);
+}

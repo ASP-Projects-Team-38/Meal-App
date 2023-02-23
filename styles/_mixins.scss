@@ -23,13 +23,13 @@
     }
 }
 
-@mixin button($bg, $hover-bg, $mt: unset) {
+@mixin button($bg, $hover-bg, $on-bg, $mt: unset) {
     @if $mt != unset {
         margin-top: $mt;
     }
 
     background-color: $bg;
-    color: #fff;
+    color: $on-bg;
     font-weight: 700;
     font-size: 1.2rem;
 

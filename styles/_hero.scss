@@ -11,12 +11,19 @@ section.hero {
         margin-right: 24px;
 
         padding: 12px 16px;
-        background-color: $placeholder-bg-colour;
+
+        @include themed() {
+            background-color: toggleTheme("placeholder-bg");
+            color: toggleTheme("placeholder-on-bg");
+        }
+
         border: none;
         border-radius: 8px;
 
         &::placeholder {
-            color: #333;
+            @include themed() {
+                color: toggleTheme("placeholder-on-bg");
+            }
             font-size: 1.1rem;
         }
 
@@ -26,7 +33,11 @@ section.hero {
     }
 
     .calendar {
-        background-color: $hover-colour-light;
+        @include themed() {
+            background-color: toggleTheme("input-bg");
+            color: toggleTheme("input-on-bg");
+            color-scheme: toggleTheme("colour-scheme");
+        }
         box-shadow: 4px 4px 4px #00000021;
     }
 }

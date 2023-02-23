@@ -6,7 +6,9 @@ header {
     .branding {
         @include flex(row, center, center, 16px);
 
-        color: $primary-bg-colour;
+        @include themed() {
+            color: toggleTheme("brand-colour");
+        }
         font-weight: bold;
         font-size: 1.5rem;
     }
@@ -18,7 +20,9 @@ header {
         font-weight: 500;
 
         a {
-            border-bottom: 4px solid #fff;
+            @include themed() {
+                border-bottom: 4px solid toggleTheme("page-bg");
+            }
             transition: border-bottom 1s;
 
             &::after {
@@ -26,7 +30,9 @@ header {
             }
 
             &:hover {
-                border-bottom: 4px solid $hover-colour;
+                @include themed() {
+                    border-bottom: 4px solid toggleTheme("hovered-page");
+                }
             }
         }
 
@@ -34,7 +40,9 @@ header {
             margin-left: 40px;
             border-bottom: none;
             font-size: 1.8rem;
-            color: #333;
+            @include themed() {
+                color: toggleTheme("page-on-bg");
+            }
 
             transition: transform 1s;
 
@@ -49,7 +57,9 @@ header {
         }
 
         a.current {
-            border-bottom: 4px solid $accent-colour;
+            @include themed() {
+                border-bottom: 4px solid toggleTheme("current-page");
+            }
         }
     }
 }

@@ -15,24 +15,31 @@ section.pinned {
     }
 
     .btn-container button{
-        @include button($secondary-bg-colour, $secondary-bg-colour-dark);
+        @include themed() {
+            @include button(toggleTheme("secondary-btn"), toggleTheme("secondary-hover-btn"), toggleTheme("secondary-on-btn"));
+        }
 
         margin-top: 20px;
     }
 
     .calendar-cards {
         .card {
-            background-color: #fff;
+            @include themed() {
+                background-color: toggleTheme("cal-card-bg");
+                border-bottom: 50px solid toggleTheme("cal-card-label-bg");
+            }
+    
             box-shadow: 0px 0px 10px 4px #0000001c;
             margin: 24px auto;
-
             box-sizing: border-box;
-            border-bottom: 50px solid #444;
-
+    
             .info {
                 margin-top: 47%;
                 margin-right: 24px;
-                color: #fff;
+
+                @include themed() {
+                    color: toggleTheme("cal-card-bg");
+                }
 
                 font-weight: 700;
                 font-size: 1.2rem;
@@ -55,6 +62,8 @@ main {
     // }
 
     button {
-        @include button($primary-btn-colour, $hover-btn-colour, calc($section-margin-top * 2));
+        @include themed() {
+            @include button(toggleTheme("primary-btn"), toggleTheme("hover-btn"), toggleTheme("primary-on-btn"), calc($section-margin-top * 2));
+        }
     }
 }

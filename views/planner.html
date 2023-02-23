@@ -6,21 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Meal App | Planner</title>
     <link rel="stylesheet" href="../styles/style.css" />
-    <script src="/scripts/planner.js" defer></script>
+    <script src="../scripts/theme.js" defer></script>
+    <script src="../scripts/planner.js" defer></script>
   </head>
-  <body>
+  <body class="theme--light">
     <div class="container">
       <!-- Header Section -->
       <header>
         <div class="branding">
-          <img src="/assets/logo.svg" alt="Site logo" class="logo" />
+          <img
+            src="../assets/logo-light.svg"
+            alt="Site logo"
+            class="logo"
+            id="logo-img"
+          />
           <p>Site Name</p>
         </div>
         <nav class="nav-links">
           <a href="index.html">Recipes</a>
           <a class="current" href="planner.html">Planner</a>
           <a href="groceries.html">Groceries</a>
-          <a class="theme" href="#">&#9775;</a>
+          <a id="theme-btn" class="theme" href="#">&#9775;</a>
         </nav>
       </header>
 
@@ -33,10 +39,18 @@
       <!-- Overview Section -->
       <section class="pinned">
         <div class="page-heading">
-          <img src="/assets/icon-calendar.svg" alt="Calendar icon" />
+          <img
+            src="../assets/icon-calendar-light.svg"
+            alt="Calendar icon"
+            id="cal-icon"
+          />
           <h2>Daily Overview</h2>
           <div class="view-change">
-            <img src="/assets/icon-switch.svg" alt="Switch icon" />
+            <img
+              src="../assets/icon-switch-light.svg"
+              alt="Switch icon"
+              id="switch-icon"
+            />
             <a href="">Change view</a>
           </div>
         </div>

@@ -8,14 +8,28 @@ html {
     font-family: $font-main;
 }
 
+body.theme--light {
+    background-color: $page-bg-light;
+    color: $page-on-bg-light;
+}
+
+body.theme--dark {
+    background-color: $page-bg-dark;
+    color: $page-on-bg-dark;
+}
+
+
 body {
     margin: 0;
 }
 
 a {
     text-decoration: none;
-    color: #000;
+    @include themed() {
+        color: toggleTheme("page-on-bg");
+    }
 }
+
 
 // Classes
 .container {
@@ -28,7 +42,11 @@ a {
     .card {
         width: 350px;
         height: 200px;
-        background-color: $placeholder-bg-colour;
+
+        @include themed() {
+            background-color: toggleTheme("placeholder-bg");
+            color: toggleTheme("placeholder-on-bg");
+        }
 
         border-radius: 24px;
     }

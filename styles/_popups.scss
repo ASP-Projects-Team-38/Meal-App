@@ -7,8 +7,11 @@ section.pop-up-container {
         @include flex(column, center, center, 4px);
 
         width: fit-content;
-        background-color: $pop-up-bg-dark;
-        color: $pop-up-on-bg-dark;
+
+        @include themed() {
+            background-color: toggleTheme("pop-up-bg");
+            color: toggleTheme("pop-up-on-bg");
+        }
 
         padding: 48px 96px;
         border-radius: 32px;
@@ -77,10 +80,16 @@ section.pop-up-container {
                 }
 
                 button {
-                    @include button($primary-btn-colour, $hover-btn-colour, -32px);
+                    @include themed() {
+                        @include button(toggleTheme("primary-btn"), toggleTheme("hover-btn"), toggleTheme("primary-on-btn"), -32px);
+                    }
                     font-size: 1rem;
                     padding: 8px 16px;
                     margin-left: 150px;
+                }
+
+                button#add-recipe-ingredient-input-btn {
+                    padding: 8px 16px;
                 }
             }
             
@@ -109,7 +118,9 @@ section.pop-up-container {
             }
 
             input[type='submit'] {
-                @include button($primary-btn-colour, $hover-btn-colour);
+                @include themed() {
+                    @include button(toggleTheme("primary-btn"), toggleTheme("hover-btn"), toggleTheme("primary-on-btn"));
+                }
                 width: 540px;
                 margin-left: 160px;
             }

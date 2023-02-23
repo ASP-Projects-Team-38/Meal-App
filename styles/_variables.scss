@@ -1,24 +1,82 @@
-// Fonts
+////////////////////////// Fonts \\\\\\\\\\\\\\\\\\\\\\\\\\
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 $font-main: 'Inter', sans-serif;
 $font-secondary: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
-// Colours
-$primary-bg-colour: #467397;
-$secondary-bg-colour: #728CEA;
-$secondary-bg-colour-dark: #5b70bd;
+////////////////////////// Colours \\\\\\\\\\\\\\\\\\\\\\\\\\
+/// ----- Light Theme ----- \\\
+// Page Colours
+$page-bg-light: #fff;
+$page-on-bg-light: #000;
+$brand-colour-light: #467397;
 
-$primary-btn-colour: #33BD7B;
-$hover-btn-colour: #2ba469;
+// Nav Link Colours
+$current-page-light: #27B6B6;
+$hovered-page-light: #9DACE0;
 
-$placeholder-bg-colour:#D9D9D9;
-$accent-colour: #27B6B6;
-$hover-colour: #9DACE0;
-$hover-colour-light: #D3DCFD;
+// Pop Up Colours
+$pop-up-bg-light: #647DD6;
+$pop-up-on-bg-light: #fff;
 
-$pop-up-bg-dark: #467397;
+// Button Colours
+$primary-btn-light: #33BD7B;
+$primary-on-btn-light: #fff;
+$hover-btn-light: #2ba469;
+
+$secondary-btn-light: #728CEA;
+$secondary-on-btn-light: #fff;
+$secondary-hover-btn-light: #5f76c6;
+
+// Input Colours
+$input-bg-light: #D3DCFD;
+$input-on-bg-light: #000;
+
+// Calendar Overview Placeholder Colours
+$cal-card-bg-light: #fff;
+$cal-card-label-bg-light: #444;
+
+// Placeholder Colours
+$placeholder-bg-light: #D9D9D9;
+$placeholder-on-bg-light: #000;
+
+
+/// ----- Dark Theme ----- \\\
+// Page Colours
+$page-bg-dark: #333;
+$page-on-bg-dark: #fff;
+$brand-colour-dark: #fff;
+
+// Nav Link Colours
+$current-page-dark: #33E4E4;
+$hovered-page-dark: #7d93f9;
+
+// Pop Up Colours
+$pop-up-bg-dark: #0C6CB9;
 $pop-up-on-bg-dark: #fff;
 
+// Button Colours
+$primary-btn-dark: #3FF09B;
+$primary-on-btn-dark: #000;
+$hover-btn-dark: #34B678;
+
+$secondary-btn-dark: #3662FE;
+$secondary-on-btn-dark: #fff;
+$secondary-hover-btn-dark: #2f55dd;
+
+// Input Colours
+$input-bg-dark: #6184FE;
+$input-on-bg-dark: #fff;
+
+// Calendar Overview Placeholder Colours
+$cal-card-bg-dark: #222;
+$cal-card-label-bg-dark: #fff;
+
+// Placeholder Colours
+$placeholder-bg-dark: #555;
+$placeholder-on-bg-dark: #fff;
+
+
+////////////////////////// White Space \\\\\\\\\\\\\\\\\\\\\\\\\\
 // Margin / Padding
 $container-margin: 120px;
 $section-margin-top: 50px;
