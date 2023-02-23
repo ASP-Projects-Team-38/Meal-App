@@ -6,7 +6,7 @@ header {
     .branding {
         @include flex(row, center, center, 16px);
 
-        color: $primary-bg-colour;
+        color: $brand-colour-light;
         font-weight: bold;
         font-size: 1.5rem;
     }
@@ -18,7 +18,7 @@ header {
         font-weight: 500;
 
         a {
-            border-bottom: 4px solid #fff;
+            border-bottom: 4px solid $page-bg-light;
             transition: border-bottom 1s;
 
             &::after {
@@ -26,7 +26,7 @@ header {
             }
 
             &:hover {
-                border-bottom: 4px solid $hover-colour;
+                border-bottom: 4px solid $hovered-page-light;
             }
         }
 
@@ -34,7 +34,7 @@ header {
             margin-left: 40px;
             border-bottom: none;
             font-size: 1.8rem;
-            color: #333;
+            color: $page-on-bg-light;
 
             transition: transform 1s;
 
@@ -49,7 +49,7 @@ header {
         }
 
         a.current {
-            border-bottom: 4px solid $accent-colour;
+            border-bottom: 4px solid $current-page-light;
         }
     }
 }

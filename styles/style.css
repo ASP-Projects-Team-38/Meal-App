@@ -10,13 +10,13 @@ html {
 
 body {
   margin: 0;
-  background-color: #fff;
-  color: #000;
+  background-color: #333;
+  color: #fff;
 }
 
 a {
   text-decoration: none;
-  color: #000;
+  color: #fff;
 }
 
 .container {
@@ -49,7 +49,7 @@ header .branding {
   justify-content: center;
   align-items: center;
   gap: 16px;
-  color: #467397;
+  color: #fff;
   font-weight: bold;
   font-size: 1.5rem;
 }
@@ -63,20 +63,20 @@ header nav {
   font-weight: 500;
 }
 header nav a {
-  border-bottom: 4px solid #fff;
+  border-bottom: 4px solid #333;
   transition: border-bottom 1s;
 }
 header nav a::after {
   content: ".";
 }
 header nav a:hover {
-  border-bottom: 4px solid #9DACE0;
+  border-bottom: 4px solid #7d93f9;
 }
 header nav a.theme {
   margin-left: 40px;
   border-bottom: none;
   font-size: 1.8rem;
-  color: #333;
+  color: #fff;
   transition: transform 1s;
 }
 header nav a.theme::after {
@@ -87,7 +87,7 @@ header nav a.theme:hover {
   border-bottom: none;
 }
 header nav a.current {
-  border-bottom: 4px solid #27B6B6;
+  border-bottom: 4px solid #33E4E4;
 }
 
 section.hero {
