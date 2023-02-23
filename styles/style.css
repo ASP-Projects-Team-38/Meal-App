@@ -410,6 +410,7 @@ main#sign-up-form form div.log-group input {
   width: 35vw;
   padding: 12px 16px;
   background-color: #D3DCFD;
+  color: #000;
   border-radius: 8px;
   outline: none;
   border: none;

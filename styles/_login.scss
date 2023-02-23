@@ -19,7 +19,8 @@ main#sign-up-form {
                 width: 35vw;
                 padding: 12px 16px;
 
-                background-color: $hover-colour-light;
+                background-color: $input-bg-light;
+                color: $input-on-bg-light;
 
                 border-radius: 8px;
                 outline: none;
