@@ -5,18 +5,24 @@ const pinIcon = document.querySelector("#pin-icon");
 const calIcon = document.querySelector("#cal-icon");
 const switchIcon = document.querySelector("#switch-icon");
 
-body.classList.add("theme--light");
-// logoImg.setAttribute("src", "../assets/logo-light.svg");
+themeBtn.addEventListener('click', toggleTheme);
+document.addEventListener('DOMContentLoaded', defaultTheme, false);
 
-themeBtn.addEventListener("click", toggleTheme);
+// Sets the default theme, if the user has chosen a setting before, it picks that.
+function defaultTheme() {
+    if (localStorage.getItem('theme') === 'theme--dark') {
+        setTheme('theme--dark');
+    } else {
+        setTheme('theme--light');
+    }
+};
 
-function toggleTheme() {
-    console.log("You clicked the theme button!");
+//  Sets the theme based on the stored theme.
+function setTheme(themeName) {
+    localStorage.setItem("theme", themeName);
+    body.className = themeName;
 
-    if (body.classList.contains("theme--light")) {
-        body.classList.remove("theme--light");
-        body.classList.add("theme--dark");
-
+    if (themeName == 'theme--dark') {
         logoImg.setAttribute("src", "../assets/logo-dark.svg");
 
         if (pinIcon != null) {
@@ -30,9 +36,6 @@ function toggleTheme() {
         }
     }
     else {
-        body.classList.remove("theme--dark");
-        body.classList.add("theme--light");
-
         logoImg.setAttribute("src", "../assets/logo-light.svg");
 
         if (pinIcon != null) {
@@ -45,4 +48,16 @@ function toggleTheme() {
             switchIcon.setAttribute("src", "../assets/icon-switch-light.svg");
         }  
     }
+}
+
+// Toggles between the light theme and dark theme.
+function toggleTheme(e) {
+    e.preventDefault();
+    console.log("You clicked the theme button!"); // testing
+    console.log(body.classList); // testing
+
+    if (localStorage.getItem('theme') === "theme--dark")
+        setTheme("theme--light");
+    else 
+        setTheme("theme--dark"); 
 }
