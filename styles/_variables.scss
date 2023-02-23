@@ -5,6 +5,10 @@ $font-secondary: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Robot
 
 ////////////////////////// Colours \\\\\\\\\\\\\\\\\\\\\\\\\\
 /// ----- Light Theme ----- \\\
+// Page Colours
+$page-bg-light: #fff;
+$page-on-bg-light: #000;
+
 // Pop Up Colours
 $pop-up-bg-light: #647DD6;
 $pop-up-on-bg-light: #fff;
@@ -14,9 +18,9 @@ $primary-btn-light: #33BD7B;
 $primary-on-btn-light: #fff;
 $hover-btn-light: #2ba469;
 
-$secondary-btn-light: #647DD6;
+$secondary-btn-light: #728CEA;
 $secondary-on-btn-light: #fff;
-$secondary-hover-btn-light: #5b70bd;
+$secondary-hover-btn-light: #5f76c6;
 
 // Input Colours
 $input-bg-light: #D3DCFD;
@@ -24,6 +28,10 @@ $input-on-bg-light: #000;
 
 
 /// ----- Dark Theme ----- \\\
+// Page Colours
+// $page-bg-light: #333;
+// $page-on-bg-light: #fff;
+
 // Pop Up Colours
 $pop-up-bg-dark: #0C6CB9;
 $pop-up-on-bg-dark: #fff;
@@ -33,9 +41,9 @@ $primary-btn-dark: #3FF09B;
 $primary-on-btn-dark: #000;
 $hover-btn-dark: #34B678;
 
-$secondary-btn-dark: #0C6CB9;
+$secondary-btn-dark: #3662FE;
 $secondary-on-btn-dark: #fff;
-$secondary-hover-btn-dark: #095a9d;
+$secondary-hover-btn-dark: #2f55dd;
 
 // Input Colours
 $input-bg-dark: #6184FE;
@@ -49,7 +57,7 @@ $secondary-bg-colour-dark: #5b70bd;
 
 $placeholder-bg-colour:#D9D9D9;
 $accent-colour: #27B6B6;
-$hover-colour: #9DACE0;
+$hover-colour: #9DACE0; // remove
 $hover-colour-light: #D3DCFD;
 
 

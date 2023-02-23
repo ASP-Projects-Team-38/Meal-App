@@ -10,6 +10,8 @@ html {
 
 body {
   margin: 0;
+  background-color: #fff;
+  color: #000;
 }
 
 a {
@@ -119,7 +121,9 @@ section.hero input:active {
 }
 section.hero .calendar {
   background-color: #D3DCFD;
+  color: #000;
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1294117647);
+  color-scheme: light;
 }
 
 section.center {
@@ -150,7 +154,7 @@ section.pinned .page-heading .view-change a {
   text-decoration: underline;
 }
 section.pinned .btn-container button {
-  background-color: #647DD6;
+  background-color: #728CEA;
   color: #fff;
   font-weight: 700;
   font-size: 1.2rem;
@@ -163,7 +167,7 @@ section.pinned .btn-container button {
 }
 section.pinned .btn-container button:hover {
   cursor: pointer;
-  background-color: #5b70bd;
+  background-color: #5f76c6;
 }
 section.pinned .calendar-cards .card {
   background-color: #fff;

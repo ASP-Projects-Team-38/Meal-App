@@ -26,8 +26,10 @@ section.hero {
     }
 
     .calendar {
-        background-color: $hover-colour-light;
+        background-color: $input-bg-light;
+        color: $input-on-bg-light;
         box-shadow: 4px 4px 4px #00000021;
+        color-scheme: light;
     }
 }
 
