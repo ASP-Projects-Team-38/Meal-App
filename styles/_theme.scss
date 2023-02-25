@@ -31,6 +31,12 @@ $themes: (
         cal-card-bg: $cal-card-bg-light,
         cal-card-label-bg: $cal-card-label-bg-light,
 
+        cal-box-bg: $cal-box-bg-light,
+        cal-box-border: $cal-box-border-light,
+        cal-box-label: $cal-box-label-light,
+        cal-box-border-hover: $cal-box-border-hover-light,
+        cal-red: $cal-red-light,
+
         placeholder-bg: $placeholder-bg-light,
         placeholder-on-bg: $placeholder-on-bg-light
     ),
@@ -65,6 +71,12 @@ $themes: (
 
         cal-card-bg: $cal-card-bg-dark,
         cal-card-label-bg: $cal-card-label-bg-dark,
+
+        cal-box-bg: $cal-box-bg-dark,
+        cal-box-border: $cal-box-border-dark,
+        cal-box-label: $cal-box-label-dark,
+        cal-box-border-hover: $cal-box-border-hover-dark,
+        cal-red: $cal-red-dark,
 
         placeholder-bg: $placeholder-bg-dark,
         placeholder-on-bg: $placeholder-on-bg-dark
