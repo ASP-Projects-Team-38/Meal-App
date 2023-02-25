@@ -535,6 +535,65 @@ section.pop-up-container section#generate-list-popup div#generate-list form inpu
   display: none;
 }
 
+main#planner-main input#selected-date {
+  font-weight: bold;
+  padding: 8px 16px;
+  margin-bottom: 16px;
+  border: none;
+  border-radius: 8px;
+}
+.theme--light main#planner-main input#selected-date {
+  color-scheme: light;
+  background-color: #D9D9D9;
+  color: #000;
+}
+.theme--dark main#planner-main input#selected-date {
+  color-scheme: dark;
+  background-color: #555;
+  color: #fff;
+}
+main#planner-main #cal-btns {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 16px;
+}
+.theme--light main#planner-main #cal-btns button {
+  margin-top: 25px;
+  background-color: #728CEA;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.2rem;
+  padding: 16px 32px;
+  border-radius: 8px;
+  border: none;
+  margin-bottom: 20px;
+  transition: hover 1s;
+  padding: 8px 16px;
+}
+.theme--light main#planner-main #cal-btns button:hover {
+  cursor: pointer;
+  background-color: #5f76c6;
+}
+.theme--dark main#planner-main #cal-btns button {
+  margin-top: 25px;
+  background-color: #3662FE;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.2rem;
+  padding: 16px 32px;
+  border-radius: 8px;
+  border: none;
+  margin-bottom: 20px;
+  transition: hover 1s;
+  padding: 8px 16px;
+}
+.theme--dark main#planner-main #cal-btns button:hover {
+  cursor: pointer;
+  background-color: #2f55dd;
+}
+
 main#sign-in-form,
 main#sign-up-form {
   display: flex;

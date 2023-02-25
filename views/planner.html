@@ -79,11 +79,14 @@
       </section>
 
       <!-- Main Section -->
-      <main>
-        <h2>Add to Planner</h2>
-        <div class="cards">
-          <div class="card"></div>
+      <main id="planner-main">
+        <h2>Add to Calendar</h2>
+        <input type="date" id="selected-date" />
+        <div id="cal-btns" class="btn-container planner">
+          <button id="display-cal-btn">Display Calendar</button>
+          <button id="update-cal-btn">Update Calendar</button>
         </div>
+        <div class="dynamic-calendar"></div>
 
         <div class="btn-container planner">
           <button id="set-remainder-btn">Set Remainders</button>
