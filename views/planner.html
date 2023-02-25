@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="../styles/style.css" />
     <script src="../scripts/theme.js" defer></script>
     <script src="../scripts/planner.js" defer></script>
+    <script src="../scripts/populateCalendar.js" defer></script>
+    <script src="../scripts/calendar.js" defer></script>
   </head>
   <body class="theme--light">
     <div class="container">
@@ -79,11 +81,14 @@
       </section>
 
       <!-- Main Section -->
-      <main>
-        <h2>Add to Planner</h2>
-        <div class="cards">
-          <div class="card"></div>
+      <main id="planner-main">
+        <h2>Add to Calendar</h2>
+        <input type="date" id="selected-date" value="2023-02-01" />
+        <div id="cal-btns" class="btn-container planner">
+          <button id="display-cal-btn">Display Calendar</button>
+          <button id="update-cal-btn">Update Calendar</button>
         </div>
+        <div class="dynamic-calendar"></div>
 
         <div class="btn-container planner">
           <button id="set-remainder-btn">Set Remainders</button>
@@ -143,6 +148,46 @@
               </div>
               <div class="submit-btn">
                 <input type="submit" value="Add" />
+              </div>
+            </form>
+          </div>
+        </section>
+      </div>
+
+      <!-- Add to Calendar Pop up -->
+      <div class="toggle-popup-display">
+        <section class="pop-up-container" id="add-to-cal-popup">
+          <div id="add-to-cal" class="pop-up">
+            <span class="close-btn" id="close-add-to-cal-popup-btn"
+              >&times;</span
+            >
+            <p>Add to Calendar</p>
+            <form action="#" id="cal-form">
+              <div class="add-to-cal-date-group">
+                <div class="box-date">11/03/2023</div>
+              </div>
+              <div class="add-to-cal-recipe-group">
+                <label for="add-to-cal-recipe">Select a Recipe:</label>
+                <select name="add-to-cal-recipe" id="add-to-cal-recipe">
+                  <option value="" selected disabled>-Select a recipe-</option>
+                  <option value="Wild mushroom mac 'n' cheese">
+                    Wild mushroom mac 'n' cheese
+                  </option>
+                  <option value="Ndolé">Ndolé</option>
+                  <option value="Chorizo & mozzarella gnocchi bake">
+                    Chorizo & mozzarella gnocchi bake
+                  </option>
+                  <option value="Swedish meatball burgers">
+                    Swedish meatball burgers
+                  </option>
+                </select>
+              </div>
+              <div class="add-to-cal-time-group">
+                <label for="add-to-cal-time">Set the time:</label>
+                <input type="time" id="add-to-cal-time" />
+              </div>
+              <div class="submit-btn">
+                <input type="submit" value="Estimate" />
               </div>
             </form>
           </div>

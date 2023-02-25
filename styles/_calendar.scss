@@ -1,0 +1,140 @@
+main#planner-main {
+    input#selected-date {
+        font-weight: bold;
+
+        @include themed() {
+            color-scheme: toggleTheme("colour-scheme");
+            background-color: toggleTheme("placeholder-bg");
+            color: toggleTheme("placeholder-on-bg");
+        }
+
+        padding: 8px 16px;
+        margin-bottom: 16px;
+
+        border: none;
+        border-radius: 8px;
+
+        &:hover {
+            cursor: pointer;
+
+            @include themed() {
+                background-color: toggleTheme("cal-card-bg");
+
+                @if toggleTheme("cal-card-bg") == #fff {
+                    border: 2px solid toggleTheme("placeholder-bg");
+                    padding: 6px 16px; // to stop movement
+                }
+                @else {
+                    border: 2px solid toggleTheme("cal-card-bg");
+                    padding: 6px 16px;
+                }
+            }
+        }
+    }
+
+    #cal-btns {
+        @include flex(row, flex-start, center, 16px);
+
+        button {
+            @include themed() {
+                @include button(toggleTheme("secondary-btn"), toggleTheme("secondary-hover-btn"), toggleTheme("secondary-on-btn"), calc($section-margin-top / 2));
+                padding: 8px 16px; // overwrite padding
+            }
+        }
+    }
+}
+
+// Styling the overall calendar
+.dynamic-calendar {
+    @include grid(100px, 100px, 36px);
+    margin: 16px 0 16px 0;
+
+    // Styling each calendar box
+    .dynamic-date {
+        @include flex(column, space-between, flex-end);
+
+        width: 100px;
+        height: 100px;
+
+        border-radius: 8px;
+
+        @include themed() {
+            background-color: toggleTheme("cal-box-bg");
+            border: 2px solid  toggleTheme("cal-box-border");
+            box-shadow: 0px 0px 4px 2px toggleTheme("cal-box-border");
+
+            &:hover {
+                box-shadow: 0px 0px 4px 4px toggleTheme("cal-box-border-hover");
+            }
+        }
+
+
+        // The date number
+        .cal-day {
+            margin: 0;
+            padding: 4px 8px;
+        
+            @include themed() {
+                background-color: toggleTheme("cal-box-label");
+            }
+            border-radius: 0 0 0 4px;
+        
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        // The add to cal btn
+        .add-to-cal-btn {
+            cursor: pointer;
+        
+            @include themed() {
+                background-color: toggleTheme("primary-btn");
+                color: toggleTheme("primary-on-btn");
+            }
+        
+            font-weight: bold;
+            font-size: 1.2rem;
+        
+            border: none;
+            border-radius: 50%;
+            padding: 4px 8px;
+        
+            margin: 4px;
+
+            &:hover {
+                @include themed() {
+                    background-color: toggleTheme("hover-btn");
+                }
+            }
+        }
+    }
+
+    .dynamic-date.current-day {
+        @include themed() {
+            border: 2px solid toggleTheme("cal-red");
+        }
+
+        .cal-day {
+            @include themed() {
+                background-color: toggleTheme("cal-red");
+            }
+            color: #fff;
+        }
+    }
+}
+
+form#cal-form {
+    .box-date {
+        background-color: #fff;
+        color: #333;
+        font-weight: bold;
+        margin-top: -16px;
+
+        padding: 8px 16px;
+        border-radius: 8px;
+    }
+}
+
+.toggle-cal-display {
+    display: none;
+}

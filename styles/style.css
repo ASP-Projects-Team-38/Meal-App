@@ -535,6 +535,175 @@ section.pop-up-container section#generate-list-popup div#generate-list form inpu
   display: none;
 }
 
+main#planner-main input#selected-date {
+  font-weight: bold;
+  padding: 8px 16px;
+  margin-bottom: 16px;
+  border: none;
+  border-radius: 8px;
+}
+.theme--light main#planner-main input#selected-date {
+  color-scheme: light;
+  background-color: #D9D9D9;
+  color: #000;
+}
+.theme--dark main#planner-main input#selected-date {
+  color-scheme: dark;
+  background-color: #555;
+  color: #fff;
+}
+main#planner-main input#selected-date:hover {
+  cursor: pointer;
+}
+.theme--light main#planner-main input#selected-date:hover {
+  background-color: #fff;
+  border: 2px solid #D9D9D9;
+  padding: 6px 16px;
+}
+.theme--dark main#planner-main input#selected-date:hover {
+  background-color: #222;
+  border: 2px solid #222;
+  padding: 6px 16px;
+}
+main#planner-main #cal-btns {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 16px;
+}
+.theme--light main#planner-main #cal-btns button {
+  margin-top: 25px;
+  background-color: #728CEA;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.2rem;
+  padding: 16px 32px;
+  border-radius: 8px;
+  border: none;
+  margin-bottom: 20px;
+  transition: hover 1s;
+  padding: 8px 16px;
+}
+.theme--light main#planner-main #cal-btns button:hover {
+  cursor: pointer;
+  background-color: #5f76c6;
+}
+.theme--dark main#planner-main #cal-btns button {
+  margin-top: 25px;
+  background-color: #3662FE;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.2rem;
+  padding: 16px 32px;
+  border-radius: 8px;
+  border: none;
+  margin-bottom: 20px;
+  transition: hover 1s;
+  padding: 8px 16px;
+}
+.theme--dark main#planner-main #cal-btns button:hover {
+  cursor: pointer;
+  background-color: #2f55dd;
+}
+
+.dynamic-calendar {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 100px));
+  gap: 36px;
+  row-gap: 20px !important;
+  margin: 16px 0 16px 0;
+}
+.dynamic-calendar .dynamic-date {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100px;
+  height: 100px;
+  border-radius: 8px;
+}
+.theme--light .dynamic-calendar .dynamic-date {
+  background-color: #fff;
+  border: 2px solid #eee;
+  box-shadow: 0px 0px 4px 2px #eee;
+}
+.theme--light .dynamic-calendar .dynamic-date:hover {
+  box-shadow: 0px 0px 4px 4px #ddd;
+}
+.theme--dark .dynamic-calendar .dynamic-date {
+  background-color: #222;
+  border: 2px solid #111;
+  box-shadow: 0px 0px 4px 2px #111;
+}
+.theme--dark .dynamic-calendar .dynamic-date:hover {
+  box-shadow: 0px 0px 4px 4px #000;
+}
+.dynamic-calendar .dynamic-date .cal-day {
+  margin: 0;
+  padding: 4px 8px;
+  border-radius: 0 0 0 4px;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.theme--light .dynamic-calendar .dynamic-date .cal-day {
+  background-color: #eee;
+}
+.theme--dark .dynamic-calendar .dynamic-date .cal-day {
+  background-color: #111;
+}
+.dynamic-calendar .dynamic-date .add-to-cal-btn {
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 50%;
+  padding: 4px 8px;
+  margin: 4px;
+}
+.theme--light .dynamic-calendar .dynamic-date .add-to-cal-btn {
+  background-color: #33BD7B;
+  color: #fff;
+}
+.theme--dark .dynamic-calendar .dynamic-date .add-to-cal-btn {
+  background-color: #3FF09B;
+  color: #000;
+}
+.theme--light .dynamic-calendar .dynamic-date .add-to-cal-btn:hover {
+  background-color: #2ba469;
+}
+.theme--dark .dynamic-calendar .dynamic-date .add-to-cal-btn:hover {
+  background-color: #34B678;
+}
+.theme--light .dynamic-calendar .dynamic-date.current-day {
+  border: 2px solid #DD4646;
+}
+.theme--dark .dynamic-calendar .dynamic-date.current-day {
+  border: 2px solid #FF3232;
+}
+.dynamic-calendar .dynamic-date.current-day .cal-day {
+  color: #fff;
+}
+.theme--light .dynamic-calendar .dynamic-date.current-day .cal-day {
+  background-color: #DD4646;
+}
+.theme--dark .dynamic-calendar .dynamic-date.current-day .cal-day {
+  background-color: #FF3232;
+}
+
+form#cal-form .box-date {
+  background-color: #fff;
+  color: #333;
+  font-weight: bold;
+  margin-top: -16px;
+  padding: 8px 16px;
+  border-radius: 8px;
+}
+
+.toggle-cal-display {
+  display: none;
+}
+
 main#sign-in-form,
 main#sign-up-form {
   display: flex;
