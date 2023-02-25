@@ -9,6 +9,9 @@ const userController = require("./app/controllers/user.controller");
 const app = express();
 const port = process.env.PORT || 5000;
 
+//connecting to the database api
+const dbConn = require("./app/config/db.config");
+
 app.use(express.static(__dirname));
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
