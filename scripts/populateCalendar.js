@@ -23,7 +23,6 @@ class PopulateCalendar {
     
         const currentDay = new Date().getDate();
 
-
         // Highlights the current day
         if ((this.numOfCalBoxes == currentDay) && 
         (this.getCurrentMonth() == this.getSelectedMonth()) &&
@@ -34,10 +33,6 @@ class PopulateCalendar {
         const addToCalBtn = document.createElement("button");
         addToCalBtn.setAttribute("class", "add-to-cal-btn");
         addToCalBtn.textContent = "+";
-        // addToCalBtn.addEventListener("click", () => {
-        //     // this.numOfDays();
-        //     this.addToCalPopUp.parentElement.classList.remove("toggle-popup-display");
-        // })
     
         dynamicDate.appendChild(calDay);
         dynamicDate.appendChild(addToCalBtn);
@@ -58,7 +53,6 @@ class PopulateCalendar {
             this.calBoxes[i].addEventListener("click", () => {
                 this.dateClicked = i+1;
                 this.setFormDate();
-
                 this.addToCalPopUp.parentElement.classList.remove("toggle-popup-display");
             })
 
@@ -117,7 +111,7 @@ class PopulateCalendar {
         }
 
         else {
-            console.log("Invalid date");
+            console.log("");
         }
 
         return this.daysInMonth;
@@ -150,8 +144,6 @@ class PopulateCalendar {
     }
 
     getCurrentYear = () => {
-        // let date = new Date();
-
         return new Date().getFullYear();
     }
 
