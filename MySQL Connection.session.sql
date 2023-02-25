@@ -1,1 +1,2 @@
 CREATE TABLE IF NOT EXISTS users (users_id INT AUTO_INCREMENT,first_name VARCHAR(255) NOT NULL,last_name VARCHAR(255) NOT NULL, DOB DATE NOT NULL, email VARCHAR(255) NOT NULL ,phone_number VARCHAR(255),username VARCHAR(255) NOT NULL, pass_word VARCHAR(255) NOT NULL, PRIMARY KEY(users_id));
+CREATE TABLE IF NOT EXISTS meal_app.grocery_list (grocery_id INT AUTO_INCREMENT,recipe_name VARCHAR(255) NOT NULL,recipe_id INT NOT NULL, PRIMARY KEY(grocery_id), FOREIGN KEY (recipe_id) REFERENCES recipes(recipe_id));
