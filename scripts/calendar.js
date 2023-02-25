@@ -17,12 +17,14 @@ const displayCalendarBtn = document.querySelector("#display-cal-btn");
 const updateCalendarBtn = document.querySelector("#update-cal-btn");
 
 const populateCalendar = new PopulateCalendar();
+populateCalendar.empty();
+populateCalendar.run();
 
 displayCalendarBtn.addEventListener("click", () => {
-    populateCalendar.empty();
-    populateCalendar.run();
+    populateCalendar.toggleCalendarDisplay();
 })
 
 updateCalendarBtn.addEventListener("click", () => {
-    populateCalendar.numOfDays();
+    populateCalendar.regenerate();
+    populateCalendar.toggleCalendarDisplay();
 })

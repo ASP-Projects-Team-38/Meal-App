@@ -700,6 +700,10 @@ form#cal-form .box-date {
   border-radius: 8px;
 }
 
+.toggle-cal-display {
+  display: none;
+}
+
 main#sign-in-form,
 main#sign-up-form {
   display: flex;
