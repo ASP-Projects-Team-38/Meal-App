@@ -6,4 +6,5 @@ View the meal app's overall current progress [here](https://asp-projects-team-38
 - View the updated add recipe pop up [here](https://asp-projects-team-38.github.io/Meal-App-View-Frontend/index.html).<br>
 - View the updated theme [here](https://asp-projects-team-38.github.io/Meal-App-View-Frontend/). <br>
 *The theme btn is now fully functional and the users selected theme persists/is stored in local storage.*<br>
-- Currently working on the dynamic calendar, you can view the progress in the dynamic-calendar branch..
+- Completed the calendar and its functionality for now. View it [here](https://asp-projects-team-38.github.io/Meal-App-View-Frontend/planner.html).<br>
+*The calendar btns are functional and display an add meal popup.*
