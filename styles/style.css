@@ -608,11 +608,11 @@ main#planner-main #cal-btns {
 }
 
 .dynamic-calendar {
-  margin: 16px 0 16px 0;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(100px, 100px));
   gap: 36px;
   row-gap: 20px !important;
+  margin: 16px 0 16px 0;
 }
 .dynamic-calendar .dynamic-date {
   display: flex;
