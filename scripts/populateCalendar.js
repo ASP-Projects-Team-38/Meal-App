@@ -7,6 +7,8 @@ class PopulateCalendar {
 
         this.date = "";
         this.daysInMonth = 31;
+
+        this.dateClicked = 0;
     }
 
     createCalBox = () => {
@@ -19,17 +21,23 @@ class PopulateCalendar {
         calDay.setAttribute("class", "cal-day");
         calDay.textContent = this.numOfCalBoxes;
     
-        if (this.numOfCalBoxes == 11) {
+        const currentDay = new Date().getDate();
+
+
+        // Highlights the current day
+        if ((this.numOfCalBoxes == currentDay) && 
+        (this.getCurrentMonth() == this.getSelectedMonth()) &&
+        (this.getCurrentYear() == this.getSelectedYear())) {
             dynamicDate.classList.add("current-day");
         }
     
         const addToCalBtn = document.createElement("button");
         addToCalBtn.setAttribute("class", "add-to-cal-btn");
         addToCalBtn.textContent = "+";
-        addToCalBtn.addEventListener("click", () => {
-            this.numOfDays();
-            this.addToCalPopUp.parentElement.classList.remove("toggle-popup-display");
-        })
+        // addToCalBtn.addEventListener("click", () => {
+        //     // this.numOfDays();
+        //     this.addToCalPopUp.parentElement.classList.remove("toggle-popup-display");
+        // })
     
         dynamicDate.appendChild(calDay);
         dynamicDate.appendChild(addToCalBtn);
@@ -46,8 +54,27 @@ class PopulateCalendar {
     generateCal = () => {
         for (let i = 0; i < this.calBoxes.length; i++) {
             this.calContainer.appendChild(this.calBoxes[i]);
+
+            this.calBoxes[i].addEventListener("click", () => {
+                this.dateClicked = i+1;
+                this.setFormDate();
+
+                this.addToCalPopUp.parentElement.classList.remove("toggle-popup-display");
+            })
+
             this.calContainer.classList.add("toggle-cal-display");
         }
+    }
+
+    setFormDate = () => {
+        const formDate = document.querySelector(".box-date");
+        let month = `${this.dateClicked}`;
+
+        if (month.length == 1) {
+            month = `0${month}`;
+        }
+
+        formDate.textContent = `${this.getSelectedYear()}-${this.getSelectedMonth()}-${month}`;
     }
 
     setDatePicker = () => {
@@ -87,21 +114,56 @@ class PopulateCalendar {
                 this.daysInMonth = 29;
             else
                 this.daysInMonth = 28;
-        
         }
 
         else {
             console.log("Invalid date");
         }
 
-
-
         return this.daysInMonth;
+    }
+
+    getSelectedDay = () => {
+        const selectedDate = document.querySelector("#selected-date");
+        this.date = selectedDate.value;
+
+        return `${this.date[8]}${this.date[9]}`;
+    }
+
+    getCurrentMonth = () => {
+        let date = new Date();
+        let month = date.getMonth() + 1;
+        let currentMonth = `${month}`;
+
+        if (currentMonth.length == 1) {
+            currentMonth = `0${month}`;
+        }
+
+        return currentMonth;
+    }
+
+    getSelectedMonth = () => {
+        const selectedDate = document.querySelector("#selected-date");
+        this.date = selectedDate.value;
+
+        return `${this.date[5]}${this.date[6]}`;
+    }
+
+    getCurrentYear = () => {
+        // let date = new Date();
+
+        return new Date().getFullYear();
+    }
+
+    getSelectedYear = () => {
+        const selectedDate = document.querySelector("#selected-date");
+        this.date = selectedDate.value;
+
+        return `${this.date[0]}${this.date[1]}${this.date[2]}${this.date[3]}`;
     }
     
     numOfDays = () => {
         const selectedDate = document.querySelector("#selected-date");
-        
         if (selectedDate.value !== "") {
             console.log("I am NOT empty.");
             console.log(selectedDate.value);
@@ -112,24 +174,29 @@ class PopulateCalendar {
             this.daysInMonth = this.getDate(month);
         }
         else {
-            console.log("I am empty.");
+            console.log("ERROR OCCURRED.");
         }
     }
 
     toggleCalendarDisplay = () => {
+        const displayCalendarBtn = document.querySelector("#display-cal-btn");
+
         if (this.calContainer.classList.contains("toggle-cal-display")) {
             this.calContainer.classList.remove("toggle-cal-display");
+            displayCalendarBtn.textContent = "Hide Calendar";
         }
         else {
             this.calContainer.classList.add("toggle-cal-display");
+            displayCalendarBtn.textContent = "Display Calendar";
         }
     }
-    
 
     run = () => {
         this.daysInMonth = this.getDate(this.setDatePicker());
         this.buildCal();
         this.generateCal();
+        this.dateClicked = this.getSelectedDay();
+        this.setFormDate();
     }
 
     empty = () => {
@@ -144,5 +211,6 @@ class PopulateCalendar {
         this.numOfDays();
         this.buildCal();
         this.generateCal();
+        this.setFormDate();
     }
 }

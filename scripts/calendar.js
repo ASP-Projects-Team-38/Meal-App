@@ -1,12 +1,16 @@
-const addToCalBtns = document.querySelectorAll(".add-to-cal-btn");
+// const addToCalBtns = document.querySelectorAll(".add-to-cal-btn");
 const closeAddToCalPopUpBtn = document.querySelector("#close-add-to-cal-popup-btn");
 const addToCalPopUp = document.querySelector("#add-to-cal-popup");
 
-for (let i = 0; i < addToCalBtns.length; i++) {
-    addToCalBtns[i].addEventListener("click", () => {
-        addToCalPopUp.parentElement.classList.remove("toggle-popup-display");
-    });
-}
+// for (let i = 0; i < addToCalBtns.length; i++) {
+//     addToCalBtns[i].addEventListener("click", () => {
+//         addToCalPopUp.parentElement.classList.remove("toggle-popup-display");
+//         populateCalendar.dateClicked = i+1;
+//         populateCalendar.setFormDate();
+
+//         console.log("I am working");
+//     });
+// }
 
 closeAddToCalPopUpBtn.addEventListener("click", () => {
     addToCalPopUp.parentElement.classList.add("toggle-popup-display");
@@ -28,3 +32,5 @@ updateCalendarBtn.addEventListener("click", () => {
     populateCalendar.regenerate();
     populateCalendar.toggleCalendarDisplay();
 })
+
+// console.log(populateCalendar.getSelectedDay());
