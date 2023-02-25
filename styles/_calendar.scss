@@ -22,11 +22,11 @@ main#planner-main {
 
                 @if toggleTheme("cal-card-bg") == #fff {
                     border: 2px solid toggleTheme("placeholder-bg");
-                    padding: 6px 16px; // to stop movement
+                    padding: 6px 14px; // to stop movement
                 }
                 @else {
                     border: 2px solid toggleTheme("cal-card-bg");
-                    padding: 6px 16px;
+                    padding: 6px 14px;
                 }
             }
         }
