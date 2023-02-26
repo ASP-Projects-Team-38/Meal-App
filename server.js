@@ -5,6 +5,7 @@ const session = require("express-session");
 const cookieParser = require("cookie-parser");
 
 const userController = require("./app/controllers/user.controller");
+const recipeController = require("./app/controllers/recipe.controller");
 
 const app = express();
 const port = process.env.PORT || 5000;
@@ -45,7 +46,13 @@ const sessionChecker = (req, res, next) => {
 };
 
 app.get("/", sessionChecker, (req, res) => {
-  res.render("index", { username: req.session.username });
+  recipeController.populateRecipesOfUserInSession(req, function() {
+    res.render("index", {
+      username: req.session.username,
+      addRecipeResult: null,
+      recipes: req.session.recipes,
+    });
+  });
 });
 
 app.get("/login", (req, res) => {
@@ -71,8 +78,9 @@ app.get("/logout", (req, res) => {
   res.redirect("/");
 });
 
-const recipeRoutes = require("./app/routes/recipe.routes");
-app.use("/api/recipes", recipeRoutes);
+app.post("/addRecipe", (req, res) => {
+  recipeController.create(req, res);
+});
 
 app.listen(port, () => {
   console.log(`Server is listening on port ${port}`);

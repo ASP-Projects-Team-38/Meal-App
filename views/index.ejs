@@ -60,12 +60,15 @@
       <main>
         <h2>Recipes</h2>
         <div class="cards">
-          <div class="card"></div>
-          <div class="card"></div>
-          <div class="card"></div>
-          <div class="card"></div>
-          <div class="card"></div>
-          <div class="card"></div>
+          <% for (var i = 0; i < recipes.length; i++) { %>
+          <div class="card">
+            <p><%= recipes[i].name %></p>
+            <p><%= recipes[i].instructions %></p>
+            <p><%= recipes[i].time_estimations %></p>
+            <p><%= JSON.stringify(recipes[i].ingredients) %></p>
+            <p><%= recipes[i].tags %></p>
+          </div>
+          <% } %>
         </div>
         <div class="btn-container recipe">
           <button id="add-recipe-btn">Add Recipe</button>
@@ -79,7 +82,7 @@
           <div id="add-recipe" class="pop-up">
             <span class="close-btn" id="close-recipe-popup-btn">&times;</span>
             <p>Add Recipe</p>
-            <form action="#">
+            <form form action="/addRecipe" method="post">
               <div class="recipe-name-group">
                 <label for="recipe-name">Recipe Name:</label>
                 <input id="recipe-name" type="text" name="recipe-name" />
@@ -96,8 +99,8 @@
                     />
                     <input
                       type="text"
-                      name="recipe-quantity-1"
-                      id="recipe-quantity-1"
+                      name="recipe-amount-1"
+                      id="recipe-amount-1"
                       placeholder="amount (e.g. 250g)"
                     />
                   </div>
@@ -187,6 +190,19 @@
           </div>
         </section>
       </div>
+
+      <!-- Add Recipe Result Pop up -->
+      <% if (addRecipeResult) { %>
+      <div>
+        <section class="pop-up-container" id="add-recipe-result-popup">
+          <div id="add-recipe-result" class="pop-up">
+            <span class="close-btn" id="close-recipe-result-popup-btn">&times;</span>
+            <p><%= addRecipeResult %></p>
+          </div>
+        </section>
+      </div>
+      <% } %>
+
     </div>
   </body>
 </html>

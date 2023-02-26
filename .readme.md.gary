@@ -61,36 +61,34 @@ npm install express-session --save
 npm install cookie-parser --save
 
 CREATE TABLE IF NOT EXISTS users (
-  id BIGINT UNSIGNED AUTO_INCREMENT,
+  username VARCHAR(30) NOT NULL,
   fname VARCHAR(30) NOT NULL,
   lname VARCHAR(30) NOT NULL,
   email VARCHAR(30) NOT NULL,
   dob VARCHAR(20) NOT NULL,
   phoneNumber VARCHAR(30) NOT NULL,
-  username VARCHAR(30) NOT NULL,
   password VARCHAR(100) NOT NULL,
-  PRIMARY KEY (id));
+  PRIMARY KEY (username));
 ```
 
 To test it:
 ```
 docker run -d -p 3306:3306 \
   --name mysql-container -e MYSQL_ROOT_PASSWORD=root \
-  -e MYSQL_DATABASE=meal_app -e MYSQL_USER=meal_app_user \
-  -e MYSQL_PASSWORD=meal_app_user mysql/mysql-server:latest
+  -e MYSQL_DATABASE=meal_app -e MYSQL_USER=sqluser \
+  -e MYSQL_PASSWORD=password mysql/mysql-server:latest
 
-mysql -h 127.0.0.1 -u meal_app_user -p
+mysql -h 127.0.0.1 -u sqluser -p
 USE meal_app;
 CREATE TABLE IF NOT EXISTS users (
-  id BIGINT UNSIGNED AUTO_INCREMENT,
+  username VARCHAR(30) NOT NULL,
   fname VARCHAR(30) NOT NULL,
   lname VARCHAR(30) NOT NULL,
   email VARCHAR(30) NOT NULL,
   dob VARCHAR(20) NOT NULL,
   phoneNumber VARCHAR(30) NOT NULL,
-  username VARCHAR(30) NOT NULL,
   password VARCHAR(100) NOT NULL,
-  PRIMARY KEY (id));
+  PRIMARY KEY (username));
 exit;
 
 git clone https://github.com/ASP-Projects-Team-38/Meal-App.git
@@ -103,3 +101,73 @@ open by broswer:
 http://127.0.0.1:5000
 
 ```
+
+
+```
+drop table recipe_ingredients;
+drop table recipe_tags;
+drop table recipes;
+drop table users;
+```
+
+
+To test it:
+```
+docker run -d -p 3306:3306 \
+  --name mysql-container -e MYSQL_ROOT_PASSWORD=root \
+  -e MYSQL_DATABASE=meal_app -e MYSQL_USER=sqluser \
+  -e MYSQL_PASSWORD=password mysql/mysql-server:latest
+
+
+mysql -h 127.0.0.1 -u sqluser -p
+USE meal_app;
+CREATE TABLE IF NOT EXISTS users (
+  username VARCHAR(30) NOT NULL,
+  fname VARCHAR(30) NOT NULL,
+  lname VARCHAR(30) NOT NULL,
+  email VARCHAR(30) NOT NULL,
+  dob VARCHAR(20) NOT NULL,
+  phoneNumber VARCHAR(30) NOT NULL,
+  password VARCHAR(100) NOT NULL,
+  PRIMARY KEY (username));
+
+CREATE TABLE IF NOT EXISTS recipes (
+  id BIGINT UNSIGNED AUTO_INCREMENT,
+  name VARCHAR(255) NOT NULL,
+  instructions TEXT NOT NULL,
+  time_estimation VARCHAR(255) NOT NULL,
+  username VARCHAR(30) NOT NULL,
+  PRIMARY KEY (id),
+  FOREIGN KEY (username) REFERENCES users(username));
+
+CREATE TABLE IF NOT EXISTS recipe_ingredients (
+  id BIGINT UNSIGNED AUTO_INCREMENT,
+  recipe_id BIGINT UNSIGNED NOT NULL,
+  name VARCHAR(255) NOT NULL,
+  amount VARCHAR(255) NOT NULL,
+  PRIMARY KEY (id),
+  FOREIGN KEY (recipe_id) REFERENCES recipes(id));
+
+CREATE TABLE IF NOT EXISTS recipe_tags (
+  id BIGINT UNSIGNED AUTO_INCREMENT,
+  recipe_id BIGINT UNSIGNED NOT NULL,
+  name VARCHAR(255) NOT NULL,
+  PRIMARY KEY (id),
+  FOREIGN KEY (recipe_id) REFERENCES recipes(id));
+
+
+git clone https://github.com/ASP-Projects-Team-38/Meal-App.git
+cd Meal-App
+
+
+npm install
+npm start
+
+
+open by broswer:
+http://127.0.0.1:5000
+
+```
+
+
+

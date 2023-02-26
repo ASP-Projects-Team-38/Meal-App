@@ -1,6 +1,7 @@
 "use strict";
 
 const User = require("../models/user.model");
+const recipeController = require("./recipe.controller");
 
 exports.create = function (req, res) {
   const fname = req.body["fname"];
@@ -11,6 +12,11 @@ exports.create = function (req, res) {
   const username = req.body["username"];
   const password = req.body["password"];
   const rePassword = req.body["re-password"];
+
+  User.getUserCountByUsername(username, function (err, userCountResult) {
+    if (err) res.send(err);
+    if (userCountResult[0].usercount >= 1) res.json({"error": "User already exists"});
+  });
 
   const new_user = new User({
     fname,

@@ -2,57 +2,73 @@
 
 const Recipe = require("../models/recipe.model");
 
-exports.findAll = function (req, res) {
-  Recipe.findAll(function (err, recipe) {
-    console.log("controller");
-    if (err) res.send(err);
-    console.log("res", recipe);
-    res.send(recipe);
+var populateRecipesOfUserInSession = exports.populateRecipesOfUserInSession = function (req, renderPage) {
+  Recipe.findByUsername(req.session.username, function(results) {
+    console.log(results);
+    req.session.recipes = results;
+    renderPage();
   });
 };
 
 exports.create = function (req, res) {
-  const new_recipe = new Recipe(req.body);
+  // parsing values from request body
+  const name = req.body["recipe-name"];
+  const instructions = req.body["recipe-instructions"];
+  const time_estimations = req.body["recipe-time-estimation"];
+  let ingredients = {};
+  for (const key in req.body) {
+    if (key.startsWith("recipe-ingredient")) {
+      console.log(key);
+      console.log(req.body[key]);
+      console.log(req.body["recipe-amount-" + key.split("-")[2]]);
+      ingredients[req.body[key]] =
+        req.body["recipe-amount-" + key.split("-")[2]];
+    }
+  }
+  const tags = req.body["recipe-tags"].split(",").map(function (item) {
+    return item.trim();
+  });
 
-  if (req.body.constructor === Object && Object.keys(req.body).length === 0) {
-    res
-      .status(400)
-      .send({ error: true, message: "Please provide all required field" });
-  } else {
-    Recipe.create(new_recipe, function (err, recipe) {
-      if (err) res.send(err);
-      res.json({
-        error: false,
-        message: "Recipe added successfully!",
-        data: recipe,
+  // validations
+  if (name === "") {
+    let err = "Name is blank";
+    populateRecipesOfUserInSession(req, function() {
+      res.render("index", {
+        username: req.session.username,
+        addRecipeResult: "Add recipe failed! (" + err + ")",
+        recipes: req.session.recipes,
       });
     });
   }
-};
 
-exports.findById = function (req, res) {
-  Recipe.findById(req.params.id, function (err, recipe) {
-    if (err) res.send(err);
-    res.json(recipe);
-  });
-};
+  // create recipe object
+  const newRecipe = new Recipe(
+    name,
+    instructions,
+    time_estimations,
+    req.session.username,
+    ingredients,
+    tags
+  );
 
-exports.update = function (req, res) {
-  if (req.body.constructor === Object && Object.keys(req.body).length === 0) {
-    res
-      .status(400)
-      .send({ error: true, message: "Please provide all required field" });
-  } else {
-    Recipe.update(req.params.id, new Recipe(req.body), function (err, recipe) {
-      if (err) res.send(err);
-      res.json({ error: false, message: "Recipe successfully updated" });
-    });
-  }
-};
-
-exports.delete = function (req, res) {
-  Recipe.delete(req.params.id, function (err, recipe) {
-    if (err) res.send(err);
-    res.json({ error: false, message: "Recipe successfully deleted" });
+  // create recipe record in database
+  Recipe.create(newRecipe, function (err, recipe) {
+    if (err) {
+      populateRecipesOfUserInSession(req, function() {
+        res.render("index", {
+          username: req.session.username,
+          addRecipeResult: "Add recipe failed! (" + err + ")",
+          recipes: req.session.recipes,
+        });
+      });
+    } else {
+      populateRecipesOfUserInSession(req, function() {
+        res.render("index", {
+          username: req.session.username,
+          addRecipeResult: "Added recipe!",
+          recipes: req.session.recipes,
+        });
+      });
+    }
   });
 };
