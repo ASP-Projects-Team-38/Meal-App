@@ -51,3 +51,11 @@ estimateCostBtn.addEventListener("click", () => {
 closeEstimateCostPopUpBtn.addEventListener("click", () => {
     estimateCostRecipePopUp.parentElement.classList.add("toggle-popup-display");
 });
+
+
+const closeRecipeResultPopUpBtn = document.querySelector("#close-recipe-result-popup-btn");
+const addRecipeResultPopUp = document.querySelector("#add-recipe-result-popup");
+
+closeRecipeResultPopUpBtn.addEventListener("click", () => {
+    addRecipeResultPopUp.parentElement.classList.add("toggle-popup-display");
+});
