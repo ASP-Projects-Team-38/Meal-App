@@ -4,6 +4,7 @@ const logoImg = document.querySelector("#logo-img");
 const pinIcon = document.querySelector("#pin-icon");
 const calIcon = document.querySelector("#cal-icon");
 const switchIcon = document.querySelector("#switch-icon");
+const themeIcon = document.querySelector("#theme-icon");
 
 themeBtn.addEventListener('click', toggleTheme);
 document.addEventListener('DOMContentLoaded', defaultTheme, false);
@@ -34,6 +35,9 @@ function setTheme(themeName) {
         if (switchIcon != null) {
             switchIcon.setAttribute("src", "../assets/icon-switch-dark.svg");
         }
+        if (themeIcon != null) {
+            themeIcon.setAttribute("src", "../assets/icon-theme-dark.svg");
+        }
     }
     else {
         logoImg.setAttribute("src", "../assets/logo-light.svg");
@@ -46,6 +50,9 @@ function setTheme(themeName) {
         }
         if (switchIcon != null) {
             switchIcon.setAttribute("src", "../assets/icon-switch-light.svg");
+        }  
+        if (themeIcon != null) {
+            themeIcon.setAttribute("src", "../assets/icon-theme-light.svg");
         }  
     }
 }

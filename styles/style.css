@@ -124,6 +124,9 @@ header nav a.theme:hover {
   transform: scale(1.3);
   border-bottom: none;
 }
+header nav a.theme img {
+  width: 24px;
+}
 .theme--light header nav a.current {
   border-bottom: 4px solid #27B6B6;
 }
