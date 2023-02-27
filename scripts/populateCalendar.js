@@ -1,4 +1,7 @@
 class PopulateCalendar {
+    /**
+     * Class that handles all Calendar functionality.
+     */
     constructor () {
         this.calContainer = document.querySelector(".dynamic-calendar");
         this.calBoxes = [];
