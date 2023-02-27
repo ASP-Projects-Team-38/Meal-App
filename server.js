@@ -38,7 +38,7 @@ const sessionChecker = (req, res, next) => {
   console.log(req.session);
   if (req.session.username) {
     console.log("Found user session");
-    next();
+    return next();
   } else {
     console.log("No user session found");
     res.redirect("/login");
