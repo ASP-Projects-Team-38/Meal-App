@@ -4,7 +4,6 @@ const Recipe = require("../models/recipe.model");
 
 var populateRecipesOfUserInSession = exports.populateRecipesOfUserInSession = function (req, renderPage) {
   Recipe.findByUsername(req.session.username, function(results) {
-    console.log(results);
     req.session.recipes = results;
     renderPage();
   });

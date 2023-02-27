@@ -18,79 +18,119 @@ var Recipe = function (
 };
 
 Recipe.create = function (newRecipe, result) {
-  dbConn.beginTransaction();
-
-  dbConn.query(
-    "INSERT INTO recipes(name, instructions, time_estimation, username) VALUES (?, ?, ?, ?);",
-    [newRecipe.name, newRecipe.instructions, newRecipe.time_estimations, newRecipe.username],
-    function (err, res) {
-      if (err) {
-        console.log("error: ", err);
-        dbConn.rollback();
-        result(err, null);
-      } else {
-        let newRecipeId = res.insertId;
-
-        for (const ingredient in newRecipe.ingredients) {
-          dbConn.query(
-            "INSERT INTO recipe_ingredients(recipe_id, name, amount) VALUES (?, ?, ?);",
-            [newRecipeId, ingredient, newRecipe.ingredients[ingredient]],
-            function (err, res) {
-              if (err) {
-                console.log("error: ", err);
-                dbConn.rollback();
-                result(err, null);
-              } else {
-                console.log(res.insertId);
-              }
-            }
-          );
-        }
-
-        for (const tag of newRecipe.tags) {
-          dbConn.query(
-            "INSERT INTO recipe_tags(recipe_id, name) VALUES (?, ?);",
-            [newRecipeId, tag],
-            function (err, res) {
-              if (err) {
-                console.log("error: ", err);
-                dbConn.rollback();
-                result(err, null);
-              } else {
-                console.log(res.insertId);
-                dbConn.commit();
-                result(null, newRecipeId);
-              }
-            }
-          );
-        }
-
-      }
+  dbConn.beginTransaction((err) => {
+    if (err) {
+      console.error("Error starting transaction: ", err);
+      return;
     }
-  );
+
+    dbConn.query(
+      "INSERT INTO recipes(name, instructions, time_estimation, username) VALUES (?, ?, ?, ?);",
+      [
+        newRecipe.name,
+        newRecipe.instructions,
+        newRecipe.time_estimations,
+        newRecipe.username,
+      ],
+      (err, res, fields) => {
+        if (err) {
+          dbConn.rollback(() => {
+            console.error("Error inserting recipe data: ", err);
+            result(err, null);
+          });
+          return;
+        }
+
+        const newRecipeId = res.insertId;
+
+        let values = "";
+        for (const ingredient in newRecipe.ingredients) {
+          values +=
+            "(" +
+            newRecipeId +
+            ",'" +
+            ingredient +
+            "','" +
+            newRecipe.ingredients[ingredient] +
+            "'),";
+        }
+        values = values.substring(0, values.length - 1);
+        let sql =
+          "INSERT INTO recipe_ingredients(recipe_id, name, amount) VALUES " +
+          values +
+          ";";
+
+        dbConn.query(sql, [], (err, res, fields) => {
+          if (err) {
+            dbConn.rollback(() => {
+              console.error("Error inserting recipe ingredients data: ", err);
+              result(err, null);
+            });
+            return;
+          }
+
+          let values = "";
+          for (const tag of newRecipe.tags) {
+            values += "(" + newRecipeId + ",'" + tag + "'),";
+          }
+          values = values.substring(0, values.length - 1);
+          let sql =
+            "INSERT INTO recipe_tags(recipe_id, name) VALUES " + values + ";";
+
+          dbConn.query(sql, [], (err, res, fields) => {
+            if (err) {
+              dbConn.rollback(() => {
+                console.error("Error inserting recipe tags data: ", err);
+                result(err, null);
+              });
+              return;
+            }
+
+            dbConn.commit((err) => {
+              if (err) {
+                dbConn.rollback(() => {
+                  console.error("Error committing transaction: ", err);
+                  result(err, null);
+                });
+                return;
+              }
+              console.log("Data inserted successfully");
+              result(null, newRecipeId);
+            });
+          });
+        });
+      }
+    );
+  });
 };
 
 Recipe.findByUsername = function (username, result) {
-  sql = `select d.name, GROUP_CONCAT(CONCAT(d.i_name, ':', d.i_amount)) as ingredients, d.tags, d.instructions, d.time_estimation, d.username
+  sql = `select x.name, x.ingredients, y.tags, x.instructions, x.time_estimation, x.username
           from (
-            select a.name as name, a.instructions, a.time_estimation, a.username, b.name as i_name, b.amount as i_amount, GROUP_CONCAT(c.name) as tags
+            select a.id, a.name, a.instructions, a.time_estimation, a.username, GROUP_CONCAT(CONCAT(b.name, ':', b.amount)) as ingredients
             from recipes a
             inner join recipe_ingredients b
             on a.id = b.recipe_id
+            where a.username = ?
+            group by a.id, a.name, a.instructions, a.time_estimation, a.username
+          ) x
+          left outer join
+          (
+            select a.id, GROUP_CONCAT(c.name) as tags
+            from recipes a
             inner join recipe_tags c
             on a.id = c.recipe_id
             where a.username = ?
-            group by a.name, b.name, b.amount, a.instructions, a.time_estimation, a.username
-          ) d
-          group by d.name, d.tags, d.instructions, d.time_estimation, d.username
-          order by d.name DESC`
+            group by a.id
+          ) y
+          on x.id = y.id
+          order by x.id desc;`;
 
-  dbConn.query(sql, username, function (err, res) {
+  dbConn.query(sql, [username, username], function (err, res) {
     if (err) {
       console.log("error: ", err);
       result([]);
     } else {
-      console.log("test recipes: ", res);
       let recipes = [];
 
       for (const i in res) {
@@ -108,7 +148,7 @@ Recipe.findByUsername = function (username, result) {
           res[i].time_estimation,
           res[i].username,
           ingredients,
-          tags,
+          tags
         );
 
         recipes.push(recipe);
