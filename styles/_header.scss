@@ -11,6 +11,10 @@ header {
         }
         font-weight: bold;
         font-size: 1.5rem;
+
+        img {
+            height: 60px;
+        }
     }
 
     nav {
@@ -25,10 +29,6 @@ header {
             }
             transition: border-bottom 1s;
 
-            &::after {
-                content: '.';
-            }
-
             &:hover {
                 @include themed() {
                     border-bottom: 4px solid toggleTheme("hovered-page");
@@ -38,17 +38,16 @@ header {
 
         a.theme {
             margin-left: 40px;
+            margin-right: 16px;
+
             border-bottom: none;
             font-size: 1.8rem;
+
             @include themed() {
                 color: toggleTheme("page-on-bg");
             }
 
             transition: transform 1s;
-
-            &::after {
-                content: '';
-            }
 
             &:hover {
                 transform: scale(1.3);
@@ -60,10 +59,52 @@ header {
             }
         }
 
+        a.user {
+            border-bottom: none;
+
+            &:hover {
+                text-decoration: underline;
+                border-bottom: none;
+            }
+            
+        }
+
         a.current {
             @include themed() {
                 border-bottom: 4px solid toggleTheme("current-page");
             }
         }
+
+        .user-login-details {
+            @include flex(column, center, center, 16px);
+
+            a {
+                @include themed() {
+                    background-color: #659FF6;
+                    color: toggleTheme("secondary-on-btn");
+                }
+
+                padding: 4px 8px;
+                border-radius: 8px;
+                min-width: 90px;
+                text-align: center;
+
+                font-size: 1rem;
+                font-weight: 600;
+            }
+
+            position: absolute;
+            right: 8px;
+        }
     }
+
+    @include themed() {
+        @if toggleTheme("cal-box-border") == #eee {
+            border-bottom: 2px solid toggleTheme("cal-box-border");
+        }
+        @else {
+            border-bottom: 2px solid #444;
+        }
+    }
+    padding: 0  0 16px 0;
 }
