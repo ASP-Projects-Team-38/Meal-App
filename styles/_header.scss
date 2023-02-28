@@ -25,15 +25,18 @@ header {
 
         a {
             @include themed() {
-                border-bottom: 4px solid toggleTheme("page-bg");
+                border-bottom: -8px solid toggleTheme("page-bg");
             }
             transition: border-bottom 1s;
 
             &:hover {
                 @include themed() {
-                    border-bottom: 4px solid toggleTheme("hovered-page");
+                    border-bottom: 8px solid toggleTheme("hovered-page");
                 }
             }
+
+            padding: 8px 16px;
+            border-radius: 8px
         }
 
         a.theme {
@@ -71,7 +74,9 @@ header {
 
         a.current {
             @include themed() {
-                border-bottom: 4px solid toggleTheme("current-page");
+                // border-bottom: 4px solid toggleTheme("current-page");
+                background-color: toggleTheme("current-page");
+                color: toggleTheme("primary-on-btn");
             }
         }
 

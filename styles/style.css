@@ -93,18 +93,20 @@ header nav {
 }
 header nav a {
   transition: border-bottom 1s;
+  padding: 8px 16px;
+  border-radius: 8px;
 }
 .theme--light header nav a {
-  border-bottom: 4px solid #fff;
+  border-bottom: -8px solid #fff;
 }
 .theme--dark header nav a {
-  border-bottom: 4px solid #333;
+  border-bottom: -8px solid #333;
 }
 .theme--light header nav a:hover {
-  border-bottom: 4px solid #9DACE0;
+  border-bottom: 8px solid #9DACE0;
 }
 .theme--dark header nav a:hover {
-  border-bottom: 4px solid #7d93f9;
+  border-bottom: 8px solid #7d93f9;
 }
 header nav a.theme {
   margin-left: 40px;
@@ -134,10 +136,12 @@ header nav a.user:hover {
   border-bottom: none;
 }
 .theme--light header nav a.current {
-  border-bottom: 4px solid #4AA5EA;
+  background-color: #4AA5EA;
+  color: #fff;
 }
 .theme--dark header nav a.current {
-  border-bottom: 4px solid #33B5E4;
+  background-color: #33B5E4;
+  color: #000;
 }
 header nav .user-login-details {
   display: flex;
