@@ -84,6 +84,9 @@
                   id="recipe-name"
                   type="text"
                   name="recipe-name"
+                  minlength="2"
+                  maxlength="100"
+                  pattern="[A-Z|a-z|\d|\-]{2,100}"
                   required
                 />
               </div>
@@ -96,6 +99,9 @@
                       name="recipe-ingredient-1"
                       id="recipe-ingredient-1"
                       placeholder="Ingredient (e.g. flour)"
+                      minlength="2"
+                      maxlength="100"
+                      pattern="[A-Z|a-z|\d|\-]{2,100}"
                       required
                     />
                     <input
@@ -103,6 +109,8 @@
                       name="recipe-quantity-1"
                       id="recipe-quantity-1"
                       placeholder="Amount (e.g. 250g)"
+                      minlength="1"
+                      maxlength="50"
                       required
                     />
                   </div>
@@ -118,6 +126,7 @@
                   name="recipe-instructions"
                   cols="30"
                   rows="10"
+                  minlength="5"
                   required
                 ></textarea>
               </div>
@@ -127,6 +136,7 @@
                   id="recipe-tags"
                   type="text"
                   name="recipe-tags"
+                  minlength="2"
                   required
                 />
               </div>
@@ -142,6 +152,7 @@
                   id="recipe-time-estimation"
                   type="text"
                   name="recipe-time-estimation"
+                  minlength="1"
                   required
                 />
               </div>
