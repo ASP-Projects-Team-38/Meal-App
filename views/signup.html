@@ -7,6 +7,7 @@
     <title>Meal App | Sign Up</title>
     <link rel="stylesheet" href="../styles/style.css" />
     <script src="../scripts/theme.js" defer></script>
+    <script src="../scripts/signup.js" defer></script>
   </head>
   <body class="theme--light">
     <div class="container">
@@ -51,30 +52,37 @@
           <div class="fname-group log-group">
             <label for="fname">First name</label>
             <input id="fname" type="text" name="fname" required />
+            <p class="error-msg"></p>
           </div>
           <div class="lname-group log-group">
             <label for="lname">Last name</label>
             <input id="lname" type="text" name="lname" required />
+            <p class="error-msg"></p>
           </div>
           <div class="dob-group log-group">
             <label for="dob">DOB</label>
             <input id="dob" type="date" name="dob" required />
+            <p class="error-msg"></p>
           </div>
           <div class="email-group log-group">
             <label for="email">Email</label>
             <input id="email" type="email" name="email" required />
+            <p class="error-msg"></p>
           </div>
           <div class="phone-number-group log-group">
             <label for="phone-number">Phone Number</label>
             <input id="phone-number" type="tel" name="phone-number" required />
+            <p class="error-msg"></p>
           </div>
           <div class="username-group log-group">
             <label for="username">Username</label>
             <input id="username" type="text" name="username" required />
+            <p class="error-msg"></p>
           </div>
           <div class="password-group log-group">
             <label for="password">Password</label>
             <input id="password" type="password" name="password" required />
+            <p class="error-msg"></p>
           </div>
           <div class="re-password-group log-group">
             <label for="re-password">Re-type Password</label>
@@ -84,6 +92,7 @@
               name="re-password"
               required
             />
+            <p class="error-msg"></p>
           </div>
           <div class="btn-container">
             <button id="login-btn">Sign Up</button>
