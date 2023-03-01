@@ -80,7 +80,12 @@
             <form action="#">
               <div class="recipe-name-group">
                 <label for="recipe-name">Recipe Name:</label>
-                <input id="recipe-name" type="text" name="recipe-name" />
+                <input
+                  id="recipe-name"
+                  type="text"
+                  name="recipe-name"
+                  required
+                />
               </div>
               <div class="recipe-ingredients-group">
                 <label>Ingredients:</label>
@@ -91,12 +96,14 @@
                       name="recipe-ingredient-1"
                       id="recipe-ingredient-1"
                       placeholder="Ingredient (e.g. flour)"
+                      required
                     />
                     <input
                       type="text"
                       name="recipe-quantity-1"
                       id="recipe-quantity-1"
                       placeholder="Amount (e.g. 250g)"
+                      required
                     />
                   </div>
                 </div>
@@ -111,11 +118,17 @@
                   name="recipe-instructions"
                   cols="30"
                   rows="10"
+                  required
                 ></textarea>
               </div>
               <div class="recipe-tags-group">
                 <label for="recipe-tags">Tags:</label>
-                <input id="recipe-tags" type="text" name="recipe-tags" />
+                <input
+                  id="recipe-tags"
+                  type="text"
+                  name="recipe-tags"
+                  required
+                />
               </div>
               <div class="warning">
                 <p>
@@ -129,6 +142,7 @@
                   id="recipe-time-estimation"
                   type="text"
                   name="recipe-time-estimation"
+                  required
                 />
               </div>
               <div class="submit-btn">
@@ -150,7 +164,11 @@
             <form action="#">
               <div class="estimate-cost-recipe-group">
                 <label for="estimate-cost-recipe">Select a Recipe:</label>
-                <select name="estimate-cost-recipe" id="estimate-cost-recipe">
+                <select
+                  name="estimate-cost-recipe"
+                  id="estimate-cost-recipe"
+                  required
+                >
                   <option value="" selected disabled>-Select a recipe-</option>
                   <option value="Wild mushroom mac 'n' cheese">
                     Wild mushroom mac 'n' cheese
@@ -166,7 +184,11 @@
               </div>
               <div class="estimate-cost-store-group">
                 <label for="estimate-cost-store">Select a Store:</label>
-                <select name="estimate-cost-store" id="estimate-cost-store">
+                <select
+                  name="estimate-cost-store"
+                  id="estimate-cost-store"
+                  required
+                >
                   <option value="" selected disabled>-Select a store-</option>
                   <option value="Sainsbury's">Sainsbury's</option>
                   <option value="Tesco">Tesco</option>
