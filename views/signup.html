@@ -51,12 +51,24 @@
         <form action="">
           <div class="fname-group log-group">
             <label for="fname">First name</label>
-            <input id="fname" type="text" name="fname" required />
+            <input
+              id="fname"
+              type="text"
+              name="fname"
+              pattern="[(A-Z)|(a-z)]{1,75}"
+              required
+            />
             <p class="error-msg"></p>
           </div>
           <div class="lname-group log-group">
             <label for="lname">Last name</label>
-            <input id="lname" type="text" name="lname" required />
+            <input
+              id="lname"
+              type="text"
+              name="lname"
+              pattern="[(A-Z)|(a-z)]{1, 100}"
+              required
+            />
             <p class="error-msg"></p>
           </div>
           <div class="dob-group log-group">
@@ -66,22 +78,46 @@
           </div>
           <div class="email-group log-group">
             <label for="email">Email</label>
-            <input id="email" type="email" name="email" required />
+            <input
+              id="email"
+              type="email"
+              name="email"
+              pattern="^[(A-Z)|(a-z)|_|\d]{1,50}@[(A-Z)|(a-z)]{1,20}\.[(A-Z)|(a-z)|\.]{1,8}$"
+              required
+            />
             <p class="error-msg"></p>
           </div>
           <div class="phone-number-group log-group">
             <label for="phone-number">Phone Number</label>
-            <input id="phone-number" type="tel" name="phone-number" required />
-            <!-- <p class="error-msg"></p> -->
+            <input
+              id="phone-number"
+              type="tel"
+              name="phone-number"
+              pattern="[0-9|+]{11,15}"
+              required
+            />
+            <p class="error-msg"></p>
           </div>
           <div class="username-group log-group">
             <label for="username">Username</label>
-            <input id="username" type="text" name="username" required />
+            <input
+              id="username"
+              type="text"
+              name="username"
+              pattern="[(A-Z)|(a-z)|-|_|\d]{1, 100}"
+              required
+            />
             <p class="error-msg"></p>
           </div>
           <div class="password-group log-group">
             <label for="password">Password</label>
-            <input id="password" type="password" name="password" required />
+            <input
+              id="password"
+              type="password"
+              name="password"
+              pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"
+              required
+            />
             <p class="error-msg"></p>
           </div>
           <div class="re-password-group log-group">
@@ -90,6 +126,7 @@
               id="re-password"
               type="password"
               name="re-password"
+              pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"
               required
             />
             <p class="error-msg"></p>

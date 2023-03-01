@@ -1,6 +1,7 @@
 const errorMsgs = document.querySelectorAll(".error-msg");
 
 for (let msg of errorMsgs) {
+    // So that there is not a big gap between form groups
     if (msg.textContent == "") {
         msg.style.marginTop = "-20px";
         msg.style.backgroundColor = "red";
