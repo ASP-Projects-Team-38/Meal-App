@@ -11,7 +11,7 @@ class PopulateCalendar {
         this.date = "";
         this.daysInMonth = 31;
 
-        this.dateClicked = 0;
+        this.dateClicked = "0";
     }
 
     createCalBox = () => {
@@ -78,6 +78,7 @@ class PopulateCalendar {
         // Set the date picker to the current date
         const dateInput = document.querySelector("#selected-date");
         let date = new Date();
+
         let month = date.getMonth() + 1;
         let currentMonth = `${month}`;
 
@@ -85,7 +86,14 @@ class PopulateCalendar {
             currentMonth = `0${month}`;
         }
 
-        let currentDate = `${date.getFullYear()}-${currentMonth}-${date.getDate()}`;
+        let day = date.getDate();
+        let currentDay = `${day}`;
+
+        if (currentDay.length == 1) {
+            currentDay = `0${day}`;
+        }
+
+        let currentDate = `${date.getFullYear()}-${currentMonth}-${currentDay}`;
         dateInput.value = currentDate;
 
         return currentMonth;
