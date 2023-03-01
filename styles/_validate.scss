@@ -1,0 +1,33 @@
+main#sign-up-form {
+    form.validate {
+        div.log-group {
+            // Styling the error messages
+            p.error-msg {
+                @include themed() {
+                    color: toggleTheme("error-msg");
+                }
+                font-weight: bold;
+                font-size: 1.0rem;
+
+                min-width: 500px;
+                width: 50vw;
+                margin: 8px 0 0 16px;
+            }
+            
+            // Styling the inputs
+            input {
+                &:valid {
+                    @include themed() {
+                        border: 2px solid toggleTheme("primary-btn");
+                    } 
+                }
+            }
+
+            input.invalid {
+                @include themed() {
+                    border: 2px solid toggleTheme("cal-red");
+                } 
+            }
+        }
+    }
+}

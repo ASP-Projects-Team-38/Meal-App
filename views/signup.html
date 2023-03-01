@@ -7,6 +7,7 @@
     <title>Meal App | Sign Up</title>
     <link rel="stylesheet" href="../styles/style.css" />
     <script src="../scripts/theme.js" defer></script>
+    <script src="../scripts/signup.js" defer></script>
   </head>
   <body class="theme--light">
     <div class="container">
@@ -38,42 +39,95 @@
       <!-- Hero Section -->
       <section class="hero center">
         <h1>User Registration</h1>
+        <p class="italic">
+          <span class="no-italic">&#9888;</span> All fields required.
+        </p>
       </section>
 
       <!-- Main Section -->
       <main id="sign-up-form">
-        <form action="/signup" method="post">
+        <form action="/signup" method="post" class="validate">
           <div class="fname-group log-group">
             <label for="fname">First name</label>
-            <input id="fname" type="text" name="fname" />
+            <input
+              id="fname"
+              type="text"
+              name="fname"
+              pattern="[(A-Z)|(a-z)|\-]{1,75}"
+              required
+            />
+            <p class="error-msg"></p>
           </div>
           <div class="lname-group log-group">
             <label for="lname">Last name</label>
-            <input id="lname" type="text" name="lname" />
+            <input
+              id="lname"
+              type="text"
+              name="lname"
+              pattern="[(A-Z)|(a-z)|\-]{1,75}"
+              required
+            />
+            <p class="error-msg"></p>
           </div>
           <div class="dob-group log-group">
             <label for="dob">DOB</label>
-            <input id="dob" type="date" name="dob" />
+            <input id="dob" type="date" name="dob" required />
+            <p class="error-msg"></p>
           </div>
           <div class="email-group log-group">
             <label for="email">Email</label>
-            <input id="email" type="email" name="email" />
+            <input
+              id="email"
+              type="email"
+              name="email"
+              pattern="^[(A-Z)|(a-z)|_|\d]{1,50}@[(A-Z)|(a-z)]{1,20}\.[(A-Z)|(a-z)|\.]{1,8}$"
+              required
+            />
+            <p class="error-msg"></p>
           </div>
           <div class="phone-number-group log-group">
             <label for="phone-number">Phone Number</label>
-            <input id="phone-number" type="tel" name="phone-number" />
+            <input
+              id="phone-number"
+              type="tel"
+              name="phone-number"
+              pattern="[0-9|+]{11,15}"
+              required
+            />
+            <p class="error-msg"></p>
           </div>
           <div class="username-group log-group">
             <label for="username">Username</label>
-            <input id="username" type="text" name="username" />
+            <input
+              id="username"
+              type="text"
+              name="username"
+              pattern="[(A-Z)|(a-z)|_|\-|\d]{3,50}"
+              required
+            />
+            <p class="error-msg"></p>
           </div>
           <div class="password-group log-group">
             <label for="password">Password</label>
-            <input id="password" type="password" name="password" />
+            <input
+              id="password"
+              type="password"
+              name="password"
+              pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)[A-Za-z\d]{8,}$"
+              required
+            />
+            <p class="error-msg"></p>
           </div>
           <div class="re-password-group log-group">
             <label for="re-password">Re-type Password</label>
-            <input id="re-password" type="password" name="re-password" />
+            <input
+              id="re-password"
+              type="password"
+              name="re-password"
+              pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)[A-Za-z\d]{8,}$"
+              required
+            />
+            <p class="error-msg"></p>
           </div>
           <div class="btn-container">
             <button id="login-btn">Sign Up</button>

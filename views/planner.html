@@ -109,7 +109,7 @@
             <form action="#">
               <div class="add-meal-recipe-group">
                 <label for="add-meal-recipe">Recipe:</label>
-                <select name="add-meal-recipe" id="add-meal-recipe">
+                <select name="add-meal-recipe" id="add-meal-recipe" required>
                   <option value="" selected disabled>-Select a recipe-</option>
                   <option value="Wild mushroom mac 'n' cheese">
                     Wild mushroom mac 'n' cheese
@@ -125,7 +125,7 @@
               </div>
               <div class="add-meal-type-group">
                 <label for="add-meal-type">Meal Type:</label>
-                <select name="add-meal-type" id="add-meal-type">
+                <select name="add-meal-type" id="add-meal-type" required>
                   <option value="" selected disabled>
                     -Select the type of meal-
                   </option>
@@ -138,7 +138,11 @@
               </div>
               <div class="add-meal-preferences-group">
                 <label for="add-meal-preferences">Diet Preferences:</label>
-                <select name="add-meal-preferences" id="add-meal-preferences">
+                <select
+                  name="add-meal-preferences"
+                  id="add-meal-preferences"
+                  required
+                >
                   <option value="" selected disabled>
                     -Select a diet preference-
                   </option>
@@ -173,7 +177,11 @@
               </div>
               <div class="add-to-cal-recipe-group">
                 <label for="add-to-cal-recipe">Select a Meal:</label>
-                <select name="add-to-cal-recipe" id="add-to-cal-recipe">
+                <select
+                  name="add-to-cal-recipe"
+                  id="add-to-cal-recipe"
+                  required
+                >
                   <option value="" selected disabled>-Select a meal-</option>
                   <option value="Wild mushroom mac 'n' cheese">
                     Wild mushroom mac 'n' cheese
@@ -189,7 +197,7 @@
               </div>
               <div class="add-to-cal-time-group">
                 <label for="add-to-cal-time">Set the time:</label>
-                <input type="time" id="add-to-cal-time" />
+                <input type="time" id="add-to-cal-time" required />
               </div>
               <div class="submit-btn">
                 <input type="submit" value="Add to Calendar" />
@@ -210,7 +218,11 @@
             <form action="#">
               <div class="set-remainders-freq-group">
                 <label for="set-remainders-freq">Remainder Frequency:</label>
-                <select name="set-remainders-freq" id="set-remainders-freq">
+                <select
+                  name="set-remainders-freq"
+                  id="set-remainders-freq"
+                  required
+                >
                   <option value="" selected disabled>
                     -Select a frequency-
                   </option>
@@ -223,7 +235,11 @@
               </div>
               <div class="set-remainders-send-group">
                 <label for="set-remainders-send">Send Reminder to:</label>
-                <select name="set-remainders-send" id="set-remainders-send">
+                <select
+                  name="set-remainders-send"
+                  id="set-remainders-send"
+                  required
+                >
                   <option value="" selected disabled>
                     -Select a communication-
                   </option>

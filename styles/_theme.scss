@@ -37,6 +37,8 @@ $themes: (
         cal-box-border-hover: $cal-box-border-hover-light,
         cal-red: $cal-red-light,
 
+        error-msg: $error-msg-light,
+
         placeholder-bg: $placeholder-bg-light,
         placeholder-on-bg: $placeholder-on-bg-light
     ),
@@ -77,6 +79,8 @@ $themes: (
         cal-box-label: $cal-box-label-dark,
         cal-box-border-hover: $cal-box-border-hover-dark,
         cal-red: $cal-red-dark,
+
+        error-msg: $error-msg-dark,
 
         placeholder-bg: $placeholder-bg-dark,
         placeholder-on-bg: $placeholder-on-bg-dark

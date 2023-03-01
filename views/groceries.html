@@ -80,7 +80,7 @@
             <form action="#">
               <div class="list-name-group">
                 <label for="list-name">List Name:</label>
-                <input id="list-name" type="text" name="list-name" />
+                <input id="list-name" type="text" name="list-name" required />
               </div>
               <div class="list-ingredients-group">
                 <label for="list-ingredients">Ingredients:</label>
@@ -88,6 +88,7 @@
                   id="list-ingredients"
                   type="text"
                   name="list-ingredients"
+                  required
                 />
               </div>
               <div class="warning">
@@ -115,7 +116,11 @@
             <form action="#">
               <div class="generate-list-name-group">
                 <label for="generate-list-name">Select a Recipe:</label>
-                <select name="generate-list-name" id="generate-list-name">
+                <select
+                  name="generate-list-name"
+                  id="generate-list-name"
+                  required
+                >
                   <option value="" selected disabled>-Select a recipe-</option>
                   <option value="Wild mushroom mac 'n' cheese">
                     Wild mushroom mac 'n' cheese
