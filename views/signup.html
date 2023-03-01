@@ -48,14 +48,14 @@
       <main id="sign-up-form">
         <!-- Uncommented for now -->
         <!-- <form action="/signup" method="post"> -->
-        <form action="">
+        <form action="" class="validate">
           <div class="fname-group log-group">
             <label for="fname">First name</label>
             <input
               id="fname"
               type="text"
               name="fname"
-              pattern="[(A-Z)|(a-z)]{1,75}"
+              pattern="[(A-Z)|(a-z)|\-]{1,75}"
               required
             />
             <p class="error-msg"></p>
@@ -66,7 +66,7 @@
               id="lname"
               type="text"
               name="lname"
-              pattern="[(A-Z)|(a-z)]{1, 100}"
+              pattern="[(A-Z)|(a-z)|\-]{1,75}"
               required
             />
             <p class="error-msg"></p>
@@ -104,7 +104,7 @@
               id="username"
               type="text"
               name="username"
-              pattern="[(A-Z)|(a-z)|-|_|\d]{1, 50}"
+              pattern="[(A-Z)|(a-z)|_|\-|\d]{3,50}"
               required
             />
             <p class="error-msg"></p>
@@ -115,7 +115,7 @@
               id="password"
               type="password"
               name="password"
-              pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"
+              pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)[A-Za-z\d]{8,}$"
               required
             />
             <p class="error-msg"></p>
@@ -126,7 +126,7 @@
               id="re-password"
               type="password"
               name="re-password"
-              pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"
+              pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)[A-Za-z\d]{8,}$"
               required
             />
             <p class="error-msg"></p>

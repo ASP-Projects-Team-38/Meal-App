@@ -901,4 +901,30 @@ main#sign-up-form form div.log-group input {
 .theme--dark main#sign-up-form form button#login-btn:hover {
   cursor: pointer;
   background-color: #34B678;
+}
+
+main#sign-up-form form.validate div.log-group p.error-msg {
+  font-weight: bold;
+  font-size: 1rem;
+  min-width: 500px;
+  width: 50vw;
+  margin: 8px 0 0 16px;
+}
+.theme--light main#sign-up-form form.validate div.log-group p.error-msg {
+  color: #DD4646;
+}
+.theme--dark main#sign-up-form form.validate div.log-group p.error-msg {
+  color: #FFBBBB;
+}
+.theme--light main#sign-up-form form.validate div.log-group input:valid {
+  border: 2px solid #33BD7B;
+}
+.theme--dark main#sign-up-form form.validate div.log-group input:valid {
+  border: 2px solid #3FF09B;
+}
+.theme--light main#sign-up-form form.validate div.log-group input.invalid {
+  border: 2px solid #DD4646;
+}
+.theme--dark main#sign-up-form form.validate div.log-group input.invalid {
+  border: 2px solid #FF3232;
 }/*# sourceMappingURL=style.css.map */
