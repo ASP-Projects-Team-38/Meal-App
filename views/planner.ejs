@@ -44,7 +44,9 @@
       <!-- Hero Section -->
       <section class="hero">
         <h1>Planner</h1>
-        <input type="date" class="calendar" />
+        <form action="/planner" method="get">
+          <input type="date" id="daily-view-date" name="daily-view-date" value="<%= dailyViewDate %>" onchange="this.form.submit()" class="calendar" />
+        </form>
       </section>
 
       <!-- Overview Section -->
@@ -68,16 +70,43 @@
 
         <div class="calendar-cards cards">
           <div class="card">
+            <% for (var i = 0; i < mealplansOnDailyViewDate.length; i++) { %>
+              <% if(mealplansOnDailyViewDate[i].meal.type == 'breakfast'){ %>
+                <p><%= mealplansOnDailyViewDate[i].meal.name  %></p>
+                <!-- <p><%= mealplansOnDailyViewDate[i].meal.type %></p>
+                <p><%= mealplansOnDailyViewDate[i].meal.diet_preferences %></p> -->
+                <p><%= mealplansOnDailyViewDate[i].meal.recipe.instructions %></p>
+                <p><%= JSON.stringify(mealplansOnDailyViewDate[i].meal.recipe.ingredients) %></p>
+              <% } %>
+            <% } %>
             <div class="info">
               <p>Breakfast</p>
             </div>
           </div>
           <div class="card">
+            <% for (var i = 0; i < mealplansOnDailyViewDate.length; i++) { %>
+              <% if(mealplansOnDailyViewDate[i].meal.type == 'lunch'){ %>
+                <p><%= mealplansOnDailyViewDate[i].meal.name  %></p>
+                <!-- <p><%= mealplansOnDailyViewDate[i].meal.type %></p>
+                <p><%= mealplansOnDailyViewDate[i].meal.diet_preferences %></p> -->
+                <p><%= mealplansOnDailyViewDate[i].meal.recipe.instructions %></p>
+                <p><%= JSON.stringify(mealplansOnDailyViewDate[i].meal.recipe.ingredients) %></p>
+              <% } %>
+            <% } %>
             <div class="info">
               <p>Lunch</p>
             </div>
           </div>
           <div class="card">
+            <% for (var i = 0; i < mealplansOnDailyViewDate.length; i++) { %>
+              <% if(mealplansOnDailyViewDate[i].meal.type == 'dinner'){ %>
+                <p><%= mealplansOnDailyViewDate[i].meal.name  %></p>
+                <!-- <p><%= mealplansOnDailyViewDate[i].meal.type %></p>
+                <p><%= mealplansOnDailyViewDate[i].meal.diet_preferences %></p> -->
+                <p><%= mealplansOnDailyViewDate[i].meal.recipe.instructions %></p>
+                <p><%= JSON.stringify(mealplansOnDailyViewDate[i].meal.recipe.ingredients) %></p>
+              <% } %>
+            <% } %>
             <div class="info">
               <p>Dinner</p>
             </div>
@@ -110,21 +139,16 @@
           <div id="add-meal" class="pop-up">
             <span class="close-btn" id="close-add-meal-popup-btn">&times;</span>
             <p>Add Meal</p>
-            <form action="#">
+            <form action="/addMeal" method="post">
               <div class="add-meal-recipe-group">
                 <label for="add-meal-recipe">Recipe:</label>
                 <select name="add-meal-recipe" id="add-meal-recipe" required>
                   <option value="" selected disabled>-Select a recipe-</option>
-                  <option value="Wild mushroom mac 'n' cheese">
-                    Wild mushroom mac 'n' cheese
-                  </option>
-                  <option value="Ndolé">Ndolé</option>
-                  <option value="Chorizo & mozzarella gnocchi bake">
-                    Chorizo & mozzarella gnocchi bake
-                  </option>
-                  <option value="Swedish meatball burgers">
-                    Swedish meatball burgers
-                  </option>
+                  <% for (var i = 0; i < recipes.length; i++) { %>
+                    <option value="<%= recipes[i].id + ',' + recipes[i].name %>">
+                      <%= recipes[i].name %>
+                    </option>
+                  <% } %>
                 </select>
               </div>
               <div class="add-meal-type-group">
@@ -175,33 +199,29 @@
               >&times;</span
             >
             <p>Add to Calendar</p>
-            <form action="#" id="cal-form">
+            <form action="/addMealToCalendar" method="post" id="cal-form" onsubmit="setFormSubmitDate()">
               <div class="add-to-cal-date-group">
-                <div class="box-date">11/03/2023</div>
+                <div id="add-to-cal-date" class="box-date">11/03/2023</div>
+                <input type="hidden" id="add-to-cal-date-hidden-input" name="add-to-cal-date-hidden-input" value="testvalue">
               </div>
-              <div class="add-to-cal-recipe-group">
-                <label for="add-to-cal-recipe">Select a Meal:</label>
+              <div class="add-to-cal-meal-group">
+                <label for="add-to-cal-meal">Select a Meal:</label>
                 <select
-                  name="add-to-cal-recipe"
-                  id="add-to-cal-recipe"
+                  name="add-to-cal-meal"
+                  id="add-to-cal-meal"
                   required
                 >
                   <option value="" selected disabled>-Select a meal-</option>
-                  <option value="Wild mushroom mac 'n' cheese">
-                    Wild mushroom mac 'n' cheese
-                  </option>
-                  <option value="Ndolé">Ndolé</option>
-                  <option value="Chorizo & mozzarella gnocchi bake">
-                    Chorizo & mozzarella gnocchi bake
-                  </option>
-                  <option value="Swedish meatball burgers">
-                    Swedish meatball burgers
-                  </option>
+                  <% for (var i = 0; i < meals.length; i++) { %>
+                    <option value="<%= meals[i].id + ',' + meals[i].name %>">
+                      <%= meals[i].name %>
+                    </option>
+                  <% } %>
                 </select>
               </div>
               <div class="add-to-cal-time-group">
                 <label for="add-to-cal-time">Set the time:</label>
-                <input type="time" id="add-to-cal-time" required />
+                <input type="time" id="add-to-cal-time" name="add-to-cal-time" required />
               </div>
               <div class="submit-btn">
                 <input type="submit" value="Add to Calendar" />
@@ -259,6 +279,41 @@
           </div>
         </section>
       </div>
+      <script>
+        function setFormSubmitDate() {
+          document.getElementById("add-to-cal-date-hidden-input").value = document.getElementById("add-to-cal-date").innerHTML;
+          return true;
+        };
+      </script>
+
+      <!-- Add Meal Result Pop up -->
+      <% if (addMealResult) { %>
+        <div>
+          <section class="pop-up-container" id="add-meal-result-popup">
+            <div id="add-meal-result" class="pop-up">
+              <span class="close-btn" id="close-meal-result-popup-btn"
+                >&times;</span
+              >
+              <p><%= addMealResult %></p>
+            </div>
+          </section>
+        </div>
+      <% } %>
+
+      <!-- Add MealPlan Result Pop up -->
+      <% if (addMealPlanResult) { %>
+        <div>
+          <section class="pop-up-container" id="add-mealplan-result-popup">
+            <div id="add-mealplan-result" class="pop-up">
+              <span class="close-btn" id="close-mealplan-result-popup-btn"
+                >&times;</span
+              >
+              <p><%= addMealPlanResult %></p>
+            </div>
+          </section>
+        </div>
+      <% } %>
+
     </div>
   </body>
 </html>

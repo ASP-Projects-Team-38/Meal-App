@@ -21,3 +21,21 @@ addMealBtn.addEventListener("click", () => {
 closeAddMealPopUpBtn.addEventListener("click", () => {
     addMealPopUp.parentElement.classList.add("toggle-popup-display");
 });
+
+const closeMealResultPopUpBtn = document.querySelector("#close-meal-result-popup-btn");
+const addMealResultPopUp = document.querySelector("#add-meal-result-popup");
+
+if (closeMealResultPopUpBtn !== null) {
+    closeMealResultPopUpBtn.addEventListener("click", () => {
+        addMealResultPopUp.parentElement.classList.add("toggle-popup-display");
+    });
+}
+
+const closeMealPlanResultPopUpBtn = document.querySelector("#close-mealplan-result-popup-btn");
+const addMealPlanResultPopUp = document.querySelector("#add-mealplan-result-popup");
+
+if (closeMealPlanResultPopUpBtn !== null) {
+    closeMealPlanResultPopUpBtn.addEventListener("click", () => {
+        addMealPlanResultPopUp.parentElement.classList.add("toggle-popup-display");
+    });
+}

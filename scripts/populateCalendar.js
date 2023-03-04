@@ -16,30 +16,30 @@ class PopulateCalendar {
 
     createCalBox = () => {
         this.numOfCalBoxes++;
-    
+
         const dynamicDate = document.createElement("div");
         dynamicDate.setAttribute("class", "dynamic-date");
-    
+
         const calDay = document.createElement("p");
         calDay.setAttribute("class", "cal-day");
         calDay.textContent = this.numOfCalBoxes;
-    
+
         const currentDay = new Date().getDate();
 
         // Highlights the current day
-        if ((this.numOfCalBoxes == currentDay) && 
+        if ((this.numOfCalBoxes == currentDay) &&
         (this.getCurrentMonth() == this.getSelectedMonth()) &&
         (this.getCurrentYear() == this.getSelectedYear())) {
             dynamicDate.classList.add("current-day");
         }
-    
+
         const addToCalBtn = document.createElement("button");
         addToCalBtn.setAttribute("class", "add-to-cal-btn");
         addToCalBtn.textContent = "+";
-    
+
         dynamicDate.appendChild(calDay);
         dynamicDate.appendChild(addToCalBtn);
-    
+
         this.calBoxes.push(dynamicDate);
     }
 
@@ -48,7 +48,7 @@ class PopulateCalendar {
             this.createCalBox();
         }
     }
-    
+
     generateCal = () => {
         for (let i = 0; i < this.calBoxes.length; i++) {
             this.calContainer.appendChild(this.calBoxes[i]);
@@ -164,7 +164,7 @@ class PopulateCalendar {
 
         return `${this.date[0]}${this.date[1]}${this.date[2]}${this.date[3]}`;
     }
-    
+
     numOfDays = () => {
         const selectedDate = document.querySelector("#selected-date");
         if (selectedDate.value !== "") {

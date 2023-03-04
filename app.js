@@ -6,6 +6,7 @@ const cookieParser = require("cookie-parser");
 
 const userController = require("./app/controllers/user.controller");
 const recipeController = require("./app/controllers/recipe.controller");
+const mealplanController = require("./app/controllers/mealplan.controller");
 
 const app = express();
 
@@ -31,7 +32,7 @@ app.use(
 );
 
 const sessionChecker = (req, res, next) => {
-  console.log(req.session);
+  // console.log(req.session);
   if (req.session.username) {
     console.log("Found user session");
     return next();
@@ -62,11 +63,16 @@ app.get("/recipes", sessionChecker, (req, res) => {
 });
 
 app.get("/planner", sessionChecker, (req, res) => {
-  recipeController.populateRecipesOfUserInSession(req, function () {
+  mealplanController.populateInfoInSession(req, function () {
     res.render("planner", {
       username: req.session.username,
-      // addRecipeResult: null,
-      // recipes: req.session.recipes,
+      addMealResult: null,
+      addMealPlanResult: null,
+      recipes: req.session.recipes,
+      meals: req.session.meals,
+      mealplans: req.session.mealplans,
+      mealplansOnDailyViewDate: req.session.mealplansOnDVDate,
+      dailyViewDate: req.session.dvDate,
     });
   });
 });
@@ -75,8 +81,6 @@ app.get("/groceries", sessionChecker, (req, res) => {
   recipeController.populateRecipesOfUserInSession(req, function () {
     res.render("groceries", {
       username: req.session.username,
-      // addRecipeResult: null,
-      // recipes: req.session.recipes,
     });
   });
 });
@@ -106,6 +110,14 @@ app.get("/logout", (req, res) => {
 
 app.post("/addRecipe", (req, res) => {
   recipeController.create(req, res);
+});
+
+app.post("/addMeal", (req, res) => {
+  mealplanController.createMeal(req, res);
+});
+
+app.post("/addMealToCalendar", (req, res) => {
+  mealplanController.addMealToCalendar(req, res);
 });
 
 module.exports = app;
