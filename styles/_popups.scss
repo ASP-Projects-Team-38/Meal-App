@@ -121,6 +121,18 @@ section.pop-up-container {
                 margin-left: -16px;
             }
 
+            div.add-meal-recipe-group select {
+                margin-left: 52px;
+            }
+
+            div.add-meal-type-group select {
+                margin-left: 20px;
+            }
+
+            div.add-meal-preferences-group select {
+                margin-right: 34px;
+            }
+
             input[type='submit'] {
                 @include themed() {
                     @include button(toggleTheme("primary-btn"), toggleTheme("hover-btn"), toggleTheme("primary-on-btn"));

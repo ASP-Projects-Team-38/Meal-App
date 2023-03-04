@@ -537,6 +537,15 @@ section.pop-up-container div.pop-up form div.recipe-time-estimation-group {
 section.pop-up-container div.pop-up form div.estimate-cost-recipe-group {
   margin-left: -16px;
 }
+section.pop-up-container div.pop-up form div.add-meal-recipe-group select {
+  margin-left: 52px;
+}
+section.pop-up-container div.pop-up form div.add-meal-type-group select {
+  margin-left: 20px;
+}
+section.pop-up-container div.pop-up form div.add-meal-preferences-group select {
+  margin-right: 34px;
+}
 section.pop-up-container div.pop-up form input[type=submit] {
   width: 540px;
   margin-left: 160px;
