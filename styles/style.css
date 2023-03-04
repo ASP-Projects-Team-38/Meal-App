@@ -237,10 +237,18 @@ section.hero .calendar {
   color: #000;
   color-scheme: light;
 }
+.theme--light section.hero .calendar:hover {
+  background-color: #c0ccfa;
+  cursor: pointer;
+}
 .theme--dark section.hero .calendar {
   background-color: #6184FE;
   color: #fff;
   color-scheme: dark;
+}
+.theme--dark section.hero .calendar:hover {
+  background-color: #5473e1;
+  cursor: pointer;
 }
 
 section.center {
