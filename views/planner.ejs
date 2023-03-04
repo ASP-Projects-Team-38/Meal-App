@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meal App | Planner</title>
+    <link rel="stylesheet" href="../styles/style.css" />
+    <script src="../scripts/theme.js" defer></script>
+    <script src="../scripts/planner.js" defer></script>
+    <script src="../scripts/populateCalendar.js" defer></script>
+    <script src="../scripts/calendar.js" defer></script>
+  </head>
+  <body class="theme--light">
+    <div class="container">
+      <!-- Header Section -->
+      <header>
+        <div class="branding">
+          <img
+            src="../assets/logo-light.svg"
+            alt="Site logo"
+            class="logo"
+            id="logo-img"
+          />
+        </div>
+        <nav class="nav-links">
+          <a href="/recipes">Recipes</a>
+          <a class="current" href="/planner">Planner</a>
+          <a href="/groceries">Groceries</a>
+          <a id="theme-btn" class="theme" href="#">
+            <img
+              id="theme-icon"
+              src="../assets/icon-theme-light.svg"
+              alt="theme icon"
+            />
+          </a>
+          <div class="user-login-details">
+            <a class="user" href="#"><%= username %></a>
+            <a class="user" href="/logout">Logout</a>
+          </div>
+        </nav>
+      </header>
+
+      <!-- Hero Section -->
+      <section class="hero">
+        <h1>Planner</h1>
+        <input type="date" class="calendar" />
+      </section>
+
+      <!-- Overview Section -->
+      <section class="pinned">
+        <div class="page-heading">
+          <img
+            src="../assets/icon-calendar-light.svg"
+            alt="Calendar icon"
+            id="cal-icon"
+          />
+          <h2>Daily Overview</h2>
+          <div class="view-change">
+            <img
+              src="../assets/icon-switch-light.svg"
+              alt="Switch icon"
+              id="switch-icon"
+            />
+            <a href="">Change view</a>
+          </div>
+        </div>
+
+        <div class="calendar-cards cards">
+          <div class="card">
+            <div class="info">
+              <p>Breakfast</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="info">
+              <p>Lunch</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="info">
+              <p>Dinner</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="btn-container">
+          <button id="add-meal-btn">Add Meal</button>
+        </div>
+      </section>
+
+      <!-- Main Section -->
+      <main id="planner-main">
+        <h2>Add to Calendar</h2>
+        <input type="date" id="selected-date" value="2023-02-01" />
+        <div id="cal-btns" class="btn-container planner">
+          <button id="display-cal-btn">Display Calendar</button>
+          <button id="update-cal-btn">Update Calendar</button>
+        </div>
+        <div class="dynamic-calendar"></div>
+
+        <div class="btn-container planner">
+          <button id="set-remainder-btn">Set Remainders</button>
+        </div>
+      </main>
+
+      <!-- Add Meal Pop up -->
+      <div class="toggle-popup-display">
+        <section class="pop-up-container" id="add-meal-popup">
+          <div id="add-meal" class="pop-up">
+            <span class="close-btn" id="close-add-meal-popup-btn">&times;</span>
+            <p>Add Meal</p>
+            <form action="#">
+              <div class="add-meal-recipe-group">
+                <label for="add-meal-recipe">Recipe:</label>
+                <select name="add-meal-recipe" id="add-meal-recipe" required>
+                  <option value="" selected disabled>-Select a recipe-</option>
+                  <option value="Wild mushroom mac 'n' cheese">
+                    Wild mushroom mac 'n' cheese
+                  </option>
+                  <option value="Ndolé">Ndolé</option>
+                  <option value="Chorizo & mozzarella gnocchi bake">
+                    Chorizo & mozzarella gnocchi bake
+                  </option>
+                  <option value="Swedish meatball burgers">
+                    Swedish meatball burgers
+                  </option>
+                </select>
+              </div>
+              <div class="add-meal-type-group">
+                <label for="add-meal-type">Meal Type:</label>
+                <select name="add-meal-type" id="add-meal-type" required>
+                  <option value="" selected disabled>
+                    -Select the type of meal-
+                  </option>
+                  <option value="breakfast">Breakfast</option>
+                  <option value="lunch">Lunch</option>
+                  <option value="dinner">Dinner</option>
+                  <option value="snack">Snack</option>
+                  <option value="dessert">Dessert</option>
+                </select>
+              </div>
+              <div class="add-meal-preferences-group">
+                <label for="add-meal-preferences">Diet Preferences:</label>
+                <select
+                  name="add-meal-preferences"
+                  id="add-meal-preferences"
+                  required
+                >
+                  <option value="" selected disabled>
+                    -Select a diet preference-
+                  </option>
+                  <option value="none">None</option>
+                  <option value="vegetarian">Vegetarian</option>
+                  <option value="pescatarian">Pescatarian</option>
+                  <option value="vegan">Vegan</option>
+                  <option value="gluten free">Gluten Free</option>
+                  <option value="dairy free">Dairy Free</option>
+                  <option value="halal">Halal</option>
+                </select>
+              </div>
+              <div class="submit-btn">
+                <input type="submit" value="Add" />
+              </div>
+            </form>
+          </div>
+        </section>
+      </div>
+
+      <!-- Add to Calendar Pop up -->
+      <div class="toggle-popup-display">
+        <section class="pop-up-container" id="add-to-cal-popup">
+          <div id="add-to-cal" class="pop-up">
+            <span class="close-btn" id="close-add-to-cal-popup-btn"
+              >&times;</span
+            >
+            <p>Add to Calendar</p>
+            <form action="#" id="cal-form">
+              <div class="add-to-cal-date-group">
+                <div class="box-date">11/03/2023</div>
+              </div>
+              <div class="add-to-cal-recipe-group">
+                <label for="add-to-cal-recipe">Select a Meal:</label>
+                <select
+                  name="add-to-cal-recipe"
+                  id="add-to-cal-recipe"
+                  required
+                >
+                  <option value="" selected disabled>-Select a meal-</option>
+                  <option value="Wild mushroom mac 'n' cheese">
+                    Wild mushroom mac 'n' cheese
+                  </option>
+                  <option value="Ndolé">Ndolé</option>
+                  <option value="Chorizo & mozzarella gnocchi bake">
+                    Chorizo & mozzarella gnocchi bake
+                  </option>
+                  <option value="Swedish meatball burgers">
+                    Swedish meatball burgers
+                  </option>
+                </select>
+              </div>
+              <div class="add-to-cal-time-group">
+                <label for="add-to-cal-time">Set the time:</label>
+                <input type="time" id="add-to-cal-time" required />
+              </div>
+              <div class="submit-btn">
+                <input type="submit" value="Add to Calendar" />
+              </div>
+            </form>
+          </div>
+        </section>
+      </div>
+
+      <!-- Set Remainders Pop up -->
+      <div class="toggle-popup-display">
+        <section class="pop-up-container" id="set-remainders-popup">
+          <div id="set-remainders" class="pop-up">
+            <span class="close-btn" id="close-set-remainders-popup-btn"
+              >&times;</span
+            >
+            <p>Set Remainders</p>
+            <form action="#">
+              <div class="set-remainders-freq-group">
+                <label for="set-remainders-freq">Remainder Frequency:</label>
+                <select
+                  name="set-remainders-freq"
+                  id="set-remainders-freq"
+                  required
+                >
+                  <option value="" selected disabled>
+                    -Select a frequency-
+                  </option>
+                  <option value="hourly">Hourly</option>
+                  <option value="daily">Daily</option>
+                  <option value="weekly">Weekly</option>
+                  <option value="bi-monthly">Bi-Monthly</option>
+                  <option value="monthly">Monthly</option>
+                </select>
+              </div>
+              <div class="set-remainders-send-group">
+                <label for="set-remainders-send">Send Reminder to:</label>
+                <select
+                  name="set-remainders-send"
+                  id="set-remainders-send"
+                  required
+                >
+                  <option value="" selected disabled>
+                    -Select a communication-
+                  </option>
+                  <option value="text">Text</option>
+                  <option value="email">Email</option>
+                  <option value="site">Site</option>
+                </select>
+              </div>
+              <div class="submit-btn">
+                <input type="submit" value="Remind Me" />
+              </div>
+            </form>
+          </div>
+        </section>
+      </div>
+    </div>
+  </body>
+</html>

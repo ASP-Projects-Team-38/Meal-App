@@ -51,6 +51,36 @@ app.get("/", sessionChecker, (req, res) => {
   });
 });
 
+app.get("/recipes", sessionChecker, (req, res) => {
+  recipeController.populateRecipesOfUserInSession(req, function () {
+    res.render("index", {
+      username: req.session.username,
+      addRecipeResult: null,
+      recipes: req.session.recipes,
+    });
+  });
+});
+
+app.get("/planner", sessionChecker, (req, res) => {
+  recipeController.populateRecipesOfUserInSession(req, function () {
+    res.render("planner", {
+      username: req.session.username,
+      // addRecipeResult: null,
+      // recipes: req.session.recipes,
+    });
+  });
+});
+
+app.get("/groceries", sessionChecker, (req, res) => {
+  recipeController.populateRecipesOfUserInSession(req, function () {
+    res.render("groceries", {
+      username: req.session.username,
+      // addRecipeResult: null,
+      // recipes: req.session.recipes,
+    });
+  });
+});
+
 app.get("/login", (req, res) => {
   res.sendFile(path.join(__dirname, "views/login.html"));
 });
