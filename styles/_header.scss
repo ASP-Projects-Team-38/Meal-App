@@ -4,7 +4,9 @@ header {
     margin-top: 20px;
 
     .branding {
-        @include flex(row, center, center, 16px);
+        @include flex(row, space-between, center, 16px);
+
+        width: 100%;
 
         @include themed() {
             color: toggleTheme("brand-colour");
@@ -15,6 +17,20 @@ header {
         img {
             height: 60px;
         }
+
+        .nav-toggle-btn {
+            @include themed() {
+                background-color: toggleTheme("page-bg");
+                color: toggleTheme("page-on-bg");
+            }
+
+            border: none;
+            font-size: 5rem;
+        }
+    }
+
+    .toggle-nav {
+        display: none;
     }
 
     nav {

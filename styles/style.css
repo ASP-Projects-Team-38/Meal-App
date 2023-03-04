@@ -75,9 +75,10 @@ header {
 header .branding {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   gap: 16px;
+  width: 100%;
   font-weight: bold;
   font-size: 1.5rem;
 }
@@ -89,6 +90,21 @@ header .branding {
 }
 header .branding img {
   height: 60px;
+}
+header .branding .nav-toggle-btn {
+  border: none;
+  font-size: 5rem;
+}
+.theme--light header .branding .nav-toggle-btn {
+  background-color: #fff;
+  color: #222;
+}
+.theme--dark header .branding .nav-toggle-btn {
+  background-color: #333;
+  color: #fff;
+}
+header .toggle-nav {
+  display: none;
 }
 header nav {
   display: flex;
