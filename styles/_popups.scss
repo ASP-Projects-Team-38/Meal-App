@@ -109,12 +109,48 @@ section.pop-up-container {
                 }
             }
 
+
+            // Minor style adjustments
             div.recipe-tags-group {
                 margin-left: 65px;
             }
 
             div.recipe-time-estimation-group {
                 margin-left: -30px;
+            }
+
+            div.estimate-cost-recipe-group {
+                margin-left: -16px;
+            }
+
+            div.add-meal-recipe-group select {
+                margin-left: 52px;
+            }
+
+            div.add-meal-type-group select {
+                margin-left: 20px;
+            }
+
+            div.add-meal-preferences-group select {
+                margin-right: 34px;
+            }
+
+            div.set-remainders-freq-group select {
+                margin-right: 82px;
+            }
+
+            div.set-remainders-send-group select {
+                margin-right: 46px;
+            }
+
+            div.add-to-cal-recipe-group select {
+                width: 530px;
+                margin-right: 11px;
+            }
+
+            div.generate-list-name-group select {
+                width: 538px;
+                margin-right: 28px;
             }
 
             input[type='submit'] {

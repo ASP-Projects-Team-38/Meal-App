@@ -237,10 +237,18 @@ section.hero .calendar {
   color: #000;
   color-scheme: light;
 }
+.theme--light section.hero .calendar:hover {
+  background-color: #c0ccfa;
+  cursor: pointer;
+}
 .theme--dark section.hero .calendar {
   background-color: #6184FE;
   color: #fff;
   color-scheme: dark;
+}
+.theme--dark section.hero .calendar:hover {
+  background-color: #5473e1;
+  cursor: pointer;
 }
 
 section.center {
@@ -525,6 +533,32 @@ section.pop-up-container div.pop-up form div.recipe-tags-group {
 }
 section.pop-up-container div.pop-up form div.recipe-time-estimation-group {
   margin-left: -30px;
+}
+section.pop-up-container div.pop-up form div.estimate-cost-recipe-group {
+  margin-left: -16px;
+}
+section.pop-up-container div.pop-up form div.add-meal-recipe-group select {
+  margin-left: 52px;
+}
+section.pop-up-container div.pop-up form div.add-meal-type-group select {
+  margin-left: 20px;
+}
+section.pop-up-container div.pop-up form div.add-meal-preferences-group select {
+  margin-right: 34px;
+}
+section.pop-up-container div.pop-up form div.set-remainders-freq-group select {
+  margin-right: 82px;
+}
+section.pop-up-container div.pop-up form div.set-remainders-send-group select {
+  margin-right: 46px;
+}
+section.pop-up-container div.pop-up form div.add-to-cal-recipe-group select {
+  width: 530px;
+  margin-right: 11px;
+}
+section.pop-up-container div.pop-up form div.generate-list-name-group select {
+  width: 538px;
+  margin-right: 28px;
 }
 section.pop-up-container div.pop-up form input[type=submit] {
   width: 540px;

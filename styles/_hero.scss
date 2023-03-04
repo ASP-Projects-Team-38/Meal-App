@@ -37,6 +37,11 @@ section.hero {
             background-color: toggleTheme("input-bg");
             color: toggleTheme("input-on-bg");
             color-scheme: toggleTheme("colour-scheme");
+
+            &:hover {
+                background-color: toggleTheme("input-bg-hover");
+                cursor: pointer;
+            }
         }
         box-shadow: 4px 4px 4px #00000021;
     }
