@@ -556,6 +556,10 @@ section.pop-up-container div.pop-up form div.add-to-cal-recipe-group select {
   width: 530px;
   margin-right: 11px;
 }
+section.pop-up-container div.pop-up form div.generate-list-name-group select {
+  width: 538px;
+  margin-right: 28px;
+}
 section.pop-up-container div.pop-up form input[type=submit] {
   width: 540px;
   margin-left: 160px;
