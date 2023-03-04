@@ -109,6 +109,8 @@ section.pop-up-container {
                 }
             }
 
+
+            // Minor style adjustments
             div.recipe-tags-group {
                 margin-left: 65px;
             }
@@ -131,6 +133,14 @@ section.pop-up-container {
 
             div.add-meal-preferences-group select {
                 margin-right: 34px;
+            }
+
+            div.set-remainders-freq-group select {
+                margin-right: 82px;
+            }
+
+            div.set-remainders-send-group select {
+                margin-right: 46px;
             }
 
             input[type='submit'] {

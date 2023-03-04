@@ -546,6 +546,12 @@ section.pop-up-container div.pop-up form div.add-meal-type-group select {
 section.pop-up-container div.pop-up form div.add-meal-preferences-group select {
   margin-right: 34px;
 }
+section.pop-up-container div.pop-up form div.set-remainders-freq-group select {
+  margin-right: 82px;
+}
+section.pop-up-container div.pop-up form div.set-remainders-send-group select {
+  margin-right: 46px;
+}
 section.pop-up-container div.pop-up form input[type=submit] {
   width: 540px;
   margin-left: 160px;
