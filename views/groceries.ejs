@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meal App | Groceries</title>
+    <link rel="stylesheet" href="../styles/style.css" />
+    <script src="../scripts/theme.js" defer></script>
+    <script src="../scripts/groceries.js" defer></script>
+  </head>
+  <body class="theme--light">
+    <div class="container">
+      <!-- Header Section -->
+      <header>
+        <div class="branding">
+          <img
+            src="/assets/logo-light.svg"
+            alt="Site logo"
+            class="logo"
+            id="logo-img"
+          />
+        </div>
+        <nav class="nav-links">
+          <a href="/recipes">Recipes</a>
+          <a href="/planner">Planner</a>
+          <a class="current" href="/groceries">Groceries</a>
+          <a id="theme-btn" class="theme" href="#">
+            <img
+              id="theme-icon"
+              src="../assets/icon-theme-light.svg"
+              alt="theme icon"
+            />
+          </a>
+          <div class="user-login-details">
+            <a class="user" href="#"><%= username %></a>
+            <a class="user" href="/logout">Logout</a>
+          </div>
+        </nav>
+      </header>
+
+      <!-- Hero Section -->
+      <section class="hero">
+        <h1>Groceries</h1>
+        <input type="text" placeholder="&#128269; Search groceries..." />
+      </section>
+
+      <!-- Pinned Section -->
+      <section class="pinned">
+        <div class="page-heading">
+          <img src="/assets/icon-pin-light.svg" alt="Pin icon" id="pin-icon" />
+          <h2>Pinned</h2>
+        </div>
+        <div class="cards">
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+        </div>
+      </section>
+
+      <!-- Main Section -->
+      <main>
+        <h2>Grocery Lists</h2>
+        <div class="cards">
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+        </div>
+        <div class="btn-container grocery">
+          <button id="add-list-btn">Add List</button>
+          <button id="generate-list-btn">Generate List</button>
+        </div>
+      </main>
+
+      <!-- Add List Pop up -->
+      <div class="toggle-popup-display">
+        <section class="pop-up-container" id="add-list-popup">
+          <div id="add-list" class="pop-up">
+            <span class="close-btn" id="close-add-list-popup-btn">&times;</span>
+            <p>Add List</p>
+            <form action="#">
+              <div class="list-name-group">
+                <label for="list-name">List Name:</label>
+                <input
+                  id="list-name"
+                  type="text"
+                  name="list-name"
+                  minlength="2"
+                  maxlength="100"
+                  pattern="[A-Z|a-z|\d|\-]{2,100}"
+                  required
+                />
+              </div>
+              <div class="list-ingredients-group">
+                <label for="list-ingredients">Ingredients:</label>
+                <input
+                  id="list-ingredients"
+                  type="text"
+                  name="list-ingredients"
+                  minlength="2"
+                  pattern="[A-Z|a-z|\d|\-]{2,100}"
+                  required
+                />
+              </div>
+              <div class="warning">
+                <p>
+                  <span>&#9432;</span>Please enter ingredients as a comma
+                  separated list.
+                </p>
+              </div>
+              <div class="submit-btn">
+                <input type="submit" value="Add" />
+              </div>
+            </form>
+          </div>
+        </section>
+      </div>
+
+      <!-- Generate List Pop up -->
+      <div class="toggle-popup-display">
+        <section class="pop-up-container" id="generate-list-popup">
+          <div id="generate-list" class="pop-up">
+            <span class="close-btn" id="close-generate-list-popup-btn"
+              >&times;</span
+            >
+            <p>Generate List</p>
+            <form action="#">
+              <div class="generate-list-name-group">
+                <label for="generate-list-name">Select a Recipe:</label>
+                <select
+                  name="generate-list-name"
+                  id="generate-list-name"
+                  required
+                >
+                  <option value="" selected disabled>-Select a recipe-</option>
+                  <option value="Wild mushroom mac 'n' cheese">
+                    Wild mushroom mac 'n' cheese
+                  </option>
+                  <option value="Ndolé">Ndolé</option>
+                  <option value="Chorizo & mozzarella gnocchi bake">
+                    Chorizo & mozzarella gnocchi bake
+                  </option>
+                  <option value="Swedish meatball burgers">
+                    Swedish meatball burgers
+                  </option>
+                </select>
+              </div>
+              <div class="submit-btn">
+                <input type="submit" value="Generate" />
+              </div>
+            </form>
+          </div>
+        </section>
+      </div>
+    </div>
+  </body>
+</html>
