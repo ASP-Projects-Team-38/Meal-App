@@ -143,6 +143,11 @@ section.pop-up-container {
                 margin-right: 46px;
             }
 
+            div.add-to-cal-recipe-group select {
+                width: 530px;
+                margin-right: 11px;
+            }
+
             input[type='submit'] {
                 @include themed() {
                     @include button(toggleTheme("primary-btn"), toggleTheme("hover-btn"), toggleTheme("primary-on-btn"));
