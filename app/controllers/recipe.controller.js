@@ -2,12 +2,13 @@
 
 const Recipe = require("../models/recipe.model");
 
-var populateRecipesOfUserInSession = exports.populateRecipesOfUserInSession = function (req, renderPage) {
-  Recipe.findByUsername(req.session.username, function(results) {
-    req.session.recipes = results;
-    renderPage();
+var populateRecipesOfUserInSession = (exports.populateRecipesOfUserInSession =
+  function (req, renderPage) {
+    Recipe.findByUsername(req.session.username, function (results) {
+      req.session.recipes = results;
+      renderPage();
+    });
   });
-};
 
 exports.create = function (req, res) {
   // parsing values from request body
@@ -31,7 +32,7 @@ exports.create = function (req, res) {
   // validations
   if (name === "") {
     let err = "Name is blank";
-    populateRecipesOfUserInSession(req, function() {
+    populateRecipesOfUserInSession(req, function () {
       res.render("index", {
         username: req.session.username,
         addRecipeResult: "Add recipe failed! (" + err + ")",
@@ -47,13 +48,14 @@ exports.create = function (req, res) {
     time_estimations,
     req.session.username,
     ingredients,
-    tags
+    tags,
+    ""
   );
 
   // create recipe record in database
   Recipe.create(newRecipe, function (err, recipe) {
     if (err) {
-      populateRecipesOfUserInSession(req, function() {
+      populateRecipesOfUserInSession(req, function () {
         res.render("index", {
           username: req.session.username,
           addRecipeResult: "Add recipe failed! (" + err + ")",
@@ -61,7 +63,7 @@ exports.create = function (req, res) {
         });
       });
     } else {
-      populateRecipesOfUserInSession(req, function() {
+      populateRecipesOfUserInSession(req, function () {
         res.render("index", {
           username: req.session.username,
           addRecipeResult: "Added recipe!",

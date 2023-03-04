@@ -7,7 +7,8 @@ var Recipe = function (
   time_estimations,
   username,
   ingredients,
-  tags
+  tags,
+  id
 ) {
   this.name = name;
   this.instructions = instructions;
@@ -15,6 +16,7 @@ var Recipe = function (
   this.username = username;
   this.ingredients = ingredients;
   this.tags = tags;
+  this.id = id;
 };
 
 Recipe.create = function (newRecipe, result) {
@@ -105,7 +107,7 @@ Recipe.create = function (newRecipe, result) {
 };
 
 Recipe.findByUsername = function (username, result) {
-  sql = `select x.name, x.ingredients, y.tags, x.instructions, x.time_estimation, x.username
+  sql = `select x.id, x.name, x.ingredients, y.tags, x.instructions, x.time_estimation, x.username
           from (
             select a.id, a.name, a.instructions, a.time_estimation, a.username, GROUP_CONCAT(CONCAT(b.name, ':', b.amount)) as ingredients
             from recipes a
@@ -148,7 +150,8 @@ Recipe.findByUsername = function (username, result) {
           res[i].time_estimation,
           res[i].username,
           ingredients,
-          tags
+          tags,
+          res[i].id
         );
 
         recipes.push(recipe);

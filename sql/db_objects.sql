@@ -1,0 +1,55 @@
+USE meal_app;
+
+CREATE TABLE IF NOT EXISTS users (
+  username VARCHAR(30) NOT NULL,
+  fname VARCHAR(30) NOT NULL,
+  lname VARCHAR(30) NOT NULL,
+  email VARCHAR(30) NOT NULL,
+  dob VARCHAR(20) NOT NULL,
+  phoneNumber VARCHAR(30) NOT NULL,
+  password VARCHAR(100) NOT NULL,
+  PRIMARY KEY (username));
+
+CREATE TABLE IF NOT EXISTS recipes (
+  id BIGINT UNSIGNED AUTO_INCREMENT,
+  name VARCHAR(255) NOT NULL,
+  instructions TEXT NOT NULL,
+  time_estimation VARCHAR(255) NOT NULL,
+  username VARCHAR(30) NOT NULL,
+  PRIMARY KEY (id),
+  FOREIGN KEY (username) REFERENCES users(username));
+
+CREATE TABLE IF NOT EXISTS recipe_ingredients (
+  id BIGINT UNSIGNED AUTO_INCREMENT,
+  recipe_id BIGINT UNSIGNED NOT NULL,
+  name VARCHAR(255) NOT NULL,
+  amount VARCHAR(255) NOT NULL,
+  PRIMARY KEY (id),
+  FOREIGN KEY (recipe_id) REFERENCES recipes(id));
+
+CREATE TABLE IF NOT EXISTS recipe_tags (
+  id BIGINT UNSIGNED AUTO_INCREMENT,
+  recipe_id BIGINT UNSIGNED NOT NULL,
+  name VARCHAR(255) NOT NULL,
+  PRIMARY KEY (id),
+  FOREIGN KEY (recipe_id) REFERENCES recipes(id));
+
+CREATE TABLE IF NOT EXISTS meals (
+  id BIGINT UNSIGNED AUTO_INCREMENT,
+  name VARCHAR(100) NOT NULL,
+  recipe_id BIGINT UNSIGNED,
+  type VARCHAR(20) NOT NULL,
+  diet_preferences VARCHAR(20) NOT NULL,
+  username VARCHAR(30) NOT NULL,
+  PRIMARY KEY (id),
+  FOREIGN KEY (recipe_id) REFERENCES recipes(id),
+  FOREIGN KEY (username) REFERENCES users(username));
+
+CREATE TABLE IF NOT EXISTS meal_plans (
+  id BIGINT UNSIGNED AUTO_INCREMENT,
+  meal_id BIGINT UNSIGNED,
+  meal_datetime DATETIME NOT NULL,
+  username VARCHAR(30) NOT NULL,
+  PRIMARY KEY (id),
+  FOREIGN KEY (meal_id) REFERENCES meals(id),
+  FOREIGN KEY (username) REFERENCES users(username));
