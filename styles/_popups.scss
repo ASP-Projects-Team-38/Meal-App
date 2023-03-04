@@ -117,6 +117,10 @@ section.pop-up-container {
                 margin-left: -30px;
             }
 
+            div.estimate-cost-recipe-group {
+                margin-left: -16px;
+            }
+
             input[type='submit'] {
                 @include themed() {
                     @include button(toggleTheme("primary-btn"), toggleTheme("hover-btn"), toggleTheme("primary-on-btn"));
