@@ -80,7 +80,15 @@
             <form action="#">
               <div class="list-name-group">
                 <label for="list-name">List Name:</label>
-                <input id="list-name" type="text" name="list-name" required />
+                <input
+                  id="list-name"
+                  type="text"
+                  name="list-name"
+                  minlength="2"
+                  maxlength="100"
+                  pattern="[A-Z|a-z|\d|\-]{2,100}"
+                  required
+                />
               </div>
               <div class="list-ingredients-group">
                 <label for="list-ingredients">Ingredients:</label>
@@ -88,6 +96,8 @@
                   id="list-ingredients"
                   type="text"
                   name="list-ingredients"
+                  minlength="2"
+                  pattern="[A-Z|a-z|\d|\-]{2,100}"
                   required
                 />
               </div>
