@@ -53,3 +53,11 @@ CREATE TABLE IF NOT EXISTS meal_plans (
   PRIMARY KEY (id),
   FOREIGN KEY (meal_id) REFERENCES meals(id),
   FOREIGN KEY (username) REFERENCES users(username));
+
+CREATE TABLE IF NOT EXISTS grocery_lists (
+  id BIGINT UNSIGNED AUTO_INCREMENT,
+  name VARCHAR(100) NOT NULL,
+  ingredients VARCHAR(255) NOT NULL,
+  username VARCHAR(30) NOT NULL,
+  PRIMARY KEY (id),
+  FOREIGN KEY (username) REFERENCES users(username));
