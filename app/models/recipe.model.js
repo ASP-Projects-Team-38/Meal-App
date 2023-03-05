@@ -161,4 +161,18 @@ Recipe.findByUsername = function (username, result) {
   });
 };
 
+Recipe.findIngredentsByRecipeID = function (recipe_id, result) {
+  sql = `select group_concat(name) as ingredients from recipe_ingredients where recipe_id = ?;`;
+
+  dbConn.query(sql, [recipe_id], function (err, res) {
+    if (err) {
+      console.log("error: ", err);
+      result([]);
+    } else {
+      let ingredients = res[0].ingredients;
+      result(ingredients);
+    }
+  });
+};
+
 module.exports = Recipe;

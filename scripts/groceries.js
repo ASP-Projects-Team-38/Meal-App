@@ -21,3 +21,12 @@ generateListBtn.addEventListener("click", () => {
 closeGenerateListPopUpBtn.addEventListener("click", () => {
     generateListPopUp.parentElement.classList.add("toggle-popup-display");
 });
+
+const closeGLResultPopUpBtn = document.querySelector("#close-grocerylist-result-popup-btn");
+const addGLResultPopUp = document.querySelector("#add-grocerylist-result-popup");
+
+if (closeGLResultPopUpBtn !== null) {
+    closeGLResultPopUpBtn.addEventListener("click", () => {
+        addGLResultPopUp.parentElement.classList.add("toggle-popup-display");
+    });
+}

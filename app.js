@@ -7,6 +7,7 @@ const cookieParser = require("cookie-parser");
 const userController = require("./app/controllers/user.controller");
 const recipeController = require("./app/controllers/recipe.controller");
 const mealplanController = require("./app/controllers/mealplan.controller");
+const grocerylistController = require("./app/controllers/grocerylist.controller");
 
 const app = express();
 
@@ -78,9 +79,12 @@ app.get("/planner", sessionChecker, (req, res) => {
 });
 
 app.get("/groceries", sessionChecker, (req, res) => {
-  recipeController.populateRecipesOfUserInSession(req, function () {
+  grocerylistController.populateInfoInSession(req, function () {
     res.render("groceries", {
       username: req.session.username,
+      addGLResult: null,
+      groceryLists: req.session.groceryLists,
+      recipes: req.session.recipes,
     });
   });
 });
@@ -118,6 +122,14 @@ app.post("/addMeal", (req, res) => {
 
 app.post("/addMealToCalendar", (req, res) => {
   mealplanController.addMealToCalendar(req, res);
+});
+
+app.post("/addGroceryList", (req, res) => {
+  grocerylistController.create(req, res);
+});
+
+app.post("/generateGroceryList", (req, res) => {
+  grocerylistController.generate(req, res);
 });
 
 module.exports = app;
