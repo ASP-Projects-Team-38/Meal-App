@@ -960,6 +960,7 @@ main#planner-main #cal-btns {
   gap: 36px;
   row-gap: 20px !important;
   margin: 16px 0 16px 0;
+  align-self: center;
 }
 .dynamic-calendar .dynamic-date {
   display: flex;
