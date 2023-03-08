@@ -103,6 +103,12 @@ header .branding .nav-toggle-btn {
   background-color: #333;
   color: #fff;
 }
+header .toggle-nav {
+  display: none;
+}
+header .close-nav-btn {
+  display: none;
+}
 header nav {
   display: flex;
   flex-direction: row;
@@ -196,6 +202,57 @@ header nav .user-login-details a {
   border-bottom: 2px solid #444;
 }
 
+/* Large devices (laptops/desktops, 992px and down) */
+@media only screen and (max-width: 992px) {
+  header .toggle-nav {
+    display: block;
+    cursor: pointer;
+  }
+  header .close-nav-btn {
+    display: block;
+    margin-top: -16px;
+    font-size: 2.5rem;
+    cursor: pointer;
+  }
+  .theme--light header .close-nav-btn {
+    color: #222;
+  }
+  .theme--dark header .close-nav-btn {
+    color: #fff;
+  }
+  header .nav-toggle-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex;
+    align-items: flex-start;
+    gap: 120px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    padding: 24px;
+    right: 0;
+  }
+  .theme--light header .nav-toggle-group {
+    background-color: #fff;
+    border-left: 2px solid #eee;
+    border-bottom: 2px solid #eee;
+  }
+  .theme--dark header .nav-toggle-group {
+    background-color: #333;
+    border-left: 2px solid #111;
+    border-bottom: 2px solid #111;
+  }
+  header .hide-nav {
+    display: none;
+  }
+  header nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 48px;
+  }
+}
 section.hero {
   display: flex;
   flex-direction: column;
