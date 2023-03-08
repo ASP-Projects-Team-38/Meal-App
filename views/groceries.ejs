@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../styles/style.css" />
     <script src="../scripts/theme.js" defer></script>
     <script src="../scripts/groceries.js" defer></script>
+    <script src="../scripts/responsive.js" defer></script>
   </head>
   <body class="theme--light">
     <div class="container">
@@ -20,23 +21,29 @@
             class="logo"
             id="logo-img"
           />
+          <button class="nav-toggle-btn toggle-nav">&#8801;</button>
         </div>
-        <nav class="nav-links">
-          <a href="/recipes">Recipes</a>
-          <a href="/planner">Planner</a>
-          <a class="current" href="/groceries">Groceries</a>
-          <a id="theme-btn" class="theme" href="#">
-            <img
-              id="theme-icon"
-              src="../assets/icon-theme-light.svg"
-              alt="theme icon"
-            />
-          </a>
-          <div class="user-login-details">
-            <a class="user" href="#"><%= username %></a>
-            <a class="user" href="/logout">Logout</a>
-          </div>
-        </nav>
+        <div class="nav-toggle-group hide-nav">
+          <span class="close-nav-btn">&times;</span>
+          <nav class="nav-links">
+            <a href="/recipes">Recipes</a>
+            <a href="/planner">Planner</a>
+            <a class="current" href="/groceries">Groceries</a>
+            <a href="/login">Login</a>
+            <a id="theme-btn" class="theme" href="#">
+              <img
+                id="theme-icon"
+                src="../assets/icon-theme-light.svg"
+                alt="theme icon"
+              />
+              <button class="nav-toggle-btn toggle-nav">&#8801;</button>
+            </a>
+            <div class="user-login-details">
+              <a class="user" href="#"><%= username %></a>
+              <a class="user" href="/logout">Logout</a>
+            </div>
+          </nav>
+        </div>
       </header>
 
       <!-- Hero Section -->

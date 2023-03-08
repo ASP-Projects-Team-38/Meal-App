@@ -48,6 +48,7 @@ main#planner-main {
 .dynamic-calendar {
     @include grid(100px, 100px, 36px);
     margin: 16px 0 16px 0;
+    align-self: center;
 
     // Styling each calendar box
     .dynamic-date {

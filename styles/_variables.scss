@@ -100,5 +100,8 @@ $placeholder-on-bg-dark: #fff;
 
 ////////////////////////// White Space \\\\\\\\\\\\\\\\\\\\\\\\\\
 // Margin / Padding
-$container-margin: 120px;
+$container-margin-l: 120px; // for large screens
+$container-margin-m: 60px; // for medium screens
+$container-margin-s: 40px; // for small screens
+$container-margin-xs: 20px; // for extra screens
 $section-margin-top: 50px;
