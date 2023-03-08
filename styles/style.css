@@ -103,9 +103,6 @@ header .branding .nav-toggle-btn {
   background-color: #333;
   color: #fff;
 }
-header .toggle-nav {
-  display: none;
-}
 header nav {
   display: flex;
   flex-direction: row;

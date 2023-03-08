@@ -29,9 +29,9 @@ header {
         }
     }
 
-    .toggle-nav {
-        display: none;
-    }
+    // .toggle-nav {
+    //     display: none;
+    // }
 
     nav {
         @include flex(row, center, center, 48px);
