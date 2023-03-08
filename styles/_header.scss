@@ -156,9 +156,10 @@ header {
         }
 
         .nav-toggle-group {
-            @include flex(row, flex, flex-start, 120px);
+            @include flex(row, center, flex-start, 120px);
 
             height: 100%;
+            min-width: 300px;
 
             position: absolute;
             top: 0;
@@ -178,6 +179,11 @@ header {
 
         nav {
             @include flex(column, center, center, 48px);
+
+            .user-login-details {
+                @include flex(column, center, center, 16px);
+                position: inherit;
+            }
     
             // font-size: 1.2rem;
             // font-weight: 500;

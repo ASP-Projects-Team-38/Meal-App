@@ -223,10 +223,11 @@ header nav .user-login-details a {
   header .nav-toggle-group {
     display: flex;
     flex-direction: row;
-    justify-content: flex;
+    justify-content: center;
     align-items: flex-start;
     gap: 120px;
     height: 100%;
+    min-width: 300px;
     position: absolute;
     top: 0;
     padding: 24px;
@@ -251,6 +252,14 @@ header nav .user-login-details a {
     justify-content: center;
     align-items: center;
     gap: 48px;
+  }
+  header nav .user-login-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    position: inherit;
   }
 }
 section.hero {
