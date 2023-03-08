@@ -17,6 +17,8 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax($min, $max));
 
+    justify-items: center;
+
     @if $gap != unset {
         gap: $gap;
         row-gap: 20px !important;

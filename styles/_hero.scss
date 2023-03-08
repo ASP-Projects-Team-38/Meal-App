@@ -50,3 +50,16 @@ section.hero {
 section.center {
     @include flex(column, center, center);
 }
+
+// Responsive
+/* Small devices (portrait tablets + large phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    section.hero {
+        input {
+            align-self: center;
+            width: 80vw;
+            max-width: 400px;
+            min-width: 250px;
+        }
+    }
+}
