@@ -1198,6 +1198,38 @@ main#sign-up-form form div.log-group input {
   background-color: #34B678;
 }
 
+/* Small devices (portrait tablets + large phones, 665px and down) */
+@media only screen and (min-width: 551px) and (max-width: 665px) {
+  main#sign-in-form form div.log-group,
+  main#sign-up-form form div.log-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+}
+/* Small devices (portrait tablets + large phones, 460px and down) */
+@media only screen and (min-width: 461px) and (max-width: 550px) {
+  main#sign-in-form form,
+  main#sign-up-form form {
+    align-self: center;
+  }
+  main#sign-in-form form div.log-group input,
+  main#sign-up-form form div.log-group input {
+    min-width: 400px;
+  }
+}
+/* Small devices (portrait tablets + large phones, 460px and down) */
+@media only screen and (max-width: 460px) {
+  main#sign-in-form form,
+  main#sign-up-form form {
+    align-self: center;
+  }
+  main#sign-in-form form div.log-group input,
+  main#sign-up-form form div.log-group input {
+    min-width: 300px;
+  }
+}
 main#sign-up-form form.validate div.log-group p.error-msg {
   font-weight: bold;
   font-size: 1rem;
