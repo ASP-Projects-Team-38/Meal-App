@@ -53,7 +53,7 @@ const addGLResultPopUp = document.querySelector("#add-grocerylist-result-popup")
 // First checks whether the button is exist, to prevent an error.
 if (closeGLResultPopUpBtn !== null) {
     closeGLResultPopUpBtn.addEventListener("click", () => {
-        // Displays the add grocery list popup.
+        // Closes the add grocery list popup.
         addGLResultPopUp.parentElement.classList.add("toggle-popup-display");
     });
 }
