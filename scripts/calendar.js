@@ -1,4 +1,5 @@
 // ADD TO CALENDAR POP UP FUNCTIONALITY.
+// ========================================================
 /** The button used to close the popup generated from the calendar. */
 const closeAddToCalPopUpBtn = document.querySelector("#close-add-to-cal-popup-btn");
 
@@ -13,6 +14,7 @@ closeAddToCalPopUpBtn.addEventListener("click", () => {
 
 
 // BUILDING THE CALENDAR.
+// ========================================================
 /** Creating an instance of the populate calendar class. */
 const populateCalendar = new PopulateCalendar();
 
@@ -21,6 +23,7 @@ populateCalendar.run(); // begins the populate calendar functionality.
 
 
 // DISPLAY CALENDAR FUNCTIONALITY.
+// ========================================================
 /** The button that toggles the display of the calendar. */
 const displayCalendarBtn = document.querySelector("#display-cal-btn");
 

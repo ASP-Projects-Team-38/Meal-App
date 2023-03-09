@@ -1,6 +1,7 @@
 class PopulateCalendar {
     /**
      * Class that creates the calendar and handles all its functionality:
+     * ========================================================
      * * Creates the calendar boxes.
      * * Determines the number of boxes required for each month.
      * * Syncs the calendar with the date input.
@@ -185,6 +186,7 @@ class PopulateCalendar {
     }
 
     /** Displays and hides the calendar based on user input.
+     * ========================================================
      * * Changes the text on the button to allow the user to know the right action.
      * * Hides and displays the calendar based off whether the calendar is currently displayed or not.
      */
