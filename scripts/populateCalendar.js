@@ -159,6 +159,14 @@ class PopulateCalendar {
         return currentMonth;
     }
 
+
+    /** Returns the days in a month. 
+     * ========================================================
+     * @param {string} month - The inputted month.
+     * --------------------------------------------------------
+     * * Sets the days of the month based of the selected month.
+     *    * Takes into account the leap year.   
+    */
     getDate = (month) => {
         if ((month == 1) || (month == 3) || (month == 5) ||
             (month == 7) || (month == 8) || (month == 10) ||
@@ -173,8 +181,9 @@ class PopulateCalendar {
 
         else if (month == 2) {
             let year = `${this.date[0]}${this.date[1]}${this.date[2]}${this.date[3]}`;
-            const leap = new Date(year, 1, 29).getDate() === 29; // checking if its a leap year
+            const leap = new Date(year, 1, 29).getDate() === 29; // Checking if its a leap year.
 
+            // Setting the day based on the leap year.
             if (leap)
                 this.daysInMonth = 29;
             else
@@ -182,24 +191,35 @@ class PopulateCalendar {
         }
 
         else {
-            console.log("");
+            console.log("ERROR | Month doesn't exist.");
         }
 
         return this.daysInMonth;
     }
 
+
+    /** Returns the selected date. 
+     * ========================================================
+     * * Returns the value of the date input element (day). 
+    */
     getSelectedDay = () => {
         const selectedDate = document.querySelector("#selected-date");
         this.date = selectedDate.value;
 
-        return `${this.date[8]}${this.date[9]}`;
+        return `${this.date[8]}${this.date[9]}`; // the 8th and 9th index corresponds to the day.
     }
 
+
+    /** Returns the current month. 
+     * ========================================================
+     * * Returns the current month based on the current date. 
+    */
     getCurrentMonth = () => {
         let date = new Date();
         let month = date.getMonth() + 1;
         let currentMonth = `${month}`;
 
+        // This is to keep the YYYY-MM-DD format.
         if (currentMonth.length == 1) {
             currentMonth = `0${month}`;
         }
@@ -207,33 +227,59 @@ class PopulateCalendar {
         return currentMonth;
     }
 
+
+    /** Returns the selected month. 
+     * ========================================================
+     * * Returns the value of the date input element (month). 
+    */
     getSelectedMonth = () => {
         const selectedDate = document.querySelector("#selected-date");
         this.date = selectedDate.value;
 
-        return `${this.date[5]}${this.date[6]}`;
+        return `${this.date[5]}${this.date[6]}`;  // the 5th and 6th index corresponds to the month.
     }
 
+
+    /** Returns the current year. 
+     * ========================================================
+     * * Returns the current year based on the current date. 
+    */
     getCurrentYear = () => {
         return new Date().getFullYear();
     }
 
+
+    /** Returns the selected year. 
+     * ========================================================
+     * * Returns the value of the date input element (year). 
+    */
     getSelectedYear = () => {
         const selectedDate = document.querySelector("#selected-date");
         this.date = selectedDate.value;
 
+        // the 1st, 2nd, 3rd and 4th index corresponds to the year.
         return `${this.date[0]}${this.date[1]}${this.date[2]}${this.date[3]}`;
     }
 
+
+    /** Calculates the number of days in a month. 
+     * ========================================================
+     * * Calculates the number of days in a month for the selected date.
+     * * Sets the daysInMonth variable.
+     * * Sets the date variable.
+    */
     numOfDays = () => {
         const selectedDate = document.querySelector("#selected-date");
-        if (selectedDate.value !== "") {
-            console.log("I am NOT empty.");
-            console.log(selectedDate.value);
 
+        if (selectedDate.value !== "") {
+            console.log("I am NOT empty."); // testing.
+            console.log(selectedDate.value);  // testing.
+
+            // Sets the date variable.
             this.date = selectedDate.value;  // output format: 2023-02-17
             let month = `${this.date[5]}${this.date[6]}`;
 
+            // Sets the daysInMonth variable.
             this.daysInMonth = this.getDate(month);
         }
         else {
@@ -249,6 +295,7 @@ class PopulateCalendar {
     toggleCalendarDisplay = () => {
         const displayCalendarBtn = document.querySelector("#display-cal-btn");
 
+        // Checks whether the container has the toggle-cal-display class or not.
         if (this.calContainer.classList.contains("toggle-cal-display")) {
             this.calContainer.classList.remove("toggle-cal-display");
             displayCalendarBtn.textContent = "Hide Calendar";
@@ -259,7 +306,16 @@ class PopulateCalendar {
         }
     }
 
-    /** Begins the populate calendar functionality. */
+
+    /** Begins the populate calendar functionality.
+     * ========================================================
+     * **Runs the following functions to create the initial calendar:**
+     * * daysInMonth()
+     * * buildCal()
+     * * generateCal()
+     * * dateClicked()
+     * * setFormDate()
+     */
     run = () => {
         this.daysInMonth = this.getDate(this.setDatePicker());
         this.buildCal();
@@ -268,15 +324,30 @@ class PopulateCalendar {
         this.setFormDate();
     }
 
-    /** Empties the dynamic calendar section, to ensure no duplicity. */
+
+    /** Empties the dynamic calendar section, to ensure no duplicity.
+     * ========================================================
+     * * Removes the dynamic calendar from the HTML.
+     * * Empties the calBoxes array.
+     * * Sets the numOfCalBoxes variable back to 0.
+     */
     empty = () => {
-        // Remove current boxes
+        // Removes the current boxes
         this.calContainer.innerHTML = "";
         this.calBoxes = [];
         this.numOfCalBoxes = 0;
     }
 
-    /** Regenerates new calendar boxes based on user input. */
+
+    /** Regenerates new calendar boxes based on user input.
+     * ========================================================
+     * **Runs the following functions to regenerate the calendar:**
+     * * empty()
+     * * numOfDays()
+     * * buildCal()
+     * * generateCal()
+     * * setFormDate()
+     */
     regenerate = () => {
         this.empty();
         this.numOfDays();
