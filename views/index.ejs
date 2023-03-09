@@ -95,6 +95,7 @@
             <span class="close-btn" id="close-recipe-popup-btn">&times;</span>
             <p>Add Recipe</p>
             <form form action="/addRecipe" method="post">
+              <!-- ---------- Recipe name ---------- -->
               <div class="recipe-name-group">
                 <label for="recipe-name">Recipe Name:</label>
                 <input
@@ -107,6 +108,9 @@
                   required
                 />
               </div>
+              <!-- ----X----- Recipe name ----X----- -->
+
+              <!-- ---------- Recipe ingredients ---------- -->
               <div class="recipe-ingredients-group">
                 <label>Ingredients:</label>
                 <div class="recipe-ingredients">
@@ -136,6 +140,9 @@
                   Add ingredient
                 </button>
               </div>
+              <!-- ----X----- Recipe ingredients ----X----- -->
+
+              <!-- ---------- Recipe instructions ---------- -->
               <div class="recipe-instructions-group">
                 <label for="recipe-instructions">Instructions:</label>
                 <textarea
@@ -147,6 +154,9 @@
                   required
                 ></textarea>
               </div>
+              <!-- ----X----- Recipe instructions ----X----- -->
+
+              <!-- ---------- Recipe tags ---------- -->
               <div class="recipe-tags-group">
                 <label for="recipe-tags">Tags:</label>
                 <input
@@ -157,12 +167,18 @@
                   required
                 />
               </div>
+              <!-- ----X----- Recipe tags ----X----- -->
+
+              <!-- ---------- Warning msg ---------- -->
               <div class="warning">
                 <p>
                   <span>&#9432;</span>Please enter instructions and tags as a
                   comma separated list.
                 </p>
               </div>
+              <!-- ----X----- Warning msg ----X----- -->
+
+              <!-- ---------- Estimate time ---------- -->
               <div class="recipe-time-estimation-group">
                 <label for="recipe-time-estimation">Time Estimation:</label>
                 <input
@@ -173,9 +189,13 @@
                   required
                 />
               </div>
+              <!-- ----X----- Estimate time ----X----- -->
+
+              <!-- ---------- Submit ---------- -->
               <div class="submit-btn">
                 <input type="submit" value="Add" />
               </div>
+              <!-- ----X----- Submit ----X----- -->
             </form>
           </div>
         </section>
@@ -191,6 +211,7 @@
             >
             <p>Estimate Cost</p>
             <form action="#">
+              <!-- ---------- Estimate recipe cost ---------- -->
               <div class="estimate-cost-recipe-group">
                 <label for="estimate-cost-recipe">Select a Recipe:</label>
                 <select
@@ -211,6 +232,9 @@
                   </option>
                 </select>
               </div>
+              <!-- ----X----- Estimate recipe cost ----X----- -->
+
+              <!-- ---------- Estimate store cost ---------- -->
               <div class="estimate-cost-store-group">
                 <label for="estimate-cost-store">Select a Store:</label>
                 <select
@@ -229,9 +253,13 @@
                   <option value="Iceland">Iceland</option>
                 </select>
               </div>
+              <!-- ----X----- Estimate store cost ----X----- -->
+
+              <!-- ---------- Submit ---------- -->
               <div class="submit-btn">
                 <input type="submit" value="Estimate" />
               </div>
+              <!-- ----X----- Submit ----X----- -->
             </form>
           </div>
         </section>
