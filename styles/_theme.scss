@@ -1,3 +1,5 @@
+// THEME VARIABLES.
+// ========================================================
 $themes: (
     light: (
         logo: url("../assets/logo-light.svg"),
@@ -90,6 +92,8 @@ $themes: (
 );
 
 
+// MAPS THEME VARIABLES.
+// ========================================================
 @mixin themed() {
     @each $theme, $map in $themes {
         .theme--#{$theme} & {
@@ -106,6 +110,9 @@ $themes: (
     }
 }
 
+
+// TOGGLES THE THEME.
+// ========================================================
 @function toggleTheme($key) {
     @return map-get($theme-map, $key);
 }
