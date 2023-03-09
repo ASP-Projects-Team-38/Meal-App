@@ -1,7 +1,9 @@
+// STYLING THE PAGE HEADERS.
+// ========================================================
 header {
     @include flex(row, space-between, center);
 
-    margin-top: 20px;
+    margin-top: 20px; // to create effective whitespace.
 
     .branding {
         @include flex(row, space-between, center, 16px);
@@ -29,6 +31,7 @@ header {
         }
     }
 
+    // To make the nav responsive.
     .toggle-nav {
         display: none;
     }
@@ -37,12 +40,16 @@ header {
     }
 
 
+    // STYLING THE NAV BAR.
+    // ========================================================
     nav {
         @include flex(row, center, center, 48px);
 
         font-size: 1.2rem;
         font-weight: 500;
 
+        // STYLING THE NAV LINKS.
+        // ========================================================
         a {
             @include themed() {
                 border-bottom: -8px solid toggleTheme("page-bg");
@@ -94,12 +101,14 @@ header {
 
         a.current {
             @include themed() {
-                // border-bottom: 4px solid toggleTheme("current-page");
                 background-color: toggleTheme("current-page");
                 color: toggleTheme("primary-on-btn");
             }
         }
 
+
+        // STYLING THE USERNAME AND LOGOUT SECTION.
+        // ========================================================
         .user-login-details {
             @include flex(column, center, center, 16px);
 
@@ -135,7 +144,9 @@ header {
 }
 
 
-// Responsive
+// RESPONSIVE.
+// ========================================================
+// Large devices (laptops/desktops, between 993px and 1170px).
 @media only screen and (min-width: 993px) and (max-width: 1170px){
     header {
         nav {
@@ -143,7 +154,8 @@ header {
         }
     }
 }
-/* Large devices (laptops/desktops, 992px and down) */
+
+// Large devices (laptops/desktops, between 992px and down).
 @media only screen and (max-width: 992px) {
     header {
         .toggle-nav {

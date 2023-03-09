@@ -1,4 +1,5 @@
-// Pinned section
+// STYLING THE PINNED SECTIONS.
+// ========================================================
 section.pinned {
     margin-top: $section-margin-top;
 
@@ -22,6 +23,9 @@ section.pinned {
         margin-top: 20px;
     }
 
+
+    // ALTERNATIVE STYLING FOR THE PLANNER PAGE.
+    // ========================================================
     .calendar-cards {
         .card {
             @include themed() {
@@ -49,17 +53,15 @@ section.pinned {
     }
 }
 
-// Main section
+
+// STYLING THE MAIN SECTIONS.
+// ========================================================
 main {
     margin-top: $section-margin-top;
 
     .btn-container {
         @include flex(row, center, center, 32px);
     }
-
-    // .btn-container.grocery {
-    //     @include flex(row, flex-start, center, 24px);
-    // }
 
     button {
         @include themed() {

@@ -368,7 +368,6 @@ header nav .user-login-details a {
     gap: 12px;
   }
 }
-/* Large devices (laptops/desktops, 992px and down) */
 @media only screen and (max-width: 992px) {
   header .toggle-nav {
     display: block;
@@ -503,7 +502,6 @@ section.center {
   align-items: center;
 }
 
-/* Small devices (portrait tablets + large phones, 600px and down) */
 @media only screen and (max-width: 600px) {
   section.hero input {
     align-self: center;
@@ -1193,7 +1191,6 @@ main#sign-up-form form div.log-group input {
   background-color: #34B678;
 }
 
-/* Small devices (portrait tablets + large phones, 665px and down) */
 @media only screen and (min-width: 551px) and (max-width: 665px) {
   main#sign-in-form form div.log-group,
   main#sign-up-form form div.log-group {
@@ -1203,7 +1200,6 @@ main#sign-up-form form div.log-group input {
     align-items: flex-start;
   }
 }
-/* Small devices (portrait tablets + large phones, 460px and down) */
 @media only screen and (min-width: 461px) and (max-width: 550px) {
   main#sign-in-form form,
   main#sign-up-form form {
@@ -1214,7 +1210,6 @@ main#sign-up-form form div.log-group input {
     min-width: 400px;
   }
 }
-/* Small devices (portrait tablets + large phones, 460px and down) */
 @media only screen and (max-width: 460px) {
   main#sign-in-form form,
   main#sign-up-form form {

@@ -1,3 +1,5 @@
+// STYLING THE POP UPS.
+// ========================================================
 section.pop-up-container {
     @include flex(row, center, center);
     margin-top: -800px;
@@ -15,7 +17,7 @@ section.pop-up-container {
 
         padding: 48px 96px;
         border-radius: 32px;
-        margin-bottom: 20px; //remove later
+        margin-bottom: 20px;
 
         p {
             font-weight: 700;
@@ -36,6 +38,8 @@ section.pop-up-container {
         }
 
 
+        // STYLING THE FORM.
+        // ========================================================
         form {
             @include flex(column, center, center, 20px);
 
@@ -79,6 +83,8 @@ section.pop-up-container {
                     }
                 }
 
+                // STYLING THE BUTTONS.
+                // ========================================================
                 button {
                     @include themed() {
                         @include button(toggleTheme("primary-btn"), toggleTheme("hover-btn"), toggleTheme("primary-on-btn"), -32px);
@@ -110,7 +116,8 @@ section.pop-up-container {
             }
 
 
-            // Minor style adjustments
+            // MINOR STYLE ADJUSTMENTS.
+            // ========================================================
             div.recipe-tags-group {
                 margin-left: 65px;
             }
@@ -163,12 +170,9 @@ section.pop-up-container {
         }
     }
 
-    // .toggle-popup-display {
-    //     display: none;
-    // }
 
-    // Add List Pop Up 
-    // Minor adjustments
+    // ALTERNATIVE STYLING FOR THE ADD LIST POP UP.
+    // ========================================================
     div#add-list {
         form {
             div.warning p {
@@ -190,8 +194,9 @@ section.pop-up-container {
         }
     }
 
-    // Generate List Pop Up 
-    // Minor adjustments
+
+    // ALTERNATIVE STYLING FOR THE GENERATE LIST POP UP.
+    // ========================================================
     section#generate-list-popup {
 
         div#generate-list {
@@ -212,6 +217,7 @@ section.pop-up-container {
     
 }
 
+// Allows the user to see the pop up, then hide it.
 .toggle-popup-display {
     display: none;
 }
