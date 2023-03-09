@@ -66,7 +66,7 @@ const closeMealPlanResultPopUpBtn = document.querySelector("#close-mealplan-resu
 /** The add meal plan result pop up. */
 const addMealPlanResultPopUp = document.querySelector("#add-mealplan-result-popup");
 
-// First checks whether the button is exist, to prevent an error.
+// First checks whether the button exists, to prevent an error.
 if (closeMealPlanResultPopUpBtn !== null) {
     closeMealPlanResultPopUpBtn.addEventListener("click", () => {
         // Closes the add meal plan result popup.

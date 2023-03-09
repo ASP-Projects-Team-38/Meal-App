@@ -106,7 +106,7 @@ const closeRecipeResultPopUpBtn = document.querySelector("#close-recipe-result-p
 /** Add recipe result pop up. */
 const addRecipeResultPopUp = document.querySelector("#add-recipe-result-popup");
 
-// First checks whether the button is exist, to prevent an error.
+// First checks whether the button exists, to prevent an error.
 if (closeRecipeResultPopUpBtn !== null) {
     closeRecipeResultPopUpBtn.addEventListener("click", () => {
         // Closes the recipe result popup.
