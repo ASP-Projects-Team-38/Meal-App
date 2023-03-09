@@ -12,7 +12,7 @@
   </head>
   <body class="theme--light">
     <div class="container">
-      <!-- Header Section -->
+      <!-- ----------------------- Header Section ----------------------- -->
       <header>
         <div class="branding">
           <img
@@ -45,14 +45,16 @@
           </nav>
         </div>
       </header>
+      <!-- -----------X----------- Header Section -----------X----------- -->
 
-      <!-- Hero Section -->
+      <!-- ----------------------- Hero Section ----------------------- -->
       <section class="hero">
         <h1>Groceries</h1>
         <input type="text" placeholder="&#128269; Search groceries..." />
       </section>
+      <!-- -----------X----------- Hero Section -----------X----------- -->
 
-      <!-- Pinned Section -->
+      <!-- ----------------------- Pinned Section ----------------------- -->
       <section class="pinned">
         <div class="page-heading">
           <img src="/assets/icon-pin-light.svg" alt="Pin icon" id="pin-icon" />
@@ -64,25 +66,27 @@
           <div class="card"></div>
         </div>
       </section>
+      <!-- -----------X----------- Pinned Section -----------X----------- -->
 
-      <!-- Main Section -->
+      <!--  ----------------------- Main Section ----------------------- -->
       <main>
         <h2>Grocery Lists</h2>
         <div class="cards">
           <% for (var i = 0; i < groceryLists.length; i++) { %>
-            <div class="card">
-              <p><%= groceryLists[i].name %></p>
-              <p><%= groceryLists[i].ingredients %></p>
-            </div>
-            <% } %>
+          <div class="card">
+            <p><%= groceryLists[i].name %></p>
+            <p><%= groceryLists[i].ingredients %></p>
+          </div>
+          <% } %>
         </div>
         <div class="btn-container grocery">
           <button id="add-list-btn">Add List</button>
           <button id="generate-list-btn">Generate List</button>
         </div>
       </main>
+      <!--  -----------X----------- Main Section -----------X----------- -->
 
-      <!-- Add List Pop up -->
+      <!-- ----------------------- Add List Pop up ----------------------- -->
       <div class="toggle-popup-display">
         <section class="pop-up-container" id="add-list-popup">
           <div id="add-list" class="pop-up">
@@ -125,8 +129,9 @@
           </div>
         </section>
       </div>
+      <!-- -----------X----------- Add List Pop up -----------X----------- -->
 
-      <!-- Generate List Pop up -->
+      <!-- ----------------------- Generate List Pop up ----------------------- -->
       <div class="toggle-popup-display">
         <section class="pop-up-container" id="generate-list-popup">
           <div id="generate-list" class="pop-up">
@@ -144,9 +149,9 @@
                 >
                   <option value="" selected disabled>-Select a recipe-</option>
                   <% for (var i = 0; i < recipes.length; i++) { %>
-                    <option value="<%= recipes[i].id + ',' + recipes[i].name %>">
-                      <%= recipes[i].name %>
-                    </option>
+                  <option value="<%= recipes[i].id + ',' + recipes[i].name %>">
+                    <%= recipes[i].name %>
+                  </option>
                   <% } %>
                 </select>
               </div>
@@ -157,21 +162,22 @@
           </div>
         </section>
       </div>
+      <!-- -----------X----------- Generate List Pop up -----------X----------- -->
 
-      <!-- Add Grocery List Result Pop up -->
+      <!-- ----------------------- Add Grocery List Result Pop up ----------------------- -->
       <% if (addGLResult) { %>
-        <div>
-          <section class="pop-up-container" id="add-grocerylist-result-popup">
-            <div id="add-grocerylist-result" class="pop-up">
-              <span class="close-btn" id="close-grocerylist-result-popup-btn"
-                >&times;</span
-              >
-              <p><%= addGLResult %></p>
-            </div>
-          </section>
-        </div>
-        <% } %>
-
+      <div>
+        <section class="pop-up-container" id="add-grocerylist-result-popup">
+          <div id="add-grocerylist-result" class="pop-up">
+            <span class="close-btn" id="close-grocerylist-result-popup-btn"
+              >&times;</span
+            >
+            <p><%= addGLResult %></p>
+          </div>
+        </section>
+      </div>
+      <% } %>
+      <!-- -----------X----------- Add Grocery List Result Pop up -----------X----------- -->
     </div>
   </body>
 </html>
