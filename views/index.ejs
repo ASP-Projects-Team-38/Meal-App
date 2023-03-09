@@ -12,7 +12,7 @@
   </head>
   <body class="theme--light">
     <div class="container">
-      <!-- Header Section -->
+      <!-- ----------------------- Header Section ----------------------- -->
       <header>
         <div class="branding">
           <img
@@ -44,13 +44,16 @@
           </nav>
         </div>
       </header>
-      <!-- Hero Section -->
+      <!-- -----------X----------- Header Section -----------X----------- -->
+
+      <!-- ----------------------- Hero Section ----------------------- -->
       <section class="hero">
         <h1>Recipes</h1>
         <input type="text" placeholder="&#128269; Search recipes..." />
       </section>
+      <!-- -----------X----------- Hero Section -----------X----------- -->
 
-      <!-- Pinned Section -->
+      <!-- ----------------------- Pinned Section ----------------------- -->
       <section class="pinned">
         <div class="page-heading">
           <img src="/assets/icon-pin-light.svg" alt="Pin icon" id="pin-icon" />
@@ -62,8 +65,9 @@
           <div class="card"></div>
         </div>
       </section>
+      <!-- -----------X----------- Pinned Section -----------X----------- -->
 
-      <!-- Main Section -->
+      <!--  ----------------------- Main Section ----------------------- -->
       <main>
         <h2>Recipes</h2>
         <div class="cards">
@@ -82,8 +86,9 @@
           <button id="estimate-cost-btn">Estimate Cost</button>
         </div>
       </main>
+      <!--  -----------X----------- Main Section -----------X----------- -->
 
-      <!-- Add Recipe Pop up -->
+      <!-- ----------------------- Add Recipe Pop up ----------------------- -->
       <div class="toggle-popup-display">
         <section class="pop-up-container" id="add-recipe-popup">
           <div id="add-recipe" class="pop-up">
@@ -175,8 +180,9 @@
           </div>
         </section>
       </div>
+      <!-- -----------X----------- Add Recipe Pop up -----------X----------- -->
 
-      <!-- Estimate Cost Pop up -->
+      <!-- ----------------------- Estimate Cost Pop up ----------------------- -->
       <div class="toggle-popup-display">
         <section class="pop-up-container" id="estimate-cost-popup">
           <div id="estimate-cost" class="pop-up">
@@ -230,8 +236,9 @@
           </div>
         </section>
       </div>
+      <!-- -----------X----------- Estimate Cost Pop up -----------X----------- -->
 
-      <!-- Add Recipe Result Pop up -->
+      <!-- ----------------------- Add Recipe Result Pop up ----------------------- -->
       <% if (addRecipeResult) { %>
       <div>
         <section class="pop-up-container" id="add-recipe-result-popup">
@@ -244,6 +251,7 @@
         </section>
       </div>
       <% } %>
+      <!-- -----------X----------- Add Recipe Result Pop up -----------X----------- -->
     </div>
   </body>
 </html>
