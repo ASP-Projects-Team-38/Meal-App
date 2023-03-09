@@ -1,4 +1,5 @@
-// Elements
+// ELEMENTS.
+// ========================================================
 html {
     scroll-behavior: smooth;
     font-size: 14px; // setting the root font sizing for rem use.
@@ -18,7 +19,6 @@ body.theme--dark {
     color: $page-on-bg-dark;
 }
 
-
 body {
     margin: 0;
 }
@@ -31,7 +31,8 @@ a {
 }
 
 
-// Classes
+// CLASSES.
+// ========================================================
 .container {
     @include container( $container-margin-l, 0);
 }
@@ -62,10 +63,11 @@ a {
     font-style: italic;
 }
 
-// Responsive
-/* Small devices (portrait tablets + large phones, 600px and down) */
+
+// RESPONSIVE.
+// ========================================================
+// Small devices (portrait tablets + large phones, 600px and down).
 @media only screen and (max-width: 600px) {
-    // Classes
     .container {
         @include container( $container-margin-xs, 0);
     }
@@ -88,9 +90,8 @@ a {
     }
 }
 
-/* Medium devices (landscape tablets, 768px and down) */
+// Medium devices (landscape tablets, between 601px and 768px).
 @media only screen and (min-width: 601px) and (max-width: 768px) {
-    // Classes
     .container {
         @include container( $container-margin-s, 0);
     }
@@ -113,9 +114,8 @@ a {
     }
 }
 
-/* Large devices (tablets, 850px and down) */
+// Large devices (tablets, between 769px and 850px).
 @media only screen and (min-width: 769px) and (max-width: 850px) {
-    // Classes
     .container {
         @include container( $container-margin-m, 0);
     }
@@ -138,9 +138,8 @@ a {
     }
 }
 
-/* Large devices (laptops/desktops, 992px and down) */
+// Large devices (laptops/desktops, between 851px and 992px).
 @media only screen and (min-width: 851px) and (max-width: 992px) {
-    // Classes
     .container {
         @include container( $container-margin-m, 0);
     }
@@ -163,9 +162,8 @@ a {
     }
 }
 
-/* Large devices (laptops/desktops, 1080px and down) */
+// Large devices (laptops/desktops, between 993px and 1080px).
 @media only screen and (min-width: 993px) and (max-width: 1080px){
-    // Classes
     .container {
         @include container( $container-margin-m, 0);
     }
@@ -188,9 +186,8 @@ a {
     }
 }
 
-/* Large devices (laptops/desktops, 1160px and down) */
+// Large devices (laptops/desktops, between 1081px and 1160px).
 @media only screen and (min-width: 1081px) and (max-width: 1160px){
-    // Classes
     .container {
         @include container( $container-margin-m, 0);
     }

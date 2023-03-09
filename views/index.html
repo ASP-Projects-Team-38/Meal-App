@@ -12,7 +12,7 @@
   </head>
   <body class="theme--light">
     <div class="container">
-      <!-- Header Section -->
+      <!-- ----------------------- Header Section ----------------------- -->
       <header>
         <div class="branding">
           <img
@@ -40,14 +40,16 @@
           </nav>
         </div>
       </header>
+      <!-- -----------X----------- Header Section -----------X----------- -->
 
-      <!-- Hero Section -->
+      <!-- ----------------------- Hero Section ----------------------- -->
       <section class="hero">
         <h1>Recipes</h1>
         <input type="text" placeholder="&#128269; Search recipes..." />
       </section>
+      <!-- -----------X----------- Hero Section -----------X----------- -->
 
-      <!-- Pinned Section -->
+      <!-- ----------------------- Pinned Section ----------------------- -->
       <section class="pinned">
         <div class="page-heading">
           <img src="/assets/icon-pin-light.svg" alt="Pin icon" id="pin-icon" />
@@ -59,8 +61,9 @@
           <div class="card"></div>
         </div>
       </section>
+      <!-- -----------X----------- Pinned Section -----------X----------- -->
 
-      <!-- Main Section -->
+      <!--  ----------------------- Main Section ----------------------- -->
       <main>
         <h2>Recipes</h2>
         <div class="cards">
@@ -76,14 +79,16 @@
           <button id="estimate-cost-btn">Estimate Cost</button>
         </div>
       </main>
+      <!--  -----------X----------- Main Section -----------X----------- -->
 
-      <!-- Add Recipe Pop up -->
+      <!-- ----------------------- Add Recipe Pop up ----------------------- -->
       <div class="toggle-popup-display">
         <section class="pop-up-container" id="add-recipe-popup">
           <div id="add-recipe" class="pop-up">
             <span class="close-btn" id="close-recipe-popup-btn">&times;</span>
             <p>Add Recipe</p>
             <form action="#">
+              <!-- ---------- Recipe name ---------- -->
               <div class="recipe-name-group">
                 <label for="recipe-name">Recipe Name:</label>
                 <input
@@ -96,6 +101,9 @@
                   required
                 />
               </div>
+              <!-- ----X----- Recipe name ----X----- -->
+
+              <!-- ---------- Recipe ingredients ---------- -->
               <div class="recipe-ingredients-group">
                 <label>Ingredients:</label>
                 <div class="recipe-ingredients">
@@ -125,6 +133,9 @@
                   Add ingredient
                 </button>
               </div>
+              <!-- ----X----- Recipe ingredients ----X----- -->
+
+              <!-- ---------- Recipe instructions ---------- -->
               <div class="recipe-instructions-group">
                 <label for="recipe-instructions">Instructions:</label>
                 <textarea
@@ -136,6 +147,9 @@
                   required
                 ></textarea>
               </div>
+              <!-- ----X----- Recipe instructions ----X----- -->
+
+              <!-- ---------- Recipe tags ---------- -->
               <div class="recipe-tags-group">
                 <label for="recipe-tags">Tags:</label>
                 <input
@@ -146,12 +160,18 @@
                   required
                 />
               </div>
+              <!-- ----X----- Recipe tags ----X----- -->
+
+              <!-- ---------- Warning msg ---------- -->
               <div class="warning">
                 <p>
                   <span>&#9432;</span>Please enter instructions and tags as a
                   comma separated list.
                 </p>
               </div>
+              <!-- ----X----- Warning msg ----X----- -->
+
+              <!-- ---------- Estimate time ---------- -->
               <div class="recipe-time-estimation-group">
                 <label for="recipe-time-estimation">Time Estimation:</label>
                 <input
@@ -162,15 +182,20 @@
                   required
                 />
               </div>
+              <!-- ----X----- Estimate time ----X----- -->
+
+              <!-- ---------- Submit ---------- -->
               <div class="submit-btn">
                 <input type="submit" value="Add" />
               </div>
+              <!-- ----X----- Submit ----X----- -->
             </form>
           </div>
         </section>
       </div>
+      <!-- -----------X----------- Add Recipe Pop up -----------X----------- -->
 
-      <!-- Estimate Cost Pop up -->
+      <!-- ----------------------- Estimate Cost Pop up ----------------------- -->
       <div class="toggle-popup-display">
         <section class="pop-up-container" id="estimate-cost-popup">
           <div id="estimate-cost" class="pop-up">
@@ -179,6 +204,7 @@
             >
             <p>Estimate Cost</p>
             <form action="#">
+              <!-- ---------- Estimate recipe cost ---------- -->
               <div class="estimate-cost-recipe-group">
                 <label for="estimate-cost-recipe">Select a Recipe:</label>
                 <select
@@ -199,6 +225,9 @@
                   </option>
                 </select>
               </div>
+              <!-- ----X----- Estimate recipe cost ----X----- -->
+
+              <!-- ---------- Estimate store cost ---------- -->
               <div class="estimate-cost-store-group">
                 <label for="estimate-cost-store">Select a Store:</label>
                 <select
@@ -217,13 +246,18 @@
                   <option value="Iceland">Iceland</option>
                 </select>
               </div>
+              <!-- ----X----- Estimate store cost ----X----- -->
+
+              <!-- ---------- Submit ---------- -->
               <div class="submit-btn">
                 <input type="submit" value="Estimate" />
               </div>
+              <!-- ----X----- Submit ----X----- -->
             </form>
           </div>
         </section>
       </div>
+      <!-- -----------X----------- Estimate Cost Pop up -----------X----------- -->
     </div>
   </body>
 </html>

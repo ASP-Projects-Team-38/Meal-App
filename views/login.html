@@ -10,7 +10,7 @@
   </head>
   <body class="theme--light">
     <div class="container">
-      <!-- Header Section -->
+      <!-- ----------------------- Header Section ----------------------- -->
       <header>
         <div class="branding">
           <img
@@ -20,11 +20,7 @@
             id="logo-img"
           />
         </div>
-        <!-- Nav not needed for login page -->
         <nav class="nav-links">
-          <!-- <a class="current" href="./index.html">Recipes</a> -->
-          <!-- <a href="./planner.html">Planner</a> -->
-          <!-- <a href="./groceries.html">Groceries</a> -->
           <a id="theme-btn" class="theme" href="#">
             <img
               id="theme-icon"
@@ -34,26 +30,36 @@
           </a>
         </nav>
       </header>
+      <!-- -----------X----------- Header Section -----------X----------- -->
 
-      <!-- Hero Section -->
+      <!-- ----------------------- Hero Section ----------------------- -->
       <section class="hero center">
         <h1>User Login</h1>
       </section>
+      <!-- -----------X----------- Hero Section -----------X----------- -->
 
-      <!-- Main Section -->
+      <!--  ----------------------- Main Section ----------------------- -->
       <main id="sign-in-form">
         <form action="/login" method="post">
+          <!-- ---------- Username ---------- -->
           <div class="username-group log-group">
             <label for="username">Username</label>
             <input id="username" type="text" name="username" />
           </div>
+          <!-- ----X----- Username ----X----- -->
+
+          <!-- ---------- Password ---------- -->
           <div class="password-group log-group">
             <label for="password">Password</label>
             <input id="password" type="password" name="password" />
           </div>
+          <!-- ----X----- Password ----X----- -->
+
+          <!-- ---------- Submit ---------- -->
           <div class="btn-container">
             <button id="login-btn">Sign In</button>
           </div>
+          <!-- ----X----- Submit ----X----- -->
         </form>
         <div class="sign-up-link">
           <p>
@@ -64,6 +70,7 @@
           </p>
         </div>
       </main>
+      <!--  -----------X----------- Main Section -----------X----------- -->
     </div>
   </body>
 </html>

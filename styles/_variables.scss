@@ -1,24 +1,29 @@
-////////////////////////// Fonts \\\\\\\\\\\\\\\\\\\\\\\\\\
+////////////////////////// FONTS \\\\\\\\\\\\\\\\\\\\\\\\\\
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 $font-main: 'Inter', sans-serif;
 $font-secondary: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
-////////////////////////// Colours \\\\\\\\\\\\\\\\\\\\\\\\\\
-/// ----- Light Theme ----- \\\
-// Page Colours
+////////////////////////// COLOURS \\\\\\\\\\\\\\\\\\\\\\\\\\
+/// ------------------- LIGHT THEME ------------------- \\\
+///====================================
+// PAGE COLOURS
+// ====================================
 $page-bg-light: #fff;
 $page-on-bg-light: #222;
 $brand-colour-light: #467397;
 
-// Nav Link Colours
+// NAV LINK COLOURS
+// ====================================
 $current-page-light: #4AA5EA;
 $hovered-page-light: #9DACE0;
 
-// Pop Up Colours
+// POP UP COLOURS
+// ====================================
 $pop-up-bg-light: #647DD6;
 $pop-up-on-bg-light: #fff;
 
-// Button Colours
+// BUTTON COLOURS
+// ====================================
 $primary-btn-light: #33BD7B;
 $primary-on-btn-light: #fff;
 $hover-btn-light: #2ba469;
@@ -27,45 +32,55 @@ $secondary-btn-light: #728CEA;
 $secondary-on-btn-light: #fff;
 $secondary-hover-btn-light: #5f76c6;
 
-// Input Colours
+// INPUT COLOURS
+// ====================================
 $input-bg-light: #D3DCFD;
 $input-bg-hover-light: #c0ccfa;
 $input-on-bg-light: #000;
 
-// Calendar Overview Placeholder Colours
+// CALENDAR OVERVIEW PLACEHOLDERS COLOURS
+// ====================================
 $cal-card-bg-light: #fff;
 $cal-card-label-bg-light: #444;
 
-// Calendar Box Colours
+// CALENDAR BOX COLOURS
+// ====================================
 $cal-box-bg-light: #fff;
 $cal-box-border-light: #eee;
 $cal-box-label-light: #eee;
 $cal-box-border-hover-light: #ddd;
 $cal-red-light: #DD4646;
 
-// Error Message Colours
+// ERROR MESSAGE COLOURS
+// ====================================
 $error-msg-light: #DD4646;
 
-// Placeholder Colours
+// PLACEHOLDER COLOURS
+// ====================================
 $placeholder-bg-light: #D9D9D9;
 $placeholder-on-bg-light: #000;
 
 
-/// ----- Dark Theme ----- \\\
-// Page Colours
+/// ------------------- DARK THEME ------------------- \\\
+/// ====================================
+// PAGE COLOURS
+// ====================================
 $page-bg-dark: #333;
 $page-on-bg-dark: #fff;
 $brand-colour-dark: #fff;
 
-// Nav Link Colours
+// NAV LINK COLOURS
+// ====================================
 $current-page-dark: #33B5E4;
 $hovered-page-dark: #7d93f9;
 
-// Pop Up Colours
+// POP UP COLOURS
+// ====================================
 $pop-up-bg-dark: #0C6CB9;
 $pop-up-on-bg-dark: #fff;
 
-// Button Colours
+// BUTTON COLOURS
+// ====================================
 $primary-btn-dark: #3FF09B;
 $primary-on-btn-dark: #000;
 $hover-btn-dark: #34B678;
@@ -74,32 +89,38 @@ $secondary-btn-dark: #3662FE;
 $secondary-on-btn-dark: #fff;
 $secondary-hover-btn-dark: #2f55dd;
 
-// Input Colours
+// INPUT COLOURS
+// ====================================
 $input-bg-dark: #6184FE;
 $input-bg-hover-dark: #5473e1;
 $input-on-bg-dark: #fff;
 
-// Calendar Overview Placeholder Colours
+// CALENDAR OVERVIEW PLACEHOLDER COLOURS
+// ====================================
 $cal-card-bg-dark: #222;
 $cal-card-label-bg-dark: #fff;
 
-// Calendar Box Colours
+// CALENDAR BOX COLOURS
+// ====================================
 $cal-box-bg-dark: #222;
 $cal-box-border-dark: #111;
 $cal-box-label-dark: #111;
 $cal-box-border-hover-dark: #000;
 $cal-red-dark: #FF3232;
 
-// Error Message Colours
+// ERROR MESSAGE COLOURS
+// ====================================
 $error-msg-dark: #FFBBBB;
 
-// Placeholder Colours
+// PLACEHOLDER COLOURS
+// ====================================
 $placeholder-bg-dark: #555;
 $placeholder-on-bg-dark: #fff;
 
 
 ////////////////////////// White Space \\\\\\\\\\\\\\\\\\\\\\\\\\
-// Margin / Padding
+// MARGIN / PADDING
+// ====================================
 $container-margin-l: 120px; // for large screens
 $container-margin-m: 60px; // for medium screens
 $container-margin-s: 40px; // for small screens

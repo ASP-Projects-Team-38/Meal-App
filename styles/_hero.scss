@@ -1,3 +1,5 @@
+// STYLING THE PAGE HERO SECTIONS.
+// ========================================================
 section.hero {
     @include flex(column, center, flex-start);
 
@@ -32,6 +34,9 @@ section.hero {
         }
     }
 
+
+    // ALTERNATIVE STYLING FOR THE PLANNER PAGE.
+    // ========================================================
     .calendar {
         @include themed() {
             background-color: toggleTheme("input-bg");
@@ -51,8 +56,10 @@ section.center {
     @include flex(column, center, center);
 }
 
-// Responsive
-/* Small devices (portrait tablets + large phones, 600px and down) */
+
+// RESPONSIVE.
+// ========================================================
+// Small devices (portrait tablets + large phones, 600px and down).
 @media only screen and (max-width: 600px) {
     section.hero {
         input {

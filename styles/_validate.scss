@@ -1,7 +1,10 @@
+// STYLING THE VALIDATION MESSAGES FOR THE SIGN UP FORM.
+// ========================================================
 main#sign-up-form {
     form.validate {
         div.log-group {
-            // Styling the error messages
+            // STYLING THE ERROR MESSAGES.
+            // ========================================================
             p.error-msg {
                 @include themed() {
                     color: toggleTheme("error-msg");
@@ -14,7 +17,9 @@ main#sign-up-form {
                 margin: 8px 0 0 16px;
             }
             
-            // Styling the inputs
+
+            // STYLING THE INPUTS.
+            // ========================================================
             input {
                 &:valid {
                     @include themed() {

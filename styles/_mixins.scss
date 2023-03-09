@@ -1,7 +1,12 @@
+// SETS THE MARGIN FOR THE CONTAINER.
+// ========================================================
 @mixin container ($mx, $my) {
     margin: $my $mx;
 }
 
+
+// SETS THE FLEX PROPERTIES FOR AN ELEMENT.
+// ========================================================
 @mixin flex($direction, $justify-content, $align-items, $gap: unset) {
     display: flex;
     flex-direction: $direction;
@@ -13,6 +18,9 @@
     }
 }
 
+
+// SETS THE GRID PROPERTIES FOR AN ELEMENT.
+// ========================================================
 @mixin grid($min, $max, $gap: unset) {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax($min, $max));
@@ -25,6 +33,9 @@
     }
 }
 
+
+// GIVES BUTTONS THE DEFAULT STYLING.
+// ========================================================
 @mixin button($bg, $hover-bg, $on-bg, $mt: unset) {
     @if $mt != unset {
         margin-top: $mt;
@@ -49,6 +60,9 @@
     }
 }
 
+
+// SETS THE BACKGROUND COLOUR FOR THE POP UPS.
+// ========================================================
 @mixin popup($bg) {
     background-color: $bg;
 }

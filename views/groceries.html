@@ -12,7 +12,7 @@
   </head>
   <body class="theme--light">
     <div class="container">
-      <!-- Header Section -->
+      <!-- ----------------------- Header Section ----------------------- -->
       <header>
         <div class="branding">
           <img
@@ -40,14 +40,16 @@
           </nav>
         </div>
       </header>
+      <!-- -----------X----------- Header Section -----------X----------- -->
 
-      <!-- Hero Section -->
+      <!-- ----------------------- Hero Section ----------------------- -->
       <section class="hero">
         <h1>Groceries</h1>
         <input type="text" placeholder="&#128269; Search groceries..." />
       </section>
+      <!-- -----------X----------- Hero Section -----------X----------- -->
 
-      <!-- Pinned Section -->
+      <!-- ----------------------- Pinned Section ----------------------- -->
       <section class="pinned">
         <div class="page-heading">
           <img src="/assets/icon-pin-light.svg" alt="Pin icon" id="pin-icon" />
@@ -59,8 +61,9 @@
           <div class="card"></div>
         </div>
       </section>
+      <!-- -----------X----------- Pinned Section -----------X----------- -->
 
-      <!-- Main Section -->
+      <!--  ----------------------- Main Section ----------------------- -->
       <main>
         <h2>Grocery Lists</h2>
         <div class="cards">
@@ -76,14 +79,16 @@
           <button id="generate-list-btn">Generate List</button>
         </div>
       </main>
+      <!--  -----------X----------- Main Section -----------X----------- -->
 
-      <!-- Add List Pop up -->
+      <!-- ----------------------- Add List Pop up ----------------------- -->
       <div class="toggle-popup-display">
         <section class="pop-up-container" id="add-list-popup">
           <div id="add-list" class="pop-up">
             <span class="close-btn" id="close-add-list-popup-btn">&times;</span>
             <p>Add List</p>
             <form action="#">
+              <!-- ---------- List name ---------- -->
               <div class="list-name-group">
                 <label for="list-name">List Name:</label>
                 <input
@@ -96,6 +101,9 @@
                   required
                 />
               </div>
+              <!-- ----X----- List name ----X----- -->
+
+              <!-- ---------- List ingredients ---------- -->
               <div class="list-ingredients-group">
                 <label for="list-ingredients">Ingredients:</label>
                 <input
@@ -107,21 +115,29 @@
                   required
                 />
               </div>
+              <!-- ----X----- List ingredients ----X----- -->
+
+              <!-- ---------- Warning ---------- -->
               <div class="warning">
                 <p>
                   <span>&#9432;</span>Please enter ingredients as a comma
                   separated list.
                 </p>
               </div>
+              <!-- ----X----- Warning msg ----X----- -->
+
+              <!-- ---------- Submit ---------- -->
               <div class="submit-btn">
                 <input type="submit" value="Add" />
               </div>
+              <!-- ----X----- Submit ----X----- -->
             </form>
           </div>
         </section>
       </div>
+      <!-- -----------X----------- Add List Pop up -----------X----------- -->
 
-      <!-- Generate List Pop up -->
+      <!-- ----------------------- Generate List Pop up ----------------------- -->
       <div class="toggle-popup-display">
         <section class="pop-up-container" id="generate-list-popup">
           <div id="generate-list" class="pop-up">
@@ -130,6 +146,7 @@
             >
             <p>Generate List</p>
             <form action="#">
+              <!-- ---------- Generate list name ---------- -->
               <div class="generate-list-name-group">
                 <label for="generate-list-name">Select a Recipe:</label>
                 <select
@@ -150,13 +167,18 @@
                   </option>
                 </select>
               </div>
+              <!-- ----X----- Generate list name ----X----- -->
+
+              <!-- ---------- Submit ---------- -->
               <div class="submit-btn">
                 <input type="submit" value="Generate" />
               </div>
+              <!-- ----X----- Submit ----X----- -->
             </form>
           </div>
         </section>
       </div>
+      <!-- -----------X----------- Generate List Pop up -----------X----------- -->
     </div>
   </body>
 </html>

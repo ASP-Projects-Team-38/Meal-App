@@ -1,30 +1,40 @@
+// FORM SPACING.
+// ========================================================
+/** All error message p tags, that display feedback to to user. */
 const errorMsgs = document.querySelectorAll(".error-msg");
 
 for (let msg of errorMsgs) {
-    // So that there is not a big gap between form groups
+    // Checks whether the there is an error message displayed.
     if (msg.textContent == "") {
+        // Hides the error msg p tag, so that there is not a big gap between form groups.
         msg.style.display = "none";
-        msg.style.borderColor = "purple"; 
     }
 }
 
-// Checking the validity of user entry
+
+// CHECKING THE VALIDITY OF USER ENTRY.
+// ========================================================
+/** All the form inputs on the page. */
 const formInputs = document.querySelectorAll("input");
 
 for (let input of formInputs) {
     input.addEventListener("change", () => {
-        console.log("Input changed.");
+        console.log("Input changed."); // testing.
 
+        /** Selects the error msg p tag associated with the input. */
         let msg = input.nextElementSibling;
         let id = input.id;
 
+        // Only displays a message when the form input is invalid.
         if(!input.checkValidity()) {
-            console.log(msg);
-            console.log(id);
+            console.log(msg); // testing.
+            console.log(id); // testing.
 
+            // Styling the error message.
             input.classList.add("invalid");
             msg.style.display = "block";
 
+            // Displays a message to the user depending on what input is invalid.
             if (id === "fname" || id === "lname") {
                 msg.textContent = "\u26A0 Name must be between 1 and 75 characters, and can only contain letters and dashes.";
             }
@@ -44,6 +54,7 @@ for (let input of formInputs) {
                 msg.textContent = "\u26A0 Invalid input!";
             }
         }
+        // If the validity is not invalid, the styling is removed, and the message content is emptied.
         else {
             input.classList.remove("invalid");
             msg.textContent = "";

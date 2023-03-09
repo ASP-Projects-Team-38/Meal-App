@@ -1,3 +1,5 @@
+// STYLING THE SIGN IN AND SIGN UP FORMS.
+// ========================================================
 main#sign-in-form,
 main#sign-up-form {
     @include flex(column, space-between, center, 16px);
@@ -16,6 +18,8 @@ main#sign-up-form {
                 margin-right: 40px;
             }
     
+            // STYLING THE INPUTS.
+            // ========================================================
             input {
                 margin-top: 16px;
                 min-width: 400px;
@@ -48,6 +52,9 @@ main#sign-up-form {
     }
 }
 
+
+// ALTERNATIVE STYLING FOR THE SIGN UP FORM.
+// ========================================================
 main#sign-up-form {
     form {
         @include flex(column, space-between, center, 32px);
@@ -71,8 +78,10 @@ main#sign-up-form {
     }
 }
 
-// Responsive
-/* Small devices (portrait tablets + large phones, 665px and down) */
+
+// RESPONSIVE.
+// ========================================================
+// Small devices (portrait tablets + large phones, between 551px and 665px).
 @media only screen and (min-width: 551px) and (max-width: 665px) {
     main#sign-in-form,
     main#sign-up-form {
@@ -84,7 +93,7 @@ main#sign-up-form {
     }
 }
 
-/* Small devices (portrait tablets + large phones, 460px and down) */
+// Small devices (portrait tablets + large phones, between 461px and 550px).
 @media only screen and (min-width: 461px) and (max-width: 550px) {
     main#sign-in-form,
     main#sign-up-form {
@@ -100,7 +109,7 @@ main#sign-up-form {
     }
 }
 
-/* Small devices (portrait tablets + large phones, 460px and down) */
+// Small devices (portrait tablets + large phones, 460px and down).
 @media only screen and (max-width: 460px) {
     main#sign-in-form,
     main#sign-up-form {

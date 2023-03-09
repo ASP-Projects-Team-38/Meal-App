@@ -1,4 +1,8 @@
+// STYLING THE PLANNER PAGE.
+// ========================================================
 main#planner-main {
+    // STYLING THE DATE INPUT ELEMENT.
+    // ========================================================
     input#selected-date {
         font-weight: bold;
 
@@ -32,6 +36,9 @@ main#planner-main {
         }
     }
 
+
+    // STYLING THE BUTTONS.
+    // ========================================================
     #cal-btns {
         @include flex(row, flex-start, center, 16px);
 
@@ -44,13 +51,17 @@ main#planner-main {
     }
 }
 
-// Styling the overall calendar
+
+// STYLING THE OVERALL CALENDAR.
+// ========================================================
 .dynamic-calendar {
     @include grid(100px, 100px, 36px);
     margin: 16px 0 16px 0;
     align-self: center;
 
-    // Styling each calendar box
+    
+    // STYLING THE CALENDAR BOXES.
+    // ========================================================
     .dynamic-date {
         @include flex(column, space-between, flex-end);
 
@@ -70,7 +81,8 @@ main#planner-main {
         }
 
 
-        // The date number
+        // STYLING THE DATE NUMBER.
+        // ========================================================
         .cal-day {
             margin: 0;
             padding: 4px 8px;
@@ -84,7 +96,8 @@ main#planner-main {
             font-weight: bold;
         }
 
-        // The add to cal btn
+        // STYLING THE ADD TO CALENDAR BUTTON.
+        // ========================================================
         .add-to-cal-btn {
             cursor: pointer;
         
@@ -110,6 +123,8 @@ main#planner-main {
         }
     }
 
+    // STYLING THE CURRENT DAY BOX.
+    // ========================================================
     .dynamic-date.current-day {
         @include themed() {
             border: 2px solid toggleTheme("cal-red");
@@ -124,6 +139,9 @@ main#planner-main {
     }
 }
 
+
+// STYLING THE CALENDAR FORM.
+// ========================================================
 form#cal-form {
     .box-date {
         background-color: #fff;
@@ -136,6 +154,7 @@ form#cal-form {
     }
 }
 
+// Allows the user to hide and view the calendar popup.
 .toggle-cal-display {
     display: none;
 }
