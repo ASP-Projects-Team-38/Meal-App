@@ -14,7 +14,7 @@
   </head>
   <body class="theme--light">
     <div class="container">
-      <!-- Header Section -->
+      <!-- ----------------------- Header Section ----------------------- -->
       <header>
         <div class="branding">
           <img
@@ -47,16 +47,25 @@
           </nav>
         </div>
       </header>
+      <!-- -----------X----------- Header Section -----------X----------- -->
 
-      <!-- Hero Section -->
+      <!-- ----------------------- Hero Section ----------------------- -->
       <section class="hero">
         <h1>Planner</h1>
         <form action="/planner" method="get">
-          <input type="date" id="daily-view-date" name="daily-view-date" value="<%= dailyViewDate %>" onchange="this.form.submit()" class="calendar" />
+          <input
+            type="date"
+            id="daily-view-date"
+            name="daily-view-date"
+            value="<%= dailyViewDate %>"
+            onchange="this.form.submit()"
+            class="calendar"
+          />
         </form>
       </section>
+      <!-- -----------X----------- Hero Section -----------X----------- -->
 
-      <!-- Overview Section -->
+      <!-- ----------------------- Overview / Pinned Section ----------------------- -->
       <section class="pinned">
         <div class="page-heading">
           <img
@@ -77,43 +86,52 @@
 
         <div class="calendar-cards cards">
           <div class="card">
-            <% for (var i = 0; i < mealplansOnDailyViewDate.length; i++) { %>
-              <% if(mealplansOnDailyViewDate[i].meal.type == 'breakfast'){ %>
-                <p><%= mealplansOnDailyViewDate[i].meal.name  %></p>
-                <!-- <p><%= mealplansOnDailyViewDate[i].meal.type %></p>
+            <% for (var i = 0; i < mealplansOnDailyViewDate.length; i++) { %> <%
+            if(mealplansOnDailyViewDate[i].meal.type == 'breakfast'){ %>
+            <p><%= mealplansOnDailyViewDate[i].meal.name %></p>
+            <!-- <p><%= mealplansOnDailyViewDate[i].meal.type %></p>
                 <p><%= mealplansOnDailyViewDate[i].meal.diet_preferences %></p> -->
-                <p><%= mealplansOnDailyViewDate[i].meal.recipe.instructions %></p>
-                <p><%= JSON.stringify(mealplansOnDailyViewDate[i].meal.recipe.ingredients) %></p>
-              <% } %>
-            <% } %>
+            <p><%= mealplansOnDailyViewDate[i].meal.recipe.instructions %></p>
+            <p>
+              <%=
+              JSON.stringify(mealplansOnDailyViewDate[i].meal.recipe.ingredients)
+              %>
+            </p>
+            <% } %> <% } %>
             <div class="info">
               <p>Breakfast</p>
             </div>
           </div>
           <div class="card">
-            <% for (var i = 0; i < mealplansOnDailyViewDate.length; i++) { %>
-              <% if(mealplansOnDailyViewDate[i].meal.type == 'lunch'){ %>
-                <p><%= mealplansOnDailyViewDate[i].meal.name  %></p>
-                <!-- <p><%= mealplansOnDailyViewDate[i].meal.type %></p>
+            <% for (var i = 0; i < mealplansOnDailyViewDate.length; i++) { %> <%
+            if(mealplansOnDailyViewDate[i].meal.type == 'lunch'){ %>
+            <p><%= mealplansOnDailyViewDate[i].meal.name %></p>
+            <!-- <p><%= mealplansOnDailyViewDate[i].meal.type %></p>
                 <p><%= mealplansOnDailyViewDate[i].meal.diet_preferences %></p> -->
-                <p><%= mealplansOnDailyViewDate[i].meal.recipe.instructions %></p>
-                <p><%= JSON.stringify(mealplansOnDailyViewDate[i].meal.recipe.ingredients) %></p>
-              <% } %>
-            <% } %>
+            <p><%= mealplansOnDailyViewDate[i].meal.recipe.instructions %></p>
+            <p>
+              <%=
+              JSON.stringify(mealplansOnDailyViewDate[i].meal.recipe.ingredients)
+              %>
+            </p>
+            <% } %> <% } %>
             <div class="info">
               <p>Lunch</p>
             </div>
           </div>
           <div class="card">
-            <% for (var i = 0; i < mealplansOnDailyViewDate.length; i++) { %>
-              <% if(mealplansOnDailyViewDate[i].meal.type == 'dinner'){ %>
-                <p><%= mealplansOnDailyViewDate[i].meal.name  %></p>
-                <!-- <p><%= mealplansOnDailyViewDate[i].meal.type %></p>
+            <% for (var i = 0; i < mealplansOnDailyViewDate.length; i++) { %> <%
+            if(mealplansOnDailyViewDate[i].meal.type == 'dinner'){ %>
+            <p><%= mealplansOnDailyViewDate[i].meal.name %></p>
+            <!-- <p><%= mealplansOnDailyViewDate[i].meal.type %></p>
                 <p><%= mealplansOnDailyViewDate[i].meal.diet_preferences %></p> -->
-                <p><%= mealplansOnDailyViewDate[i].meal.recipe.instructions %></p>
-                <p><%= JSON.stringify(mealplansOnDailyViewDate[i].meal.recipe.ingredients) %></p>
-              <% } %>
-            <% } %>
+            <p><%= mealplansOnDailyViewDate[i].meal.recipe.instructions %></p>
+            <p>
+              <%=
+              JSON.stringify(mealplansOnDailyViewDate[i].meal.recipe.ingredients)
+              %>
+            </p>
+            <% } %> <% } %>
             <div class="info">
               <p>Dinner</p>
             </div>
@@ -124,8 +142,9 @@
           <button id="add-meal-btn">Add Meal</button>
         </div>
       </section>
+      <!-- -----------X----------- Overview / Pinned Section -----------X----------- -->
 
-      <!-- Main Section -->
+      <!--  ----------------------- Main Section ----------------------- -->
       <main id="planner-main">
         <h2>Add to Calendar</h2>
         <input type="date" id="selected-date" value="2023-02-01" />
@@ -139,8 +158,9 @@
           <button id="set-remainder-btn">Set Remainders</button>
         </div>
       </main>
+      <!--  -----------X----------- Main Section -----------X----------- -->
 
-      <!-- Add Meal Pop up -->
+      <!-- ----------------------- Add Meal Pop up ----------------------- -->
       <div class="toggle-popup-display">
         <section class="pop-up-container" id="add-meal-popup">
           <div id="add-meal" class="pop-up">
@@ -152,9 +172,9 @@
                 <select name="add-meal-recipe" id="add-meal-recipe" required>
                   <option value="" selected disabled>-Select a recipe-</option>
                   <% for (var i = 0; i < recipes.length; i++) { %>
-                    <option value="<%= recipes[i].id + ',' + recipes[i].name %>">
-                      <%= recipes[i].name %>
-                    </option>
+                  <option value="<%= recipes[i].id + ',' + recipes[i].name %>">
+                    <%= recipes[i].name %>
+                  </option>
                   <% } %>
                 </select>
               </div>
@@ -197,8 +217,9 @@
           </div>
         </section>
       </div>
+      <!-- -----------X----------- Add Meal Pop up -----------X----------- -->
 
-      <!-- Add to Calendar Pop up -->
+      <!-- ----------------------- Add to Calendar Pop up ----------------------- -->
       <div class="toggle-popup-display">
         <section class="pop-up-container" id="add-to-cal-popup">
           <div id="add-to-cal" class="pop-up">
@@ -206,29 +227,40 @@
               >&times;</span
             >
             <p>Add to Calendar</p>
-            <form action="/addMealToCalendar" method="post" id="cal-form" onsubmit="setFormSubmitDate()">
+            <form
+              action="/addMealToCalendar"
+              method="post"
+              id="cal-form"
+              onsubmit="setFormSubmitDate()"
+            >
               <div class="add-to-cal-date-group">
                 <div id="add-to-cal-date" class="box-date">11/03/2023</div>
-                <input type="hidden" id="add-to-cal-date-hidden-input" name="add-to-cal-date-hidden-input" value="testvalue">
+                <input
+                  type="hidden"
+                  id="add-to-cal-date-hidden-input"
+                  name="add-to-cal-date-hidden-input"
+                  value="testvalue"
+                />
               </div>
               <div class="add-to-cal-meal-group">
                 <label for="add-to-cal-meal">Select a Meal:</label>
-                <select
-                  name="add-to-cal-meal"
-                  id="add-to-cal-meal"
-                  required
-                >
+                <select name="add-to-cal-meal" id="add-to-cal-meal" required>
                   <option value="" selected disabled>-Select a meal-</option>
                   <% for (var i = 0; i < meals.length; i++) { %>
-                    <option value="<%= meals[i].id + ',' + meals[i].name %>">
-                      <%= meals[i].name %>
-                    </option>
+                  <option value="<%= meals[i].id + ',' + meals[i].name %>">
+                    <%= meals[i].name %>
+                  </option>
                   <% } %>
                 </select>
               </div>
               <div class="add-to-cal-time-group">
                 <label for="add-to-cal-time">Set the time:</label>
-                <input type="time" id="add-to-cal-time" name="add-to-cal-time" required />
+                <input
+                  type="time"
+                  id="add-to-cal-time"
+                  name="add-to-cal-time"
+                  required
+                />
               </div>
               <div class="submit-btn">
                 <input type="submit" value="Add to Calendar" />
@@ -237,8 +269,9 @@
           </div>
         </section>
       </div>
+      <!-- -----------X----------- Add to Calendar Pop up -----------X----------- -->
 
-      <!-- Set Remainders Pop up -->
+      <!-- ----------------------- Set Remainders Pop up ----------------------- -->
       <div class="toggle-popup-display">
         <section class="pop-up-container" id="set-remainders-popup">
           <div id="set-remainders" class="pop-up">
@@ -286,41 +319,44 @@
           </div>
         </section>
       </div>
+      <!-- -----------X----------- Set Remainders Pop up -----------X----------- -->
       <script>
         function setFormSubmitDate() {
-          document.getElementById("add-to-cal-date-hidden-input").value = document.getElementById("add-to-cal-date").innerHTML;
+          document.getElementById("add-to-cal-date-hidden-input").value =
+            document.getElementById("add-to-cal-date").innerHTML;
           return true;
-        };
+        }
       </script>
 
-      <!-- Add Meal Result Pop up -->
+      <!-- ----------------------- Add Meal Result Pop up ----------------------- -->
       <% if (addMealResult) { %>
-        <div>
-          <section class="pop-up-container" id="add-meal-result-popup">
-            <div id="add-meal-result" class="pop-up">
-              <span class="close-btn" id="close-meal-result-popup-btn"
-                >&times;</span
-              >
-              <p><%= addMealResult %></p>
-            </div>
-          </section>
-        </div>
+      <div>
+        <section class="pop-up-container" id="add-meal-result-popup">
+          <div id="add-meal-result" class="pop-up">
+            <span class="close-btn" id="close-meal-result-popup-btn"
+              >&times;</span
+            >
+            <p><%= addMealResult %></p>
+          </div>
+        </section>
+      </div>
       <% } %>
+      <!-- -----------X----------- Add Meal Result Pop up -----------X----------- -->
 
-      <!-- Add MealPlan Result Pop up -->
+      <!-- ----------------------- Add MealPlan Result Pop up ----------------------- -->
       <% if (addMealPlanResult) { %>
-        <div>
-          <section class="pop-up-container" id="add-mealplan-result-popup">
-            <div id="add-mealplan-result" class="pop-up">
-              <span class="close-btn" id="close-mealplan-result-popup-btn"
-                >&times;</span
-              >
-              <p><%= addMealPlanResult %></p>
-            </div>
-          </section>
-        </div>
+      <div>
+        <section class="pop-up-container" id="add-mealplan-result-popup">
+          <div id="add-mealplan-result" class="pop-up">
+            <span class="close-btn" id="close-mealplan-result-popup-btn"
+              >&times;</span
+            >
+            <p><%= addMealPlanResult %></p>
+          </div>
+        </section>
+      </div>
       <% } %>
-
+      <!-- -----------X----------- Add MealPlan Result Pop up -----------X----------- -->
     </div>
   </body>
 </html>
