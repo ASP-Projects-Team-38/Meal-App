@@ -1,7 +1,8 @@
 class PopulateCalendar {
     /**
-     * Class that creates the calendar and handles all its functionality:
+     * Creates the calendar and handles all its functionality:
      * ========================================================
+     * @class
      * * Creates the calendar boxes.
      * * Determines the number of boxes required for each month.
      * * Syncs the calendar with the date input.
