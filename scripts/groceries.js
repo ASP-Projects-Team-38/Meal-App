@@ -47,7 +47,7 @@ closeGenerateListPopUpBtn.addEventListener("click", () => {
 /** Closes the generate grocery list pop up when clicked. */
 const closeGLResultPopUpBtn = document.querySelector("#close-grocerylist-result-popup-btn");
 
-/** Generate grocery list pop up. */
+/** Add grocery list pop up. */
 const addGLResultPopUp = document.querySelector("#add-grocerylist-result-popup");
 
 // First checks whether the button is exist, to prevent an error.
