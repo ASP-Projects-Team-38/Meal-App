@@ -7,29 +7,50 @@ class PopulateCalendar {
      * * Determines the number of boxes required for each month.
      * * Syncs the calendar with the date input.
      */
+
     constructor () {
+        /** @type {HTMLDivElement} The div the where the calendar will be populated. */
         this.calContainer = document.querySelector(".dynamic-calendar");
+
+        /** @type {HTMLDivElement} The array that contains the created calendar boxes. */
         this.calBoxes = [];
+
+        /** @type {number} The total number of calendar boxes. */
         this.numOfCalBoxes = 0;
+
+        /** @type {HTMLElement} The pop up that allows users to add data to the calendar. */
         this.addToCalPopUp = document.querySelector("#add-to-cal-popup");
 
+        /** @type {string} The date. */
         this.date = "";
+
+        /** @type {number} The number of days in a selected month. */
         this.daysInMonth = 31;
 
+        /** @type {string} The selected date. */
         this.dateClicked = "0";
     }
 
-    createCalBox = () => {
-        this.numOfCalBoxes++;
 
+    /** Creates the calendar box. 
+     * ========================================================
+     * * Adds the day of the month to the calendar box.
+     * * Highlights the current day.
+     * * Adds the addToCalBtn to the calendar box.
+    */
+    createCalBox = () => {
+        this.numOfCalBoxes++; // Increases the total number of boxes.
+
+        // Creates the calendar box div.
         const dynamicDate = document.createElement("div");
         dynamicDate.setAttribute("class", "dynamic-date");
 
+        // Creates the day text that will be in the div (i.e. 18).
         const calDay = document.createElement("p");
         calDay.setAttribute("class", "cal-day");
         calDay.textContent = this.numOfCalBoxes;
 
-        const currentDay = new Date().getDate();
+        const currentDay = new Date().getDate(); // Gets the current day of the month.
 
         // Highlights the current day
         if ((this.numOfCalBoxes == currentDay) &&
@@ -38,6 +59,7 @@ class PopulateCalendar {
             dynamicDate.classList.add("current-day");
         }
 
+        // Creates the button that when clicked displays a pop up.
         const addToCalBtn = document.createElement("button");
         addToCalBtn.setAttribute("class", "add-to-cal-btn");
         addToCalBtn.textContent = "+";
@@ -45,19 +67,37 @@ class PopulateCalendar {
         dynamicDate.appendChild(calDay);
         dynamicDate.appendChild(addToCalBtn);
 
+        // Adds the created calendar box to the calBoxes array.
         this.calBoxes.push(dynamicDate);
     }
 
+
+    /** Builds the calendar boxes. 
+     * ========================================================
+     * * Creates a specific number of calendar boxes.
+     *    * The number of boxes is equal to the number of days in a month- for the selected month.
+     * * Calls the createCalBox() function.
+    */
     buildCal = () => {
         for (let i = 0; i < this.daysInMonth; i++) {
             this.createCalBox();
         }
     }
 
+
+    /** Generates the calendar. 
+     * ========================================================
+     * * Generates the calendar boxes in the DOM.
+     *    * It appends the boxes to the calendar container div.
+     * * Displays the pop up if clicked.
+     * * Calls the setFormDate() function.
+    */
     generateCal = () => {
         for (let i = 0; i < this.calBoxes.length; i++) {
+            // Appends each box to the calendar div.
             this.calContainer.appendChild(this.calBoxes[i]);
 
+            // Displays the add to calendar pop up.
             this.calBoxes[i].addEventListener("click", () => {
                 this.dateClicked = i+1;
                 this.setFormDate();
@@ -68,38 +108,53 @@ class PopulateCalendar {
         }
     }
 
-    setFormDate = () => {
-        const formDate = document.querySelector(".box-date");
-        let month = `${this.dateClicked}`;
 
-        if (month.length == 1) {
-            month = `0${month}`;
+    /** Sets the form date. 
+     * ========================================================
+     * * Sets the form date in the format YYYY-MM-DD (matches the date object).
+     * * Calls the getSelectedYear() and getSelectedMonth() functions.
+    */
+    setFormDate = () => {
+        // Where the date will be stored.
+        const formDate = document.querySelector(".box-date");
+        let day = `${this.dateClicked}`;
+
+        if (day.length == 1) {
+            day = `0${day}`;
         }
 
-        formDate.textContent = `${this.getSelectedYear()}-${this.getSelectedMonth()}-${month}`;
+        // Sets the form date.
+        formDate.textContent = `${this.getSelectedYear()}-${this.getSelectedMonth()}-${day}`;
     }
 
-    setDatePicker = () => {
-        // Set the date picker to the current date
-        const dateInput = document.querySelector("#selected-date");
-        let date = new Date();
 
-        let month = date.getMonth() + 1;
+    /** Sets the date picker. 
+     * ========================================================
+     * * Sets the date picker to the current date.
+     * * Returns the current month, to be used by the getDate() function.
+    */
+    setDatePicker = () => {
+        // Gets the date input element.
+        const dateInput = document.querySelector("#selected-date");
+        let date = new Date(); // gets the current date.
+
+        let month = date.getMonth() + 1; // gets the current month.
         let currentMonth = `${month}`;
 
         if (currentMonth.length == 1) {
             currentMonth = `0${month}`;
         }
 
-        let day = date.getDate();
+        let day = date.getDate();  // gets the current day.
         let currentDay = `${day}`;
 
         if (currentDay.length == 1) {
             currentDay = `0${day}`;
         }
 
+        // Create a string of the date in the format YYYY-MM-DD.
         let currentDate = `${date.getFullYear()}-${currentMonth}-${currentDay}`;
-        dateInput.value = currentDate;
+        dateInput.value = currentDate; // sets the date input to the above string.
 
         return currentMonth;
     }
