@@ -1,6 +1,9 @@
 class PopulateCalendar {
     /**
-     * Class that handles all Calendar functionality.
+     * Class that creates the calendar and handles all its functionality:
+     * * Creates the calendar boxes.
+     * * Determines the number of boxes required for each month.
+     * * Syncs the calendar with the date input.
      */
     constructor () {
         this.calContainer = document.querySelector(".dynamic-calendar");
@@ -181,6 +184,10 @@ class PopulateCalendar {
         }
     }
 
+    /** Displays and hides the calendar based on user input.
+     * * Changes the text on the button to allow the user to know the right action.
+     * * Hides and displays the calendar based off whether the calendar is currently displayed or not.
+     */
     toggleCalendarDisplay = () => {
         const displayCalendarBtn = document.querySelector("#display-cal-btn");
 
@@ -194,6 +201,7 @@ class PopulateCalendar {
         }
     }
 
+    /** Begins the populate calendar functionality. */
     run = () => {
         this.daysInMonth = this.getDate(this.setDatePicker());
         this.buildCal();
@@ -202,6 +210,7 @@ class PopulateCalendar {
         this.setFormDate();
     }
 
+    /** Empties the dynamic calendar section, to ensure no duplicity. */
     empty = () => {
         // Remove current boxes
         this.calContainer.innerHTML = "";
@@ -209,6 +218,7 @@ class PopulateCalendar {
         this.numOfCalBoxes = 0;
     }
 
+    /** Regenerates new calendar boxes based on user input. */
     regenerate = () => {
         this.empty();
         this.numOfDays();
