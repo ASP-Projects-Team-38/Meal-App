@@ -667,11 +667,12 @@ section.pop-up-container div.pop-up p {
   padding-top: 40px;
 }
 section.pop-up-container div.pop-up span.close-btn {
-  margin-left: -770px;
   font-weight: 700;
   font-size: 3.5rem;
   margin-bottom: -80px;
   margin-top: -10px;
+  position: relative;
+  left: -50%;
 }
 section.pop-up-container div.pop-up span.close-btn:hover {
   cursor: pointer;
@@ -771,10 +772,15 @@ section.pop-up-container div.pop-up form label {
   font-weight: 500;
   font-size: 1.3rem;
 }
+section.pop-up-container div.pop-up form div.warning {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
 section.pop-up-container div.pop-up form div.warning p {
   font-weight: 400;
   font-size: 1rem;
-  margin-left: 80px;
   margin-top: -36px;
 }
 section.pop-up-container div.pop-up form div.warning p span {
@@ -865,7 +871,7 @@ section.pop-up-container section#generate-list-popup div#generate-list form sele
   font-size: 1.2rem;
 }
 section.pop-up-container section#generate-list-popup div#generate-list form input[type=submit] {
-  width: 500px;
+  width: 55vw;
   margin-left: 190px;
 }
 
@@ -873,6 +879,73 @@ section.pop-up-container section#generate-list-popup div#generate-list form inpu
   display: none;
 }
 
+@media only screen and (max-width: 540px) {
+  section.pop-up-container {
+    margin-top: -1500px;
+  }
+}
+@media only screen and (min-width: 541px) and (max-width: 992px) {
+  section.pop-up-container {
+    margin-top: -1000px;
+  }
+}
+@media only screen and (max-width: 992px) {
+  section.pop-up-container div.pop-up {
+    width: 60vw;
+  }
+  section.pop-up-container div.pop-up form div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 48px;
+  }
+  section.pop-up-container div.pop-up form input, section.pop-up-container div.pop-up form textarea, section.pop-up-container div.pop-up form select {
+    width: 55vw;
+    margin-top: -10px;
+  }
+  section.pop-up-container div.pop-up form div.recipe-tags-group {
+    margin-left: 0;
+  }
+  section.pop-up-container div.pop-up form div.recipe-time-estimation-group {
+    margin-left: 0;
+  }
+  section.pop-up-container div.pop-up form div.estimate-cost-recipe-group {
+    margin-left: -16px;
+  }
+  section.pop-up-container div.pop-up form div.estimate-cost-recipe-group select {
+    margin-top: -36px;
+    margin-bottom: 16px;
+  }
+  section.pop-up-container div.pop-up form div.estimate-cost-store-group select {
+    margin-top: -36px;
+    margin-bottom: 16px;
+  }
+  section.pop-up-container div.pop-up form div.add-meal-recipe-group select {
+    margin: -36px 0 16px 0;
+  }
+  section.pop-up-container div.pop-up form div.add-meal-type-group select {
+    margin: -36px 0 16px 0;
+  }
+  section.pop-up-container div.pop-up form div.add-meal-preferences-group select {
+    margin: -36px 0 16px 0;
+  }
+  section.pop-up-container div.pop-up form div.add-to-cal-recipe-group select {
+    width: 55vw;
+    margin: -36px 11px 16px 0;
+  }
+  section.pop-up-container div.pop-up form div.add-to-cal-time-group input {
+    width: 52vw;
+    margin: -36px 11px 16px 0;
+  }
+  section.pop-up-container div.pop-up form input[type=submit] {
+    margin-left: 0;
+    width: 55vw;
+  }
+  div#add-list form input[type=submit] {
+    width: 200px;
+  }
+}
 main#planner-main input#selected-date {
   font-weight: bold;
   padding: 8px 16px;

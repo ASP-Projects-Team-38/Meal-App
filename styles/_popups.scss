@@ -26,11 +26,13 @@ section.pop-up-container {
         }
 
         span.close-btn {
-            margin-left: -770px;
+            // margin-left: -770px;
             font-weight: 700;
             font-size: 3.5rem;
             margin-bottom: -80px;
             margin-top: -10px;
+            position: relative;
+            left: -50%;
 
             &:hover {
                 cursor: pointer;
@@ -104,14 +106,21 @@ section.pop-up-container {
                 font-size: 1.3rem;
             }
 
-            div.warning p {
-                font-weight: 400;
-                font-size: 1rem;
-                margin-left: 80px;
-                margin-top: -36px;
+            div.warning {
+                @include flex(row, center, center);
+
+                p {
+                    font-weight: 400;
+                    font-size: 1rem;
+                    // margin-left: 80px;
+                    margin-top: -36px;
+
+                    // position: relative;
+                    // left: 10px;
 
                 span {
                     margin-right: 8px;
+                }
                 }
             }
 
@@ -208,7 +217,8 @@ section.pop-up-container {
                 }
 
                 input[type='submit'] {
-                    width: 500px;
+                    // width: 500px;
+                    width: 55vw;
                     margin-left: 190px;
                 }
             }
@@ -221,3 +231,210 @@ section.pop-up-container {
 .toggle-popup-display {
     display: none;
 }
+
+
+// RESPONSIVE.
+// ========================================================
+// Small devices (tablets + phones, below 540px).
+@media only screen and (max-width: 540px) {
+    section.pop-up-container {
+        margin-top: -1500px;
+    }
+}
+
+// Large devices (laptops/desktops, between 541px and 992px).
+@media only screen and (min-width: 541px) and (max-width: 992px) {
+    section.pop-up-container {
+        margin-top: -1000px;
+    }
+}
+
+// Large devices (laptops/desktops, between 851px and 992px).
+@media only screen and (max-width: 992px) {
+    section.pop-up-container {
+        div.pop-up {
+            width: 60vw;
+
+            form {
+                div {
+                    @include flex(column, center, flex-start, 48px);
+                }
+
+                input, textarea, select {
+                    width: 55vw;
+                    margin-top: -10px;
+                }
+
+                // div.recipe-ingredients-group {
+                //     @include flex(column, center, flex-start);
+    
+                //     div.recipe-ingredients {
+                //         @include flex(column, center, flex-start);
+    
+                //         div.recipe-ingredient-subgroup {
+                //             @include flex(row, flex-start, center, 12px);
+                //             margin-top: -24px;
+                //             margin-left: 150px;
+        
+                //             input {
+                //                 width: 150px;
+                //             }
+        
+                //             input:first-of-type {
+                //                 width: 300px;
+                //             }
+                //         }
+                //     }
+                // }
+
+                // RESET MINOR STYLE ADJUSTMENTS.
+                // ========================================================
+                div.recipe-tags-group {
+                    margin-left: 0;
+                }
+
+                div.recipe-time-estimation-group {
+                    margin-left: 0;
+                }
+
+                div.estimate-cost-recipe-group {
+                    margin-left: -16px;
+
+                    select {
+                        margin-top: -36px;
+                        margin-bottom: 16px;
+                    }
+                }
+
+                div.estimate-cost-store-group select {
+                    margin-top: -36px;
+                    margin-bottom: 16px;
+                }
+
+                div.add-meal-recipe-group select {
+                    margin: -36px 0 16px 0;
+                }
+    
+                div.add-meal-type-group select {
+                    margin: -36px 0 16px 0;
+                }
+    
+                div.add-meal-preferences-group select {
+                    margin: -36px 0 16px 0;
+                }
+
+                div.add-to-cal-recipe-group select {
+                    width: 55vw;
+                    margin: -36px 11px 16px 0;
+                }
+
+                div.add-to-cal-time-group input {
+                    width: 52vw;
+                    margin: -36px 11px 16px 0;
+                }
+
+                input[type='submit'] {
+                    margin-left: 0;
+                    width: 55vw;
+                    // margin-left: 160px;
+                }
+            }
+        }
+    }
+
+    // ADJUSTING THE ALTERNATIVE STYLING FOR THE ADD LIST POP UP.
+    // ========================================================
+    div#add-list {
+        form {
+            // div.warning p {
+            //     margin-left: -20px;
+            // }
+
+            // div.list-ingredients-group input {
+            //     margin-left: -8px;
+            // }
+
+            // input, textarea, select {
+            //     margin-top: -8px;
+            // }
+
+            input[type='submit'] {
+                // width: 530px;
+                // margin-left: 140px;
+                // margin-left: 40px;
+                width: 200px;
+            }
+        }
+    }
+}
+
+// // Large devices (laptops/desktops, between 851px and 992px).
+// @media only screen and (min-width: 851px) and (max-width: 992px) {
+//     section.pop-up-container {
+//         div.pop-up {
+//             width: 60vw;
+
+//             form {
+//                 div {
+//                     @include flex(column, center, flex-start, 48px);
+//                 }
+
+//                 // div.warning p {
+//                 //     margin-left: 0;
+    
+//                 //     // span {
+//                 //     //     margin-right: 8px;
+//                 //     // }
+//                 // }
+
+//                 // RESET MINOR STYLE ADJUSTMENTS.
+//                 // ========================================================
+//                 div.recipe-tags-group {
+//                     margin-left: 0;
+//                 }
+
+//                 div.recipe-time-estimation-group {
+//                     margin-left: 0;
+//                 }
+
+//                 // div.estimate-cost-recipe-group {
+//                 //     margin-left: -16px;
+//                 // }
+
+//                 // div.add-meal-recipe-group select {
+//                 //     margin-left: 52px;
+//                 // }
+
+//                 // div.add-meal-type-group select {
+//                 //     margin-left: 20px;
+//                 // }
+
+//                 // div.add-meal-preferences-group select {
+//                 //     margin-right: 34px;
+//                 // }
+
+//                 // div.set-remainders-freq-group select {
+//                 //     margin-right: 82px;
+//                 // }
+
+//                 // div.set-remainders-send-group select {
+//                 //     margin-right: 46px;
+//                 // }
+
+//                 // div.add-to-cal-recipe-group select {
+//                 //     width: 530px;
+//                 //     margin-right: 11px;
+//                 // }
+
+//                 // div.generate-list-name-group select {
+//                 //     width: 538px;
+//                 //     margin-right: 28px;
+//                 // }
+
+//                 input[type='submit'] {
+//                     margin-left: 0;
+//                 }
+//             }
+//         }
+//     }
+// }
