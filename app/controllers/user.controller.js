@@ -19,8 +19,10 @@ exports.create = function (req, res) {
   // check duplicate user name
   User.getUserCountByUsername(username, function (err, userCountResult) {
     if (err) res.send(err);
-    if (userCountResult[0].usercount >= 1)
-      res.json({ error: "User already exists" });
+    if (userCountResult[0].usercount >= 1) {
+      console.log("User already exists");
+      res.redirect("/");
+    };
   });
 
   // create user object
@@ -46,9 +48,17 @@ exports.login = function (req, res) {
   const username = req.body["username"];
   const password = req.body["password"];
 
+  if (username === "" || password === "") {
+    console.log("Username or password is blank");
+    res.redirect("/");
+  };
+
   User.getUserCountByUsername(username, function (err, userCountResult) {
     if (err) res.send(err);
-    if (userCountResult[0].usercount < 1) res.json({ error: "User not exist" });
+    if (userCountResult[0].usercount < 1) {
+      console.log("User not exist");
+      res.redirect("/");
+    };
   });
 
   User.findPasswordByUsername(username, function (err, passwordResult) {
