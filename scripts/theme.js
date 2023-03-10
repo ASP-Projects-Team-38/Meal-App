@@ -21,6 +21,10 @@ const switchIcon = document.querySelector("#switch-icon");
 /** The theme icon. */
 const themeIcon = document.querySelector("#theme-icon");
 
+/** cards */
+let cards = document.querySelectorAll(".card");
+
+
 // The theme button calls the toggleTheme() function when clicked.
 themeBtn.addEventListener('click', toggleTheme);
 // Calls the defaultTheme() function when the DOM is loaded.
@@ -106,4 +110,16 @@ function toggleTheme(e) {
         setTheme("theme--light");
     else 
         setTheme("theme--dark"); 
+}
+
+console.log("number of cards: ", cards.length);
+
+for (let i = 0; i < cards.length; cards++) {
+    if (cards[i] !== null) {
+        if (cards[i].innerHTML === "") {
+            console.log(cards[i], "I am empty.");
+
+            // cards[i].appendChild(logoImg);
+        }
+    }
 }

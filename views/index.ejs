@@ -76,7 +76,9 @@
             <p><%= recipes[i].name %></p>
             <p><%= recipes[i].instructions %></p>
             <p><%= recipes[i].time_estimations %></p>
-            <p><%= JSON.stringify(recipes[i].ingredients) %></p>
+            <p class="user-input-recipe-ingredients">
+              <%= JSON.stringify(recipes[i].ingredients) %>
+            </p>
             <p><%= recipes[i].tags %></p>
           </div>
           <% } %>

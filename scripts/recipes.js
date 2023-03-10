@@ -113,3 +113,23 @@ if (closeRecipeResultPopUpBtn !== null) {
         addRecipeResultPopUp.parentElement.classList.add("toggle-popup-display");
     });
 }
+
+
+// STYLING THE RECIPE CARDS.
+// ========================================================
+const recipeIngredientsElement = document.querySelector(".user-input-recipe-ingredients");
+const recipeIngredients = JSON.parse(recipeIngredientsElement.innerHTML);
+
+recipeIngredientsElement.innerHTML = ""; // empty
+let ingredientsContainer = document.createElement("ul"); // contains all the ingredients
+
+for (let property in recipeIngredients) {
+    console.log(`${property}: ${recipeIngredients[property]}`);
+
+    let li = document.createElement("li");
+    li.textContent = `${property}: ${recipeIngredients[property]}`;
+
+    ingredientsContainer.appendChild(li);
+}
+
+recipeIngredientsElement.appendChild(ingredientsContainer);

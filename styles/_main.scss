@@ -38,9 +38,6 @@ section.pinned {
             box-sizing: border-box;
     
             .info {
-                margin-top: 165px;
-                margin-right: 24px;
-
                 @include themed() {
                     color: toggleTheme("cal-card-bg");
                 }
@@ -48,6 +45,44 @@ section.pinned {
                 font-weight: 700;
                 font-size: 1.2rem;
                 text-align: right;
+
+                p {
+                    margin-top: 165px;
+                    margin-right: 24px;
+                }
+            }
+        }
+    }
+}
+
+
+// STYLING THE CARDS
+// ========================================================
+main {
+    .cards {
+        .card {
+            padding: 8px 24px 16px 24px;
+            overflow: scroll;
+
+            p:first-of-type {
+                font-size: 2.2rem;
+                font-weight: bold;
+                text-align: center;
+                font-family: $font-display;
+            }
+
+            p:nth-of-type(2) {
+                line-height: 2rem;
+                text-align: justify;
+            }
+
+            p:nth-of-type(3) {
+                font-weight: bold;
+                font-size: 1.4rem;
+
+                @include themed() {
+                    color: toggleTheme("current-page");
+                }
             }
         }
     }
