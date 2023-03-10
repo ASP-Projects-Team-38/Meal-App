@@ -1,7 +1,9 @@
 "use strict";
 
+// import libs
 const Recipe = require("../models/recipe.model");
 
+// set recipe data in user session
 var populateRecipesOfUserInSession = (exports.populateRecipesOfUserInSession =
   function (req, renderPage) {
     Recipe.findByUsername(req.session.username, function (results) {
@@ -10,8 +12,9 @@ var populateRecipesOfUserInSession = (exports.populateRecipesOfUserInSession =
     });
   });
 
+// create recipe
 exports.create = function (req, res) {
-  // parsing values from request body
+  // parsing inputs
   const name = req.body["recipe-name"];
   const instructions = req.body["recipe-instructions"];
   const time_estimations = req.body["recipe-time-estimation"];
@@ -52,7 +55,7 @@ exports.create = function (req, res) {
     ""
   );
 
-  // create recipe record in database
+  // create recipe record in DB
   Recipe.create(newRecipe, function (err, recipe) {
     if (err) {
       populateRecipesOfUserInSession(req, function () {

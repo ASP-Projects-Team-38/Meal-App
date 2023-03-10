@@ -1,8 +1,10 @@
 "use strict";
 
+// import libs
 const GroceryList = require("../models/grocerylist.model");
 const Recipe = require("../models/recipe.model");
 
+// set recipe and grocery lists info in user session
 var populateInfoInSession = (exports.populateInfoInSession = function (
   req,
   renderPage
@@ -19,8 +21,9 @@ var populateInfoInSession = (exports.populateInfoInSession = function (
   });
 });
 
+// create grocery list
 exports.create = function (req, res) {
-  // parsing values from request body
+  // parsing inputs
   const name = req.body["list-name"];
   const ingredients = req.body["list-ingredients"];
 
@@ -32,7 +35,7 @@ exports.create = function (req, res) {
     ""
   );
 
-  // create grocery list record in database
+  // create grocery list record in DB
   GroceryList.create(newGroceryList, function (err, groceryList) {
     if (err) {
       populateInfoInSession(req, function () {
@@ -56,15 +59,14 @@ exports.create = function (req, res) {
   });
 };
 
+// generate grocery list by recipe
 exports.generate = function (req, res) {
-  // parsing values from request body
+  // parsing inputs
   const recipe_id = req.body["generate-list-name"].split(",")[0];
   const recipe_name = req.body["generate-list-name"].split(",")[1];
 
+  // get ingredents of a recipe
   Recipe.findIngredentsByRecipeID(recipe_id, function (ingredients) {
-    console.log("debug");
-    console.log(ingredients);
-
     // create grocery list object
     const newGroceryList = new GroceryList(
       recipe_name,
@@ -73,7 +75,7 @@ exports.generate = function (req, res) {
       ""
     );
 
-    // create grocery list record in database
+    // create grocery list record in DB
     GroceryList.create(newGroceryList, function (err, groceryList) {
       if (err) {
         populateInfoInSession(req, function () {

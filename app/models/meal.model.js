@@ -1,6 +1,9 @@
 "user strict";
+
+// import db connection
 var dbConn = require("../config/db.config");
 
+// meal object
 var Meal = function (
   name,
   type,
@@ -19,6 +22,7 @@ var Meal = function (
   this.id = id;
 };
 
+// create meal record in DB
 Meal.create = function (newMeal, result) {
   dbConn.query(
     "INSERT INTO meals(name, recipe_id, type, diet_preferences, username) VALUES (?, ?, ?, ?, ?);",
@@ -44,6 +48,7 @@ Meal.create = function (newMeal, result) {
   );
 };
 
+// get meals by user name from DB
 Meal.findByUsername = function (username, result) {
   sql = `select id, name, recipe_id, type, diet_preferences, username
          from meals where username = ?;`;
@@ -73,4 +78,5 @@ Meal.findByUsername = function (username, result) {
   });
 };
 
+// module export
 module.exports = Meal;

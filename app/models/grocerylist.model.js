@@ -1,26 +1,21 @@
 "user strict";
+
+// import db connection
 var dbConn = require("../config/db.config");
 
-var GroceryList = function (
-  name,
-  ingredients,
-  username,
-  id
-) {
+// grocery list object
+var GroceryList = function (name, ingredients, username, id) {
   this.name = name;
   this.ingredients = ingredients;
   this.username = username;
   this.id = id;
 };
 
+// create grocery list record in DB
 GroceryList.create = function (newGroceryList, result) {
   dbConn.query(
     "INSERT INTO grocery_lists (name, ingredients, username) VALUES (?, ?, ?);",
-    [
-      newGroceryList.name,
-      newGroceryList.ingredients,
-      newGroceryList.username,
-    ],
+    [newGroceryList.name, newGroceryList.ingredients, newGroceryList.username],
     (err, res, fields) => {
       if (err) {
         console.error("Error inserting grocery list: ", err);
@@ -36,6 +31,7 @@ GroceryList.create = function (newGroceryList, result) {
   );
 };
 
+// get grocery lists by user name from DB
 GroceryList.findByUsername = function (username, result) {
   sql = `select id, name, ingredients, username
          from grocery_lists where username = ?;`;
@@ -62,4 +58,5 @@ GroceryList.findByUsername = function (username, result) {
   });
 };
 
+// module export
 module.exports = GroceryList;
