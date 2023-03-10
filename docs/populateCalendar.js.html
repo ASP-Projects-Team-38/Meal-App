@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: populateCalendar.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: populateCalendar.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>class PopulateCalendar {
+    /**
+     * Creates the calendar and handles all its functionality:&lt;br>
+     * @class
+     * - Creates the calendar boxes.&lt;br>
+     * - Determines the number of boxes required for each month.&lt;br>
+     * - Syncs the calendar with the date input.&lt;br>
+     */
+
+    constructor () {
+        /** 
+         * The div the where the calendar will be populated.
+         * @type {HTMLDivElement} 
+         */
+        this.calContainer = document.querySelector(".dynamic-calendar");
+
+        /** 
+         * The array that contains the created calendar boxes.
+         * @type {HTMLDivElement} 
+         */
+        this.calBoxes = [];
+
+        /** 
+         * The total number of calendar boxes.
+         * @type {number} 
+         */
+        this.numOfCalBoxes = 0;
+
+        /** 
+         * The pop up that allows users to add data to the calendar.
+         * @type {HTMLElement} 
+         */
+        this.addToCalPopUp = document.querySelector("#add-to-cal-popup");
+
+        /** 
+         * The date.
+         * @type {string} 
+         */
+        this.date = "";
+
+        /** 
+         * The number of days in a selected month.
+         * @type {number} 
+         */
+        this.daysInMonth = 31;
+
+        /** 
+         * The selected date.
+         * @type {string} 
+         */
+        this.dateClicked = "0";
+    }
+
+
+    /** 
+     * Creates the calendar box.&lt;br>
+     * 
+     * - Adds the day of the month to the calendar box.&lt;br>
+     * - Highlights the current day.&lt;br>
+     * - Adds the addToCalBtn to the calendar box.&lt;br>
+    */
+    createCalBox = () => {
+        this.numOfCalBoxes++; // Increases the total number of boxes.
+
+        // Creates the calendar box div.
+        const dynamicDate = document.createElement("div");
+        dynamicDate.setAttribute("class", "dynamic-date");
+
+        // Creates the day text that will be in the div (i.e. 18).
+        const calDay = document.createElement("p");
+        calDay.setAttribute("class", "cal-day");
+        calDay.textContent = this.numOfCalBoxes;
+
+        const currentDay = new Date().getDate(); // Gets the current day of the month.
+
+        // Highlights the current day
+        if ((this.numOfCalBoxes == currentDay) &amp;&amp;
+        (this.getCurrentMonth() == this.getSelectedMonth()) &amp;&amp;
+        (this.getCurrentYear() == this.getSelectedYear())) {
+            dynamicDate.classList.add("current-day");
+        }
+
+        // Creates the button that when clicked displays a pop up.
+        const addToCalBtn = document.createElement("button");
+        addToCalBtn.setAttribute("class", "add-to-cal-btn");
+        addToCalBtn.textContent = "+";
+
+        dynamicDate.appendChild(calDay);
+        dynamicDate.appendChild(addToCalBtn);
+
+        // Adds the created calendar box to the calBoxes array.
+        this.calBoxes.push(dynamicDate);
+    }
+
+
+    /** 
+     * Builds the calendar boxes.&lt;br>
+     *  
+     * - Creates a specific number of calendar boxes.&lt;br>
+     *    - The number of boxes is equal to the number of days in a month- for the selected month.&lt;br>
+     * - Calls the createCalBox() function.&lt;br>
+    */
+    buildCal = () => {
+        for (let i = 0; i &lt; this.daysInMonth; i++) {
+            this.createCalBox();
+        }
+    }
+
+
+    /** 
+     * Generates the calendar.&lt;br>
+     * 
+     * - Generates the calendar boxes in the DOM.&lt;br>
+     *    - It appends the boxes to the calendar container div.&lt;br>
+     * - Displays the pop up if clicked.&lt;br>
+     * - Calls the setFormDate() function.&lt;br>
+    */
+    generateCal = () => {
+        for (let i = 0; i &lt; this.calBoxes.length; i++) {
+            // Appends each box to the calendar div.
+            this.calContainer.appendChild(this.calBoxes[i]);
+
+            // Displays the add to calendar pop up.
+            this.calBoxes[i].addEventListener("click", () => {
+                this.dateClicked = i+1;
+                this.setFormDate();
+                this.addToCalPopUp.parentElement.classList.remove("toggle-popup-display");
+            })
+
+            this.calContainer.classList.add("toggle-cal-display");
+        }
+    }
+
+
+    /** 
+     * Sets the form date.&lt;br>
+     * 
+     * - Sets the form date in the format YYYY-MM-DD (matches the date object).&lt;br>
+     * - Calls the getSelectedYear() and getSelectedMonth() functions.&lt;br>
+    */
+    setFormDate = () => {
+        // Where the date will be stored.
+        const formDate = document.querySelector(".box-date");
+        let day = `${this.dateClicked}`;
+
+        if (day.length == 1) {
+            day = `0${day}`;
+        }
+
+        // Sets the form date.
+        formDate.textContent = `${this.getSelectedYear()}-${this.getSelectedMonth()}-${day}`;
+    }
+
+
+    /** 
+     * Sets the date picker.&lt;br>
+     * 
+     * - Sets the date picker to the current date.&lt;br>
+     * - Returns the current month, to be used by the getDate() function.&lt;br>
+    */
+    setDatePicker = () => {
+        // Gets the date input element.
+        const dateInput = document.querySelector("#selected-date");
+        let date = new Date(); // gets the current date.
+
+        let month = date.getMonth() + 1; // gets the current month.
+        let currentMonth = `${month}`;
+
+        if (currentMonth.length == 1) {
+            currentMonth = `0${month}`;
+        }
+
+        let day = date.getDate();  // gets the current day.
+        let currentDay = `${day}`;
+
+        if (currentDay.length == 1) {
+            currentDay = `0${day}`;
+        }
+
+        // Create a string of the date in the format YYYY-MM-DD.
+        let currentDate = `${date.getFullYear()}-${currentMonth}-${currentDay}`;
+        dateInput.value = currentDate; // sets the date input to the above string.
+
+        return currentMonth;
+    }
+
+
+    /** 
+     * Returns the days in a month.&lt;br>
+     * 
+     * @param {string} month - The inputted month.&lt;br>
+     * 
+     * - Sets the days of the month based of the selected month.&lt;br>
+     *    - Takes into account the leap year.&lt;br>
+    */
+    getDate = (month) => {
+        if ((month == 1) || (month == 3) || (month == 5) ||
+            (month == 7) || (month == 8) || (month == 10) ||
+            (month == 12)) {
+            this.daysInMonth = 31;
+        }
+
+        else if ((month == 4) || (month == 6) || (month == 9) ||
+                (month == 11)) {
+            this.daysInMonth = 30;
+        }
+
+        else if (month == 2) {
+            let year = `${this.date[0]}${this.date[1]}${this.date[2]}${this.date[3]}`;
+            const leap = new Date(year, 1, 29).getDate() === 29; // Checking if its a leap year.
+
+            // Setting the day based on the leap year.
+            if (leap)
+                this.daysInMonth = 29;
+            else
+                this.daysInMonth = 28;
+        }
+
+        else {
+            console.log("ERROR | Month doesn't exist.");
+        }
+
+        return this.daysInMonth;
+    }
+
+
+    /** 
+     * Returns the selected date.&lt;br>
+
+     * - Returns the value of the date input element (day).&lt;br>
+    */
+    getSelectedDay = () => {
+        const selectedDate = document.querySelector("#selected-date");
+        this.date = selectedDate.value;
+
+        return `${this.date[8]}${this.date[9]}`; // the 8th and 9th index corresponds to the day.
+    }
+
+
+    /** 
+     * Returns the current month.&lt;br>
+     * 
+     * - Returns the current month based on the current date.&lt;br>
+    */
+    getCurrentMonth = () => {
+        let date = new Date();
+        let month = date.getMonth() + 1;
+        let currentMonth = `${month}`;
+
+        // This is to keep the YYYY-MM-DD format.
+        if (currentMonth.length == 1) {
+            currentMonth = `0${month}`;
+        }
+
+        return currentMonth;
+    }
+
+
+    /** 
+     * Returns the selected month.&lt;br>
+     * 
+     * - Returns the value of the date input element (month).&lt;br>
+    */
+    getSelectedMonth = () => {
+        const selectedDate = document.querySelector("#selected-date");
+        this.date = selectedDate.value;
+
+        return `${this.date[5]}${this.date[6]}`;  // the 5th and 6th index corresponds to the month.
+    }
+
+
+    /** 
+     * Returns the current year.&lt;br>
+     *  
+     * - Returns the current year based on the current date.&lt;br> 
+    */
+    getCurrentYear = () => {
+        return new Date().getFullYear();
+    }
+
+
+    /** 
+     * Returns the selected year.&lt;br>
+     * 
+     * - Returns the value of the date input element (year) &lt;br>
+    */
+    getSelectedYear = () => {
+        const selectedDate = document.querySelector("#selected-date");
+        this.date = selectedDate.value;
+
+        // the 1st, 2nd, 3rd and 4th index corresponds to the year.
+        return `${this.date[0]}${this.date[1]}${this.date[2]}${this.date[3]}`;
+    }
+
+
+    /** 
+     * Calculates the number of days in a month.&lt;br>
+     * 
+     * - Calculates the number of days in a month for the selected date.&lt;br>
+     * - Sets the daysInMonth variable.&lt;br>
+     * - Sets the date variable.&lt;br>
+    */
+    numOfDays = () => {
+        const selectedDate = document.querySelector("#selected-date");
+
+        if (selectedDate.value !== "") {
+            console.log("I am NOT empty."); // testing.
+            console.log(selectedDate.value);  // testing.
+
+            // Sets the date variable.
+            this.date = selectedDate.value;  // output format: 2023-02-17
+            let month = `${this.date[5]}${this.date[6]}`;
+
+            // Sets the daysInMonth variable.
+            this.daysInMonth = this.getDate(month);
+        }
+        else {
+            console.log("ERROR OCCURRED.");
+        }
+    }
+
+    /** 
+     * Displays and hides the calendar based on user input.&lt;br>
+     * 
+     * - Changes the text on the button to allow the user to know the right action.&lt;br>
+     * - Hides and displays the calendar based off whether the calendar is currently displayed or not.&lt;br>
+     */
+    toggleCalendarDisplay = () => {
+        const displayCalendarBtn = document.querySelector("#display-cal-btn");
+
+        // Checks whether the container has the toggle-cal-display class or not.
+        if (this.calContainer.classList.contains("toggle-cal-display")) {
+            this.calContainer.classList.remove("toggle-cal-display");
+            displayCalendarBtn.textContent = "Hide Calendar";
+        }
+        else {
+            this.calContainer.classList.add("toggle-cal-display");
+            displayCalendarBtn.textContent = "Display Calendar";
+        }
+    }
+
+
+    /** 
+     * Begins the populate calendar functionality.&lt;br>
+     * Runs the following functions to create the initial calendar:&lt;br>
+     * 
+     * - daysInMonth()&lt;br>
+     * - buildCal()&lt;br>
+     * - generateCal()&lt;br>
+     * - dateClicked()&lt;br>
+     * - setFormDate()&lt;br>
+     */
+    run = () => {
+        this.daysInMonth = this.getDate(this.setDatePicker());
+        this.buildCal();
+        this.generateCal();
+        this.dateClicked = this.getSelectedDay();
+        this.setFormDate();
+    }
+
+
+    /** 
+     * Empties the dynamic calendar section, to ensure no duplicity.&lt;br>
+     * 
+     * - Removes the dynamic calendar from the HTML.&lt;br>
+     * - Empties the calBoxes array.&lt;br>
+     * - Sets the numOfCalBoxes variable back to 0.&lt;br>
+     */
+    empty = () => {
+        // Removes the current boxes
+        this.calContainer.innerHTML = "";
+        this.calBoxes = [];
+        this.numOfCalBoxes = 0;
+    }
+
+
+    /** 
+     * Regenerates new calendar boxes based on user input.&lt;br>
+     * Runs the following functions to regenerate the calendar:&lt;br>
+     * 
+     * - empty()&lt;br>
+     * - numOfDays()&lt;br>
+     * - buildCal()&lt;br>
+     * - generateCal()&lt;br>
+     * - setFormDate()&lt;br>
+     */
+    regenerate = () => {
+        this.empty();
+        this.numOfDays();
+        this.buildCal();
+        this.generateCal();
+        this.setFormDate();
+    }
+}
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="PopulateCalendar.html">PopulateCalendar</a></li></ul><h3>Global</h3><ul><li><a href="global.html#addGLResultPopUp">addGLResultPopUp</a></li><li><a href="global.html#addIngredientBtn">addIngredientBtn</a></li><li><a href="global.html#addIngredientInputField">addIngredientInputField</a></li><li><a href="global.html#addListBtn">addListBtn</a></li><li><a href="global.html#addListPopUp">addListPopUp</a></li><li><a href="global.html#addMealBtn">addMealBtn</a></li><li><a href="global.html#addMealPlanResultPopUp">addMealPlanResultPopUp</a></li><li><a href="global.html#addMealPopUp">addMealPopUp</a></li><li><a href="global.html#addMealResultPopUp">addMealResultPopUp</a></li><li><a href="global.html#addRecipeBtn">addRecipeBtn</a></li><li><a href="global.html#addRecipePopUp">addRecipePopUp</a></li><li><a href="global.html#addRecipeResultPopUp">addRecipeResultPopUp</a></li><li><a href="global.html#addToCalPopUp">addToCalPopUp</a></li><li><a href="global.html#body">body</a></li><li><a href="global.html#calIcon">calIcon</a></li><li><a href="global.html#closeAddListPopUpBtn">closeAddListPopUpBtn</a></li><li><a href="global.html#closeAddMealPopUpBtn">closeAddMealPopUpBtn</a></li><li><a href="global.html#closeAddToCalPopUpBtn">closeAddToCalPopUpBtn</a></li><li><a href="global.html#closeEstimateCostPopUpBtn">closeEstimateCostPopUpBtn</a></li><li><a href="global.html#closeGLResultPopUpBtn">closeGLResultPopUpBtn</a></li><li><a href="global.html#closeGenerateListPopUpBtn">closeGenerateListPopUpBtn</a></li><li><a href="global.html#closeMealPlanResultPopUpBtn">closeMealPlanResultPopUpBtn</a></li><li><a href="global.html#closeMealResultPopUpBtn">closeMealResultPopUpBtn</a></li><li><a href="global.html#closeNavBtn">closeNavBtn</a></li><li><a href="global.html#closeRecipePopUpBtn">closeRecipePopUpBtn</a></li><li><a href="global.html#closeRecipeResultPopUpBtn">closeRecipeResultPopUpBtn</a></li><li><a href="global.html#closeSetRemaindersPopUpBtn">closeSetRemaindersPopUpBtn</a></li><li><a href="global.html#defaultTheme">defaultTheme</a></li><li><a href="global.html#displayCalendarBtn">displayCalendarBtn</a></li><li><a href="global.html#errorMsgs">errorMsgs</a></li><li><a href="global.html#estimateCostBtn">estimateCostBtn</a></li><li><a href="global.html#estimateCostRecipePopUp">estimateCostRecipePopUp</a></li><li><a href="global.html#formInputs">formInputs</a></li><li><a href="global.html#generateListBtn">generateListBtn</a></li><li><a href="global.html#generateListPopUp">generateListPopUp</a></li><li><a href="global.html#ingredientsInputSection">ingredientsInputSection</a></li><li><a href="global.html#logoImg">logoImg</a></li><li><a href="global.html#navGroup">navGroup</a></li><li><a href="global.html#numberOfIngredients">numberOfIngredients</a></li><li><a href="global.html#pinIcon">pinIcon</a></li><li><a href="global.html#populateCalendar">populateCalendar</a></li><li><a href="global.html#setRemaindersBtn">setRemaindersBtn</a></li><li><a href="global.html#setRemaindersPopUp">setRemaindersPopUp</a></li><li><a href="global.html#setTheme">setTheme</a></li><li><a href="global.html#switchIcon">switchIcon</a></li><li><a href="global.html#themeBtn">themeBtn</a></li><li><a href="global.html#themeIcon">themeIcon</a></li><li><a href="global.html#toggleNavBtn">toggleNavBtn</a></li><li><a href="global.html#toggleTheme">toggleTheme</a></li><li><a href="global.html#updateCalendarBtn">updateCalendarBtn</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Fri Mar 10 2023 16:37:38 GMT+0000 (Greenwich Mean Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

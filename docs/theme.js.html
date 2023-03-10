@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: theme.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: theme.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>// VARIABLES NEEDED FOR THEME FUNCTIONALITY.
+// ========================================================
+/** Toggles between the themes when clicked. */
+const themeBtn = document.querySelector("#theme-btn");
+
+/** The body element of the page. */
+const body = document.querySelector("body");
+
+/** The Plan2Eat brand logo. */
+const logoImg = document.querySelector("#logo-img");
+
+/** The pin icon. */
+const pinIcon = document.querySelector("#pin-icon");
+
+/** The calendar icon. */
+const calIcon = document.querySelector("#cal-icon");
+
+/** The switch icon. */
+const switchIcon = document.querySelector("#switch-icon");
+
+/** The theme icon. */
+const themeIcon = document.querySelector("#theme-icon");
+
+// The theme button calls the toggleTheme() function when clicked.
+themeBtn.addEventListener('click', toggleTheme);
+// Calls the defaultTheme() function when the DOM is loaded.
+document.addEventListener('DOMContentLoaded', defaultTheme, false);
+
+
+// SETS THE DEFAULT THEME.
+/** 
+ * Sets the default theme
+ * 
+ * - If the user has chosen a setting before, it picks that.
+ * - It calls the setTheme() function. */
+function defaultTheme() {
+    // Compares the value stored to determine what theme to pick.
+    if (localStorage.getItem('theme') === 'theme--dark') {
+        setTheme('theme--dark');
+    } else {
+        setTheme('theme--light');
+    }
+};
+
+
+// USING THE STORED THEME.
+/** 
+ * Sets the theme based on the stored theme. 
+ * 
+ * @param {string} themeName - The type of theme (light or dark).
+ * 
+ * - Sets the theme based on the value passed in.
+ * - Changes the src for various elements based on the theme.
+*/
+function setTheme(themeName) {
+    localStorage.setItem("theme", themeName);
+    // Sets the body element's class name to the theme name.
+    body.className = themeName;
+
+    if (themeName == 'theme--dark') {
+        logoImg.setAttribute("src", "../assets/logo-dark.svg");
+
+        // Checks whether each icon exists before setting its src attribute.
+        if (pinIcon != null) {
+            pinIcon.setAttribute("src", "../assets/icon-pin-dark.svg");
+        }
+        if (calIcon != null) {
+            calIcon.setAttribute("src", "../assets/icon-calendar-dark.svg");
+        }
+        if (switchIcon != null) {
+            switchIcon.setAttribute("src", "../assets/icon-switch-dark.svg");
+        }
+        if (themeIcon != null) {
+            themeIcon.setAttribute("src", "../assets/icon-theme-dark.svg");
+        }
+    }
+    else {
+        logoImg.setAttribute("src", "../assets/logo-light.svg");
+
+        // Checks whether each icon exists before setting its src attribute.
+        if (pinIcon != null) {
+            pinIcon.setAttribute("src", "../assets/icon-pin-light.svg");
+        }
+        if (calIcon != null) {
+            calIcon.setAttribute("src", "../assets/icon-calendar-light.svg");
+        }
+        if (switchIcon != null) {
+            switchIcon.setAttribute("src", "../assets/icon-switch-light.svg");
+        }  
+        if (themeIcon != null) {
+            themeIcon.setAttribute("src", "../assets/icon-theme-light.svg");
+        }  
+    }
+}
+
+
+// TOGGLING BETWEEN THE THEMES.
+/** 
+ * Toggles between the light theme and dark theme. 
+ * 
+ * - Sets the theme based on what the theme previously was.
+*/
+function toggleTheme(e) {
+    e.preventDefault();
+    console.log("You clicked the theme button!"); // testing
+    console.log(body.classList); // testing
+
+    // Toggling between the two themes, based on the current theme.
+    if (localStorage.getItem('theme') === "theme--dark")
+        setTheme("theme--light");
+    else 
+        setTheme("theme--dark"); 
+}</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="PopulateCalendar.html">PopulateCalendar</a></li></ul><h3>Global</h3><ul><li><a href="global.html#addGLResultPopUp">addGLResultPopUp</a></li><li><a href="global.html#addIngredientBtn">addIngredientBtn</a></li><li><a href="global.html#addIngredientInputField">addIngredientInputField</a></li><li><a href="global.html#addListBtn">addListBtn</a></li><li><a href="global.html#addListPopUp">addListPopUp</a></li><li><a href="global.html#addMealBtn">addMealBtn</a></li><li><a href="global.html#addMealPlanResultPopUp">addMealPlanResultPopUp</a></li><li><a href="global.html#addMealPopUp">addMealPopUp</a></li><li><a href="global.html#addMealResultPopUp">addMealResultPopUp</a></li><li><a href="global.html#addRecipeBtn">addRecipeBtn</a></li><li><a href="global.html#addRecipePopUp">addRecipePopUp</a></li><li><a href="global.html#addRecipeResultPopUp">addRecipeResultPopUp</a></li><li><a href="global.html#addToCalPopUp">addToCalPopUp</a></li><li><a href="global.html#body">body</a></li><li><a href="global.html#calIcon">calIcon</a></li><li><a href="global.html#closeAddListPopUpBtn">closeAddListPopUpBtn</a></li><li><a href="global.html#closeAddMealPopUpBtn">closeAddMealPopUpBtn</a></li><li><a href="global.html#closeAddToCalPopUpBtn">closeAddToCalPopUpBtn</a></li><li><a href="global.html#closeEstimateCostPopUpBtn">closeEstimateCostPopUpBtn</a></li><li><a href="global.html#closeGLResultPopUpBtn">closeGLResultPopUpBtn</a></li><li><a href="global.html#closeGenerateListPopUpBtn">closeGenerateListPopUpBtn</a></li><li><a href="global.html#closeMealPlanResultPopUpBtn">closeMealPlanResultPopUpBtn</a></li><li><a href="global.html#closeMealResultPopUpBtn">closeMealResultPopUpBtn</a></li><li><a href="global.html#closeNavBtn">closeNavBtn</a></li><li><a href="global.html#closeRecipePopUpBtn">closeRecipePopUpBtn</a></li><li><a href="global.html#closeRecipeResultPopUpBtn">closeRecipeResultPopUpBtn</a></li><li><a href="global.html#closeSetRemaindersPopUpBtn">closeSetRemaindersPopUpBtn</a></li><li><a href="global.html#defaultTheme">defaultTheme</a></li><li><a href="global.html#displayCalendarBtn">displayCalendarBtn</a></li><li><a href="global.html#errorMsgs">errorMsgs</a></li><li><a href="global.html#estimateCostBtn">estimateCostBtn</a></li><li><a href="global.html#estimateCostRecipePopUp">estimateCostRecipePopUp</a></li><li><a href="global.html#formInputs">formInputs</a></li><li><a href="global.html#generateListBtn">generateListBtn</a></li><li><a href="global.html#generateListPopUp">generateListPopUp</a></li><li><a href="global.html#ingredientsInputSection">ingredientsInputSection</a></li><li><a href="global.html#logoImg">logoImg</a></li><li><a href="global.html#navGroup">navGroup</a></li><li><a href="global.html#numberOfIngredients">numberOfIngredients</a></li><li><a href="global.html#pinIcon">pinIcon</a></li><li><a href="global.html#populateCalendar">populateCalendar</a></li><li><a href="global.html#setRemaindersBtn">setRemaindersBtn</a></li><li><a href="global.html#setRemaindersPopUp">setRemaindersPopUp</a></li><li><a href="global.html#setTheme">setTheme</a></li><li><a href="global.html#switchIcon">switchIcon</a></li><li><a href="global.html#themeBtn">themeBtn</a></li><li><a href="global.html#themeIcon">themeIcon</a></li><li><a href="global.html#toggleNavBtn">toggleNavBtn</a></li><li><a href="global.html#toggleTheme">toggleTheme</a></li><li><a href="global.html#updateCalendarBtn">updateCalendarBtn</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Fri Mar 10 2023 16:37:38 GMT+0000 (Greenwich Mean Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

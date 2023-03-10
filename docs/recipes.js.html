@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: recipes.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: recipes.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>// ADD RECIPE FUNCTIONALITY.
+// ========================================================
+/** Displays the add recipe pop up when clicked. */
+const addRecipeBtn = document.querySelector("#add-recipe-btn");
+
+/** Closes the add recipe pop up when clicked. */
+const closeRecipePopUpBtn = document.querySelector("#close-recipe-popup-btn");
+
+/** The add recipe pop up. */
+const addRecipePopUp = document.querySelector("#add-recipe-popup");
+
+addRecipeBtn.addEventListener("click", () => {
+    // Displays the add recipe pop up when the add recipe button is clicked.
+    addRecipePopUp.parentElement.classList.remove("toggle-popup-display");
+});
+
+closeRecipePopUpBtn.addEventListener("click", () => {
+    // Hides the add recipe pop up when the close button is clicked.
+    addRecipePopUp.parentElement.classList.add("toggle-popup-display");
+});
+
+
+// ADD INGREDIENT INPUT FUNCTIONALITY.
+// ========================================================
+/** The recipe ingredient section, where all add ingredients will go. */
+const ingredientsInputSection = document.querySelector(".recipe-ingredients");
+
+/** Adds two more input fields when clicked, to allow the user to add another ingredient. */
+const addIngredientBtn = document.querySelector("#add-recipe-ingredient-input-btn");
+
+/** The current number of ingredients that the user has added.
+ * Always starts as 1, since the user must add at least 1 ingredient. */
+let numberOfIngredients = 1;
+
+// The addIngredientInputField() called when the add ingredient button is clicked.
+addIngredientBtn.addEventListener("click", addIngredientInputField); 
+
+
+/**
+ * Adds ingredient input field.
+ * 
+ * - Creates two input fields:
+ *   - 1 for the ingredient name.
+ *   - 1 for the ingredient amount.
+ * - The fields are add as a group.
+ */
+function addIngredientInputField() {
+    console.log("You clicked the add ingredient button.") // testing.
+    // Increased so that number of ingredients match the number of input field groups.
+    numberOfIngredients++;
+
+    /** The group that will contain the two inputs. */
+    let ingredientGroup = document.createElement("div");
+    ingredientGroup.classList.add("recipe-ingredient-subgroup");
+
+    /** The ingredient name input. */
+    let ingredientInput = document.createElement("input");
+    // Adding the necessary attributes for styling and identification.
+    ingredientInput.setAttribute("placeholder", "Ingredient (e.g. flour)");
+    ingredientInput.setAttribute("name", `recipe-ingredient-${numberOfIngredients}`);
+    ingredientInput.setAttribute("id", `recipe-ingredient-${numberOfIngredients}`);
+
+    /** The ingredient amount input. */
+    let amountInput = document.createElement("input");
+    // Adding the necessary attributes for styling and identification.
+    amountInput.setAttribute("placeholder", "Amount (e.g. 250g)");
+    amountInput.setAttribute("name", `recipe-amount-${numberOfIngredients}`);
+    amountInput.setAttribute("id", `recipe-amount-${numberOfIngredients}`);
+
+    // Adding both inputs to the group created earlier.
+    ingredientGroup.appendChild(ingredientInput);
+    ingredientGroup.appendChild(amountInput);
+
+    // Adding the group to the recipe ingredient section.
+    ingredientsInputSection.appendChild(ingredientGroup);
+}
+
+
+// ESTIMATE COST FUNCTIONALITY.
+// ========================================================
+/** Displays the estimate cost pop up when clicked. */
+const estimateCostBtn = document.querySelector("#estimate-cost-btn");
+
+/** Closes the estimate cost pop up when clicked. */
+const closeEstimateCostPopUpBtn = document.querySelector("#close-estimate-cost-popup-btn");
+
+/** The estimate cost pop up. */
+const estimateCostRecipePopUp = document.querySelector("#estimate-cost-popup");
+
+estimateCostBtn.addEventListener("click", () => {
+    // Displays the estimate cost pop up when the estimate cost button is clicked.
+    estimateCostRecipePopUp.parentElement.classList.remove("toggle-popup-display");
+});
+
+closeEstimateCostPopUpBtn.addEventListener("click", () => {
+    // Hides the estimate cost pop up when the close button is clicked.
+    estimateCostRecipePopUp.parentElement.classList.add("toggle-popup-display");
+});
+
+
+// RECIPE RESULT FUNCTIONALITY.
+// ========================================================
+/** Closes the recipe result pop up when clicked. */
+const closeRecipeResultPopUpBtn = document.querySelector("#close-recipe-result-popup-btn");
+
+/** Add recipe result pop up. */
+const addRecipeResultPopUp = document.querySelector("#add-recipe-result-popup");
+
+// First checks whether the button exists, to prevent an error.
+if (closeRecipeResultPopUpBtn !== null) {
+    closeRecipeResultPopUpBtn.addEventListener("click", () => {
+        // Closes the recipe result popup.
+        addRecipeResultPopUp.parentElement.classList.add("toggle-popup-display");
+    });
+}
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="PopulateCalendar.html">PopulateCalendar</a></li></ul><h3>Global</h3><ul><li><a href="global.html#addGLResultPopUp">addGLResultPopUp</a></li><li><a href="global.html#addIngredientBtn">addIngredientBtn</a></li><li><a href="global.html#addIngredientInputField">addIngredientInputField</a></li><li><a href="global.html#addListBtn">addListBtn</a></li><li><a href="global.html#addListPopUp">addListPopUp</a></li><li><a href="global.html#addMealBtn">addMealBtn</a></li><li><a href="global.html#addMealPlanResultPopUp">addMealPlanResultPopUp</a></li><li><a href="global.html#addMealPopUp">addMealPopUp</a></li><li><a href="global.html#addMealResultPopUp">addMealResultPopUp</a></li><li><a href="global.html#addRecipeBtn">addRecipeBtn</a></li><li><a href="global.html#addRecipePopUp">addRecipePopUp</a></li><li><a href="global.html#addRecipeResultPopUp">addRecipeResultPopUp</a></li><li><a href="global.html#addToCalPopUp">addToCalPopUp</a></li><li><a href="global.html#body">body</a></li><li><a href="global.html#calIcon">calIcon</a></li><li><a href="global.html#closeAddListPopUpBtn">closeAddListPopUpBtn</a></li><li><a href="global.html#closeAddMealPopUpBtn">closeAddMealPopUpBtn</a></li><li><a href="global.html#closeAddToCalPopUpBtn">closeAddToCalPopUpBtn</a></li><li><a href="global.html#closeEstimateCostPopUpBtn">closeEstimateCostPopUpBtn</a></li><li><a href="global.html#closeGLResultPopUpBtn">closeGLResultPopUpBtn</a></li><li><a href="global.html#closeGenerateListPopUpBtn">closeGenerateListPopUpBtn</a></li><li><a href="global.html#closeMealPlanResultPopUpBtn">closeMealPlanResultPopUpBtn</a></li><li><a href="global.html#closeMealResultPopUpBtn">closeMealResultPopUpBtn</a></li><li><a href="global.html#closeNavBtn">closeNavBtn</a></li><li><a href="global.html#closeRecipePopUpBtn">closeRecipePopUpBtn</a></li><li><a href="global.html#closeRecipeResultPopUpBtn">closeRecipeResultPopUpBtn</a></li><li><a href="global.html#closeSetRemaindersPopUpBtn">closeSetRemaindersPopUpBtn</a></li><li><a href="global.html#defaultTheme">defaultTheme</a></li><li><a href="global.html#displayCalendarBtn">displayCalendarBtn</a></li><li><a href="global.html#errorMsgs">errorMsgs</a></li><li><a href="global.html#estimateCostBtn">estimateCostBtn</a></li><li><a href="global.html#estimateCostRecipePopUp">estimateCostRecipePopUp</a></li><li><a href="global.html#formInputs">formInputs</a></li><li><a href="global.html#generateListBtn">generateListBtn</a></li><li><a href="global.html#generateListPopUp">generateListPopUp</a></li><li><a href="global.html#ingredientsInputSection">ingredientsInputSection</a></li><li><a href="global.html#logoImg">logoImg</a></li><li><a href="global.html#navGroup">navGroup</a></li><li><a href="global.html#numberOfIngredients">numberOfIngredients</a></li><li><a href="global.html#pinIcon">pinIcon</a></li><li><a href="global.html#populateCalendar">populateCalendar</a></li><li><a href="global.html#setRemaindersBtn">setRemaindersBtn</a></li><li><a href="global.html#setRemaindersPopUp">setRemaindersPopUp</a></li><li><a href="global.html#setTheme">setTheme</a></li><li><a href="global.html#switchIcon">switchIcon</a></li><li><a href="global.html#themeBtn">themeBtn</a></li><li><a href="global.html#themeIcon">themeIcon</a></li><li><a href="global.html#toggleNavBtn">toggleNavBtn</a></li><li><a href="global.html#toggleTheme">toggleTheme</a></li><li><a href="global.html#updateCalendarBtn">updateCalendarBtn</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Fri Mar 10 2023 16:37:38 GMT+0000 (Greenwich Mean Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

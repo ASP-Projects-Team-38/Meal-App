@@ -1,0 +1,1729 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Class: PopulateCalendar</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Class: PopulateCalendar</h1>
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        <h2><span class="attribs"><span class="type-signature"></span></span>PopulateCalendar<span class="signature">()</span><span class="type-signature"></span></h2>
+        
+            <div class="class-description">- Creates the calendar boxes.<br>
+- Determines the number of boxes required for each month.<br>
+- Syncs the calendar with the date input.<br></div>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+
+    
+    <h2>Constructor</h2>
+    
+
+    
+    <h4 class="name" id="PopulateCalendar"><span class="type-signature"></span>new PopulateCalendar<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Creates the calendar and handles all its functionality:<br>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="populateCalendar.js.html">populateCalendar.js</a>, <a href="populateCalendar.js.html#line10">line 10</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Members</h3>
+
+        
+            
+<h4 class="name" id="addToCalPopUp"><span class="type-signature"></span>addToCalPopUp<span class="type-signature"> :HTMLElement</span></h4>
+
+
+
+
+<div class="description">
+    The pop up that allows users to add data to the calendar.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">HTMLElement</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="populateCalendar.js.html">populateCalendar.js</a>, <a href="populateCalendar.js.html#line33">line 33</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="buildCal"><span class="type-signature"></span>buildCal<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Builds the calendar boxes.<br>
+ 
+- Creates a specific number of calendar boxes.<br>
+   - The number of boxes is equal to the number of days in a month- for the selected month.<br>
+- Calls the createCalBox() function.<br>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="populateCalendar.js.html">populateCalendar.js</a>, <a href="populateCalendar.js.html#line103">line 103</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="calBoxes"><span class="type-signature"></span>calBoxes<span class="type-signature"> :HTMLDivElement</span></h4>
+
+
+
+
+<div class="description">
+    The array that contains the created calendar boxes.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">HTMLDivElement</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="populateCalendar.js.html">populateCalendar.js</a>, <a href="populateCalendar.js.html#line21">line 21</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="calContainer"><span class="type-signature"></span>calContainer<span class="type-signature"> :HTMLDivElement</span></h4>
+
+
+
+
+<div class="description">
+    The div the where the calendar will be populated.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">HTMLDivElement</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="populateCalendar.js.html">populateCalendar.js</a>, <a href="populateCalendar.js.html#line15">line 15</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="createCalBox"><span class="type-signature"></span>createCalBox<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Creates the calendar box.<br>
+
+- Adds the day of the month to the calendar box.<br>
+- Highlights the current day.<br>
+- Adds the addToCalBtn to the calendar box.<br>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="populateCalendar.js.html">populateCalendar.js</a>, <a href="populateCalendar.js.html#line62">line 62</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="date"><span class="type-signature"></span>date<span class="type-signature"> :string</span></h4>
+
+
+
+
+<div class="description">
+    The date.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">string</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="populateCalendar.js.html">populateCalendar.js</a>, <a href="populateCalendar.js.html#line39">line 39</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="dateClicked"><span class="type-signature"></span>dateClicked<span class="type-signature"> :string</span></h4>
+
+
+
+
+<div class="description">
+    The selected date.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">string</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="populateCalendar.js.html">populateCalendar.js</a>, <a href="populateCalendar.js.html#line51">line 51</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="daysInMonth"><span class="type-signature"></span>daysInMonth<span class="type-signature"> :number</span></h4>
+
+
+
+
+<div class="description">
+    The number of days in a selected month.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">number</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="populateCalendar.js.html">populateCalendar.js</a>, <a href="populateCalendar.js.html#line45">line 45</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="empty"><span class="type-signature"></span>empty<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Empties the dynamic calendar section, to ensure no duplicity.<br>
+
+- Removes the dynamic calendar from the HTML.<br>
+- Empties the calBoxes array.<br>
+- Sets the numOfCalBoxes variable back to 0.<br>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="populateCalendar.js.html">populateCalendar.js</a>, <a href="populateCalendar.js.html#line369">line 369</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="generateCal"><span class="type-signature"></span>generateCal<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Generates the calendar.<br>
+
+- Generates the calendar boxes in the DOM.<br>
+   - It appends the boxes to the calendar container div.<br>
+- Displays the pop up if clicked.<br>
+- Calls the setFormDate() function.<br>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="populateCalendar.js.html">populateCalendar.js</a>, <a href="populateCalendar.js.html#line118">line 118</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="getCurrentMonth"><span class="type-signature"></span>getCurrentMonth<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Returns the current month.<br>
+
+- Returns the current month based on the current date.<br>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="populateCalendar.js.html">populateCalendar.js</a>, <a href="populateCalendar.js.html#line245">line 245</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="getCurrentYear"><span class="type-signature"></span>getCurrentYear<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Returns the current year.<br>
+ 
+- Returns the current year based on the current date.<br>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="populateCalendar.js.html">populateCalendar.js</a>, <a href="populateCalendar.js.html#line277">line 277</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="getDate"><span class="type-signature"></span>getDate<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Returns the days in a month.<br>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="populateCalendar.js.html">populateCalendar.js</a>, <a href="populateCalendar.js.html#line196">line 196</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="getSelectedDay"><span class="type-signature"></span>getSelectedDay<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Returns the selected date.<br>
+- Returns the value of the date input element (day).<br>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="populateCalendar.js.html">populateCalendar.js</a>, <a href="populateCalendar.js.html#line232">line 232</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="getSelectedMonth"><span class="type-signature"></span>getSelectedMonth<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Returns the selected month.<br>
+
+- Returns the value of the date input element (month).<br>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="populateCalendar.js.html">populateCalendar.js</a>, <a href="populateCalendar.js.html#line264">line 264</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="getSelectedYear"><span class="type-signature"></span>getSelectedYear<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Returns the selected year.<br>
+
+- Returns the value of the date input element (year) <br>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="populateCalendar.js.html">populateCalendar.js</a>, <a href="populateCalendar.js.html#line287">line 287</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="numOfCalBoxes"><span class="type-signature"></span>numOfCalBoxes<span class="type-signature"> :number</span></h4>
+
+
+
+
+<div class="description">
+    The total number of calendar boxes.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">number</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="populateCalendar.js.html">populateCalendar.js</a>, <a href="populateCalendar.js.html#line27">line 27</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="numOfDays"><span class="type-signature"></span>numOfDays<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Calculates the number of days in a month.<br>
+
+- Calculates the number of days in a month for the selected date.<br>
+- Sets the daysInMonth variable.<br>
+- Sets the date variable.<br>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="populateCalendar.js.html">populateCalendar.js</a>, <a href="populateCalendar.js.html#line303">line 303</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="regenerate"><span class="type-signature"></span>regenerate<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Regenerates new calendar boxes based on user input.<br>
+Runs the following functions to regenerate the calendar:<br>
+
+- empty()<br>
+- numOfDays()<br>
+- buildCal()<br>
+- generateCal()<br>
+- setFormDate()<br>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="populateCalendar.js.html">populateCalendar.js</a>, <a href="populateCalendar.js.html#line387">line 387</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="run"><span class="type-signature"></span>run<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Begins the populate calendar functionality.<br>
+Runs the following functions to create the initial calendar:<br>
+
+- daysInMonth()<br>
+- buildCal()<br>
+- generateCal()<br>
+- dateClicked()<br>
+- setFormDate()<br>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="populateCalendar.js.html">populateCalendar.js</a>, <a href="populateCalendar.js.html#line353">line 353</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="setDatePicker"><span class="type-signature"></span>setDatePicker<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Sets the date picker.<br>
+
+- Sets the date picker to the current date.<br>
+- Returns the current month, to be used by the getDate() function.<br>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="populateCalendar.js.html">populateCalendar.js</a>, <a href="populateCalendar.js.html#line161">line 161</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="setFormDate"><span class="type-signature"></span>setFormDate<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Sets the form date.<br>
+
+- Sets the form date in the format YYYY-MM-DD (matches the date object).<br>
+- Calls the getSelectedYear() and getSelectedMonth() functions.<br>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="populateCalendar.js.html">populateCalendar.js</a>, <a href="populateCalendar.js.html#line141">line 141</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="toggleCalendarDisplay"><span class="type-signature"></span>toggleCalendarDisplay<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Displays and hides the calendar based on user input.<br>
+
+- Changes the text on the button to allow the user to know the right action.<br>
+- Hides and displays the calendar based off whether the calendar is currently displayed or not.<br>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="populateCalendar.js.html">populateCalendar.js</a>, <a href="populateCalendar.js.html#line328">line 328</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="PopulateCalendar.html">PopulateCalendar</a></li></ul><h3>Global</h3><ul><li><a href="global.html#addGLResultPopUp">addGLResultPopUp</a></li><li><a href="global.html#addIngredientBtn">addIngredientBtn</a></li><li><a href="global.html#addIngredientInputField">addIngredientInputField</a></li><li><a href="global.html#addListBtn">addListBtn</a></li><li><a href="global.html#addListPopUp">addListPopUp</a></li><li><a href="global.html#addMealBtn">addMealBtn</a></li><li><a href="global.html#addMealPlanResultPopUp">addMealPlanResultPopUp</a></li><li><a href="global.html#addMealPopUp">addMealPopUp</a></li><li><a href="global.html#addMealResultPopUp">addMealResultPopUp</a></li><li><a href="global.html#addRecipeBtn">addRecipeBtn</a></li><li><a href="global.html#addRecipePopUp">addRecipePopUp</a></li><li><a href="global.html#addRecipeResultPopUp">addRecipeResultPopUp</a></li><li><a href="global.html#addToCalPopUp">addToCalPopUp</a></li><li><a href="global.html#body">body</a></li><li><a href="global.html#calIcon">calIcon</a></li><li><a href="global.html#closeAddListPopUpBtn">closeAddListPopUpBtn</a></li><li><a href="global.html#closeAddMealPopUpBtn">closeAddMealPopUpBtn</a></li><li><a href="global.html#closeAddToCalPopUpBtn">closeAddToCalPopUpBtn</a></li><li><a href="global.html#closeEstimateCostPopUpBtn">closeEstimateCostPopUpBtn</a></li><li><a href="global.html#closeGLResultPopUpBtn">closeGLResultPopUpBtn</a></li><li><a href="global.html#closeGenerateListPopUpBtn">closeGenerateListPopUpBtn</a></li><li><a href="global.html#closeMealPlanResultPopUpBtn">closeMealPlanResultPopUpBtn</a></li><li><a href="global.html#closeMealResultPopUpBtn">closeMealResultPopUpBtn</a></li><li><a href="global.html#closeNavBtn">closeNavBtn</a></li><li><a href="global.html#closeRecipePopUpBtn">closeRecipePopUpBtn</a></li><li><a href="global.html#closeRecipeResultPopUpBtn">closeRecipeResultPopUpBtn</a></li><li><a href="global.html#closeSetRemaindersPopUpBtn">closeSetRemaindersPopUpBtn</a></li><li><a href="global.html#defaultTheme">defaultTheme</a></li><li><a href="global.html#displayCalendarBtn">displayCalendarBtn</a></li><li><a href="global.html#errorMsgs">errorMsgs</a></li><li><a href="global.html#estimateCostBtn">estimateCostBtn</a></li><li><a href="global.html#estimateCostRecipePopUp">estimateCostRecipePopUp</a></li><li><a href="global.html#formInputs">formInputs</a></li><li><a href="global.html#generateListBtn">generateListBtn</a></li><li><a href="global.html#generateListPopUp">generateListPopUp</a></li><li><a href="global.html#ingredientsInputSection">ingredientsInputSection</a></li><li><a href="global.html#logoImg">logoImg</a></li><li><a href="global.html#navGroup">navGroup</a></li><li><a href="global.html#numberOfIngredients">numberOfIngredients</a></li><li><a href="global.html#pinIcon">pinIcon</a></li><li><a href="global.html#populateCalendar">populateCalendar</a></li><li><a href="global.html#setRemaindersBtn">setRemaindersBtn</a></li><li><a href="global.html#setRemaindersPopUp">setRemaindersPopUp</a></li><li><a href="global.html#setTheme">setTheme</a></li><li><a href="global.html#switchIcon">switchIcon</a></li><li><a href="global.html#themeBtn">themeBtn</a></li><li><a href="global.html#themeIcon">themeIcon</a></li><li><a href="global.html#toggleNavBtn">toggleNavBtn</a></li><li><a href="global.html#toggleTheme">toggleTheme</a></li><li><a href="global.html#updateCalendarBtn">updateCalendarBtn</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Fri Mar 10 2023 16:37:38 GMT+0000 (Greenwich Mean Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

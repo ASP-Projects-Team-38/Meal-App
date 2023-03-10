@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: signup.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: signup.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>// FORM SPACING.
+// ========================================================
+/** All error message p tags, that display feedback to to user. */
+const errorMsgs = document.querySelectorAll(".error-msg");
+
+for (let msg of errorMsgs) {
+    // Checks whether the there is an error message displayed.
+    if (msg.textContent == "") {
+        // Hides the error msg p tag, so that there is not a big gap between form groups.
+        msg.style.display = "none";
+    }
+}
+
+
+// CHECKING THE VALIDITY OF USER ENTRY.
+// ========================================================
+/** All the form inputs on the page. */
+const formInputs = document.querySelectorAll("input");
+
+for (let input of formInputs) {
+    input.addEventListener("change", () => {
+        console.log("Input changed."); // testing.
+
+        /** Selects the error msg p tag associated with the input. */
+        let msg = input.nextElementSibling;
+        let id = input.id;
+
+        // Only displays a message when the form input is invalid.
+        if(!input.checkValidity()) {
+            console.log(msg); // testing.
+            console.log(id); // testing.
+
+            // Styling the error message.
+            input.classList.add("invalid");
+            msg.style.display = "block";
+
+            // Displays a message to the user depending on what input is invalid.
+            if (id === "fname" || id === "lname") {
+                msg.textContent = "\u26A0 Name must be between 1 and 75 characters, and can only contain letters and dashes.";
+            }
+            else if (id === "email") {
+                msg.textContent = "\u26A0 Not a valid email. Ex: you@example.com";
+            }
+            else if (id === "phone-number") {
+                msg.textContent = "\u26A0 Phone number must be between 11 and 15 digits (and +).";
+            }
+            else if (id === "username") {
+                msg.textContent = "\u26A0 Username must be between 3 and 50 characters, and can contain letters, numbers, dashes, and underscores.";
+            }
+            else if (id === "password" || id === "re-password") {
+                msg.textContent = "\u26A0 Password must contain a minimum of 8 characters, at least 1 uppercase letter, 1 lowercase letter and 1 number.";
+            }
+            else {
+                msg.textContent = "\u26A0 Invalid input!";
+            }
+        }
+        // If the validity is not invalid, the styling is removed, and the message content is emptied.
+        else {
+            input.classList.remove("invalid");
+            msg.textContent = "";
+        }
+    });
+}</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="PopulateCalendar.html">PopulateCalendar</a></li></ul><h3>Global</h3><ul><li><a href="global.html#addGLResultPopUp">addGLResultPopUp</a></li><li><a href="global.html#addIngredientBtn">addIngredientBtn</a></li><li><a href="global.html#addIngredientInputField">addIngredientInputField</a></li><li><a href="global.html#addListBtn">addListBtn</a></li><li><a href="global.html#addListPopUp">addListPopUp</a></li><li><a href="global.html#addMealBtn">addMealBtn</a></li><li><a href="global.html#addMealPlanResultPopUp">addMealPlanResultPopUp</a></li><li><a href="global.html#addMealPopUp">addMealPopUp</a></li><li><a href="global.html#addMealResultPopUp">addMealResultPopUp</a></li><li><a href="global.html#addRecipeBtn">addRecipeBtn</a></li><li><a href="global.html#addRecipePopUp">addRecipePopUp</a></li><li><a href="global.html#addRecipeResultPopUp">addRecipeResultPopUp</a></li><li><a href="global.html#addToCalPopUp">addToCalPopUp</a></li><li><a href="global.html#body">body</a></li><li><a href="global.html#calIcon">calIcon</a></li><li><a href="global.html#closeAddListPopUpBtn">closeAddListPopUpBtn</a></li><li><a href="global.html#closeAddMealPopUpBtn">closeAddMealPopUpBtn</a></li><li><a href="global.html#closeAddToCalPopUpBtn">closeAddToCalPopUpBtn</a></li><li><a href="global.html#closeEstimateCostPopUpBtn">closeEstimateCostPopUpBtn</a></li><li><a href="global.html#closeGLResultPopUpBtn">closeGLResultPopUpBtn</a></li><li><a href="global.html#closeGenerateListPopUpBtn">closeGenerateListPopUpBtn</a></li><li><a href="global.html#closeMealPlanResultPopUpBtn">closeMealPlanResultPopUpBtn</a></li><li><a href="global.html#closeMealResultPopUpBtn">closeMealResultPopUpBtn</a></li><li><a href="global.html#closeNavBtn">closeNavBtn</a></li><li><a href="global.html#closeRecipePopUpBtn">closeRecipePopUpBtn</a></li><li><a href="global.html#closeRecipeResultPopUpBtn">closeRecipeResultPopUpBtn</a></li><li><a href="global.html#closeSetRemaindersPopUpBtn">closeSetRemaindersPopUpBtn</a></li><li><a href="global.html#defaultTheme">defaultTheme</a></li><li><a href="global.html#displayCalendarBtn">displayCalendarBtn</a></li><li><a href="global.html#errorMsgs">errorMsgs</a></li><li><a href="global.html#estimateCostBtn">estimateCostBtn</a></li><li><a href="global.html#estimateCostRecipePopUp">estimateCostRecipePopUp</a></li><li><a href="global.html#formInputs">formInputs</a></li><li><a href="global.html#generateListBtn">generateListBtn</a></li><li><a href="global.html#generateListPopUp">generateListPopUp</a></li><li><a href="global.html#ingredientsInputSection">ingredientsInputSection</a></li><li><a href="global.html#logoImg">logoImg</a></li><li><a href="global.html#navGroup">navGroup</a></li><li><a href="global.html#numberOfIngredients">numberOfIngredients</a></li><li><a href="global.html#pinIcon">pinIcon</a></li><li><a href="global.html#populateCalendar">populateCalendar</a></li><li><a href="global.html#setRemaindersBtn">setRemaindersBtn</a></li><li><a href="global.html#setRemaindersPopUp">setRemaindersPopUp</a></li><li><a href="global.html#setTheme">setTheme</a></li><li><a href="global.html#switchIcon">switchIcon</a></li><li><a href="global.html#themeBtn">themeBtn</a></li><li><a href="global.html#themeIcon">themeIcon</a></li><li><a href="global.html#toggleNavBtn">toggleNavBtn</a></li><li><a href="global.html#toggleTheme">toggleTheme</a></li><li><a href="global.html#updateCalendarBtn">updateCalendarBtn</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Fri Mar 10 2023 16:37:38 GMT+0000 (Greenwich Mean Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

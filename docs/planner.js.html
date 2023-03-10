@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: planner.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: planner.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>// SET REMAINDERS FUNCTIONALITY.
+// ========================================================
+/** Displays the set remainders pop up when clicked. */
+const setRemaindersBtn = document.querySelector("#set-remainder-btn");
+
+/** Closes the set remainders pop up when clicked. */
+const closeSetRemaindersPopUpBtn = document.querySelector("#close-set-remainders-popup-btn");
+
+/** The set remainders pop up. */
+const setRemaindersPopUp = document.querySelector("#set-remainders-popup");
+
+setRemaindersBtn.addEventListener("click", () => {
+    // Displays the set remainders pop up when the set remainder button is clicked.
+    setRemaindersPopUp.parentElement.classList.remove("toggle-popup-display");
+});
+
+closeSetRemaindersPopUpBtn.addEventListener("click", () => {
+    // Hides the set remainders pop up when the close button is clicked.
+    setRemaindersPopUp.parentElement.classList.add("toggle-popup-display");
+});
+
+
+// ADD MEAL FUNCTIONALITY.
+// ========================================================
+/** Displays the add meal pop up when clicked. */
+const addMealBtn = document.querySelector("#add-meal-btn");
+
+/** Closes the add meal pop up when clicked. */
+const closeAddMealPopUpBtn = document.querySelector("#close-add-meal-popup-btn");
+
+/** The add meal pop up. */
+const addMealPopUp = document.querySelector("#add-meal-popup");
+
+addMealBtn.addEventListener("click", () => {
+    // Displays the add meal pop up when the add meal button is clicked.
+    addMealPopUp.parentElement.classList.remove("toggle-popup-display");
+});
+
+closeAddMealPopUpBtn.addEventListener("click", () => {
+    // Hides the add meal pop up when the close button is clicked.
+    addMealPopUp.parentElement.classList.add("toggle-popup-display");
+});
+
+
+// MEAL RESULT FUNCTIONALITY.
+// ========================================================
+/** Closes the meal result pop up when clicked. */
+const closeMealResultPopUpBtn = document.querySelector("#close-meal-result-popup-btn");
+
+/** The add meal result pop up. */
+const addMealResultPopUp = document.querySelector("#add-meal-result-popup");
+
+if (closeMealResultPopUpBtn !== null) {
+    closeMealResultPopUpBtn.addEventListener("click", () => {
+        // Closes the add meal result popup.
+        addMealResultPopUp.parentElement.classList.add("toggle-popup-display");
+    });
+}
+
+
+// MEAL PLAN RESULT FUNCTIONALITY.
+// ========================================================
+/** Closes the meal plan result pop up when clicked. */
+const closeMealPlanResultPopUpBtn = document.querySelector("#close-mealplan-result-popup-btn");
+
+/** The add meal plan result pop up. */
+const addMealPlanResultPopUp = document.querySelector("#add-mealplan-result-popup");
+
+// First checks whether the button exists, to prevent an error.
+if (closeMealPlanResultPopUpBtn !== null) {
+    closeMealPlanResultPopUpBtn.addEventListener("click", () => {
+        // Closes the add meal plan result popup.
+        addMealPlanResultPopUp.parentElement.classList.add("toggle-popup-display");
+    });
+}
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="PopulateCalendar.html">PopulateCalendar</a></li></ul><h3>Global</h3><ul><li><a href="global.html#addGLResultPopUp">addGLResultPopUp</a></li><li><a href="global.html#addIngredientBtn">addIngredientBtn</a></li><li><a href="global.html#addIngredientInputField">addIngredientInputField</a></li><li><a href="global.html#addListBtn">addListBtn</a></li><li><a href="global.html#addListPopUp">addListPopUp</a></li><li><a href="global.html#addMealBtn">addMealBtn</a></li><li><a href="global.html#addMealPlanResultPopUp">addMealPlanResultPopUp</a></li><li><a href="global.html#addMealPopUp">addMealPopUp</a></li><li><a href="global.html#addMealResultPopUp">addMealResultPopUp</a></li><li><a href="global.html#addRecipeBtn">addRecipeBtn</a></li><li><a href="global.html#addRecipePopUp">addRecipePopUp</a></li><li><a href="global.html#addRecipeResultPopUp">addRecipeResultPopUp</a></li><li><a href="global.html#addToCalPopUp">addToCalPopUp</a></li><li><a href="global.html#body">body</a></li><li><a href="global.html#calIcon">calIcon</a></li><li><a href="global.html#closeAddListPopUpBtn">closeAddListPopUpBtn</a></li><li><a href="global.html#closeAddMealPopUpBtn">closeAddMealPopUpBtn</a></li><li><a href="global.html#closeAddToCalPopUpBtn">closeAddToCalPopUpBtn</a></li><li><a href="global.html#closeEstimateCostPopUpBtn">closeEstimateCostPopUpBtn</a></li><li><a href="global.html#closeGLResultPopUpBtn">closeGLResultPopUpBtn</a></li><li><a href="global.html#closeGenerateListPopUpBtn">closeGenerateListPopUpBtn</a></li><li><a href="global.html#closeMealPlanResultPopUpBtn">closeMealPlanResultPopUpBtn</a></li><li><a href="global.html#closeMealResultPopUpBtn">closeMealResultPopUpBtn</a></li><li><a href="global.html#closeNavBtn">closeNavBtn</a></li><li><a href="global.html#closeRecipePopUpBtn">closeRecipePopUpBtn</a></li><li><a href="global.html#closeRecipeResultPopUpBtn">closeRecipeResultPopUpBtn</a></li><li><a href="global.html#closeSetRemaindersPopUpBtn">closeSetRemaindersPopUpBtn</a></li><li><a href="global.html#defaultTheme">defaultTheme</a></li><li><a href="global.html#displayCalendarBtn">displayCalendarBtn</a></li><li><a href="global.html#errorMsgs">errorMsgs</a></li><li><a href="global.html#estimateCostBtn">estimateCostBtn</a></li><li><a href="global.html#estimateCostRecipePopUp">estimateCostRecipePopUp</a></li><li><a href="global.html#formInputs">formInputs</a></li><li><a href="global.html#generateListBtn">generateListBtn</a></li><li><a href="global.html#generateListPopUp">generateListPopUp</a></li><li><a href="global.html#ingredientsInputSection">ingredientsInputSection</a></li><li><a href="global.html#logoImg">logoImg</a></li><li><a href="global.html#navGroup">navGroup</a></li><li><a href="global.html#numberOfIngredients">numberOfIngredients</a></li><li><a href="global.html#pinIcon">pinIcon</a></li><li><a href="global.html#populateCalendar">populateCalendar</a></li><li><a href="global.html#setRemaindersBtn">setRemaindersBtn</a></li><li><a href="global.html#setRemaindersPopUp">setRemaindersPopUp</a></li><li><a href="global.html#setTheme">setTheme</a></li><li><a href="global.html#switchIcon">switchIcon</a></li><li><a href="global.html#themeBtn">themeBtn</a></li><li><a href="global.html#themeIcon">themeIcon</a></li><li><a href="global.html#toggleNavBtn">toggleNavBtn</a></li><li><a href="global.html#toggleTheme">toggleTheme</a></li><li><a href="global.html#updateCalendarBtn">updateCalendarBtn</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Fri Mar 10 2023 16:37:38 GMT+0000 (Greenwich Mean Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
