@@ -47,7 +47,7 @@ for (let input of formInputs) {
             else if (id === "username") {
                 msg.textContent = "\u26A0 Username must be between 3 and 50 characters, and can contain letters, numbers, dashes, and underscores.";
             }
-            else if (id === "password" || id === "re-password") {
+            else if (id === "password") {
                 msg.textContent = "\u26A0 Password must contain a minimum of 8 characters, at least 1 uppercase letter, 1 lowercase letter and 1 number.";
             }
             else {
