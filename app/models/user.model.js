@@ -1,6 +1,9 @@
 "user strict";
+
+// import db connection
 var dbConn = require("../config/db.config");
 
+// user object
 var User = function (user) {
   this.fname = user.fname;
   this.lname = user.lname;
@@ -11,6 +14,7 @@ var User = function (user) {
   this.password = user.password;
 };
 
+// create user record in DB
 User.create = function (newUser, result) {
   dbConn.query("INSERT INTO users set ?", newUser, function (err, res) {
     if (err) {
@@ -23,26 +27,37 @@ User.create = function (newUser, result) {
   });
 };
 
+// get number of user count by name from DB
 User.getUserCountByUsername = function (username, result) {
-  dbConn.query("Select count(1) as usercount from users where username = ?", username, function (err, res) {
-    if (err) {
-      console.log("error: ", err);
-      result(err, null);
-    } else {
-      result(null, res);
+  dbConn.query(
+    "Select count(1) as usercount from users where username = ?",
+    username,
+    function (err, res) {
+      if (err) {
+        console.log("error: ", err);
+        result(err, null);
+      } else {
+        result(null, res);
+      }
     }
-  });
+  );
 };
 
+// get password by username from DB
 User.findPasswordByUsername = function (username, result) {
-  dbConn.query("Select max(password) as password from users where username = ?", username, function (err, res) {
-    if (err) {
-      console.log("error: ", err);
-      result(err, null);
-    } else {
-      result(null, res);
+  dbConn.query(
+    "Select max(password) as password from users where username = ?",
+    username,
+    function (err, res) {
+      if (err) {
+        console.log("error: ", err);
+        result(err, null);
+      } else {
+        result(null, res);
+      }
     }
-  });
+  );
 };
 
+// module export
 module.exports = User;

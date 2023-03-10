@@ -1,9 +1,11 @@
 "use strict";
 
+// import libs
 const Recipe = require("../models/recipe.model");
 const Meal = require("../models/meal.model");
 const MealPlan = require("../models/mealplan.model");
 
+// set recipes, meals, meal plans info in user session
 var populateInfoInSession = (exports.populateInfoInSession = function (
   req,
   renderPage
@@ -34,6 +36,7 @@ var populateInfoInSession = (exports.populateInfoInSession = function (
   });
 });
 
+// create meal
 exports.createMeal = function (req, res) {
   // parsing values from request body
   const recipe_id = req.body["add-meal-recipe"].split(",")[0];
@@ -85,8 +88,9 @@ exports.createMeal = function (req, res) {
   });
 };
 
+// add meal to calendar for meal plan
 exports.addMealToCalendar = function (req, res) {
-  // parsing values from request body
+  // parsing inputs
   const meal_id = req.body["add-to-cal-meal"].split(",")[0];
   const meal_name = req.body["add-to-cal-meal"].split(",")[1];
   const meal_date = req.body["add-to-cal-date-hidden-input"];

@@ -1,23 +1,25 @@
+// import required public libs
 const express = require("express");
 const bodyParser = require("body-parser");
 const path = require("path");
 const session = require("express-session");
 const cookieParser = require("cookie-parser");
 
+// import our libs
 const userController = require("./app/controllers/user.controller");
 const recipeController = require("./app/controllers/recipe.controller");
 const mealplanController = require("./app/controllers/mealplan.controller");
 const grocerylistController = require("./app/controllers/grocerylist.controller");
 
+// init app
 const app = express();
 
+// set app settings
 app.use(express.static(__dirname));
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
-
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-
 app.set("trust proxy", 1); // trust first proxy
 app.use(
   session({
@@ -32,8 +34,8 @@ app.use(
   })
 );
 
+// function for checking user session
 const sessionChecker = (req, res, next) => {
-  // console.log(req.session);
   if (req.session.username) {
     console.log("Found user session");
     return next();
@@ -43,6 +45,7 @@ const sessionChecker = (req, res, next) => {
   }
 };
 
+// web app endpoints
 app.get("/", sessionChecker, (req, res) => {
   recipeController.populateRecipesOfUserInSession(req, function () {
     res.render("index", {
@@ -132,4 +135,5 @@ app.post("/generateGroceryList", (req, res) => {
   grocerylistController.generate(req, res);
 });
 
+// module export
 module.exports = app;

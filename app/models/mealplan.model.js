@@ -1,10 +1,13 @@
 "user strict";
 
+// import db connection
+var dbConn = require("../config/db.config");
+
+// import models
 const Recipe = require("./recipe.model");
 const Meal = require("./meal.model");
 
-var dbConn = require("../config/db.config");
-
+// meal plan object
 var MealPlan = function (
   id,
   meal_id,
@@ -23,6 +26,7 @@ var MealPlan = function (
   this.meal = meal;
 };
 
+// create meal plan record in DB
 MealPlan.createMealPlan = function (newMealPlan, result) {
   dbConn.query(
     "INSERT INTO meal_plans (meal_id, meal_datetime, username) VALUES (?, ?, ?);",
@@ -42,6 +46,7 @@ MealPlan.createMealPlan = function (newMealPlan, result) {
   );
 };
 
+// get meal plans by user name from DB
 MealPlan.findByUsername = function (username, result) {
   sql = `select m.id, m.meal_id, m.meal_datetime, m.meal_date, m.meal_time, m.username, m.type, m.diet_preferences, n.name as recipe_name, n.ingredients, n.tags, n.instructions, n.time_estimation, m.recipe_id, m.meal_name
           from (
@@ -119,6 +124,7 @@ MealPlan.findByUsername = function (username, result) {
   });
 };
 
+// get meal plans by user name and date from DB
 MealPlan.findByUsernameAndDate = function (username, searchDate, result) {
   sql = `select m.id, m.meal_id, m.meal_datetime, m.meal_date, m.meal_time, m.username, m.type, m.diet_preferences, n.name as recipe_name, n.ingredients, n.tags, n.instructions, n.time_estimation, m.recipe_id, m.meal_name
           from (
@@ -201,4 +207,5 @@ MealPlan.findByUsernameAndDate = function (username, searchDate, result) {
   );
 };
 
+// module export
 module.exports = MealPlan;

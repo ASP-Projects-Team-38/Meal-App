@@ -1,6 +1,9 @@
 "user strict";
+
+// import db connection
 var dbConn = require("../config/db.config");
 
+// recipe object
 var Recipe = function (
   name,
   instructions,
@@ -19,6 +22,7 @@ var Recipe = function (
   this.id = id;
 };
 
+// create recipe record in DB
 Recipe.create = function (newRecipe, result) {
   dbConn.beginTransaction((err) => {
     if (err) {
@@ -106,6 +110,7 @@ Recipe.create = function (newRecipe, result) {
   });
 };
 
+// get recipes by user name from DB
 Recipe.findByUsername = function (username, result) {
   sql = `select x.id, x.name, x.ingredients, y.tags, x.instructions, x.time_estimation, x.username
           from (
@@ -161,6 +166,7 @@ Recipe.findByUsername = function (username, result) {
   });
 };
 
+// get ingredients by recipe id from DB
 Recipe.findIngredentsByRecipeID = function (recipe_id, result) {
   sql = `select group_concat(name) as ingredients from recipe_ingredients where recipe_id = ?;`;
 
@@ -175,4 +181,5 @@ Recipe.findIngredentsByRecipeID = function (recipe_id, result) {
   });
 };
 
+// module export
 module.exports = Recipe;
