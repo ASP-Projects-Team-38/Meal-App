@@ -26,7 +26,6 @@ section.pop-up-container {
         }
 
         span.close-btn {
-            // margin-left: -770px;
             font-weight: 700;
             font-size: 3.5rem;
             margin-bottom: -80px;
@@ -112,11 +111,7 @@ section.pop-up-container {
                 p {
                     font-weight: 400;
                     font-size: 1rem;
-                    // margin-left: 80px;
                     margin-top: -36px;
-
-                    // position: relative;
-                    // left: 10px;
 
                 span {
                     margin-right: 8px;
@@ -184,11 +179,6 @@ section.pop-up-container {
     // ========================================================
     div#add-list {
         form {
-            // div.warning p {
-                // margin-left: -20px;
-                // margin-left: 0;
-            // }
-
             div.list-ingredients-group input {
                 margin-left: -8px;
             }
@@ -200,7 +190,6 @@ section.pop-up-container {
             input[type='submit'] {
                 width: 530px;
                 margin-left: 140px;
-                // margin-left: 0;
             }
         }
     }
@@ -219,7 +208,6 @@ section.pop-up-container {
                 }
 
                 input[type='submit'] {
-                    // width: 500px;
                     width: 55vw;
                     margin-left: 190px;
                 }
@@ -267,27 +255,28 @@ section.pop-up-container {
                     margin-top: -10px;
                 }
 
-                // div.recipe-ingredients-group {
-                //     @include flex(column, center, flex-start);
+                div.recipe-ingredients-group {
+                    margin-left: -150px;
+
+                    label {
+                        margin-left: 150px;
+                    }
     
-                //     div.recipe-ingredients {
-                //         @include flex(column, center, flex-start);
-    
-                //         div.recipe-ingredient-subgroup {
-                //             @include flex(row, flex-start, center, 12px);
-                //             margin-top: -24px;
-                //             margin-left: 150px;
+                    div.recipe-ingredients {
+                        div.recipe-ingredient-subgroup {
+                            @include flex(column, flex-start, flex-start, 24px);
         
-                //             input {
-                //                 width: 150px;
-                //             }
+                            input {
+                                width: 55vw;
+                            }
         
-                //             input:first-of-type {
-                //                 width: 300px;
-                //             }
-                //         }
-                //     }
-                // }
+                            input:first-of-type {
+                                width: 55vw;
+                            }
+                        }
+                    }
+                }
+
 
                 // RESET MINOR STYLE ADJUSTMENTS.
                 // ========================================================
@@ -351,7 +340,6 @@ section.pop-up-container {
                 input[type='submit'] {
                     margin-left: 0;
                     width: 55vw;
-                    // margin-left: 160px;
                 }
             }
         }
@@ -384,74 +372,3 @@ section.pop-up-container {
     }
 
 }
-
-// // Large devices (laptops/desktops, between 851px and 992px).
-// @media only screen and (min-width: 851px) and (max-width: 992px) {
-//     section.pop-up-container {
-//         div.pop-up {
-//             width: 60vw;
-
-//             form {
-//                 div {
-//                     @include flex(column, center, flex-start, 48px);
-//                 }
-
-//                 // div.warning p {
-//                 //     margin-left: 0;
-    
-//                 //     // span {
-//                 //     //     margin-right: 8px;
-//                 //     // }
-//                 // }
-
-//                 // RESET MINOR STYLE ADJUSTMENTS.
-//                 // ========================================================
-//                 div.recipe-tags-group {
-//                     margin-left: 0;
-//                 }
-
-//                 div.recipe-time-estimation-group {
-//                     margin-left: 0;
-//                 }
-
-//                 // div.estimate-cost-recipe-group {
-//                 //     margin-left: -16px;
-//                 // }
-
-//                 // div.add-meal-recipe-group select {
-//                 //     margin-left: 52px;
-//                 // }
-
-//                 // div.add-meal-type-group select {
-//                 //     margin-left: 20px;
-//                 // }
-
-//                 // div.add-meal-preferences-group select {
-//                 //     margin-right: 34px;
-//                 // }
-
-//                 // div.set-remainders-freq-group select {
-//                 //     margin-right: 82px;
-//                 // }
-
-//                 // div.set-remainders-send-group select {
-//                 //     margin-right: 46px;
-//                 // }
-
-//                 // div.add-to-cal-recipe-group select {
-//                 //     width: 530px;
-//                 //     margin-right: 11px;
-//                 // }
-
-//                 // div.generate-list-name-group select {
-//                 //     width: 538px;
-//                 //     margin-right: 28px;
-//                 // }
-
-//                 input[type='submit'] {
-//                     margin-left: 0;
-//                 }
-//             }
-//         }
-//     }
-// }

@@ -901,6 +901,25 @@ section.pop-up-container section#generate-list-popup div#generate-list form inpu
     width: 55vw;
     margin-top: -10px;
   }
+  section.pop-up-container div.pop-up form div.recipe-ingredients-group {
+    margin-left: -150px;
+  }
+  section.pop-up-container div.pop-up form div.recipe-ingredients-group label {
+    margin-left: 150px;
+  }
+  section.pop-up-container div.pop-up form div.recipe-ingredients-group div.recipe-ingredients div.recipe-ingredient-subgroup {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 24px;
+  }
+  section.pop-up-container div.pop-up form div.recipe-ingredients-group div.recipe-ingredients div.recipe-ingredient-subgroup input {
+    width: 55vw;
+  }
+  section.pop-up-container div.pop-up form div.recipe-ingredients-group div.recipe-ingredients div.recipe-ingredient-subgroup input:first-of-type {
+    width: 55vw;
+  }
   section.pop-up-container div.pop-up form div.recipe-tags-group {
     margin-left: 0;
   }
