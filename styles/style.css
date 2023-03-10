@@ -605,6 +605,11 @@ main .cards .card p:first-of-type {
 main .cards .card p:nth-of-type(2) {
   line-height: 2rem;
   text-align: justify;
+  font-size: 1.1rem;
+  background-color: #fff;
+  color: #222;
+  border-radius: 8px;
+  padding: 8px;
 }
 main .cards .card p:nth-of-type(3) {
   font-weight: bold;
@@ -615,6 +620,20 @@ main .cards .card p:nth-of-type(3) {
 }
 .theme--dark main .cards .card p:nth-of-type(3) {
   color: #33B5E4;
+}
+main .cards .card ul {
+  padding: 0;
+}
+main .cards .card li {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.2rem;
+}
+main .cards .card span {
+  font-weight: bold;
+  margin-right: 8px;
 }
 
 main {

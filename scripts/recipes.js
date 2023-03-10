@@ -127,7 +127,7 @@ for (let property in recipeIngredients) {
     console.log(`${property}: ${recipeIngredients[property]}`);
 
     let li = document.createElement("li");
-    li.textContent = `${property}: ${recipeIngredients[property]}`;
+    li.innerHTML = `<span>${property}:</span> ${recipeIngredients[property]}`;
 
     ingredientsContainer.appendChild(li);
 }

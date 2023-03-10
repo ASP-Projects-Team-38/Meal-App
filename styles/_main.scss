@@ -74,6 +74,12 @@ main {
             p:nth-of-type(2) {
                 line-height: 2rem;
                 text-align: justify;
+                font-size: 1.1rem;
+
+                background-color: #fff;
+                color: #222;
+                border-radius: 8px;
+                padding: 8px;
             }
 
             p:nth-of-type(3) {
@@ -83,6 +89,20 @@ main {
                 @include themed() {
                     color: toggleTheme("current-page");
                 }
+            }
+
+            ul {
+                padding: 0;
+            }
+
+            li {
+                @include flex(row, space-between, center);
+                font-size: 1.2rem;
+            }
+
+            span {
+                font-weight: bold;
+                margin-right: 8px;
             }
         }
     }
