@@ -21,25 +21,28 @@ exports.create = function (req, res) {
     if (err) res.send(err);
     if (userCountResult[0].usercount >= 1) {
       console.log("User already exists");
-      res.redirect("/");
-    };
-  });
+      res.redirect("/signup");
+    } else if (password !== rePassword) {
+      console.log("Password not match");
+      res.redirect("/signup");
+    } else {
+      // create user object
+      const new_user = new User({
+        fname,
+        lname,
+        email,
+        dob,
+        phoneNumber,
+        username,
+        password,
+      });
 
-  // create user object
-  const new_user = new User({
-    fname,
-    lname,
-    email,
-    dob,
-    phoneNumber,
-    username,
-    password,
-  });
-
-  // create user record in DB
-  User.create(new_user, function (err, user) {
-    if (err) res.send(err);
-    res.redirect("/");
+      // create user record in DB
+      User.create(new_user, function (err, user) {
+        if (err) res.send(err);
+        res.redirect("/");
+      });
+    }
   });
 };
 
@@ -51,23 +54,24 @@ exports.login = function (req, res) {
   if (username === "" || password === "") {
     console.log("Username or password is blank");
     res.redirect("/");
-  };
-
-  User.getUserCountByUsername(username, function (err, userCountResult) {
-    if (err) res.send(err);
-    if (userCountResult[0].usercount < 1) {
-      console.log("User not exist");
-      res.redirect("/");
-    };
-  });
-
-  User.findPasswordByUsername(username, function (err, passwordResult) {
-    if (err) res.send(err);
-    if (passwordResult[0].password !== password) {
-      res.json({ error: "Password not match" });
-    } else {
-      req.session.username = username;
-      res.redirect("/");
-    }
-  });
+  } else {
+    User.getUserCountByUsername(username, function (err, userCountResult) {
+      if (err) res.send(err);
+      if (userCountResult[0].usercount < 1) {
+        console.log("User does not exist");
+        res.redirect("/");
+      } else {
+        User.findPasswordByUsername(username, function (err, passwordResult) {
+          if (err) res.send(err);
+          if (passwordResult[0].password !== password) {
+            console.log("Password not match");
+            res.redirect("/");
+          } else {
+            req.session.username = username;
+            res.redirect("/");
+          }
+        });
+      }
+    });
+  }
 };
