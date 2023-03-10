@@ -184,9 +184,10 @@ section.pop-up-container {
     // ========================================================
     div#add-list {
         form {
-            div.warning p {
-                margin-left: -20px;
-            }
+            // div.warning p {
+                // margin-left: -20px;
+                // margin-left: 0;
+            // }
 
             div.list-ingredients-group input {
                 margin-left: -8px;
@@ -199,6 +200,7 @@ section.pop-up-container {
             input[type='submit'] {
                 width: 530px;
                 margin-left: 140px;
+                // margin-left: 0;
             }
         }
     }
@@ -323,6 +325,14 @@ section.pop-up-container {
                     margin: -36px 0 16px 0;
                 }
 
+                div.set-remainders-freq-group select {
+                    margin-right: 0;
+                }
+
+                div.set-remainders-send-group select {
+                    margin-right: 0;
+                }
+
                 div.add-to-cal-recipe-group select {
                     width: 55vw;
                     margin: -36px 11px 16px 0;
@@ -333,6 +343,11 @@ section.pop-up-container {
                     margin: -36px 11px 16px 0;
                 }
 
+                div.generate-list-name-group select {
+                    width: 55vw;
+                    margin: -40px 0 16px 0;
+                }
+
                 input[type='submit'] {
                     margin-left: 0;
                     width: 55vw;
@@ -340,32 +355,34 @@ section.pop-up-container {
                 }
             }
         }
-    }
 
-    // ADJUSTING THE ALTERNATIVE STYLING FOR THE ADD LIST POP UP.
-    // ========================================================
-    div#add-list {
-        form {
-            // div.warning p {
-            //     margin-left: -20px;
-            // }
 
-            // div.list-ingredients-group input {
-            //     margin-left: -8px;
-            // }
-
-            // input, textarea, select {
-            //     margin-top: -8px;
-            // }
-
-            input[type='submit'] {
-                // width: 530px;
-                // margin-left: 140px;
-                // margin-left: 40px;
-                width: 200px;
+        // ADJUSTING THE ALTERNATIVE STYLING FOR THE ADD LIST POP UP.
+        // ========================================================
+        div#add-list {
+            form {
+                input[type='submit'] {
+                    width: 55vw;
+                    margin-left: 0;
+                }
             }
         }
+
+
+        // ADJUSTING THE ALTERNATIVE STYLING FOR THE GENERATE LIST POP UP.
+        // ========================================================
+        section#generate-list-popup {
+
+            div#generate-list {
+                form {
+                    input[type='submit'] {
+                        margin-left: 0;
+                    }
+                }
+            }  
+        }
     }
+
 }
 
 // // Large devices (laptops/desktops, between 851px and 992px).
