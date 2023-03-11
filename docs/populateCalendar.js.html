@@ -30,9 +30,11 @@
     /**
      * Creates the calendar and handles all its functionality:&lt;br>
      * @class
-     * - Creates the calendar boxes.&lt;br>
-     * - Determines the number of boxes required for each month.&lt;br>
-     * - Syncs the calendar with the date input.&lt;br>
+     * &lt;ul>
+     * &lt;li>Creates the calendar boxes.&lt;/li>
+     * &lt;li>Determines the number of boxes required for each month.&lt;/li>
+     * &lt;li>Syncs the calendar with the date input.&lt;/li>
+     * &lt;/ul>
      */
 
     constructor () {
@@ -83,9 +85,11 @@
     /** 
      * Creates the calendar box.&lt;br>
      * 
-     * - Adds the day of the month to the calendar box.&lt;br>
-     * - Highlights the current day.&lt;br>
-     * - Adds the addToCalBtn to the calendar box.&lt;br>
+     * &lt;ul>
+     * &lt;li>Adds the day of the month to the calendar box.&lt;/li>
+     * &lt;li>Highlights the current day.&lt;/li>
+     * &lt;li>Adds the addToCalBtn to the calendar box.&lt;/li>
+     * &lt;/ul>
     */
     createCalBox = () => {
         this.numOfCalBoxes++; // Increases the total number of boxes.
@@ -124,9 +128,12 @@
     /** 
      * Builds the calendar boxes.&lt;br>
      *  
-     * - Creates a specific number of calendar boxes.&lt;br>
-     *    - The number of boxes is equal to the number of days in a month- for the selected month.&lt;br>
-     * - Calls the createCalBox() function.&lt;br>
+     * &lt;ul>
+     * &lt;li>Creates a specific number of calendar boxes.
+     *    &lt;li>The number of boxes is equal to the number of days in a month- for the selected month.&lt;/li>
+     * &lt;/li>
+     * &lt;li>Calls the createCalBox() function.&lt;/li>
+     * &lt;/ul>
     */
     buildCal = () => {
         for (let i = 0; i &lt; this.daysInMonth; i++) {
@@ -138,10 +145,13 @@
     /** 
      * Generates the calendar.&lt;br>
      * 
-     * - Generates the calendar boxes in the DOM.&lt;br>
-     *    - It appends the boxes to the calendar container div.&lt;br>
-     * - Displays the pop up if clicked.&lt;br>
-     * - Calls the setFormDate() function.&lt;br>
+     * &lt;ul>
+     * &lt;li>Generates the calendar boxes in the DOM.
+     *    &lt;li>It appends the boxes to the calendar container div.&lt;/li>
+     * &lt;/li>
+     * &lt;li>Displays the pop up if clicked.&lt;/li>
+     * &lt;li>Calls the setFormDate() function.&lt;/li>
+     * &lt;ul>
     */
     generateCal = () => {
         for (let i = 0; i &lt; this.calBoxes.length; i++) {
@@ -163,8 +173,10 @@
     /** 
      * Sets the form date.&lt;br>
      * 
-     * - Sets the form date in the format YYYY-MM-DD (matches the date object).&lt;br>
-     * - Calls the getSelectedYear() and getSelectedMonth() functions.&lt;br>
+     * &lt;ul>
+     * &lt;li>Sets the form date in the format YYYY-MM-DD (matches the date object).&lt;/li>
+     * &lt;li>Calls the getSelectedYear() and getSelectedMonth() functions.&lt;/li>
+     * &lt;/ul>
     */
     setFormDate = () => {
         // Where the date will be stored.
@@ -183,8 +195,10 @@
     /** 
      * Sets the date picker.&lt;br>
      * 
-     * - Sets the date picker to the current date.&lt;br>
-     * - Returns the current month, to be used by the getDate() function.&lt;br>
+     * &lt;ul>
+     * &lt;li>Sets the date picker to the current date.&lt;/li>
+     * &lt;li>Returns the current month, to be used by the getDate() function.&lt;/li>
+     * &lt;/ul>
     */
     setDatePicker = () => {
         // Gets the date input element.
@@ -218,8 +232,9 @@
      * 
      * @param {string} month - The inputted month.&lt;br>
      * 
-     * - Sets the days of the month based of the selected month.&lt;br>
-     *    - Takes into account the leap year.&lt;br>
+     * &lt;ul>&lt;li>Sets the days of the month based of the selected month.
+     *    &lt;li>Takes into account the leap year.&lt;/li>
+     * &lt;/li>&lt;/ul>
     */
     getDate = (month) => {
         if ((month == 1) || (month == 3) || (month == 5) ||
@@ -255,7 +270,7 @@
     /** 
      * Returns the selected date.&lt;br>
 
-     * - Returns the value of the date input element (day).&lt;br>
+     * &lt;ul>&lt;li>Returns the value of the date input element (day).&lt;/li>&lt;/ul>
     */
     getSelectedDay = () => {
         const selectedDate = document.querySelector("#selected-date");
@@ -268,7 +283,7 @@
     /** 
      * Returns the current month.&lt;br>
      * 
-     * - Returns the current month based on the current date.&lt;br>
+     * &lt;ul>&lt;li>Returns the current month based on the current date.&lt;/li>&lt;/ul>
     */
     getCurrentMonth = () => {
         let date = new Date();
@@ -287,7 +302,7 @@
     /** 
      * Returns the selected month.&lt;br>
      * 
-     * - Returns the value of the date input element (month).&lt;br>
+     * &lt;ul>&lt;li>Returns the value of the date input element (month).&lt;/ul>&lt;/li>
     */
     getSelectedMonth = () => {
         const selectedDate = document.querySelector("#selected-date");
@@ -300,7 +315,7 @@
     /** 
      * Returns the current year.&lt;br>
      *  
-     * - Returns the current year based on the current date.&lt;br> 
+     * &lt;ul>&lt;li>Returns the current year based on the current date.&lt;/ul>&lt;/li>
     */
     getCurrentYear = () => {
         return new Date().getFullYear();
@@ -310,7 +325,7 @@
     /** 
      * Returns the selected year.&lt;br>
      * 
-     * - Returns the value of the date input element (year) &lt;br>
+     * &lt;ul>&lt;li>Returns the value of the date input element (year)&lt;/ul>&lt;/li>
     */
     getSelectedYear = () => {
         const selectedDate = document.querySelector("#selected-date");
@@ -324,9 +339,11 @@
     /** 
      * Calculates the number of days in a month.&lt;br>
      * 
-     * - Calculates the number of days in a month for the selected date.&lt;br>
-     * - Sets the daysInMonth variable.&lt;br>
-     * - Sets the date variable.&lt;br>
+     * &lt;ul>
+     * &lt;li>Calculates the number of days in a month for the selected date.&lt;/li>
+     * &lt;li>Sets the daysInMonth variable.&lt;/li>
+     * &lt;li>Sets the date variable.&lt;/li>
+     * &lt;/ul>
     */
     numOfDays = () => {
         const selectedDate = document.querySelector("#selected-date");
@@ -350,8 +367,10 @@
     /** 
      * Displays and hides the calendar based on user input.&lt;br>
      * 
-     * - Changes the text on the button to allow the user to know the right action.&lt;br>
-     * - Hides and displays the calendar based off whether the calendar is currently displayed or not.&lt;br>
+     * &lt;ul>
+     * &lt;li>Changes the text on the button to allow the user to know the right action.&lt;/li>
+     * &lt;li>Hides and displays the calendar based off whether the calendar is currently displayed or not.&lt;/li>
+     * &lt;/ul>
      */
     toggleCalendarDisplay = () => {
         const displayCalendarBtn = document.querySelector("#display-cal-btn");
@@ -372,11 +391,13 @@
      * Begins the populate calendar functionality.&lt;br>
      * Runs the following functions to create the initial calendar:&lt;br>
      * 
-     * - daysInMonth()&lt;br>
-     * - buildCal()&lt;br>
-     * - generateCal()&lt;br>
-     * - dateClicked()&lt;br>
-     * - setFormDate()&lt;br>
+     * &lt;ul>
+     * &lt;li>daysInMonth()&lt;li>
+     * &lt;li>buildCal()&lt;li>
+     * &lt;li>generateCal()&lt;li>
+     * &lt;li>dateClicked()&lt;/li>
+     * &lt;li>setFormDate()&lt;/li>
+     * &lt;ul>
      */
     run = () => {
         this.daysInMonth = this.getDate(this.setDatePicker());
@@ -390,9 +411,11 @@
     /** 
      * Empties the dynamic calendar section, to ensure no duplicity.&lt;br>
      * 
-     * - Removes the dynamic calendar from the HTML.&lt;br>
-     * - Empties the calBoxes array.&lt;br>
-     * - Sets the numOfCalBoxes variable back to 0.&lt;br>
+     * &lt;ul>
+     * &lt;li>Removes the dynamic calendar from the HTML.&lt;/li>
+     * &lt;li>Empties the calBoxes array.&lt;/li>
+     * &lt;li>Sets the numOfCalBoxes variable back to 0.&lt;/li>
+     * &lt;ul>
      */
     empty = () => {
         // Removes the current boxes
@@ -406,11 +429,13 @@
      * Regenerates new calendar boxes based on user input.&lt;br>
      * Runs the following functions to regenerate the calendar:&lt;br>
      * 
-     * - empty()&lt;br>
-     * - numOfDays()&lt;br>
-     * - buildCal()&lt;br>
-     * - generateCal()&lt;br>
-     * - setFormDate()&lt;br>
+     * &lt;ul>
+     * &lt;li>empty()&lt;/li>
+     * &lt;li>numOfDays()&lt;/li>
+     * &lt;li>buildCal()&lt;/li>
+     * &lt;li>generateCal()&lt;/li>
+     * &lt;li>setFormDate()&lt;/li>
+     * &lt;/ul>
      */
     regenerate = () => {
         this.empty();
@@ -436,7 +461,7 @@
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Fri Mar 10 2023 16:37:38 GMT+0000 (Greenwich Mean Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Sat Mar 11 2023 10:33:33 GMT+0000 (Greenwich Mean Time)
 </footer>
 
 <script> prettyPrint(); </script>
