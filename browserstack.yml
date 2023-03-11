@@ -1,0 +1,50 @@
+---
+#---First test conditions ---#
+
+# userName: tintsajrkhoza_SNxqVy
+# accessKey: 8p4ZjapyZgUizMjd1f8T
+# platforms:
+#   - os: Windows
+#     osVersion: 11
+#     browserName: Chrome
+#     browserVersion: 103.0
+#   - os: Windows
+#     osVersion: 10
+#     browserName: Firefox
+#     browserVersion: 102.0
+#   - os: OS X
+#     osVersion: Big Sur
+#     browserName: Safari
+#     browserVersion: 14.1
+# parallelsPerPlatform: 2
+# browserstackLocal: true
+# buildName: bstack
+# projectName: meal app
+# testObservability: true
+# networkLogs: true
+# consoleLogs: errors
+
+#---Second test conditions ---#
+
+userName: tintsajrkhoza_SNxqVy
+accessKey: 8p4ZjapyZgUizMjd1f8T
+platforms:
+  - os: Windows
+    osVersion: 11
+    browserName: Chrome
+    browserVersion: 103.0
+  - os: Windows
+    osVersion: 11
+    browserName: Firefox
+    browserVersion: latest
+  - os: OS X
+    osVersion: Big Sur
+    browserName: Safari
+    browserVersion: 14.1
+parallelsPerPlatform: 1
+browserstackLocal: true
+buildName: bstack
+projectName: meal app
+testObservability: true
+networkLogs: true
+consoleLogs: errors
