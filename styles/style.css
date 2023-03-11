@@ -592,17 +592,17 @@ section.pinned .calendar-cards .card .info p {
   margin-right: 24px;
 }
 
-main .cards .card {
+main.ejs .cards .card {
   padding: 8px 24px 16px 24px;
   overflow: scroll;
 }
-main .cards .card p:first-of-type {
+main.ejs .cards .card p:first-of-type {
   font-size: 2.2rem;
   font-weight: bold;
   text-align: center;
   font-family: "Rampart One", cursive;
 }
-main .cards .card p:nth-of-type(2) {
+main.ejs .cards .card p:nth-of-type(2) {
   line-height: 2rem;
   text-align: justify;
   font-size: 1.1rem;
@@ -611,27 +611,27 @@ main .cards .card p:nth-of-type(2) {
   border-radius: 8px;
   padding: 8px;
 }
-main .cards .card p:nth-of-type(3) {
+main.ejs .cards .card p:nth-of-type(3) {
   font-weight: bold;
   font-size: 1.4rem;
 }
-.theme--light main .cards .card p:nth-of-type(3) {
+.theme--light main.ejs .cards .card p:nth-of-type(3) {
   color: #4AA5EA;
 }
-.theme--dark main .cards .card p:nth-of-type(3) {
+.theme--dark main.ejs .cards .card p:nth-of-type(3) {
   color: #33B5E4;
 }
-main .cards .card ul {
+main.ejs .cards .card ul {
   padding: 0;
 }
-main .cards .card li {
+main.ejs .cards .card li {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   font-size: 1.2rem;
 }
-main .cards .card span {
+main.ejs .cards .card span {
   font-weight: bold;
   margin-right: 8px;
 }
