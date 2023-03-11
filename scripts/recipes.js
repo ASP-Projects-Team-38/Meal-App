@@ -118,18 +118,24 @@ if (closeRecipeResultPopUpBtn !== null) {
 // STYLING THE RECIPE CARDS.
 // ========================================================
 const recipeIngredientsElement = document.querySelector(".user-input-recipe-ingredients");
-const recipeIngredients = JSON.parse(recipeIngredientsElement.innerHTML);
+let recipeIngredients;
 
-recipeIngredientsElement.innerHTML = ""; // empty
-let ingredientsContainer = document.createElement("ul"); // contains all the ingredients
+if (recipeIngredientsElement !== null) {
+    recipeIngredients = JSON.parse(recipeIngredientsElement.innerHTML);
 
-for (let property in recipeIngredients) {
-    console.log(`${property}: ${recipeIngredients[property]}`);
+    recipeIngredientsElement.innerHTML = ""; // empty
+    let ingredientsContainer = document.createElement("ul"); // contains all the ingredients
 
-    let li = document.createElement("li");
-    li.innerHTML = `<span>${property}:</span> ${recipeIngredients[property]}`;
+    for (let property in recipeIngredients) {
+        console.log(`${property}: ${recipeIngredients[property]}`);
 
-    ingredientsContainer.appendChild(li);
+        let li = document.createElement("li");
+        li.innerHTML = `<span>${property}:</span> ${recipeIngredients[property]}`;
+
+        ingredientsContainer.appendChild(li);
+    }
+
+    recipeIngredientsElement.appendChild(ingredientsContainer);
 }
 
-recipeIngredientsElement.appendChild(ingredientsContainer);
+
