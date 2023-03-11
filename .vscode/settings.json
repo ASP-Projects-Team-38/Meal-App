@@ -12,6 +12,20 @@
       "database": "meal_app",
       "username": "sqluser",
       "password": "password"
+    },
+    {
+      "mysqlOptions": {
+        "authProtocol": "default"
+      },
+      "previewLimit": 50,
+      "server": "127.0.0.1",
+      "port": 3306,
+      "driver": "MySQL",
+      "name": "meal_app",
+      "database": "meal_app",
+      "username": "sqluser",
+      "password": "password"
     }
-  ]
+  ],
+  "npm-scripts.showStartNotification": false
 }

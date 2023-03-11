@@ -5,7 +5,9 @@
   "main": "server.js",
   "scripts": {
     "test": "jest",
-    "start": "nodemon server.js"
+    "start": "nodemon server.js",
+    "test-browserstack": "browserstack-node-sdk jest test-browserstack.test.js",
+    "start-browserstack": "browserstack-node-sdk jest start-browserstack.test.js"
   },
   "repository": {
     "type": "git",
@@ -20,13 +22,17 @@
   "homepage": "https://github.com/ASP-Projects-Team-38/Meal-App#readme",
   "dependencies": {
     "body-parser": "^1.20.1",
+    "chromedriver": "^111.0.0",
     "cookie-parser": "^1.4.6",
     "ejs": "^3.1.8",
     "express": "^4.18.2",
     "express-session": "^1.17.3",
-    "mysql2": "^3.1.0"
+    "geckodriver": "^3.2.0",
+    "mysql2": "^3.1.0",
+    "selenium-webdriver": "^4.8.1"
   },
   "devDependencies": {
+    "browserstack-node-sdk": "^1.6.2",
     "jest": "^29.4.3",
     "nodemon": "^2.0.20",
     "supertest": "^6.3.3"

@@ -5,7 +5,7 @@ const mysql = require("mysql2");
 
 // do not put db credentials here, just for dev purpose only
 const dbConn = mysql.createConnection({
-  host: "localhost",
+  host: "127.0.0.1",
   user: "sqluser",
   password: "password",
   database: "meal_app",
