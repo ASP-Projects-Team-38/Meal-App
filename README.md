@@ -1,6 +1,6 @@
 # Meal-App
 
-View the meal app's overall current progress [here](https://asp-projects-team-38.github.io/Meal-App/views/).<br>
+View the meal app's overall current progress [here](https://asp-projects-team-38.github.io/Meal-App/views/about.html).<br>
 
 View the documentation created for the script files (utilising JSDocs) [here](https://asp-projects-team-38.github.io/Meal-App/docs/index.html).<br>
 
