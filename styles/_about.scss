@@ -2,25 +2,54 @@
 // ========================================================
 body#about-landing {
     div.hero-container {
-        background-color: #9ddc8e;
+        background-color: #FFDB7E;
         height: 100vh;
 
         section {
-            @include flex(row, space-between, center);
+            @include flex(row, space-between, center, 24px);
 
             div.text {
                 h1 {
-                    width: 70%;
+                    color: #333;
+                    font-size: 4rem;
+                    line-height: 5rem;
+                }
+                p {
+                    color: #333;
+                    font-size: 1.5rem;
+                    line-height: 2.7rem;
+                    font-weight: 300;
                 }
 
-                p {
-                    width: 70%;
+
+                // STYLING THE ACTION BUTTONS
+                div.action-buttons {
+                    @include flex(row, flex-start, center, 24px);
+
+                    margin-top: 36px;
+
+                    .action-btn-1 {
+                        @include button(#444, #e0b23e, #fff);
+                        border-radius: 32px;
+
+                        span {
+                            margin-left: 8px;
+                        }
+                    }
+                    .action-btn-2 {
+                        @include button(unset, #e0b23e, #333);
+                        border: 4px solid #444;
+                        padding: 12px 28px;
+                        border-radius: 32px;
+                    }
                 }
             }
 
             div.image {
                 img {
-                    width: 700px;
+                    margin-top: 48px;
+                    margin-left: 24px;
+                    width: 750px;
                 }
             }
         }

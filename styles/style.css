@@ -1396,7 +1396,7 @@ main#sign-up-form form.validate div.log-group p.error-msg {
 }
 
 body#about-landing div.hero-container {
-  background-color: #9ddc8e;
+  background-color: #FFDB7E;
   height: 100vh;
 }
 body#about-landing div.hero-container section {
@@ -1404,13 +1404,66 @@ body#about-landing div.hero-container section {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  gap: 24px;
 }
 body#about-landing div.hero-container section div.text h1 {
-  width: 70%;
+  color: #333;
+  font-size: 4rem;
+  line-height: 5rem;
 }
 body#about-landing div.hero-container section div.text p {
-  width: 70%;
+  color: #333;
+  font-size: 1.5rem;
+  line-height: 2.7rem;
+  font-weight: 300;
+}
+body#about-landing div.hero-container section div.text div.action-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 24px;
+  margin-top: 36px;
+}
+body#about-landing div.hero-container section div.text div.action-buttons .action-btn-1 {
+  background-color: #444;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.2rem;
+  padding: 16px 32px;
+  border-radius: 8px;
+  border: none;
+  margin-bottom: 20px;
+  transition: hover 1s;
+  border-radius: 32px;
+}
+body#about-landing div.hero-container section div.text div.action-buttons .action-btn-1:hover {
+  cursor: pointer;
+  background-color: #e0b23e;
+}
+body#about-landing div.hero-container section div.text div.action-buttons .action-btn-1 span {
+  margin-left: 8px;
+}
+body#about-landing div.hero-container section div.text div.action-buttons .action-btn-2 {
+  background-color: unset;
+  color: #333;
+  font-weight: 700;
+  font-size: 1.2rem;
+  padding: 16px 32px;
+  border-radius: 8px;
+  border: none;
+  margin-bottom: 20px;
+  transition: hover 1s;
+  border: 4px solid #444;
+  padding: 12px 28px;
+  border-radius: 32px;
+}
+body#about-landing div.hero-container section div.text div.action-buttons .action-btn-2:hover {
+  cursor: pointer;
+  background-color: #e0b23e;
 }
 body#about-landing div.hero-container section div.image img {
-  width: 700px;
+  margin-top: 48px;
+  margin-left: 24px;
+  width: 750px;
 }/*# sourceMappingURL=style.css.map */
