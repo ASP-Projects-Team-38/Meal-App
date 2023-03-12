@@ -1393,4 +1393,124 @@ main#sign-up-form form.validate div.log-group p.error-msg {
 }
 .theme--dark main#sign-up-form form.validate div.log-group input.invalid {
   border: 2px solid #FF3232;
+}
+
+body#about-landing div.hero-container {
+  background-color: #FFE794;
+  height: 100vh;
+}
+body#about-landing div.hero-container section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+}
+body#about-landing div.hero-container section div.text h1 {
+  color: #333;
+  font-size: 4rem;
+  line-height: 5rem;
+}
+body#about-landing div.hero-container section div.text p {
+  color: #333;
+  font-size: 1.5rem;
+  line-height: 2.7rem;
+  font-weight: 300;
+}
+body#about-landing div.hero-container section div.text div.action-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 24px;
+  margin-top: 36px;
+}
+body#about-landing div.hero-container section div.text div.action-buttons .action-btn-1 {
+  background-color: #444;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.2rem;
+  padding: 16px 32px;
+  border-radius: 8px;
+  border: none;
+  margin-bottom: 20px;
+  transition: hover 1s;
+  border-radius: 32px;
+}
+body#about-landing div.hero-container section div.text div.action-buttons .action-btn-1:hover {
+  cursor: pointer;
+  background-color: #e0c358;
+}
+body#about-landing div.hero-container section div.text div.action-buttons .action-btn-1 span {
+  margin-left: 8px;
+}
+body#about-landing div.hero-container section div.text div.action-buttons .action-btn-2 {
+  background-color: unset;
+  color: #333;
+  font-weight: 700;
+  font-size: 1.2rem;
+  padding: 16px 32px;
+  border-radius: 8px;
+  border: none;
+  margin-bottom: 20px;
+  transition: hover 1s;
+  border: 4px solid #444;
+  padding: 12px 28px;
+  border-radius: 32px;
+}
+body#about-landing div.hero-container section div.text div.action-buttons .action-btn-2:hover {
+  cursor: pointer;
+  background-color: #e0c358;
+}
+body#about-landing div.hero-container section div.image img {
+  margin-top: 48px;
+  margin-left: 24px;
+  width: 750px;
+}
+body#about-landing div.main-container {
+  background-color: #f9f8f8;
+  height: 110vh;
+  margin-top: -100px;
+  color: #333;
+}
+body#about-landing div.main-container main div.text {
+  text-align: center;
+  margin-bottom: 100px;
+}
+body#about-landing div.main-container main div.text h2 {
+  font-size: 3.5rem;
+  padding-top: 50px;
+  margin-bottom: 0;
+}
+body#about-landing div.main-container main div.text p {
+  font-size: 1.5rem;
+  color: #555;
+}
+body#about-landing div.main-container main div.info-cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  text-align: center;
+}
+body#about-landing div.main-container main div.info-cards div.info-card {
+  background-color: #fff;
+  height: 500px;
+  width: 350px;
+  border-radius: 24px;
+  padding: 32px 16px;
+}
+body#about-landing div.main-container main div.info-cards div.info-card img {
+  width: 200px;
+  height: 200px;
+}
+body#about-landing div.main-container main div.info-cards div.info-card p.heading {
+  font-size: 1.7rem;
+  font-weight: 800;
+}
+body#about-landing div.main-container main div.info-cards div.info-card p.info {
+  font-size: 1.5rem;
+  line-height: 2.2rem;
+  color: #555;
 }/*# sourceMappingURL=style.css.map */
