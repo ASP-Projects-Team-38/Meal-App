@@ -1393,4 +1393,24 @@ main#sign-up-form form.validate div.log-group p.error-msg {
 }
 .theme--dark main#sign-up-form form.validate div.log-group input.invalid {
   border: 2px solid #FF3232;
+}
+
+body#about-landing div.hero-container {
+  background-color: #9ddc8e;
+  height: 100vh;
+}
+body#about-landing div.hero-container section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+body#about-landing div.hero-container section div.text h1 {
+  width: 70%;
+}
+body#about-landing div.hero-container section div.text p {
+  width: 70%;
+}
+body#about-landing div.hero-container section div.image img {
+  width: 700px;
 }/*# sourceMappingURL=style.css.map */

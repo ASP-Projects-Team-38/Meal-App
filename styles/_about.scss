@@ -1,0 +1,28 @@
+// STYLING FOR THE LANDING / ABOUT PAGE.
+// ========================================================
+body#about-landing {
+    div.hero-container {
+        background-color: #9ddc8e;
+        height: 100vh;
+
+        section {
+            @include flex(row, space-between, center);
+
+            div.text {
+                h1 {
+                    width: 70%;
+                }
+
+                p {
+                    width: 70%;
+                }
+            }
+
+            div.image {
+                img {
+                    width: 700px;
+                }
+            }
+        }
+    }
+}
