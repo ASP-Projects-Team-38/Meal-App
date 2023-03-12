@@ -66,6 +66,10 @@ app.get("/recipes", sessionChecker, (req, res) => {
   });
 });
 
+app.get("/about", (req, res) => {
+  res.render("about");
+});
+
 app.get("/planner", sessionChecker, (req, res) => {
   mealplanController.populateInfoInSession(req, function () {
     res.render("planner", {
